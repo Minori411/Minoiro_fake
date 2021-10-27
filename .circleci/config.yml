@@ -1,57 +1,75 @@
 version: 2.1
+orbs:
+  ruby: circleci/ruby@1.1.2
+  heroku: circleci/heroku@1.2.3
+
 jobs:
-  Hello-World:
+  build:
     docker:
-      - image: alpine:3.7
+      - image: circleci/ruby:3.0.2
+    working_directory: ~/myapp
     steps:
-      - run:
-          name: Hello World
-          command: |
-            echo 'Hello World!'
-            echo 'This is the delivery pipeline'
-  I-Have-Code:
+      - checkout:
+          path: ~/myapp
+      - ruby/install-deps
+
+  test:
     docker:
-      - image: alpine:3.7
+      - image: circleci/ruby:3.0.2
+      - image: circleci/mysql:8.0
+        environment:
+          MYSQL_ROOT_PASSWORD: password
+          MYSQL_DATABASE: app_test
+          MYSQL_USER: root
+    environment:
+      BUNDLE_JOBS: "3"
+      BUNDLE_RETRY: "3"
+      APP_DATABASE_HOST: "127.0.0.1"
+      RAILS_ENV: test
+    working_directory: ~/myapp
+    steps:
+      - checkout:
+          path: ~/myapp
+      - ruby/install-deps
+      - run:
+          name: Database setup
+          command: bundle exec rails db:migrate
+      - run:
+          name: test
+          command: bundle exec rake test
+
+  deploy:
+    docker:
+      - image: circleci/ruby:3.0.2
     steps:
       - checkout
+      - setup_remote_docker:
+          version: 19.03.13
+      - heroku/install
       - run:
-          name: Code Has Arrived
-          command: |
-            ls -al
-            echo '^^^That should look familiar^^^'
-  Run-With-Node:
-    docker:
-      - image: circleci/node:14-browsers
-    steps:
+          name: heroku login
+          command: heroku container:login
       - run:
-          name: Running In A Container With Node
-          command: |
-            node -v
-  Now-Complete:
-    docker:
-      - image: alpine:3.7
-    steps:
+          name: push docker image
+          command: heroku container:push web -a $HEROKU_APP_NAME
       - run:
-          name: Approval Complete
-          command: |
-            echo 'Do work once the approval has completed'
+          name: release docker image
+          command: heroku container:release web -a $HEROKU_APP_NAME
+      - run:
+          name: database setup
+          command: heroku run bundle exec rake db:migrate RAILS_ENV=production -a $HEROKU_APP_NAME
 
 workflows:
- version: 2
- Example_Workflow:
-   jobs:
-     - Hello-World
-     - I-Have-Code:
-         requires:
-           - Hello-World
-     - Run-With-Node:
-         requires:
-           - Hello-World
-     - Hold-For-Approval:
-         type: approval
-         requires:
-           - Run-With-Node
-           - I-Have-Code
-     - Now-Complete:
-         requires:
-           - Hold-For-Approval
+  version: 2
+  build_test_and_deploy:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
+      - deploy:
+          requires:
+            - test
+          filters:
+            branches:
+              only: main
