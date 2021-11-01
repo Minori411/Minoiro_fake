@@ -6,4 +6,4 @@ require:
   - rubocop-rspec
 
 AllCops:
-NewCops: enable
+  EnabledByDefault: false
