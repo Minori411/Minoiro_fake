@@ -7,10 +7,10 @@ jobs:
   build:
     docker:
       - image: circleci/ruby:3.0.2
-    working_directory: ~/myapp
+    working_directory: ~/Minoiro_fake
     steps:
       - checkout:
-          path: ~/myapp
+          path: ~/Minoiro_fake
       - ruby/install-deps
 
   test:
@@ -25,17 +25,24 @@ jobs:
       BUNDLE_RETRY: "3"
       APP_DATABASE_HOST: "127.0.0.1"
       RAILS_ENV: test
-    working_directory: ~/myapp
+    working_directory: ~/Minoiro_fake
     steps:
       - checkout:
-          path: ~/myapp
+          path: ~/Minoiro_fake
       - ruby/install-deps
       - run:
           name: Database setup
           command: bundle exec rails db:migrate
       - run:
-          name: test
-          command: bundle exec rake test
+          name: テストを実行（RSpec）
+          command: |
+            bundle exec rspec --profile 10 \
+                              --format RspecJunitFormatter \
+                              --out test_results/rspec.xml \
+                              --format progress \
+                              $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
+      - store_test_results:
+          path: test_results
 
   deploy:
     docker:
