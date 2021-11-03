@@ -7,10 +7,10 @@ jobs:
   build:
     docker:
       - image: circleci/ruby:3.0.2
-    working_directory: ~/Minoiro_fake
+    working_directory: ~/minoirofake
     steps:
       - checkout:
-          path: ~/Minoiro_fake
+          path: ~/minoirofake
       - ruby/install-deps
 
   test:
@@ -25,23 +25,24 @@ jobs:
       BUNDLE_RETRY: "3"
       APP_DATABASE_HOST: "127.0.0.1"
       RAILS_ENV: test
-    working_directory: ~/Minoiro_fake
+    working_directory: ~/minoirofake
     steps:
       - checkout:
-          path: ~/Minoiro_fake
+          path: ~/minoirofake
       - ruby/install-deps
       - run:
           name: Database setup
           command: bundle exec rails db:migrate
-      - run:
-          name: Rubocop
-          command: bundle exec rubocop
       - run:
           name: rspec
           command: |
             bundle exec rspec --format RspecJunitFormatter \
                               --out test_results/rspec.xml \
                               --format documentation
+      - run:
+          name: Rubocop
+          command: bundle exec rubocop
+      
       - store_test_results:
           path: test_results
 
