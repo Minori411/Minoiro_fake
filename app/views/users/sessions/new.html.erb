@@ -21,6 +21,12 @@
   <div class="actions">
     <%= f.submit "Log in" %>
   </div>
+  <%= link_to 'ログアウト', destroy_user_session_path,class: 'dropdown-item',method: :delete %>
+  
+  
+  
+
 <% end %>
+
 
 <%= render "users/shared/links" %>
