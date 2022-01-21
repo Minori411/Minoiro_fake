@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     get "user/:id", :to => "users/registrations#detail"
     get "signup", :to => "users/registrations#new"
-    get "login", :to => "users/sessions#new"
+    get "users/sign_in", :to => "users/sessions#new"
     get "users/sign_out", :to => "users/sessions#destroy"
   end
   
