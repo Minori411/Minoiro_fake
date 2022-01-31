@@ -1,13 +1,12 @@
-User.create_profile!(
-    email: 'minoiro@gmail.com',
-    name: 'テスト太郎',
-    password: 'foobar',
-    image: File.open('./app/assets/images/cats.jpg')
-)
+require 'faker'
 
-User.all.each do |user|
-    user.articles.create!(
-        title: 'タイトル',
-        body: 'テキストテキストテキストテキスト'
-        )
+100.times do |n|
+    name = Faker::Name.name
+    email = Faker::Internet.email
+    password = "password"
+    User.create!(name: name,
+                email: email,
+                password: password,
+                password_confirmation: password,
+                )
 end

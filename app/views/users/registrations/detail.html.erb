@@ -1,1 +1,10 @@
-<h1>こんにちは</h1>
+<% provide(:title, 'All users') %>
+<h1>All users</h1>
+
+
+<ul class="users">
+    <% @users.each do |user| %>
+        <%= user.name %>
+    <% end %>
+</ul>
+
