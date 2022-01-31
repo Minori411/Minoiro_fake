@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
   def new
-    name: params[:name]
+  end
+
+  def index
+    @users=User.all
   end
 end
