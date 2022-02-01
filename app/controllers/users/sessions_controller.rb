@@ -2,6 +2,22 @@
 
 class Users::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
+  def new
+  end
+
+  def create
+    user = User.find_by(email: params[:session][:email].downcase)
+    if user && user.authenticate(params[:session][:password])
+      # ユーザーログイン後にユーザー情報のページにリダイレクトする
+    else
+      # エラーメッセージを作成する
+      flash.now[:danger] = '正しくない組み合わせです'
+      render 'new'
+    end
+  end
+
+  def destroy
+  end
 
   # GET /resource/sign_in
   # def new

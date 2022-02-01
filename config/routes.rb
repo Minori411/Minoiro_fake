@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'users/index', :to => "users#index"
-  get 'users/new'
+  get 'users/new', :to => "users#new"
   devise_for :users, :controllers => {
     :registrations => 'users/registrations',
     :sessions => 'users/sessions'   
@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   devise_scope :user do
     get "user/:id", :to => "users/registrations#detail"
     get "signup", :to => "users/registrations#new"
-    get "users/sign_in", :to => "users/sessions#new"
-    get "users/sign_out", :to => "users/sessions#destroy"
+    get "signin", :to => "users/sessions#new"
+    get "logout", :to => "users/sessions#destroy"
   end
   
   get "sample", to: "sample#index"

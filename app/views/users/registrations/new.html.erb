@@ -1,42 +1,43 @@
-<h2>Sign up</h2>
+<% provide(:title, "ログイン") %>
+              <div class="loginpanel_wrap p-t6 p-b6">
+                  <div class="loginpanel">
+                      <form method="POST" action="" accept-charset="UTF-8" novalidate id="login">
+                          <input name="_token" type="hidden" value="">
+                          <div class="login_title">
+                              <h1>ログイン</h1>
+                          </div>
+                          <div class="m-b-20"></div>
+                          <%= form_for(:session, url: login_path) do |f| %>
+                            <div class="input_head">
+                            <p><%= f.label :メールアドレス %></p>
+                            </div>
+                            <%= f.email_field :email, :placeholder => "info@minoiro.com" %>
+                            <div class="input_body">
+                            <p><%= f.label :パスワード（英数字8文字以上） %></p>
+                            </div>
+                            <span class="help-block"></span>
+                            <%= f.password_field :password, :placeholder => "Password"%>
+                            <i class="fa fa-eye icon_eye js-toggle-password"></i>
+                            <%= f.submit "ログイン", class:"submit_buttons submit_button primaryButton" %>
+                          <% end %>
+                          <div class="m-t2">
+                          <label> 
+                              <input type="checkbox" name="remember">
+                              ログインしたままにする
+                          </label>
+                          </div>
+                            <div class="m-t3">
+                              <a href="#" class="btn_small">アカウントをお持ちでない方はこちら</a>
+                              </div>
+                              <div class="m-t1">
+                              <a href="#">パスワードをお忘れの方はこちら</a>
+                              </div>
+                      </form>
+                      </div>
+                  </div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "users/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<!-- Dropdown Trigger -->
-  <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>
-
-  <!-- Dropdown Structure -->
-  <ul id='dropdown1' class='dropdown-content'>
-    <li><a href="#!">one</a></li>
-    <li><a href="#!">two</a></li>
-    <li class="divider" tabindex="-1"></li>
-    <li><a href="#!">three</a></li>
-    <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-    <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
-  </ul>
-
-<%= render "users/shared/links" %>
+                    
+                          
+                            
+                  
