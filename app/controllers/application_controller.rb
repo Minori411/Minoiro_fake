@@ -1,17 +1,10 @@
 class ApplicationController < ActionController::Base
+    helper_method :current_user
 
     private
 
-    def after_sign_out_path_for(resource_or_scope)
-        destroy_user_session_path    
+    def current_user
+        @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
     end
 
-    # このアクションを追加
-    def after_sign_in_path_for(resource_or_scope)
-        "/user/#{current_user.id}"
-    end
-
-    protected
-
-    
 end

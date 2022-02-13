@@ -7,7 +7,7 @@
                               <h1>ログイン</h1>
                           </div>
                           <div class="m-b-20"></div>
-                          <%= form_for(:session, url: login_path) do |f| %>
+                          <%= form_with(model: @user) do |f| %>
                             <div class="input_head">
                             <p><%= f.label :メールアドレス %></p>
                             </div>
@@ -18,13 +18,15 @@
                             <span class="help-block"></span>
                             <%= f.password_field :password, :placeholder => "Password"%>
                             <i class="fa fa-eye icon_eye js-toggle-password"></i>
-                            <%= f.submit "ログイン", class:"submit_buttons submit_button primaryButton" %>
+                            <%= f.submit "ログイン", class:"waves-effect waves-light btn-large login-btn" %>
                           <% end %>
                           <div class="m-t2">
-                          <label> 
-                              <input type="checkbox" name="remember">
-                              ログインしたままにする
-                          </label>
+                          <p>
+                            <label>
+                              <input type="checkbox" />
+                              <span>ログインしたままにする</span>
+                            </label>
+                          </p>
                           </div>
                             <div class="m-t3">
                               <a href="#" class="btn_small">アカウントをお持ちでない方はこちら</a>
