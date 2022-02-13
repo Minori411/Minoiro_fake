@@ -7,7 +7,7 @@
                             <span class="top-keyVisual_lead">気軽に相談してみよう</span>
                         </h1>
                         <div class="top-keyVisual_img">
-                        <%= image_url('reichan.png')%>
+                        <%= image_tag('rainbow.png')%>
                         </div>
                     </div>
                 </div>
@@ -52,7 +52,7 @@
                         <div class="col s12 m6">
                             <div class="card triple-cards">
                                 <div class="card-image">
-                                <%= image_tag "/img/clock.png" %>
+                                <%= image_tag "clock.png" %>
                                 </div>
                                 <div class="card-content">
                                     <span class="card-title">即日取れるカウンセリング予約</span>
@@ -68,8 +68,8 @@
                 <div class="col s12 m6">
                     <div class="card triple-cards">
                         <div class="card-image img-resize">
-                        <img src="/img/online_illust.png" height="300px">
-                        <img src="/img/offline_illust.png">
+                        <%= image_tag "online_illust.png", :height=>300%>
+                        <%= image_tag "offline_illust.png", :height=>300%>
                         </div>
                         <div class="card-content">
                             <span class="card-title">オンライン・オフラインに対応</span>
@@ -86,7 +86,7 @@
                 <div class="col s12 m6">
                     <div class="card triple-cards">
                         <div class="card-image">
-                        <img src="/img/reasonable_illust2.png" height="300px">
+                        <%= image_tag "reasonable_illust2.png", :height=>300%>
                         </div>
                         <div class="card-content">
                             <span class="card-title">リーズナブル</span>
@@ -103,14 +103,14 @@
 <ul class="collapsible popout">
     <li>
         <div class="collapsible-header">
-            <img src="/img/colorbottole.png" height="30px">
+            <%=image_tag "colorbottole.png", :height=>30%>
             カラーコンサルティング（オーラソーマ）とは？
         </div>
         <div class="collapsible-body">
             <span>オーラソーマとは、1983年にイギリスのヴィッキー・ウォールが創始したカラーセラピーです。</span>
-            <img src="/img/bottles.jpg" width="1000px" height="500px">
+            <%= image_tag "bottles.jpg", :size=>'995x500'%>
             <br>
-            <a class="waves-effect waves-light btn bottle_select">ボトルを４本選ぶ</a>
+            <a class="waves-effect waves-light btn bottle_select">ボトルを4本選ぶ</a>
         </div>
     </li>
   </ul>

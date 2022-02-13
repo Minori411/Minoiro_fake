@@ -283,6 +283,12 @@ ul{
     border-radius: 4px;
     margin-bottom: 30px;
     margin-left: 100px;
+    background: #ff6e00!important;
+    font-weight: 700!important;
+
+    &:hover {
+        background:darken(#ff6e00,20%)!important;
+    }
 }
 }
 
@@ -306,6 +312,11 @@ ul{
     border-radius: 4px;
     margin-bottom: 20px;
     margin-top: 40px;
+    font-weight: 700!important;
+
+    &:hover {
+        background:lighten(#ff6e00,20%)!important;
+    }
 }
 
 .minoiro {
@@ -431,5 +442,19 @@ p {
     font-weight: 700;
     border-radius: 4px;
     margin-top: 20px;
+
+    &:hover {
+        background:darken(#ff6e00,20%)!important;
+    }
 }
 
+.free-btn {
+    background: #ff6e00!important;
+    border-radius: 4px!important;
+    font-weight: 700!important;
+
+    &:hover {
+        background:darken(#ff6e00,20%)!important;
+    }
+    
+}
