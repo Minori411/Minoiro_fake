@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
+  get     'signup',   to: 'sessions#new'
+  post    'signin',   to: 'sessions#create'
+  delete  'logout',  to: 'sessions#destroy'
+
   get 'users/index', :to => "users#index"
   get 'users/new', :to => "users#new"
   

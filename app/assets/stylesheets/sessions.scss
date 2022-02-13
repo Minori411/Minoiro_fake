@@ -78,11 +78,9 @@ main {
         margin: 0;
         outline: none;
         appearance: none;
-        padding: 8px;
         border-radius: 4px!important;
         width: 100%;
         border: 1px solid #e4eaec;
-        min-height: 22px;
         font-size: 16px;
     }
 
@@ -128,9 +126,6 @@ h1 {
     margin-bottom: 20px!important
 }
 
-.form_item {
-    line-height: 1.5;
-}
 
 .help-block {
     font-size:12px;
@@ -156,23 +151,6 @@ h1 {
     cursor: pointer;
 }
 
-.primaryButton {
-    color: #fff;
-    display: inline-block;
-    box-sizing: border-box;
-    font-weight: 600;
-    background: #ff6e00;
-    border: 1px solid #ff6e00;
-    border-radius: 4px;
-}
-
-.submit_button {
-    height: 48px;
-    font-size: 16px;
-    min-width: 200px;
-    cursor: pointer;
-    width: 100%;
-}
 
 .m-t2 {
     margin-top: 20px;
@@ -214,11 +192,6 @@ input[type=checkbox]:read-only {
     }
 }
 
-div {
-	max-width: 100%;
-	height: auto;
-}
-
 .m-t3{
     margin-top: 30px;
 }
@@ -243,4 +216,19 @@ div {
 
 a{
     text-decoration: none;
+}
+
+.signin_btn {
+    background: #ff6e00!important;
+    border-radius: 4px;
+    width: 100%!important;
+}
+
+.waves-button-input {
+    color: #fff!important;
+    font-weight: 700!important;
+}
+
+.pass2 {
+
 }
