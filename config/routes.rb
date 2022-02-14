@@ -1,14 +1,16 @@
 Rails.application.routes.draw do
-  get 'home/index'
-  get 'sessions/new'
+  devise_for :users, :controllers => {
+  :registrations => 'users/registrations',
+  :sessions => 'users/sessions'   
+} 
 
-  get     'login',   to: 'sessions#new'
-  post    'login',   to: 'sessions#create'
-  delete  'logout',  to: 'sessions#destroy'
-
-  get  'signup',  to: 'users#new'
-  post 'signup', to: 'users#create'
-
+devise_scope :user do
+  get "user/:id", :to => "users/registrations#detail"
+  get "signup", :to => "users/registrations#new"
+  get "login", :to => "users/sessions#new"
+  get "logout", :to => "users/sessions#destroy"
+end
+  get "users/index", to: "users#index"
 
   root :to => "home#index"
   
