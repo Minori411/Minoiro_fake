@@ -314,8 +314,10 @@ ul{
 }
 
 .card-custom {
-    display: inline-block!important;
+    display: block!important;
     font-weight: 700;
+    white-space: nowrap;
+    margin-left: 100px;
 }
 
 
@@ -365,7 +367,6 @@ ul{
 
 .minoiro {
     margin-top: 5px;
-    white-space: nowrap;
 }
 
 
@@ -446,11 +447,12 @@ p {
 
 .top-conversion_buttons {
     margin: 24px auto;
-    max-width: 240px;
+    max-width: 500px;
 }
 
 .minoiro2 {
     margin-top: 20px;
+    margin-left: -10px;
 }
 
 
