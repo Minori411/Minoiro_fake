@@ -79,7 +79,6 @@ ul {
 }
 
 .top-keyVisual_inner {
-    max-width: 1200px;
     margin: 0 auto;
     position: relative;
 }
@@ -168,15 +167,15 @@ h1,h2,h3,h4,h5,h6{
     display: flex!important;
     justify-content:space-between!important;
     width: 100%;
+    margin: 0 auto;
 }
 
 
 .top-container_item {
     position: relative;
-    margin-bottom: 64px;
+    margin-bottom: 20px;
     padding-bottom: 40px;
-    right:0;
-    top:0;    
+    margin-top: 20px;
 
 }
 
@@ -280,7 +279,7 @@ ul{
 
 .small-text {
     font-size: 10px;
-    margin-top: 40px!important;
+    margin-top: 10px!important;
 }
 
 .card-title {
@@ -313,7 +312,7 @@ ul{
 }
 
 .top-cards{
-    margin-left: 100px!important;
+    margin-left: -10px!important;
 
 }
 
@@ -432,9 +431,11 @@ p {
 
 
 .popout{
-    width: 1000px;;
+    width: 100%;
     margin: 0 auto;
     margin-bottom: 50px;
+
+
 
     li {
     border: 2px solid #a1887f!important;
@@ -455,11 +456,12 @@ p {
     padding-right: 0px!important;
 }
 .bottle_select {
-    margin-left: 430px;
+    margin: 0 auto!important;
     background:#ff6e00;
     font-weight: 700;
     border-radius: 4px;
     margin-top: 20px;
+    width: 100%;
 
     &:hover {
         background:darken(#ff6e00,20%)!important;
@@ -477,9 +479,6 @@ p {
     
 }
 
-.img_left {
-    margin-left: 100px!important;
-}
 
 .pchyoji-login {
     background: #fff!important;
@@ -600,4 +599,21 @@ p {
 div {
     overflow:hidden;
 
+}
+
+@media(max-width: 699px) {
+    .top-case_body {
+        display: block;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+
+    .img_left {
+        margin-top: 20px;
+    }
+
+    .img_middle,
+    .img_right {
+        margin-top: -100px;
+    }
 }
