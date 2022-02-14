@@ -274,7 +274,21 @@ ul{
 }
 
 .img-resize {
-    display: flex;
+    display: flex!important;
+    width: 332px;
+    height: 300px;
+}
+
+.image1 {
+    width: 167px!important;
+}
+
+.image2 {
+    position:absolute!important;
+    left:167px!important;
+    width: 165px!important;
+    height: 300px!important;
+    
 }
 
 .small-text {
