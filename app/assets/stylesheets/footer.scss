@@ -1,0 +1,39 @@
+.page-footer{
+    background: #ff6e00!important;
+    }
+    
+    .page-footer{
+        .row{
+            display: block!important;
+        }
+    }
+    
+    
+    .col{
+            a{
+    font-size: 12px;
+    padding-bottom: 10px;
+    }
+    }
+    
+    .page-footer{
+        a:hover{
+            color:darken(#eeeeee,20%)!important;
+            }
+    }
+    
+    .page-footer{
+        h5{
+        text-align:left!important;
+    }
+    }
+    
+    body {
+        display: flex;
+        min-height: 100vh!important;
+        flex-direction: column!important;
+    }
+    
+    main {
+        flex: 1 0 auto!important;
+    }

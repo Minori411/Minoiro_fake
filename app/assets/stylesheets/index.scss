@@ -151,8 +151,10 @@ h1,h2,h3,h4,h5,h6{
 
 .top-container_body {
     max-width: 1060px;
-    margin: 64px auto 0;
+    margin: 64px 0;
     display: flex!important;
+    justify-content:space-between!important;
+    width: 100%;
 }
 
 
@@ -160,7 +162,8 @@ h1,h2,h3,h4,h5,h6{
     position: relative;
     margin-bottom: 64px;
     padding-bottom: 40px;
-    
+    right:0;
+    top:0;    
 
 }
 
@@ -251,12 +254,15 @@ ul{
 }
 
 .triple-cards {
-    width: 300px;
+    width: 700px;
     height: 500px;
+    margin-right: -300px;
+    
+
 }
 
 .img-resize {
-    width: 150px;
+    width: 165px;
     display: flex;
 }
 
@@ -277,6 +283,7 @@ ul{
     font-weight: 700;
 }
 
+
 .card{
 .start-now {
     width: 300px;
@@ -285,6 +292,7 @@ ul{
     margin-left: 100px;
     background: #ff6e00!important;
     font-weight: 700!important;
+    font-size: 16px!important;
 
     &:hover {
         background:darken(#ff6e00,20%)!important;
@@ -298,7 +306,7 @@ ul{
 }
 
 .top-card {
-    width: 500px;
+    width: 1000px;
     height: 300px;
     border-radius: 8px;
 }
@@ -313,6 +321,7 @@ ul{
     margin-bottom: 20px;
     margin-top: 40px;
     font-weight: 700!important;
+    font-size: 16px!important;
 
     &:hover {
         background:lighten(#ff6e00,20%)!important;
@@ -324,9 +333,6 @@ ul{
     white-space: nowrap;
 }
 
-.grid {
-    margin-right: 60px;
-}
 
 .card {
     border-radius: 8px!important;
@@ -458,3 +464,30 @@ p {
     }
     
 }
+
+.img_left {
+    margin-left: 100px!important;
+}
+
+.pchyoji-login {
+    background: #fff!important;
+    border: 2px solid #ff6e00!important;
+    font-weight: 700!important;
+    color: #ff6e00;
+    border-radius: 4px;
+
+    &:hover {
+        background: lighten(#ff6e00,20%)!important;
+    }
+}
+
+.pchyoji-register {
+    background: #ff6e00;
+    font-weight: 700;
+    border-radius: 4px;
+
+    &:hover {
+        background: darken(#ff6e00,20%)!important;
+    }
+}
+
