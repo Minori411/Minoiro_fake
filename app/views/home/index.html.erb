@@ -1,4 +1,5 @@
-        <section class="top-keyVisual">
+       <body>
+       <section class="top-keyVisual">
             <div class="top-keyVisual_container">
                 <div class="top-keyVisual_heading">
                     <div class="top-keyVisual_inner heading-inner flexbox">
@@ -9,10 +10,17 @@
                         <div class="top-keyVisual_img">
                         <%= image_tag('rainbow.png')%>
                         </div>
+                        <div class="top-smt-image">
+                        <%= image_tag('reichan.png')%>
+                        <div>
                     </div>
                 </div>
                 <div class="top-register">
                     <div class="top-register_inner">
+                    <div class="smt-hyoji-btn">
+                        <a class="waves-effect waves-light btn-large smt-test-login">テストログイン</a>
+                        <a class="waves-effect waves-light btn-large smt-start-now">今すぐはじめる</a>
+                    </div>
                         <div class="top-register_card flexbox">
                             <div class="row top-cards">
                                 <div class="col s12 m6">
@@ -28,6 +36,7 @@
                               </div>
 
                         </div>
+                       
                     </div>
                 </div>
                 
@@ -68,8 +77,8 @@
                 <div class="col s12 m10">
                     <div class="card triple-cards">
                         <div class="card-image img-resize">
-                        <%= image_tag "online_illust.png", :size=>'300x300'%>
-                        <%= image_tag "offline_illust.png", :size=>'300x300'%>
+                        <%= image_tag "online_illust.png"%>
+                        <%= image_tag "offline_illust.png"%>
                         </div>
                         <div class="card-content">
                             <span class="card-title">オンライン・オフラインに対応</span>
@@ -214,3 +223,4 @@
     </div>
 
 
+</body>

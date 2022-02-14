@@ -567,3 +567,11 @@ a{
 .navi {
     margin-bottom: 20px;
 }
+
+@media (max-width: 699px){
+    .menu {
+        white-space:nowrap;
+        margin-top: -50px;
+    }
+
+}

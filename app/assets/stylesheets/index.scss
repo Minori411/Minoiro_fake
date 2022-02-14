@@ -68,6 +68,12 @@ ul {
     }
 }
 
+@media (max-width:699px) {
+    .top-keyVisual {
+        height: 400px;
+    }
+}
+
 .top-keyVisual_heading {
     padding: 0 4%;
 }
@@ -85,6 +91,13 @@ ul {
     width: 55%;
     margin-right: 45%;
     line-height: 1.6;
+}
+
+@media(max-width:699px) {
+    .top-keyVisual_copy {
+    white-space:nowrap;
+    font-size: 30px!important;
+}
 }
 
 h1 {
@@ -262,7 +275,6 @@ ul{
 }
 
 .img-resize {
-    width: 165px;
     display: flex;
 }
 
@@ -491,3 +503,101 @@ p {
     }
 }
 
+@media(max-width:699px) {
+    div{
+        overflow:hidden;
+    }
+}
+
+@media(max-width:699px){
+.top-keyVisual_img {
+    display:none;
+}
+}
+
+@media(max-width:699px) {
+    .top-cards {
+       display: none;
+    }
+}
+
+.top-smt-image {
+    display: none;
+}
+
+@media(max-width:699px){
+    .top-smt-image{
+    display: block!important;
+    margin-right: auto;
+}
+}
+
+
+
+@media (max-width: 699px) {
+    .smt-hyoji-card {
+        display: block!important;
+    }
+}
+
+.smt-hyoji-btn {
+    display: none;
+}
+
+@media (max-width: 699px) {
+    .smt-hyoji-btn {
+        display: block!important;
+        margin-right: auto;
+    }
+
+    .smt-test-login {
+        background: #fff;
+        color: #ff6e00;
+        font-weight: 700;
+        border: 2px solid #ff6e00;
+        border-radius: 4px;
+
+        &:hover {
+            background: lighten(#ff6e00,20%);
+        }
+    }
+
+    .smt-start-now {
+        background: #ff6e00;
+        font-weight: 700;
+        border-radius: 4px;
+        margin-top: 20px;
+
+        &:hover {
+            background: darken(#ff6e00,20%);
+        }
+    }
+
+    .smt-test-login,
+    .smt-start-now {
+        display: block;
+    }
+}
+
+@media (max-width: 699px) {
+    .top-container_body {
+        display: block!important;
+    }
+
+    .img_left {
+        margin-left: 0!important;
+    }
+
+    .top-keyVisual_lead {
+        white-space: nowrap;
+    }
+
+    .heading-copy {
+        font-size: 30px;
+    }
+}
+
+div {
+    overflow:hidden;
+
+}
