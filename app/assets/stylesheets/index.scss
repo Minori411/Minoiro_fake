@@ -176,7 +176,13 @@ h1,h2,h3,h4,h5,h6{
     margin-bottom: 20px;
     padding-bottom: 40px;
     margin-top: 20px;
+    margin-right: 30px;
+}
 
+@media( max-width:699px) {
+    .triple-cards{
+        margin-bottom: 40px!important;
+    }
 }
 
 .item-copy {
@@ -268,26 +274,30 @@ ul{
 .triple-cards {
     width: 700px;
     height: 500px;
-    margin-right: -300px;
+
     
+
 
 }
 
 .img-resize {
     display: flex!important;
-    width: 332px;
+    width: 360px;
     height: 300px;
+    overflow:hidden;
 }
 
 .image1 {
-    width: 167px!important;
+    width: 165px!important;
 }
 
 .image2 {
     position:absolute!important;
-    left:167px!important;
-    width: 165px!important;
+    left:165px!important;
+    width: 180px!important;
     height: 300px!important;
+    padding:0!important;
+    margin:0!important;
     
 }
 
