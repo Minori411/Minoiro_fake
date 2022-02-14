@@ -179,6 +179,13 @@ h1,h2,h3,h4,h5,h6{
     margin-right: 30px;
 }
 
+@media (max-width: 699px) {
+    .top-container_item {
+        margin-right: -30px;
+
+
+    }
+}
 @media( max-width:699px) {
     .triple-cards{
         margin-bottom: 40px!important;
@@ -320,6 +327,11 @@ ul{
     margin-left: 100px;
 }
 
+@media (max-width: 699px) {
+    .minoiro {
+        margin-left: 0px;
+    }
+}
 
 .card{
 .start-now {
@@ -642,4 +654,9 @@ div {
     .img_right {
         margin-top: -100px;
     }
+}
+
+.bottles {
+    width: 100%;
+    height: 100%;
 }
