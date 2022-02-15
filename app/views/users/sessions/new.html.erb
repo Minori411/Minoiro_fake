@@ -1,26 +1,33 @@
-<h2>Log in</h2>
+<% provide(:title, "ログイン") %>
+<main id="app" data-action="/login">
+              <div class="loginpanel_wrap back_gray p-t6 p-b6">
+                  <div class="loginpanel">
+                      <form method="POST" action="" accept-charset="UTF-8" novalidate id="login">
+                          <input name="_token" type="hidden" value="">
+                          <div class="login_title">
+                              <h1>ログイン</h1>
+                          </div>
+                          <div class="m-b-20"></div>
+                          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                            <div class="input_head">
+                            <p><%= f.label :メールアドレス %></p>
+                            </div>
+                            <%= f.email_field :email, autofocus: true, autocomplete: "email",:placeholder => "info@minoiro.com" %>
+                            <div class="input_body">
+                            <p><%= f.label :パスワード（英数字8文字以上） %></p>
+                            </div>
+                            <span class="help-block"></span>
+                            <%= f.password_field :password, autocomplete: "current-password",:placeholder => "Password"%>
+                            <i class="fa fa-eye icon_eye js-toggle-password"></i>
+                            <%= f.submit "ログイン", class:"waves-effect waves-light btn-large login-btn2" %>
+                          
+                            <%= render "users/shared/links" %>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+                      </form>
+                      </div>
+                  </div>
+              </main>   
+                    
+                <% end %>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+                  

@@ -2,4 +2,18 @@
  *= require_tree .
  *= require_self
  */
-@import 'index'
+@import 'index';
+@import 'registration';
+
+.login-btn2 {
+    background: #ff6e00;
+    width: 100%;
+    border-radius: 4px;
+    font-weight: 700;
+    margin-top: 40px;
+    margin-bottom: 20px;
+
+    &:hover {
+        background:darken(#ff6e00,20%);
+    }
+}
