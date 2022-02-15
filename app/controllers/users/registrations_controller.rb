@@ -22,9 +22,8 @@ def after_sign_up_path_for(resource)
   "/user/#{current_user.id}"
 end
   # POST /resource
-  # def create
-  #   super
-  # end
+def create
+end
 
   # GET /resource/edit
   # def edit

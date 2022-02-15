@@ -3,7 +3,7 @@
         <div id="vapp">
             <div class="loginpanel_wrap p-t6 p-b6">
                 <div class="loginpanel">
-                    <form id="register" method="POST" action="" accept-charset="UTF-8">
+                    <form id="register" method="POST" action="/signup" accept-charset="UTF-8">
                         <input type="hidden" name="_token" value="">
                         <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
                           <%= render "users/shared/error_messages", resource: resource %>
