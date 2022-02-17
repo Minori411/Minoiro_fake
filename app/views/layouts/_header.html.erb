@@ -28,10 +28,10 @@
                 </form>
             </div>
     <div class="navi_login">
-        <a href="#" tabindex="0" class="waves-effect waves-light btn pchyoji-login">ログイン</a>
+        <%= link_to("ログイン", new_session_path(resource_name), class: "waves-effect waves-light btn pchyoji-login") %>
     </div>
     <div class="navi_entry">
-        <a href="#" tabindex="0" class="waves-effect waves-light btn pchyoji-register">無料登録</a>
+        <%= link_to("無料登録",new_registration_path(resource_name),class: "waves-effect waves-light btn pchyoji-register") %>
     </div>
     </div>
 </div>
