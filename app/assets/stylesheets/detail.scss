@@ -263,3 +263,18 @@ li {
 h3 {
     font-size: 20px;
 }
+
+@media(max-width: 699px) {
+    .dashContent_right {
+        margin-right: 16px;
+    }
+
+    .todo_area_title {
+        margin-left: 80px;
+        white-space: nowrap;
+    }
+
+    .scroll {
+        margin-left: 40px;
+    }
+}

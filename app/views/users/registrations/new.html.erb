@@ -21,10 +21,10 @@
                         </div>
                         <div class="form_item">
                             <div class="input_head">
-                                <p><%= f.label :ユーザー名 %> <em>(8文字まで)</em></p>
+                                <p><%= f.label :ユーザー名 %></p>
                             </div>
                             <div class="input_body">
-                              <%= f.text_field :name, :placeholeder => "ユーザー名", autofocus: true, maxlength: "8" %>
+                              <%= f.text_field :name, :placeholeder => "ユーザー名", autofocus: true, maxlength: "20" %>
                             </div>
                         </div>
                         <div class="form_item">
@@ -32,9 +32,6 @@
                                 <p><%= f.label :パスワード（英数字8文字以上）%></p>
                             </div>
                             <div class="input_body">
-                            <% if @minimum_password_length %>
-                            <em>(<%= @minimum_password_length %> characters minimum)</em>
-                            <% end %><br />
                             <%= f.password_field :password, autocomplete: "new-password" %>                               
                             <i class="fa icon_eye fa-eye">
                             </i>
@@ -66,7 +63,7 @@
                             </p>
                         </div>
                         <div class="submit_buttons">
-                        <%= f.submit "無料で会員登録する",class:"waves-effect waves-light btn-large registration-btn" %>
+                        <%= f.button "無料で会員登録する",type: :submit,class:"waves-effect waves-light btn-large registration-btn" %>
                         </div>
                         <div class="m-t3">
                         <%= render "users/shared/links" %>
