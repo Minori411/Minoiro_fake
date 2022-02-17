@@ -18,3 +18,13 @@
         background:darken(#ff6e00,20%);
     }
 }
+
+.password_reset {
+    width: 100%;
+    background: #ff6e00;
+    border-radius: 4px;
+
+    &:hover {
+        background:darken(#ff6e00,20%);
+    }
+}
