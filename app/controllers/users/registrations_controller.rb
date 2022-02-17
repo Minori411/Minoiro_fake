@@ -28,7 +28,7 @@ def create
   if @user.save
     # 保存の成功をここで扱う。
     flash[:success]="ユーザーを登録しました"
-    redirect_to user_path
+    redirect_to user_path(@user.id)
   else
     render 'new'
   end
