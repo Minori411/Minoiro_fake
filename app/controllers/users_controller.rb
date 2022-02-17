@@ -7,6 +7,8 @@ class UsersController < ApplicationController
         @user = User.new
     end
     
+    
+    
     def index
         @users= User.all
         @users= User.search(params[:search])
