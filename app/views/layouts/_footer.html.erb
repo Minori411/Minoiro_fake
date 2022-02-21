@@ -36,7 +36,7 @@
   <div class="footer-copyright">
     <div class="container">
     © みのいろ
-    <a class="grey-text text-lighten-4 right" href="#!">退会</a>
+    <%= link_to "退会", withdrawal_path, method: :patch, data: { confilm: "本当に退会しますか？" }, class: "grey-text text-lighten-4 right" %>
     </div>
   </div>
 </footer>

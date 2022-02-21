@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Web企画書.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<div style="text-align: center;">
+Webサイト企画書
+</div>
+<p>【概要】</p>
+<p>カラーコンサルタントと悩んでいる人をつなげるマッチングサイト</p>
+<p>【制作目的】</p>
+<p>カラーコンサルタントを通して多くの人に癒しを与えたい</p>
+<p>【背景】
+結論ファースト
+日本は欧米に比べてメンタルケア・メンタルヘルスの文化が浸透しておらず、故に精神疾患患者数、及び自殺者数は年々増加傾向にあり、日本の心理医療は先進国のなかで唯一、アフリカの医療進歩と並ぶほど、乏しいものと言われています。医療機関またはオンラインで行われることの多い心理カウンセリングを受診する為には、初診では約3ヶ月～の予約待ちを強いられ、受診料も50分のセッションで相場は5,000円程度と決して安価ではありません。
+しかし、精神疾患を抱えている人は働けずに収入が乏しい方も多いため、そのような方達の助けになるサービスがあればいいと思いました。また、日本の若者の死因トップは自殺で、これは主要先進国の中で唯一日本だけです。よって若者にも気軽に使っていただけるサービスにしたいです。
+カウンセラーの中にも国家資格を持った方がいますが、その中でも今回はカラーセラピーに特化したWebサイトを作ろうと思います。なぜなら、私自身、うつ病を経て統合失調症を発症し、カウンセリングを受けたことがありますが、正直当たり障りのないことしか言われず、これだったら友人や家族と話した方がいいと思ったことがあったからです。普通のカウンセリングは、主観でアドバイスするのに対し、カラーセラピーは色を通してカウンセリングするためそこには主観がありません。色彩心理学があるように、色は人を癒すと科学的も証明されているので私とっては普通のカウンセリングよりもカラーセラピーの方が癒しになった経験があります。まだ日本ではそこまで知名度もないので、皆さんにカラーセラピーを知っていただく機会にしたいです。
+NPO法人の「みんなのいばしょ」というサービスでは、悩んでいる方を対象にチャットでの無料相談窓口を設けており、全てボランティアでの運営だそうですが、毎日６割ほどしか受付できないほど相談が殺到しているそうです。また、コロナ禍でうつ病の人が増加傾向にあるというニュースからも分かる通り、今現在非常にニーズが高いサービスなのではないかと考えました。よってこのサービスを起案します。</p>
+<p>【ターゲット】</p>
+<p>悩みを抱えている全ての方</p>
+<p>【サイトタイトル】</p>
+<p>みのいろ</p>
+<p>【サイトタイトル意味】</p>
+<p>私の名前がみのりなのでそれに色（いろ）をつけて「みのいろ」にしました。
+十人十色、それぞれ個性的に自信を持って生きていってほしいという意味と、私の名前、みのりの意味が「みのりゆたかな人生を送ってほしい」なので皆さんにも同じくみのりゆたかな人生を送ってほしいと思い名付けました。</p>
+<p>【コンセプト】</p>
+<p>気軽に皆さんに使っていただけるよう価格を抑えて、「今日やりたい」など即日できるようにします。オンラインでもオフラインでも実施できるようにします。</p>
+<p>【デザインコンセプト】</p>
+<p>虹色、花、海</p>
+<p>【サービス内容】</p>
+<p>価格を抑えるために初心者のカラーコンサルタントや、資格に向けて勉強中の方も対象にします。資格を持っている方は資格証明なども付けれるようにします。障害者手帳をお持ちの方はさらに半額になるサービスもつけます。</p>
+<p>【価格】</p>
+<p>カラーコンサルテーションの相場は１時間約9000円ですが、それだと高く気軽に使って頂けないので、価格は1000円〜4500円まで、時間は30分〜1時間の間でセラピスト自身が選べるようなサービスにしたいと思います。</p>
+<p>【技術仕様】</p>
+<p>◇フロントエンド</p>
+<p>・HTML/CSS</p>
+<p>・JavaScript</p>
+<p>・React/Next.js</p>
+<p>◇バックエンド</p>
+<p>・Ruby 3.0.2</p>
+<p>・Ruby on Rails 6.1.4</p>
+<p>・MySQL 8.0.26</p>
+<p>◇インフラ</p>
+<p>・Heroku（第1段階）</p>
+<p>・AWS（VPC/EC2/RDS/ALB/S3/ACM/Route53）</p>
+<p>・AWS（ECS）（第3段階）</p>
+<p>・Terraform</p>
+<p>◇テスト</p>
+<p>・RSpec</p>
+<p>◇CI/CD</p>
+<p>・CircleCI</p>
+<p>◇バージョン管理</p>
+<p>・Git/GitHub</p>
+<p>◇開発環境</p>
+<p>・VScode</p>
+<p>・Docker</p>
+<p>【開発フェーズ】</p>
+<p>●第1段階</p>
+<p>・設計（画面遷移図/画面詳細図/ER図）</p>
+<p>・機能実装</p>
+<p>・Herokuにデプロイ</p>
+<p>・テスト作成</p>
+<p>・UI/UXのブラッシュアップ</p>
+<p>●第2段階</p>
+<p>・Docker/docker-composeの導入</p>
+<p>・GitHub/CircleCI連携</p>
+<p>・インフラのAWS化</p>
+<p>・CircleCIからAWSにデプロイ</p>
+<p>●第3段階</p>
+<p>・Terraformによるインフラのコード化</p>
+<p>・AWS（ECS）の導入</p>
+<p>・Reactによる完全SPA化</p>
+<p>●第4段階</p>
+<p>・Reactによる完全SPA化</p>
+<p>【機能要件】</p>
+<p>★はお客様だけの機能要件
+☆はコンサルタントだけの機能要件</p>
+<p>【お客様】</p>
+<p>★ボトルを４本選ぶ</p>
+<p>メッセージ</p>
+<p>メッセージを送る</p>
+<p>★コンサルタントに一括相談する</p>
+<p>検索</p>
+<p>印刷する</p>
+<p>ログイン</p>
+<p>新規登録</p>
+<p>問い合わせ</p>
+<p>★コンサルタントを探す</p>
+<p>★障害者手帳掲載</p>
+<p>★興味があるタグ</p>
+<p>返信所要時間</p>
+<p>ログイン２４時間以内</p>
+<p>フォロー</p>
+<p>アンフォロー</p>
+<p>ブロック</p>
+<p>（本人確認）</p>
+<p>登録日</p>
+<p>累計</p>
+<p>レビュー（スターレイト）</p>
+<p>料金表示</p>
+<p>フォローリスト</p>
+<p>★ソーシャルシェア</p>
+<p>プロフィール作成・編集・削除</p>
+<p>ログアウト</p>
+<p>退会</p>
+<p>設定</p>
+<p>★おすすめのコンサルタント</p>
+<p>★似ているコンサルタント</p>
+<p>★人気のコンサルタント</p>
+<p>★評価が高いコンサルタント</p>
+<p>★価格が安いコンサルタント</p>
+<p>SNS連携</p>
+<p>★おすすめブログ</p>
+<p>契約する</p>
+<p>ログインしたままにする</p>
+<p>パスワードを忘れた場合</p>
+<p>総計/38  ★/12</p>
+<p>【コンサルタント】</p>
+<p>☆出金申請する</p>
+<p>CSVでダウンロード</p>
+<p>検索</p>
+<p>☆ブログを作成・編集する</p>
+<p>☆プランを作成・編集する</p>
+<p>ログイン</p>
+<p>新規登録</p>
+<p>問い合わせ</p>
+<p>☆資格掲載</p>
+<p>☆経歴掲載</p>
+<p>返信所要時間</p>
+<p>ログイン２４時間以内</p>
+<p>フォロー</p>
+<p>アンフォロー</p>
+<p>ブロック</p>
+<p>？本人確認</p>
+<p>登録日</p>
+<p>累計</p>
+<p>レビュー</p>
+<p>フォローリスト</p>
+<p>プロフィール作成・編集・削除</p>
+<p>ログアウト</p>
+<p>退会</p>
+<p>設定</p>
+<p>契約する</p>
+<p>メッセージ</p>
+<p>メッセージを送る</p>
+<p>SNS連携</p>
+<p>ログインしたままにする</p>
+<p>パスワードを忘れた場合</p>
+<p>総計/30   ☆/5</p>
+<p>【共通】
+Adminアカウント</p>
+<p>Adminユーザーによる管理</p>
+<p>【追加保留】</p>
+<p>チップを送る</p>
+<p>コンサルタントを募集する</p>
+<p>契約リクエスト</p>
+<p>レビューへのコメント</p>
+<p>ボトルを４本選ぶ</p>
+
+</body>
+</html>

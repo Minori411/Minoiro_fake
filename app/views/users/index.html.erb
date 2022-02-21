@@ -1,13 +1,6 @@
 <% provide(:title, 'All users') %>
 <h1>All users</h1>
 
-<%= form_with model: @user,url: users_index_path(resource_name), local: true do |f| %>
-    <p>
-        <%= f.text_field :search, params[:search] %>
-        <%= f.submit "Search", :name => nil %>
-    </p>
-<% end %>
-
 <ul class="users">
   <% User.all.each do |user| %>
     <%= user.name %>

@@ -1,5 +1,14 @@
 class UsersController < ApplicationController
 
+    def withdrawal
+        @user = User.find(params[:id])
+        # is_deletedカラムをtrueに変更することにより削除フラグを立てる
+        @user.update(is_deleted: true)
+        reset_session
+        flash[:notice] = "退会処理を実行いたしました"
+        redirect_to root_path
+    end
+
     def show
     end
 
@@ -11,7 +20,6 @@ class UsersController < ApplicationController
     
     def index
         @users= User.all
-        @users= User.search(params[:search])
     end
 
     def create

@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get '/users/:id/unsubscribe', :to => 'users#unsubscribe', as: 'unsubscribe'
+  patch '/users/:id/withdrawal', :to => 'users#withdrawal', as: 'withdrawal'
+
   devise_scope :users do
     get '/users', to: redirect("/users/sign_up")
   end
@@ -22,6 +25,6 @@ end
   root :to => "home#index"
   
   get "sample", to: "sample#index"
-  resources :users
+  resources :users, only: [:show, :edit, :update]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
