@@ -1,3 +1,230 @@
+<% if signed_in? %>
+
+<%#PC表示%>
+    <header class="header pc_hyoji mini">
+        <div class="header_inner">
+            <div class="header_inner_head flexbox">
+                <div id="logo">
+                    <a href="∠" class="flexbox">
+                        <p>みのいろ</p>
+                    </a>
+                </div>
+                <ul class="menu gnav flexbox">
+                    <li class="menu_item flexbox">
+                        <a href="#">コンサルタントを探す</a>
+                    </li>
+                    
+                    <li class="menu_item flexbox">
+                        <a href="#">ブログ</a>
+                    </li>
+                </ul>
+                <div class="navi auth_buttons flexbox">
+                    <div class="search">
+                        <form method="GET">
+                            <div class="relative">
+                                <input id="q" placeholder="検索" name="q" type="text">
+                                <div class="absolute center-v right-1 gray2 header_search">
+                                    <i class="fas fa-search gray"></i>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="notification" style="margin-right: 16px;">
+                        <!-- Dropdown Trigger -->
+                        <a class='dropdown-trigger' href='#' data-target='dropdown1'><i class="far fa-bell"></i></a>
+                        <!-- Dropdown Structure -->
+                        <ul id='dropdown1' class='dropdown-content dropdown1'>
+                            <li><a href="#!" class="read">全て既読にする</a></li>
+                            <li class="divider" tabindex="-1"></li>
+                            <li><a href="#!">two</a></li>
+                            <li class="divider" tabindex="-1"></li>
+                            <li><a href="#!">three</a></li>
+                            <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+                            <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+                        </ul>
+                    </div>
+                    <div class="iconbtn" style="margin-right: 16px;">
+                        <!-- Dropdown Trigger -->
+                        <a class='dropdown-trigger' href='#' data-target='dropdown2'><img src="flower.jpeg" height="50px"></a>
+
+                        <!-- Dropdown Structure -->
+                        <ul id='dropdown2' class='dropdown-content dropdown2'>
+                            <li><a href="#!">HOME</a></li>
+                            <li class="divider" tabindex="-1"></li>
+                            <li><a href="#!">プロフィール</a></li>
+                            <li class="divider" tabindex="-1"></li>
+                            <li><a href="#!">フォローリスト</a></li>
+                            <li class="divider" tabindex="-1"></li>
+                            <li><a href="#!">設定</a></li>
+                            <li class="divider" tabindex="-1"></li>
+                            <li><a href="#!">紹介手数料割引</a></li>
+                            <li class="divider" tabinde
+                            <li><a href="#!">ログアウト</a></li>
+                            <li class="divider" tabindex="-1"></li>
+                            <li><a href="#!">退会</a></li>
+                        </ul>
+                    </div>
+                    <div class="add_new">
+                        <!-- Dropdown Trigger -->
+                        <a class='dropdown-trigger btn create-btn' href='#' data-target='dropdown3'>作成</a>
+
+                        <!-- Dropdown Structure -->
+                        <ul id='dropdown3' class='dropdown-content dropdown3'>
+                            <li><a href="#!">プランの作成</a></li>
+                            <li class="divider" tabindex="-1"></li>
+                            <li><a href="#!">ブログの作成</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <%#スマホ表示%>
+    <header class="header smt_hyoji">
+        <div class="header_inner flexbox">
+            <div id="nav-drawer" class="header_inner_head flexbox">
+                <div class="menu_icon envelope">
+                    <a href="#">
+                        <i class="far fa-envelope awe-resize"></i>
+                    </a>
+                </div>
+                
+                    <div class="notification">
+                        <a class='dropdown-trigger' href='#' data-target='dropdown4'><i class="far fa-bell awe-resize"></i></a>
+                        <!-- Dropdown Structure -->
+                        <ul id='dropdown4' class='dropdown-content'>
+                            <li><a href="#!" class="read">全て既読にする</a></li>
+                            <li class="divider" tabindex="-1"></li>
+                            <li><a href="#!">two</a></li>
+                        </ul>
+                    </div>
+                   
+                <div class="menu_icon_last">
+                    <ul id="slide-out" class="sidenav">
+                        <li><a class="waves-effect" href="#!">
+                            <i class="far fa-user fa-resize"></i>
+                            プロフィール
+                        </a></li>
+                        <li><div class="divider"></div></li>
+                        <li><a class="waves-effect" href="#!">
+                            <i class="far fa-envelope fa-resize"></i>
+                            メッセージ
+                        </a></li>
+                        <li><div class="divider message-bottom"></div></li>
+                        <li><a class="waves-effect" href="#">
+                            <i class="fas fa-question-circle fa-resize"></i>
+                            みのいろとは？（お客様）
+                        </a></li>
+                        <li><div class="divider"></div></li>
+                        <li><a class="waves-effect" href="#!">
+                            <i class="fas fa-question-circle fa-resize"></i>
+                            みのいろとは？（コンサルタント）
+                        </a></li>
+                        <li><div class="divider"></div></li>
+                        <li><a class="waves-effect" href="#!">
+                            <i class="fas fa-home fa-resize"></i>
+                            HOME
+                        </a></li>
+                        <li><div class="divider"></div></li>
+                        <li><a class="waves-effect" href="#!">
+                            <i class="fas fa-search fa-resize"></i>
+                            コンサルタントを探す
+                        </a></li>
+                        <li><div class="divider"></div></li>
+                        <li><a class="waves-effect" href="#!">
+                            <i class="fas fa-search fa-resize"></i>
+                            ブログを探す
+                        </a></li>
+                        <li><div class="divider"></div></li>
+                        <li><a class="waves-effect" href="#!">
+                            <i class="far fa-heart fa-resize"></i>
+                            フォローリスト
+                        </a></li>
+                        <li><div class="divider followlist-bottom"></div></li>
+                        <li><a class="waves-effect" href="#!">
+                            <i class="fas fa-chalkboard-teacher fa-resize"></i>
+                            プラン管理
+                        </a></li>
+                        <li><div class="divider"></div></li>
+                        <li><a class="waves-effect" href="#!">
+                            <i class="fas fa-handshake fa-resize"></i>
+                            契約管理
+                        </a></li>
+                        <li><div class="divider"></div></li>
+                        <li><a class="waves-effect" href="#!">
+                            <i class="fas fa-piggy-bank fa-resize"></i>
+                            売上管理
+                        </a></li>
+                        <li><div class="divider"></div></li>
+                        <li>
+                            <ul class="collapsible">
+                                <li>
+                                  <a class="waves-effect collapsible-header" href="#">
+                                    <i class="fas fa-coins fa-resize"></i>
+                                      お支払い管理
+                                    </a>
+                                  <div class="collapsible-body">
+                                    <a class="waves-effect collapsible-header" href="#">課金履歴</a>
+                                    <div class="divider"></div>
+                                    <a class="waves-effect collapsible-header" href="#">出金申請</a>
+                                    <div class="divider"></div>
+                                    <a class="waves-effect collapsible-header" href="#">出金履歴</a>
+                                  </div>
+                                </li>
+                              </ul>
+                        </li>
+                        
+                        <li><div class="divider money-bottom"></div></li>
+                        <li><a class="waves-effect" href="#!">
+                            <i class="fas fa-cog fa-resize"></i>
+                            設定
+                        </a></li>
+                        <li><div class="divider"></div></li>
+                        <li><a class="waves-effect" href="#!">
+                            <i class="fas fa-tag fa-resize"></i>
+                            紹介手数料割引
+                        </a></li>
+                        <li><div class="divider"></div></li>
+                        <li><a class="waves-effect" href="#!">
+                            <i class="fas fa-sync-alt fa-resize"></i>
+                            お客様に切り替え
+                        </a></li>
+                        <li><div class="divider"></div></li>
+                        <li><a class="waves-effect" href="#!">
+                            <i class="fas fa-unlock-alt fa-resize"></i>
+                            ログアウト
+                        </a></li>
+                        <li><div class="divider"></div></li>
+                        <li><a class="waves-effect" href="#!">
+                            <i class="fas fa-minus-circle fa-resize"></i>
+                            退会
+                        </a></li>
+                        <li><div class="divider logout-bottom"></div></li>
+                        <li><a class="waves-effect" href="#!">ビジョン</a></li>
+                        <li><div class="divider"></div></li>
+                        <li><a class="waves-effect" href="#!">利用規約</a></li>
+                        <li><div class="divider"></div></li>
+                        <li><a class="waves-effect" href="#!">特定商取引に基づく表記</a></li>
+                        <li><div class="divider"></div></li>
+                        <li><a class="waves-effect" href="#!">個人情報保護法</a></li>
+                        <li><div class="divider"></div></li>
+                        <li><a class="waves-effect" href="#!">お問い合わせ</a></li>
+                        <li><div class="divider"></div></li>
+
+
+
+                      </ul>
+                      <a href="#" data-target="slide-out" class="sidenav-trigger"><img src="flower.jpeg" height="50px"></a>
+                </div>
+            </div>
+        </div>
+    
+                
+    </header>
+
+
+<% else %>
+
 <%#pc表示%>
 <header class="header pc_hyoji mini">
     <div class="header_inner">
@@ -128,5 +355,4 @@
     </div>
 </a>
 
-
-
+<% end %>
