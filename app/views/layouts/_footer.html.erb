@@ -37,7 +37,7 @@
     <div class="container">
     © みのいろ
     <% if current_user %>
-    <%= link_to "退会", withdrawal_path(current_user.id), method: :delete, class: "grey-text text-lighten-4 right modal-close modal-trigger btn-flat",href: "#modal1" %>
+    <a class="waves-effect waves-light modal-trigger grey-text text-lighten-4 right" href="#modal1">退会</a>
     <!-- Modal Structure -->
   <div id="modal1" class="modal">
     <div class="modal-content">
@@ -47,7 +47,7 @@
       本当に退会してよろしいですか？</p>
     </div>
     <div class="modal-footer">
-      <a href="#!" class=" waves-effect waves-green ">退会</a>
+    <%= link_to "退会", withdrawal_path(current_user.id), method: :delete, class: "waves-effect waves-green" %>
     </div>
   </div>
     <% end %>
@@ -55,7 +55,5 @@
   </div>
 </footer>
 
-
-  
       
     

@@ -1,22 +1,26 @@
 Rails.application.routes.draw do
 
+  devise_for :users, :controllers => {
+    :registrations => 'users/registrations',
+    :sessions => 'users/sessions'   
+  } 
+
+  devise_scope :user do
+    get "user/:id", :to => "users/registrations#detail"
+    get '/users', to: redirect("/users/sign_up")
+    get "signup", :to => "users/registrations#new"
+    post "signup", :to => "users/registrations#create"
+    get "login", :to => "users/sessions#new"
+    post 'login', to: 'users/sessions#create'
+    get "logout", :to => "users/sessions#destroy"
+  end
+
   get '/users/:id/unsubscribe', :to => 'users#unsubscribe', as: 'unsubscribe'
   delete '/users/:id/withdrawal', :to => 'users#withdrawal', as: 'withdrawal'
 
-  devise_for :users, :controllers => {
-  :registrations => 'users/registrations',
-  :sessions => 'users/sessions'   
-} 
+ 
 
-devise_scope :user do
-  get "user/:id", :to => "users/registrations#detail"
-  get '/users', to: redirect("/users/sign_up")
-  get "signup", :to => "users/registrations#new"
-  post "signup", :to => "users/registrations#create"
-  get "login", :to => "users/sessions#new"
-  post 'login', to: 'users/sessions#create'
-  get "logout", :to => "users/sessions#destroy"
-end
+
   get "users/index", to: "users#index"
 
   root :to => "home#index"
