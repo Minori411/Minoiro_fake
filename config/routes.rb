@@ -1,11 +1,7 @@
 Rails.application.routes.draw do
 
   get '/users/:id/unsubscribe', :to => 'users#unsubscribe', as: 'unsubscribe'
-  patch '/users/:id/withdrawal', :to => 'users#withdrawal', as: 'withdrawal'
-
-  devise_scope :users do
-    get '/users', to: redirect("/users/sign_up")
-  end
+  delete '/users/:id/withdrawal', :to => 'users#withdrawal', as: 'withdrawal'
 
   devise_for :users, :controllers => {
   :registrations => 'users/registrations',
@@ -14,6 +10,7 @@ Rails.application.routes.draw do
 
 devise_scope :user do
   get "user/:id", :to => "users/registrations#detail"
+  get '/users', to: redirect("/users/sign_up")
   get "signup", :to => "users/registrations#new"
   post "signup", :to => "users/registrations#create"
   get "login", :to => "users/sessions#new"
