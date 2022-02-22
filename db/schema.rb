@@ -17,6 +17,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_22_065223) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.datetime "soft_destroyed_at"
+    t.datetime "locked_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
@@ -27,6 +29,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_22_065223) do
     t.string "unconfirmed_email"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["soft_destroyed_at"], name: "index_users_on_soft_destroyed_at"
   end
 
 end

@@ -18,9 +18,6 @@ Rails.application.routes.draw do
   get '/users/:id/unsubscribe', :to => 'users#unsubscribe', as: 'unsubscribe'
   delete '/users/:id/withdrawal', :to => 'users#withdrawal', as: 'withdrawal'
 
- 
-
-
   get "users/index", to: "users#index"
 
   root :to => "home#index"
