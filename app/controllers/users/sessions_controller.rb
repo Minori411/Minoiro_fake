@@ -15,23 +15,15 @@ end
 
   # DELETE /resource/sign_out
 def destroy
-  super
+  signed_out = (Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name))
+  set_flash_message! :notice, :signed_out if signed_out
+  yield if block_given?
+  redirect_to root_path#renderで遷移先のURLを記述 ← コード記入
 end
 
   protected
 
-  # 会員の論理削除のための記述。退会後は、同じアカウントでは利用できない。
-def reject_user
-  @user = User.find_by(name: params[:user][:name])
-    if @user 
-      if @user.valid_password?(params[:user][:password]) && (@user.is_deleted == false)
-        flash[:notice] = "退会済みです。再度ご登録をしてご利用ください。"
-        redirect_to new_user_registration
-      else
-        flash[:notice] = "項目を入力してください"
-      end
-    end
-end
+
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_in_params

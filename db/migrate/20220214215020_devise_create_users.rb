@@ -17,6 +17,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       # kakurenbo-puti
       t.datetime :soft_destroyed_at
       t.datetime :locked_at
+      
 
       ## Trackable
       # t.integer  :sign_in_count, default: 0, null: false
@@ -42,7 +43,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
 
     #add_index :users, :email,                unique: true
     # 代わりに、soft_destoryed_atがNULLであることを条件にした部分indexを追加する
-    add_index :users, :email, unique: true, where: '(soft_destroyed_at IS NULL)'
+    add_index :users, :email,where: '(soft_destroyed_at IS NULL)'
     add_index :users, :soft_destroyed_at
     add_index :users, :reset_password_token, unique: true
     # add_index :users, :confirmation_token,   unique: true

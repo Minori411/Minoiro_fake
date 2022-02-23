@@ -36,11 +36,7 @@
                         <ul id='dropdown1' class='dropdown-content dropdown1'>
                             <li><a href="#!" class="read">全て既読にする</a></li>
                             <li class="divider" tabindex="-1"></li>
-                            <li><a href="#!">two</a></li>
-                            <li class="divider" tabindex="-1"></li>
-                            <li><a href="#!">three</a></li>
-                            <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-                            <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+                            <li><a href="#!">お知らせ</a></li>
                         </ul>
                     </div>
                     <div class="iconbtn" style="margin-right: 16px;">
@@ -49,18 +45,30 @@
 
                         <!-- Dropdown Structure -->
                         <ul id='dropdown2' class='dropdown-content dropdown2'>
-                            <li><a href="#!">HOME</a></li>
+                            <li>
+                            <%= link_to "HOME" %>
+                            </li>
                             <li class="divider" tabindex="-1"></li>
-                            <li><a href="#!">プロフィール</a></li>
+                            <li>
+                            <%= link_to "プロフィール" %>
+                            </li>
                             <li class="divider" tabindex="-1"></li>
-                            <li><a href="#!">フォローリスト</a></li>
+                            <li>
+                            <%= link_to "フォローリスト" %>
+                            </li>
                             <li class="divider" tabindex="-1"></li>
-                            <li><a href="#!">設定</a></li>
+                            <li>
+                            <%= link_to "設定" %>
+                            </li>
                             <li class="divider" tabindex="-1"></li>
-                            <li><a href="#!">紹介手数料割引</a></li>
+                            <li>
+                            <%= link_to "紹介手数料割引" %>
+                            </li>
                             <li class="divider" tabindex="-1"></li>
-                            <li><a href="#!">ログアウト</a></li>
-                        </ul>
+                            <li>
+                            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+                            </li>
+                            </ul>
                     </div>
                     <div class="add_new">
                         <!-- Dropdown Trigger -->
