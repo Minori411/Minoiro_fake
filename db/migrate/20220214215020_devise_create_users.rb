@@ -13,6 +13,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
 
       ## Rememberable
       t.datetime :remember_created_at
+      t.string :remember_token
 
       # kakurenbo-puti
       t.datetime :soft_destroyed_at

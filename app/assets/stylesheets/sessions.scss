@@ -1,3 +1,6 @@
+
+
+
 body {
     background:#f4f4f8fa;
     display: flex;
@@ -233,4 +236,15 @@ a{
     background: #ff6e00!important;
     margin-top: 40px;
     width: 100%;
+}
+
+.remember_me {
+    appearance: checkbox!important;
+}
+
+[type="checkbox"]:not(:checked), 
+[type="checkbox"]:checked {
+    opacity:1!important;
+    pointer-events: auto;
+    position:static!important;
 }

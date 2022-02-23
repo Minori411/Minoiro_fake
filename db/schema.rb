@@ -17,6 +17,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_23_064705) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "remember_token"
     t.datetime "soft_destroyed_at"
     t.datetime "locked_at"
     t.datetime "created_at", null: false
