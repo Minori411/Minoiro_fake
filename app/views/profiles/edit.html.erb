@@ -1,0 +1,343 @@
+<div class="back_white inner p-t3 dashContent">
+            <div class="dashContent_right">
+                <h1>プロフィール</h1>
+                <ul class="sub_menu">
+                    <li class="active">
+                        <a href="#">
+                            プロフィール
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">メール・通知</a>
+                    </li>
+                    <li>
+                        <a href="#">お支払い情報</a>
+                    </li>
+                    <li>
+                        <a href="#">本人確認</a>
+                    </li>
+                    <li>
+                        <a href="#">銀行口座</a>
+                    </li>
+                    <li>
+                        <a href="#">パスワード変更</a>
+                    </li>
+                    <li>
+                        <a href="#">外部サービス連携</a>
+                    </li>
+                    <li>
+                        <a href="#">紹介</a>
+                    </li>
+                </ul>
+                <form method="POST" action="" accept-charset="UTF-8" enctype="">
+                    <input name="_token" type="hidden" value="">
+                    <div class="boxbaseP30">
+                    <div class="in">
+                        <h3 class="pc_hyoji">魅力的なプロフィールを完成させましょう!</h3>
+                        <p class="m-b2">詳細に書けば書くほど信頼されるプロフィールに!</p>
+                        <div class="profileIndicator">
+                            <div class="c100 p0 big">
+                                <span>0%</span>
+                                <div class="slice">
+                                    <div class="bar"></div>
+                                    <div class="fill"></div>
+                                </div>
+                            </div>
+                            <div class="profileIndicator_items">
+                                <div class="profileIndicator_item profileIndicator_item-active">□ 自己紹介</div>
+                                <div class="profileIndicator_item">□ アイコン</div>
+                            </div>
+                        </div>
+                        <div class="Midasi">基本情報</div>
+                        <table class="editable m-b3">
+                            <tbody>
+                                <tr>
+                                    <th width="150">
+                                        ユーザ名
+                                        <span class="form_badge form_badge_hissu">必須</span>
+                                    </th>
+                                    <td>
+                                        <div class>
+                                            <input class="w300" placeholder="60文字以内" name="name" type="text">
+                                            <span class="help-block"></span>
+                                        </div>
+                                        <p class="gray2 m-t05">
+                                            <i class="fa fa-exclamation-circle fa-fw"></i>
+                                            本名、本人画像にすることで信頼性が高まります
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>ニックネーム</th>
+                                    <td>
+                                        <div class>
+                                            <input class="nickname" placeholder="60文字以内" name="nickname" type="text">
+                                            <span class="help-block"></span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>アイコン</th>
+                                    <td>
+                                        <div class="icon size125" style="background-image:url('');"></div>
+                                        <div class="upload m-t1" data-thumbnail-target="#selected-file">
+                                            画像をアップロードする（縦横200px×200px以上推奨、5MB未満)
+                                            <div class="alignCenter m-t-20 m-b-20">
+                                                <label class="upload-btn">
+                                                    <input id="dammy_icon" style="display:none" accept="image/*" data-thumbnail-target="#selected-file" name="dammy_icon" type="file">
+                                                    ファイルを選択
+                                                </label>
+                                            </div>
+                                            <div id="selected-file">
+                                                <div class="selected-file-thumbnail"></div>
+                                                <div class="selected-file-result"></div>
+                                                <input id="icon" name="icon" type="hidden">
+                                            </div>
+                                        </div>
+                                        <span class="help-block m-t-5"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <div class="p-b1">メールアドレス</div>
+                                    </th>
+                                    <td>
+                                        <div class="p-t1 p-b1">
+                                            <a href="#">変更する</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>自己紹介</th>
+                                    <td>
+                                        <div class>
+                                            <textarea placeholder="1000文字以内" name="profile" cols="50" rows="10"></textarea>
+                                            <span class="help-block"></span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>URL</th>
+                                    <td>
+                                        <div class>
+                                            <input class="w300" placeholder="http://..." name="url" type="text">
+                                            <span class="help-block"></span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>ユーザースタイル</th>
+                                    <td>
+                                        <div class="form-group">
+                                            <div class="select-wrap">
+                                                <select class="w200 usage-style-form" name="usage_style">
+                                                    <option value="1" selected="selected">コンサルタント</option>
+                                                    <option value="2">お客様</option>
+                                                </select> 
+                                                <span class="help-block"></span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div id="appProfile">
+                            <div class="Midasi">資格</div>
+                            <div>
+                                <table class="editable">
+                                    <tr>
+                                        <th width="150">資格名</th>
+                                        <td colspan="3">
+                                            <div>
+                                                <div class="certificate-input-root">
+                                                    <div class="certificate-input-wrapper-default input">
+                                                        <input class="w300" placeholder="資格名" name="certificate" type="text">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="consultant-info">
+                                        <th>資格証明書</th>
+                                        <td>
+                                            <div class="upload m-t1" data-thumbnail-target="#selected-file">
+                                                画像をアップロードする（縦横200px×200px以上推奨、5MB未満)
+                                                <div class="alignCenter m-t-20 m-b-20">
+                                                    <label class="upload-btn">
+                                                        <input id="dammy_certificate" style="display:none" accept="image/*" data-thumbnail-target="#selected-file" name="dammy_certificate" type="file">
+                                                        ファイルを選択
+                                                    </label>
+                                                </div>
+                                                <div id="selected-file">
+                                                    <div class="selected-file-thumbnail"></div>
+                                                    <div class="selected-file-result"></div>
+                                                    <input id="certificate" name="certificate" type="hidden">
+                                                </div>
+                                            </div>
+                                            <span class="help-block m-t-5"></span>
+                                        </td>
+                                    </tr>
+                                    <tr class="consultant-info">
+                                        <th width="150">レベル</th>
+                                        <td width="235">
+                                            <div class="form-group">
+                                                <div class="select-wrap">
+                                                    <select name="levels[0]">
+                                                        <option value="0">選択してください</option>
+                                                        <option value="1">★ 初心者</option>
+                                                        <option value="2">★★ 初級</option>
+                                                        <option value="3">★★★ 初中級</option>
+                                                        <option value="4">★★★★ 中級</option>
+                                                        <option value="5">★★★★★ 熟練</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <th width="150">経験年数</th>
+                                        <td width="235">
+                                            <div class="form-group">
+                                                <div class="select-wrap">
+                                                    <select name="exs[0]">
+                                                        <option value="0">選択して下さい</option>
+                                                        <option value="1">半年未満</option>
+                                                        <option value="2">〜1年</option>
+                                                        <option value="3">〜3年</option>
+                                                        <option value="4">〜5年</option>
+                                                        <option value="5">5年〜</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="consultant-info">
+                                        <td></td>
+                                        <td colspan="3">
+                                            <a href="#">
+                                                <i class="fa fa-times red"></i>
+                                                削除する
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>    
+                            <div class="m-b5 alignCenter">
+                                <a href="#" class="btn">資格を追加する</a>
+                            </div>                                       
+                        </div>
+                        <div id="career" class="Midasi">経歴・実績</div>
+                        <div class="WorkResultBox">
+                            <table class="editable m-b2">
+                                <tr>
+                                    <th width="150">経歴・実績</th>
+                                    <td colspan="3">
+                                        <div class="m-t-5">
+                                            <textarea name="description[0]" placeholder="フリーのカラーセラピストとして活動中"></textarea>
+                                        </div>
+                                        <input type="hidden" name="result_id[0]" value="13650">
+                                        <input type="hidden" name="result_delete[0]" value="true">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th width="150">期間</th>
+                                    <td colspan="3">
+                                        <input type="number" name="startY[0]" placeholder="2000" class="year">
+                                        <input type="number" name="start<[0]" placeholder="2" min="1" max="12" class="month">
+                                        〜
+                                        <input type="number" name="startY[0]" placeholder="2000" class="year">
+                                        <input type="number" name="start<[0]" placeholder="2" min="1" max="12" class="month">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td colspan="3">
+                                        <a href="#">
+                                            <i class="fas fa-times red"></i>
+                                            削除する
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="m-b5 alignCenter">
+                            <a href="#" class="btn">経歴・実績を追加する</a>
+                        
+                        </div>
+                        <div class="Midasi">外部サービスアカウント</div>
+                        <table class="editable m-b3">
+                            <tbody>
+                                <tr>
+                                    <th width="150">Twitterアカウント</th>
+                                    <td>
+                                        <div class="flex">
+                                            <div class="profile_sns_link">https://twitter.com/</div>
+                                            <div class>
+                                                <input class="w300" placeholder="accountname" name="twitter_account" tyoe="text" value>
+                                            </div>
+                                        </div>
+                                        <span class="help-block"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Facebookアカウント</th>
+                                    <td>
+                                        <div class="flex">
+                                            <div class="profile_sns_link">https://www.facebook.com/</div>
+                                            <div class>
+                                                <input class="w300" placeholder="username" name="facebook_account" tyoe="text" value>
+                                            </div>
+                                        </div>
+                                        <span class="help-block"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Instagramアカウント</th>
+                                    <td>
+                                        <div class="flex">
+                                            <div class="profile_sns_link">https://www.instagram.com/</div>
+                                            <div class>
+                                                <input class="w300" placeholder="accountname" name="instagram_account" tyoe="text" value>
+                                            </div>
+                                        </div>
+                                        <span class="help-block"></span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="vapp" class="customer-info">
+                            <div class="Midasi">障害者手帳有無</div>
+                            <table class="editable m-b3 notificationTbl">
+                                <tbody>
+                                    <tr>
+                                        <th width="150">障害者手帳証明</th>  
+                                        <td>
+                                            <div class="upload m-t1" data-thumbnail-target="#selected-file">
+                                                画像をアップロードする（縦横200px×200px以上推奨、5MB未満)
+                                                <div class="alignCenter m-t-20 m-b-20">
+                                                    <label class="upload-btn">
+                                                        <input id="dammy_certificate" style="display:none" accept="image/*" data-thumbnail-target="#selected-file" name="dammy_certificate" type="file">
+                                                        ファイルを選択
+                                                    </label>
+                                                </div>
+                                                <div id="selected-file">
+                                                    <div class="selected-file-thumbnail"></div>
+                                                    <div class="selected-file-result"></div>
+                                                    <input id="disorder" name="disorder" type="hidden">
+                                                </div>
+                                            </div>
+                                            <span class="help-block m-t-5"></span>
+                                        </td>                                  
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="small m-t2">
+                        <a href="#">退会はこちら</a>
+                    </div>
+                    <div class="imasugu alignCenter">
+                        <input type="submit" value="保存する" class="btn nosubmit" onclick="$(window).off('beforeunload');">
+                    </div>
+                </form>
+            </div>
+        </div>

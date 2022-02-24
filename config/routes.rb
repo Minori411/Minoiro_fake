@@ -25,5 +25,6 @@ Rails.application.routes.draw do
   
   get "sample", to: "sample#index"
   resources :users, only: [:show, :edit, :update]
+  resource :profile, only: [:show, :edit, :update]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

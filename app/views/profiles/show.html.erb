@@ -1,0 +1,103 @@
+<div class="userProfileHeader">
+<div class="userProfileHeader_inner flexbox">
+    <div class="userProfileHeader_icon">
+        <div class="icon size125 wborder style="background-image:"></div>
+    </div>
+    <div class="userProfileHeader_name">
+        <div class="name">
+            <h1>山田太郎</h1>
+            <div class="snsicon"></div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="userProfile">
+<div class="inner">
+    <div class="userProfile_Main">
+        <div class="scoreBox customer_summary m-t1 m-b2 column_3">
+            <div class="flexbox scoreBox_wrap">
+                <div class="scoreStatus contract_manage flexbox">
+                    <div class="scoreStatus_item relative">
+                        <span class="scoreStatus_label flexbox">累計</span>
+                        <span class="scoreStatus_score">1</span>
+                        <span>人</span>
+                    </div>
+                </div>
+            </div>
+            <ul class="scoreStatus_lists flexbox m-t1">
+                <li class="scoreStatus_list flexbox">
+                    <span class="scoreStatus_list_score">0</span>
+                    <span class="scoreStatus_list_label">フォロー</span>
+                </li>
+                <li class="scoreStatus_list flexbox">
+                    <span class="scoreStatus_list_score">0</span>
+                    <span class="scoreStatus_list_label">フォロワー</span>
+                </li>
+                <li class="scoreStatus_list flexbox">
+                    <span class="scoreStatus_list_label">
+                        最終ログイン
+                        <span>24時間以内</span>
+                    </span>
+                <li class="scoreStatus_list flexbox">
+                    <span class="scoreStatus_list_label">
+                        登録日
+                        <span>2021/03/10</span>
+                    </span>
+                </li>
+            </ul>
+        </div>
+        <div class="tab_wrapper">
+            <input id="introduction" type="radio" name="tab_item" checked>
+            <label class="tab_item font-bold" for="introduction">
+                自己紹介
+            </label>
+            <input id="plan" type="radio" name="tab_item">
+            <label class="tab_item font-bold" for="plan">プラン</label>
+            <input id="post" type="radio" name="tab_item">
+            <label class="tab_item font-bold" for="post">ブログ</label>
+            <input id="review" type="radio" name="tab_item">
+            <label class="tab_item font-bold" for="review">レビュー</label>
+            <!--自己紹介 カテゴリ-->
+            <div class="tab_content" id="introduction_content">
+                <div class="tab_content_description">
+                    <div class="boxbaseP30">
+                        <div class="flexbox title_area">
+                            <h2 class="mt-0">自己紹介</h2>
+                            <div class="editBox">
+                                <%= link_to "編集する",edit_profile_path, class:"button subButton fas fa-edit" %>
+                            </div>
+                        </div>
+                        <div class="plan_detail_markdown_over nobefore" style="max-height: none;">
+                            <p></p>
+                        </div>
+                        <div class="alignCenter" style="display: none;">
+                            <a href="#" class="link more-btn">
+                                <i class="fas fa-angle-down"></i>
+                                もっとみる
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--プラン カテゴリ-->
+            <div class="tab_content" id="plan_content">
+                <div class="tab_content_description">
+                    <div class="tab_content_plan"></div>
+                </div>
+            </div>
+            <!--投稿 カテゴリ--> 
+            <div class="tab_content" id="post_content">
+                <div class="tab_content_description"></div>
+            </div>
+            <!--レビュー カテゴリ-->
+            <div class="tab_content" id="review_content">
+                <div class="tab_content_description"></div>
+            </div>
+        </div>
+    </div>
+    <div class="userProfileSide">
+        <div class="alignCenter"></div>
+        <div class="m-b1"></div>
+    </div>
+</div>
+</div>

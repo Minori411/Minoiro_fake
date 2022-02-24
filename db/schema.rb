@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_02_23_064705) do
+ActiveRecord::Schema[7.0].define(version: 2022_02_24_015923) do
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -29,6 +29,25 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_23_064705) do
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
     t.string "remember_digest"
+    t.string "nickname"
+    t.string "prefecture"
+    t.string "user_image"
+    t.integer "userstyle"
+    t.text "introduction"
+    t.integer "total_users"
+    t.datetime "deleted_at"
+    t.text "blogs"
+    t.string "select_bottles"
+    t.text "career"
+    t.text "url"
+    t.string "twitter"
+    t.string "facebook"
+    t.string "instagram"
+    t.string "certificate_name"
+    t.string "certificate"
+    t.string "disability_certificate"
+    t.string "level"
+    t.string "experience"
     t.index ["email", "soft_destroyed_at"], name: "index_users_on_email_and_soft_destroyed_at", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["soft_destroyed_at"], name: "index_users_on_soft_destroyed_at"
