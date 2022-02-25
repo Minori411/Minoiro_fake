@@ -7,12 +7,6 @@ class User < ApplicationRecord
           
   soft_deletable # <- kakurenbo-putiを使えるようにする
 
-  _validators.delete(:email)
-  _validate_callbacks.each do |callback|
-    if callback.filter.respond_to? :attributes
-      callback.filter.attributes.delete :email
-    end
-  end
   
 
   # 論理削除に対応するため、validationをカスタマイズする
