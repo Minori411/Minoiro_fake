@@ -37,7 +37,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_24_015923) do
     t.string "nickname"
     t.string "prefecture"
     t.string "user_image"
-    t.integer "userstyle"
+    t.integer "userstyle", default: 0
     t.text "introduction"
     t.integer "total_users"
     t.datetime "deleted_at"
