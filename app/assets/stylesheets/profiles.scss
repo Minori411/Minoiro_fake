@@ -211,8 +211,8 @@ a,a:hover{
         }
 
         .scoreBox{
-            .scoreStatus_list{
-                width: calc(25% - 1px);
+            .scoreStatus_lists{
+                width: calc(23% - 1px);
             }
         }
     }
@@ -240,7 +240,7 @@ a,a:hover{
         font-size: 16px;
     }
 
-    .scoreStatus_list{
+    .scoreStatus_lists{
         text-align: center;
         border: solid #e5e5e5;
         border-width: 0 0 0 1px;
@@ -249,7 +249,7 @@ a,a:hover{
         font-size: 12px;
     }
 
-    .scoreStatus_lists{
+    .scoreStatus_listss{
         border: 1px solid #eee;
         padding: 8px 0;
         border-radius: 4px;
@@ -403,8 +403,8 @@ p{
     .userProfileHeader_icon {
         .size125 {
             width: 80px;
-            height: 80px;
-            border: none;
+            height: 60px!important;
+            margin-top: 20px!important;
         }
     }
 }
@@ -832,6 +832,8 @@ input {
     background-position: top;
     background-size: cover;
     background-color: #f4f8fa;
+    margin-bottom: 30px;
+
 }
 
 .upload {
@@ -1066,6 +1068,3 @@ input[type=number] {
     border-radius: 4px!important;
 }
 
-.expand-c {
-    
-}

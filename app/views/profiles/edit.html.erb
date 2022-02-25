@@ -29,7 +29,7 @@
                         <a href="#">紹介</a>
                     </li>
                 </ul>
-                <form method="POST" action="" accept-charset="UTF-8" enctype="">
+                <form method="POST" action=  accept-charset="UTF-8" enctype="">
                     <input name="_token" type="hidden" value="">
                     <div class="boxbaseP30">
                     <div class="in">
@@ -141,24 +141,14 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <div id="appProfile">
-                            <div class="Midasi">資格</div>
-                            <div>
-                                <table class="editable">
+                       <% if current_user.userstyle == 0 %>
+                            <%#お客様の処理%>
+                        <div class="vapp" class="customer-info">
+                            <div class="Midasi">障害者手帳有無</div>
+                            <table class="editable m-b3 notificationTbl">
+                                <tbody>
                                     <tr>
-                                        <th width="150">資格名</th>
-                                        <td colspan="3">
-                                            <div>
-                                                <div class="certificate-input-root">
-                                                    <div class="certificate-input-wrapper-default input">
-                                                        <input class="w300" placeholder="資格名" name="certificate" type="text">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr class="consultant-info">
-                                        <th>資格証明書</th>
+                                        <th width="150">障害者手帳証明</th>  
                                         <td>
                                             <div class="upload m-t1" data-thumbnail-target="#selected-file">
                                                 画像をアップロードする（縦横200px×200px以上推奨、5MB未満)
@@ -171,57 +161,102 @@
                                                 <div id="selected-file">
                                                     <div class="selected-file-thumbnail"></div>
                                                     <div class="selected-file-result"></div>
-                                                    <input id="certificate" name="certificate" type="hidden">
+                                                    <input id="disorder" name="disorder" type="hidden">
                                                 </div>
                                             </div>
                                             <span class="help-block m-t-5"></span>
-                                        </td>
+                                        </td>                                  
                                     </tr>
-                                    </table>
-                                    <table class="editable">
-                                    <tr class="consultant-info">
-                                        <th width="150">レベル</th>
-                                        <td width="235">
-                                            <div class="form-group">
-                                                <div class="select-wrap">
-                                                    <select name="levels[0]">
-                                                        <option value="0">選択してください</option>
-                                                        <option value="1">★ 初心者</option>
-                                                        <option value="2">★★ 初級</option>
-                                                        <option value="3">★★★ 初中級</option>
-                                                        <option value="4">★★★★ 中級</option>
-                                                        <option value="5">★★★★★ 熟練</option>
-                                                    </select>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    </div>
+                          <% elsif current_user.userstyle == 1 %>
+                            <%#コンサルタントの処理%>
+
+                        <div id="appProfile">
+                        <div class="Midasi">資格</div>
+                        <div>
+                            <table class="editable">
+                                <tr>
+                                    <th width="150">資格名</th>
+                                    <td colspan="3">
+                                        <div>
+                                            <div class="certificate-input-root">
+                                                <div class="certificate-input-wrapper-default input">
+                                                    <input class="w300" placeholder="資格名" name="certificate" type="text">
                                                 </div>
                                             </div>
-                                        </td>
-                                        <th width="150">経験年数</th>
-                                        <td width="235">
-                                            <div class="form-group">
-                                                <div class="select-wrap">
-                                                    <select name="exs[0]">
-                                                        <option value="0">選択して下さい</option>
-                                                        <option value="1">半年未満</option>
-                                                        <option value="2">〜1年</option>
-                                                        <option value="3">〜3年</option>
-                                                        <option value="4">〜5年</option>
-                                                        <option value="5">5年〜</option>
-                                                    </select>
-                                                </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="consultant-info">
+                                    <th>資格証明書</th>
+                                    <td>
+                                        <div class="upload m-t1" data-thumbnail-target="#selected-file">
+                                            画像をアップロードする（縦横200px×200px以上推奨、5MB未満)
+                                            <div class="alignCenter m-t-20 m-b-20">
+                                                <label class="upload-btn">
+                                                    <input id="dammy_certificate" style="display:none" accept="image/*" data-thumbnail-target="#selected-file" name="dammy_certificate" type="file">
+                                                    ファイルを選択
+                                                </label>
                                             </div>
-                                        </td>
-                                    </tr>
-                                    <tr class="consultant-info">
-                                        <td></td>
-                                        <td colspan="3">
-                                            <a href="#">
-                                                <i class="fa fa-times red"></i>
-                                                削除する
-                                            </a>
-                                        </td>
-                                    </tr>
+                                            <div id="selected-file">
+                                                <div class="selected-file-thumbnail"></div>
+                                                <div class="selected-file-result"></div>
+                                                <input id="certificate" name="certificate" type="hidden">
+                                            </div>
+                                        </div>
+                                        <span class="help-block m-t-5"></span>
+                                    </td>
+                                </tr>
                                 </table>
-                            </div>    
+                                <table class="editable">
+                                <tr class="consultant-info">
+                                    <th width="150">レベル</th>
+                                    <td width="235">
+                                        <div class="form-group">
+                                            <div class="select-wrap">
+                                                <select name="levels[0]">
+                                                    <option value="0">選択してください</option>
+                                                    <option value="1">★ 初心者</option>
+                                                    <option value="2">★★ 初級</option>
+                                                    <option value="3">★★★ 初中級</option>
+                                                    <option value="4">★★★★ 中級</option>
+                                                    <option value="5">★★★★★ 熟練</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <th width="150">経験年数</th>
+                                    <td width="235">
+                                        <div class="form-group">
+                                            <div class="select-wrap">
+                                                <select name="exs[0]">
+                                                    <option value="0">選択して下さい</option>
+                                                    <option value="1">半年未満</option>
+                                                    <option value="2">〜1年</option>
+                                                    <option value="3">〜3年</option>
+                                                    <option value="4">〜5年</option>
+                                                    <option value="5">5年〜</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="consultant-info">
+                                    <td></td>
+                                    <td colspan="3">
+                                        <a href="#">
+                                            <i class="fa fa-times red"></i>
+                                            削除する
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>  
                             <div class="m-b5 alignCenter">
                                 <a href="#" class="btn">資格を追加する</a>
                             </div>                                       
@@ -305,35 +340,7 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <div class="vapp" class="customer-info">
-                            <div class="Midasi">障害者手帳有無</div>
-                            <table class="editable m-b3 notificationTbl">
-                                <tbody>
-                                    <tr>
-                                        <th width="150">障害者手帳証明</th>  
-                                        <td>
-                                            <div class="upload m-t1" data-thumbnail-target="#selected-file">
-                                                画像をアップロードする（縦横200px×200px以上推奨、5MB未満)
-                                                <div class="alignCenter m-t-20 m-b-20">
-                                                    <label class="upload-btn">
-                                                        <input id="dammy_certificate" style="display:none" accept="image/*" data-thumbnail-target="#selected-file" name="dammy_certificate" type="file">
-                                                        ファイルを選択
-                                                    </label>
-                                                </div>
-                                                <div id="selected-file">
-                                                    <div class="selected-file-thumbnail"></div>
-                                                    <div class="selected-file-result"></div>
-                                                    <input id="disorder" name="disorder" type="hidden">
-                                                </div>
-                                            </div>
-                                            <span class="help-block m-t-5"></span>
-                                        </td>                                  
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    </div>
+                    <% end %>
                     <div class="small m-t2">
                         <a href="#">退会はこちら</a>
                     </div>
