@@ -15,3 +15,9 @@
     margin-left: 20px;
     margin-bottom: 20px;
 }
+
+[type="radio"]:not(:checked), 
+[type="radio"]:checked {
+    opacity: 1!important;
+    pointer-events: auto!important;
+}

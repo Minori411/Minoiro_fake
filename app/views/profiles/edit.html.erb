@@ -29,7 +29,7 @@
                         <a href="#">紹介</a>
                     </li>
                 </ul>
-                <form method="POST" action=  accept-charset="UTF-8" enctype="">
+                <form method="POST" action="profile/edit"  accept-charset="UTF-8" enctype="">
                     <input name="_token" type="hidden" value="">
                     <div class="boxbaseP30">
                     <div class="in">
@@ -48,99 +48,6 @@
                                 <div class="profileIndicator_item">□ アイコン</div>
                             </div>
                         </div>
-                        <div class="Midasi">基本情報</div>
-                        <table class="editable m-b3">
-                            <tbody>
-                                <tr>
-                                    <th width="150">
-                                        ユーザ名
-                                        <span class="form_badge form_badge_hissu">必須</span>
-                                    </th>
-                                    <td>
-                                        <div class>
-                                            <input class="w300" placeholder="60文字以内" name="name" type="text">
-                                            <span class="help-block"></span>
-                                        </div>
-                                        <p class="gray2 m-t05">
-                                            <i class="fa fa-exclamation-circle fa-fw"></i>
-                                            本名、本人画像にすることで信頼性が高まります
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>ニックネーム</th>
-                                    <td>
-                                        <div class>
-                                            <input class="nickname" placeholder="60文字以内" name="nickname" type="text">
-                                            <span class="help-block"></span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>アイコン</th>
-                                    <td>
-                                        <div class="icon size125" style="background-image:url('');"></div>
-                                        <div class="upload m-t1" data-thumbnail-target="#selected-file">
-                                            画像をアップロードする（縦横200px×200px以上推奨、5MB未満)
-                                            <div class="alignCenter m-t-20 m-b-20">
-                                                <label class="upload-btn">
-                                                    <input id="dammy_icon" style="display:none" accept="image/*" data-thumbnail-target="#selected-file" name="dammy_icon" type="file">
-                                                    ファイルを選択
-                                                </label>
-                                            </div>
-                                            <div id="selected-file">
-                                                <div class="selected-file-thumbnail"></div>
-                                                <div class="selected-file-result"></div>
-                                                <input id="icon" name="icon" type="hidden">
-                                            </div>
-                                        </div>
-                                        <span class="help-block m-t-5"></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>
-                                        <div class="p-b1">メールアドレス</div>
-                                    </th>
-                                    <td>
-                                        <div class="p-t1 p-b1">
-                                            <a href="#">変更する</a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>自己紹介</th>
-                                    <td>
-                                        <div class>
-                                            <textarea placeholder="1000文字以内" name="profile" cols="50" rows="10"></textarea>
-                                            <span class="help-block"></span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>URL</th>
-                                    <td>
-                                        <div class>
-                                            <input class="w300" placeholder="http://..." name="url" type="text">
-                                            <span class="help-block"></span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>ユーザースタイル</th>
-                                    <td>
-                                        <div class="form-group">
-                                            <div class="select-wrap">
-                                                <select class="w200 usage-style-form" name="usage_style">
-                                                    <option value="1" selected="selected">コンサルタント</option>
-                                                    <option value="2">お客様</option>
-                                                </select> 
-                                                <span class="help-block"></span>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
                     <% if current_user.userstyle == 0 %>
                             <%#お客様の処理%>
                         <div class="vapp" class="customer-info">
@@ -336,6 +243,100 @@
                                             </div>
                                         </div>
                                         <span class="help-block"></span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <% else %>
+                        <div class="Midasi">基本情報</div>
+                        <table class="editable m-b3">
+                            <tbody>
+                                <tr>
+                                    <th width="150">
+                                        ユーザ名
+                                        <span class="form_badge form_badge_hissu">必須</span>
+                                    </th>
+                                    <td>
+                                        <div class>
+                                            <input class="w300" placeholder="60文字以内" name="name" type="text">
+                                            <span class="help-block"></span>
+                                        </div>
+                                        <p class="gray2 m-t05">
+                                            <i class="fa fa-exclamation-circle fa-fw"></i>
+                                            本名、本人画像にすることで信頼性が高まります
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>ニックネーム</th>
+                                    <td>
+                                        <div class>
+                                            <input class="nickname" placeholder="60文字以内" name="nickname" type="text">
+                                            <span class="help-block"></span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>アイコン</th>
+                                    <td>
+                                        <div class="icon size125" style="background-image:url('');"></div>
+                                        <div class="upload m-t1" data-thumbnail-target="#selected-file">
+                                            画像をアップロードする（縦横200px×200px以上推奨、5MB未満)
+                                            <div class="alignCenter m-t-20 m-b-20">
+                                                <label class="upload-btn">
+                                                    <input id="dammy_icon" style="display:none" accept="image/*" data-thumbnail-target="#selected-file" name="dammy_icon" type="file">
+                                                    ファイルを選択
+                                                </label>
+                                            </div>
+                                            <div id="selected-file">
+                                                <div class="selected-file-thumbnail"></div>
+                                                <div class="selected-file-result"></div>
+                                                <input id="icon" name="icon" type="hidden">
+                                            </div>
+                                        </div>
+                                        <span class="help-block m-t-5"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <div class="p-b1">メールアドレス</div>
+                                    </th>
+                                    <td>
+                                        <div class="p-t1 p-b1">
+                                            <a href="#">変更する</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>自己紹介</th>
+                                    <td>
+                                        <div class>
+                                            <textarea placeholder="1000文字以内" name="profile" cols="50" rows="10"></textarea>
+                                            <span class="help-block"></span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>URL</th>
+                                    <td>
+                                        <div class>
+                                            <input class="w300" placeholder="http://..." name="url" type="text">
+                                            <span class="help-block"></span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>ユーザースタイル</th>
+                                    <td>
+                                        <div class="form-group">
+                                            <div class="select-wrap">
+                                                <select class="w200 usage-style-form" name="usage_style">
+                                                    <option value="1" selected="selected">コンサルタント</option>
+                                                    <option value="2">お客様</option>
+                                                </select> 
+                                                <span class="help-block"></span>
+                                            </div>
+                                        </div>
                                     </td>
                                 </tr>
                             </tbody>
