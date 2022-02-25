@@ -966,6 +966,7 @@ select {
     justify-content: center;
     border: 1px solid #e4eaec;
     white-space: nowrap;
+    height: 47px;
 }
 
 .imasugu {
@@ -1068,3 +1069,8 @@ input[type=number] {
     border-radius: 4px!important;
 }
 
+.userstyle {
+    font-size: 14px;
+    margin-top: 10px;
+    color: #333;
+}

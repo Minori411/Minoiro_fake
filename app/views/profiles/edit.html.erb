@@ -1,4 +1,5 @@
 <div class="back_white inner p-t3 dashContent">
+    <%= form_with model: @user, url: edit_profile_path, local: true do |f| %>
             <div class="dashContent_right">
                 <h1>プロフィール</h1>
                 <ul class="sub_menu">
@@ -117,6 +118,63 @@
                                     </td>
                                 </tr>
                                 <tr>
+                                    <th>都道府県</th>
+                                    <td>
+                                        <div class="form-group">
+                                        <select class="browser-default">
+                                            <option value="" disabled selected>未選択</option>
+                                            <option value="1">北海道</option>
+                                            <option value="2">青森県</option>
+                                            <option value="3">岩手県</option>
+                                            <option value="4">宮城県</option>
+                                            <option value="5">秋田県</option>
+                                            <option value="6">山形県</option>
+                                            <option value="7">福島県</option>
+                                            <option value="8">群馬県</option>
+                                            <option value="9">栃木県</option>
+                                            <option value="10">茨城県</option>
+                                            <option value="11">埼玉県</option>
+                                            <option value="12">千葉県</option>
+                                            <option value="13">東京都</option>
+                                            <option value="14">神奈川県</option>
+                                            <option value="15">新潟県</option>
+                                            <option value="16">富山県</option>
+                                            <option value="17">石川県</option>
+                                            <option value="18">福井県</option>
+                                            <option value="19">山梨県</option>
+                                            <option value="20">長野県</option>
+                                            <option value="21">岐阜県</option>
+                                            <option value="22">静岡県</option>
+                                            <option value="23">愛知県</option>
+                                            <option value="24">三重県</option>
+                                            <option value="25">滋賀県</option>
+                                            <option value="26">京都府</option>
+                                            <option value="27">大阪府</option>
+                                            <option value="28">兵庫県</option>
+                                            <option value="29">奈良県</option>
+                                            <option value="30">和歌山県</option>
+                                            <option value="31">岡山県</option>
+                                            <option value="32">広島県</option>
+                                            <option value="33">山口県</option>
+                                            <option value="34">徳島県</option>
+                                            <option value="35">香川県</option>
+                                            <option value="36">愛媛県</option>
+                                            <option value="37">高知</option>
+                                            <option value="38">青森県</option>
+                                            <option value="39">福岡県</option>
+                                            <option value="40">佐賀県</option>
+                                            <option value="41">長崎県</option>
+                                            <option value="42">熊本県</option>
+                                            <option value="43">北海道</option>
+                                            <option value="44">大分県</option>
+                                            <option value="45">宮崎県</option>
+                                            <option value="46">鹿児島県</option>
+                                            <option value="47">沖縄県</option>
+                                            <option value="48">海外</option>    
+                                        </select>
+                                    </td>
+                                </tr> 
+                                <tr>
                                     <th>URL</th>
                                     <td>
                                         <div class>
@@ -129,13 +187,11 @@
                                     <th>ユーザースタイル</th>
                                     <td>
                                         <div class="form-group">
-                                            <div class="select-wrap">
-                                                <select class="w200 usage-style-form" name="usage_style">
-                                                    <option value="1" selected="selected">コンサルタント</option>
-                                                    <option value="2">お客様</option>
-                                                </select> 
-                                                <span class="help-block"></span>
-                                            </div>
+                                            <% if current_user.userstyle == 0 %>
+                                                <%=f.label :お客様, class: "userstyle" %>
+                                            <% elsif current_user.userstyle == 1 %>
+                                                <%=f.label :コンサルタント, class: "userstyle" %>
+                                            <% end %>
                                         </div>
                                     </td>
                                 </tr>
@@ -349,4 +405,5 @@
                     </div>
                 </form>
             </div>
+            <% end %>
         </div>
