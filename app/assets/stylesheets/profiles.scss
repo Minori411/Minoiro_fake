@@ -1,12 +1,3 @@
-/* 
-html5doctor.com Reset Stylesheet
-v1.6.1
-Last Updated: 2010-09-17
-Author: Richard Clark - http://richclarkdesign.com 
-Twitter: @rich_clark
-*/
-
-
 
 main{
     flex: 1;
@@ -499,13 +490,6 @@ p{
         padding: 16px;
     }
 }
-
-@media (max-width: 699px) {
-        .scoreStatus_listss {
-           
-        }
-    }
-
 
 @media (max-width: 699px) {
     .scoreBox {
@@ -1091,4 +1075,5 @@ input[type=number] {
 
 .registration_date {
     display: block!important;
+    font-size: 12px;
 }
