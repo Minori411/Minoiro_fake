@@ -1,4 +1,5 @@
 <div class="userProfileHeader">
+<%= form_with model: @user, url: profile_path, local: true do |f| %>
 <div class="userProfileHeader_inner flexbox">
     <div class="userProfileHeader_icon">
         <div class="icon size125 wborder style="background-image:"></div>
@@ -36,7 +37,15 @@
                 <li class="scoreStatus_lists flexbox">
                     <span class="scoreStatus_list_label">
                         最終ログイン
-                        <span>24時間以内</span>
+                        <% if current_user.current_sign_in_at > 1.day.ago %>
+                        <%= f.label :２４時間以内, class: "current_signin"%>
+                        <% elsif current_user.current_sign_in_at > 2.day.ago %>
+                        <%= f.label :１日前, class: "current_signin"%>
+                        <% elsif current_user.current_sign_in_at > 3.day.ago %>
+                        <%= f.label :２日前, class: "current_signin"%>
+                        <% else %>
+                        <%= f.label :３日以上, class: "current_signin"%>
+                        <% end %>       
                     </span>
                 <li class="scoreStatus_lists flexbox">
                     <span class="scoreStatus_list_label">
@@ -100,4 +109,5 @@
         <div class="m-b1"></div>
     </div>
 </div>
+<% end %>
 </div>

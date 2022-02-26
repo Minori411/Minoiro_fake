@@ -403,8 +403,8 @@ p{
     .userProfileHeader_icon {
         .size125 {
             width: 80px;
-            height: 60px!important;
-            margin-top: 20px!important;
+            height: 80px!important;
+            margin-top: 30px!important;
         }
     }
 }
@@ -501,9 +501,18 @@ p{
 }
 
 @media (max-width: 699px) {
+        .scoreStatus_listss {
+           
+        }
+    }
+
+
+@media (max-width: 699px) {
     .scoreBox {
         .scoreStatus_lists {
             border: none;
+            width: calc(40% - 1px)!important;
+            
             
 
             .scoreStatus_list {
@@ -1073,4 +1082,14 @@ input[type=number] {
     font-size: 14px;
     margin-top: 10px;
     color: #333;
+}
+
+.current_signin {
+    display: block;
+}
+
+@media (max-width: 699px) {
+    .scoreStatus_list_label {
+        display: block!important;
+    }
 }
