@@ -1084,12 +1084,11 @@ input[type=number] {
     color: #333;
 }
 
-.current_signin {
+.current_signin,
+.follow {
     display: block;
 }
 
-@media (max-width: 699px) {
-    .scoreStatus_list_label {
-        display: block!important;
-    }
+.registration_date {
+    display: block!important;
 }

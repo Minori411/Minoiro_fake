@@ -26,13 +26,13 @@
                 </div>
             </div>
             <ul class="scoreStatus_listss flexbox m-t1">
-                <li class="scoreStatus_lists flexbox">
+                <li class="scoreStatus_lists">
                     <span class="scoreStatus_list_score">0</span>
-                    <span class="scoreStatus_list_label">フォロー</span>
+                    <%= f.label :フォロー, class: "scoreStatus_list_label follow"%>
                 </li>
-                <li class="scoreStatus_lists flexbox">
+                <li class="scoreStatus_lists">
                     <span class="scoreStatus_list_score">0</span>
-                    <span class="scoreStatus_list_label">フォロワー</span>
+                    <%= f.label :フォロワー, class: "scoreStatus_list_label follow"%>
                 </li>
                 <li class="scoreStatus_lists flexbox">
                     <span class="scoreStatus_list_label">
@@ -48,9 +48,9 @@
                         <% end %>       
                     </span>
                 <li class="scoreStatus_lists flexbox">
-                    <span class="scoreStatus_list_label">
+                    <span class="scoreStatus_list_label registration_date">
                         登録日
-                        <span>2021/03/10</span>
+                        <%= current_user.created_at.strftime('%Y/%m/%d'), class: "registration_date" %>
                     </span>
                 </li>
             </ul>
