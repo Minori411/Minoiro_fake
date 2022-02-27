@@ -21,5 +21,9 @@ module Myapp
     config.time_zone = "Tokyo"
     config.active_record.default_timezone = :local
     # config.eager_load_paths << Rails.root.join("extras")
+    if Rails.env.development? || Rails.env.test?
+      Bundler.require(*Rails.groups)
+      Dotenv::Railtie.load
+    end
   end
 end
