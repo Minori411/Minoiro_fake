@@ -43,7 +43,9 @@
                         <%= f.label :１日前, class: "current_signin"%>
                         <% elsif current_user.current_sign_in_at > 3.day.ago %>
                         <%= f.label :２日前, class: "current_signin"%>
-                        <% else %>
+                        <% elsif current_user.current_sign_in_at > 30.day.ago %>
+                        <%= f.label :３０日以上, class: "current_signin"%>
+                        <% elsif 3.days.ago > current_user.current_sign_in_at > 30.day.ago %>
                         <%= f.label :３日以上, class: "current_signin"%>
                         <% end %>       
                     </span>
