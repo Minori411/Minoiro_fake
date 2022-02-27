@@ -46,6 +46,7 @@ group :development, :test do
   gem 'gimei'
   gem 'database_cleaner-active_record'
   gem 'database_cleaner-sequel'
+  gem 'ransack'
 end
 
 group :development do

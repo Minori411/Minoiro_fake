@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-
-    
+    before_action :set_q, only: [:index, :search]
 
     def show
     end
@@ -33,11 +32,19 @@ class UsersController < ApplicationController
         flash[:notice] = "退会処理を実行いたしました"
         redirect_to root_path
     end
+
+    def search
+        @results = @q.result
+    end
     
     private
     
     def user_params
         params.require(:user).permit(:name, :email, :password, :password_confirmation, :userstyle)
+    end
+
+    def set_q
+        @q = User.ransack(params[:q])
     end
 
 

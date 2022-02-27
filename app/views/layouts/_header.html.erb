@@ -11,7 +11,7 @@
                 </div>
                 <ul class="menu gnav flexbox">
                     <li class="menu_item flexbox">
-                        <a href="#">コンサルタントを探す</a>
+                        <%= link_to "コンサルタントを探す",users_index_path %>
                     </li>
                     
                     <li class="menu_item flexbox">
@@ -22,7 +22,11 @@
                     <div class="search">
                         <form method="GET">
                             <div class="relative">
-                                <input id="q" placeholder="検索" name="q" type="text">
+                            <%= search_form_for @q, url: search_users_path do |f| %>
+                                <%= f.search_field :name_cont,:placeholder => "検索" %>
+                                <br>
+                                <% f.submit '検索' %>
+                              <% end %> 
                                 <div class="absolute center-v right-1 gray2 header_search">
                                     <i class="fas fa-search gray"></i>
                                 </div>
