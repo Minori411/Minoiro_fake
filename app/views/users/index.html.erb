@@ -1,7 +1,75 @@
 <% provide(:title, 'All users') %>
-<h1>All users</h1>
+<div class="back_white">
+    <div class="mentaListBox">
+    <div class="searchBox">
+    <form method="GET" action="search" class="js-auto-submit">
+    <div class="plan_search">
+        <input name="search_on" type="hidden" value="on">
+        <h3 class="m-b1">条件で絞り込む</h3>
+        <div class="relative">
+            <input id="q" placeholder="コンサルテーション" name="q" type="text">
+            <div class="absolute center-v right-1 gray2 header-search">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+        <div class="cp_box">
+            <input id="cp00" type="checkbox">
+            <label for="cp00">
+                <i class="fas fa-chevron-down"></i>
+                もっと詳しく検索
+            </label>
+            <div class="cp_container">
 
-
+            <div class="motto">
+                <div class="searchBox_m">知りたいこと</div>
+                <div class="inner flex tagbox multiple">
+                    <a href="#" class="chip">生まれてきた意味（使命）</a>
+                    <a href="#" class="chip">過去</a>
+                    <a href="#" class="chip">現在</a>
+                    <a href="#" class="chip">未来</a>
+                    <a href="#" class="chip">恋愛</a>
+                    <a href="#" class="chip">夫婦関係</a>
+                </div>
+                <div class="searchBox_m">コンサルタイプ</div>
+                <div class="inner flex tagbox">
+                    <a href="#" class="chip">カップルコンサル</a>
+                </div>
+                <div class="searchBox_m">相談方式</div>
+                <div class="inner flex tagbox">
+                    <a href="#" class="chip">チャット</a>
+                    <a href="#" class="chip">ビデオ通話</a>
+                </div>
+                <div class="searchBox_m">料金</div>
+                <div class="">
+                    <div class="">
+                      <select class="browser-default">
+                          <option value="" disabled selected>Choose your option</option>
+                          <option value="1">Option 1</option>
+                          <option value="2">Option 2</option>
+                          <option value="3">Option 3</option>
+                      </select>
+                    </div>
+                  </div>
+                <div class="searchBox_m">評価</div>
+                <div class="">
+                    <div class="">
+                        <select class="browser-default">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="1">〜★★★</option>
+                            <option value="2">〜★★★★</option>
+                            <option value="3">★★★★★</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+        </div>          
+        </div>
+</form>
+</div>
+</div>
+</div>
 
 <ul class="users">
   <% User.all.each do |user| %>
