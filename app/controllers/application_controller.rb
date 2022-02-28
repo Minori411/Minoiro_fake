@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
     before_action :configure_permitted_parameters, if: :devise_controller?
-    before_action :set_q
+    before_action :set_search
 
     protect_from_forgery with: :null_session  # このアクションを追加
   def after_sign_in_path_for(resource)
@@ -11,13 +11,10 @@ class ApplicationController < ActionController::Base
     logout_path
   end
 
-  def search
-    @results = @q.result
-  end
 
-  private
-  def set_q
-    @q = User.ransack(params[:q])
+  def set_search
+    @search = User.ransack(params[:q])
+    @search_users = @search.result
   end
 
   protected
