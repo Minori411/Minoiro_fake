@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'inquiry/index'
+  get 'inquiry/confirm'
+  get 'inquiry/thanks'
+  
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   devise_for :users, :controllers => {
