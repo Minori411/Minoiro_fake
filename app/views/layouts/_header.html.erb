@@ -5,9 +5,7 @@
         <div class="header_inner">
             <div class="header_inner_head flexbox">
                 <div id="logo">
-                    <a href="∠" class="flexbox">
-                        <p>みのいろ</p>
-                    </a>
+                    <%= link_to "みのいろ",users_path %>
                 </div>
                 <ul class="menu gnav flexbox">
                     <li class="menu_item flexbox">
@@ -50,7 +48,7 @@
                         <!-- Dropdown Structure -->
                         <ul id='dropdown2' class='dropdown-content dropdown2'>
                             <li>
-                            <%= link_to "HOME" %>
+                            <%= link_to "HOME", users_path %>
                             </li>
                             <li class="divider" tabindex="-1"></li>
                             <li>

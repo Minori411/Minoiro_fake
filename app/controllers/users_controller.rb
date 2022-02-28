@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-    before_action :set_q, only: [:index, :search]
 
     def show
     end
@@ -33,9 +32,7 @@ class UsersController < ApplicationController
         redirect_to root_path
     end
 
-    def search
-        @results = @q.result
-    end
+    
     
     private
     
@@ -43,9 +40,7 @@ class UsersController < ApplicationController
         params.require(:user).permit(:name, :email, :password, :password_confirmation, :userstyle)
     end
 
-    def set_q
-        @q = User.ransack(params[:q])
-    end
+    
 
 
 
