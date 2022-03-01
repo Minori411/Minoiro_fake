@@ -187,9 +187,7 @@ li {
         }
     }
 
-    .scoreStatus_list:first-child {
-        border-width: 0;
-    }
+    
 
     .contract_manage {
         border: 1px solid #eee;
@@ -231,13 +229,21 @@ li {
         box-sizing: border-box;
     }
 
+    .scoreStatus_listsss {
+        border: 1px solid #eee;
+        padding: 8px 0;
+        border-radius: 4px;
+        box-sizing: border-box;
+
+    }
+
     .scoreStatus_list {
         width: calc(20%-1px);
         text-align: center;
-        border: aolid #e5e5e5;
         align-items: center;
         justify-content: center;
         font-size: 12px;
+        margin: 0 auto!important;
     }
 
     .scoreStatus_list_score {
