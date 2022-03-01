@@ -48,7 +48,7 @@
                             <%= f.label :お客様として %>
                         </label>
                         </p>
-                        <p>
+                        <p class="consultant-check">
                         <label>
                             <%= f.radio_button :userstyle, value=1, class:"with-gap" %>
                             <%= f.label :コンサルタントとして %>
@@ -59,14 +59,14 @@
                         <p class="checkbox_content mt-4">
                             <span class="checkbox_wrapper">
                                 <label>
-                                    <input id="is_guideline" type="checkbox" name="is_kiyaku">
-                            <span>
-                                <a href="#" target="_blank">利用規約</a>
-                                    と
-                                <a href="#" target="_blank">個人情報保護法</a>
-                                    に同意します。
-                            </span>
-                                    </label>
+                                    <span>
+                                    <%= f.check_box :is_kiyaku, id: "is_guideline", class:"kiyaku" %>
+                                        <a href="#" target="_blank">利用規約</a>
+                                            と
+                                        <a href="#" target="_blank">個人情報保護法</a>
+                                            に同意します。
+                                    </span>
+                                </label>
                             </span>
                         </p>
                     </div>

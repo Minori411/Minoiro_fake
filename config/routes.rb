@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  get 'inquiry/index'
-  get 'inquiry/confirm'
-  get 'inquiry/thanks'
+  get 'inquiries/index'
+  get 'inquiries/confirm'
+  post 'inquiries/confirm'
+  get 'inquiries/thanks'
+  post 'inquiries/thanks'
   
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 

@@ -1,0 +1,55 @@
+.container_wrap{
+    width: 480px;
+    background: #fff;
+    padding: 32px 56px 56px;
+    margin: 0 auto;
+    font-size: 13px;
+    box-sizing:border-box;
+}
+
+.inquiry-btn {
+
+    color: #ff6e00!important;
+    margin-left: 120px!important;
+    margin-top: 20px;
+}
+
+.btn {
+    &:hover {
+        background: darken(#ff6e00, 20%);
+    }
+}
+
+.inquiry-label {
+    text-align: left!important;
+}
+
+.inquiry-title {
+    text-align: center;
+}
+
+.message-inquiry {
+    margin-top: 20px!important;
+}
+
+.confirm-btn {
+    margin-left: 150px!important;
+    margin-top: 20px;
+
+    &:hover {
+        background:darken(#ff6e00, 20%);
+    }
+}
+
+.page-header {
+    h5 {
+        color: #333;
+        text-align: center;
+    }
+}
+
+.go-to-top {
+    color:#ff6e00;
+    margin-left: 150px;
+    margin-top: 20px!important;
+}
