@@ -38,15 +38,15 @@
                     <span class="scoreStatus_list_label">
                         最終ログイン
                         <% if current_user.current_sign_in_at > 1.day.ago %>
-                        <%= f.label :２４時間以内, class: "current_signin"%>
+                        <%= content_tag :p, "24時間以内", class: "current_signin"%>
                         <% elsif current_user.current_sign_in_at > 2.day.ago %>
-                        <%= f.label :１日前, class: "current_signin"%>
+                        <%= content_tag :p, "1日前", class: "current_signin"%>
                         <% elsif current_user.current_sign_in_at > 3.day.ago %>
-                        <%= f.label :２日前, class: "current_signin"%>
-                        <% elsif current_user.current_sign_in_at > 30.day.ago %>
-                        <%= f.label :３０日以上, class: "current_signin"%>
-                        <% elsif 3.days.ago > current_user.current_sign_in_at > 30.day.ago %>
-                        <%= f.label :３日以上, class: "current_signin"%>
+                        <%= content_tag :p, "2日前", class: "current_signin"%>
+                        <% elsif current_user.current_sign_in_at > 31.day.ago %>
+                        <%= content_tag :p, "30日以上", class: "current_signin"%>
+                        <% elsif 3.days.ago > current_user.current_sign_in_at > 31.day.ago %>
+                        <%= content_tag :p, "30日以上", class: "current_signin"%>
                         <% end %>       
                     </span>
                 <li class="scoreStatus_lists flexbox">

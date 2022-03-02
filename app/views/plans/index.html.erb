@@ -1,0 +1,206 @@
+<div class="back_white">
+    <div class="mentaListBox">
+    <div class="searchBox">
+    <form method="GET" action="search" class="js-auto-submit">
+    <div class="plan_search">
+        <input name="search_on" type="hidden" value="on">
+        <h3 class="m-b1">条件で絞り込む</h3>
+        <div class="relative">
+        <%= search_form_for @search, url: search_users_path do |f| %>
+            <%= f.search_field :name_cont,:placeholder => "検索" %>
+            <br>
+            <% f.submit '検索' %>
+        <% end %> 
+            <div class="absolute center-v right-1 gray2 header-search">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+        <div class="cp_box">
+            <input id="cp00" type="checkbox">
+            <label for="cp00">
+                <i class="fas fa-chevron-down"></i>
+                もっと詳しく検索
+            </label>
+            <div class="cp_container">
+
+            <div class="motto">
+                <div class="searchBox_m">知りたいこと</div>
+                <div class="inner flex tagbox multiple">
+                    <a href="#" class="chip">生まれてきた意味（使命）</a>
+                    <a href="#" class="chip">過去</a>
+                    <a href="#" class="chip">現在</a>
+                    <a href="#" class="chip">未来</a>
+                    <a href="#" class="chip">恋愛</a>
+                    <a href="#" class="chip">夫婦関係</a>
+                </div>
+                <div class="searchBox_m">コンサルタイプ</div>
+                <div class="inner flex tagbox">
+                    <a href="#" class="chip">カップルコンサル</a>
+                </div>
+                <div class="searchBox_m">相談方式</div>
+                <div class="inner flex tagbox">
+                    <a href="#" class="chip">チャット</a>
+                    <a href="#" class="chip">ビデオ通話</a>
+                </div>
+                <div class="price-custom">
+                <div class="searchBox_m">料金</div>
+                <div class="form-group right">
+                    <div class="select-wrap">
+                <select class="browser-default">
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                  </select>
+            </div>
+            </div>
+            </div>
+            <div class="review-custom">
+                <div class="searchBox_m">評価</div>
+                <div class="form-group right">
+                    <div class="select-wrap">
+                        <select class="browser-default">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="1">〜★★★</option>
+                            <option value="2">〜★★★★</option>
+                            <option value="3">★★★★★</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+        </div>
+        </div>          
+        </div>
+    
+    <div class="listBox">
+        <div class="mentorSearch">
+            <h1>
+                コンサルタントを探す
+            </h1>
+        </div>
+        <ul class="navbox_nav flexbox">
+            <li class="active">
+                <a href="#">
+                    人気
+                </a>
+            </li>
+            <li>
+                <a href="#">新着</a>
+            </li>
+            <li>
+                <a href="#">フォローリスト</a>
+            </li>
+        </ul>
+        <div class="listBox_inner flexbox">
+            <div class="listBox_info">
+                <p class="listBox_result">
+                    <span>10</span>
+                    人のコンサルタントがみつかりました。
+                </p>
+            </div>
+            <div class="consultant-plan">
+            <div id="vapp">
+                <div class="mentorList">
+                    <div class="plan-card">
+                        <a href="#" class="plan-card_wrapper"></a>
+                        <div class="p-content-card_inner">
+                            <div class="plan_card_eyecatch">
+                                <div class="plan-card_image slickSlide slick-initialized slick-slider">
+                                    <div class="slick-list draggable">
+                                        <div class="slick-track" style="opacity: 1; width: 268px; tranform: translated3d(0px, 0px, 0px);">
+                                            <div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width:268px">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <label>
+                                    <div class="plan-card_iconButton flexbox">
+                                        <div>
+                                            <span class="like off">
+                                                <i class="far fa-heart"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="plan-card-text">
+                                <div class="plan-card_top">
+                                    <div class="plan-card_subject">
+                                        カップルコンサルできます!あなたが知りたい過去のトラウマや未来の不安などを解消します!
+                                    </div>
+                                    <div class="plan-card_user flexbox">
+                                        <a href="#" class="flexbox">
+                                            <span class="avatar-image">
+                                                <img src="/img/flower.jpeg">
+                                            </span>
+                                            <span class="name">
+                                                林みのり
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="plan-card_bottom">
+                                    <div class="plan-card_info flexbox">
+                                        <div class="plan-card_review flexbox">
+                                            <span class="plan-card_review-icon">
+                                                <i class="fas fa-star"></i>
+                                            </span>
+                                            <span class="plan-card_review-count">4.7</span>
+                                        </div>
+                                        <div class="plan-card_price">
+                                            1000円〜
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="m-t2"></div>
+        <h3 class="top_mentor_title m-t2 m-b1">高い評価がつけられたコンサルタント</h3>
+        <div class="top_mentor_compornent m-t1">
+            <section class="regular top_mentor_card">
+                <div class="top_mentor_card_card">
+                    <div class="thumbnail"></div>
+                    <div class="title">
+                        <a href="#">カップルコンサルできます</a>
+                    </div>
+                    <div class="facebook avatar_icon">
+                        <div class="face">
+                            <a href="#">
+                                <div class="icon size30" style="background:"></div>
+                            </a>
+                        </div>
+                        <div class="name">
+                            <a href="#">林みのりさんがオススメ!</a>
+                        </div>
+                    </div>
+                    <div class="comment text-ellipsis-line3">
+                        丁寧に悩みをヒアリングしてくださり、期待を超えた答えをいつもくれる方です。今後ともよろしくお願いいたします。
+                    </div>
+                    <div class="facebox mt-2">
+                        <div class="face">
+                            <div class="icon size20" style=""></div>
+                        </div>
+                        <div class="name-small">
+                            <a href="#">minori411</a>
+                            さんが高評価
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</form>
+</div>
+</div>
+</div>
+
+<% @plans.each do |plan| %>
+    <%= plan.name %><br>
+<% end %>

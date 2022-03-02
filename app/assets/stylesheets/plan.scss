@@ -1,0 +1,768 @@
+.mentaListBox {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    .searchBox_m {
+        margin-top: 20px;
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+    @media(max-width: 699px) {
+        .searchBox {
+            width: 100%!important;
+            position: absolute;
+        }
+    }
+    .searchBox {
+        width: 290px;
+        margin-right: 50px;
+        box-sizing: border-box;
+        text-align: left;
+
+        .select-wrap {
+            position: relative;
+            width: 100%;
+            top: -50px;
+
+        }
+
+        #q {
+            background: #f4f8fa;
+            margin: 0;
+            border: none;
+            outline: none;
+            appearance: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .plan_search {
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #f6f6f6;
+            border-radius: 8px;
+            overflow:hidden;
+        }
+    }
+}
+
+.plan_search {
+    margin-top: 50px;
+}
+
+input {
+    line-height: normal;
+    padding: 0.5rem 0.75rem;
+}
+
+.m-b1 {
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-weight: 700;
+}
+
+.relative {
+    position: relative;
+}
+
+input[type=text] {
+    min-height: 44px;
+    font-size: 16px;
+}
+
+input {
+    overflow: visible;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.gray2 {
+    font-size: 13px;
+    color: #999;
+}
+
+.right-1 {
+    right: 1rem;
+}
+
+.center-v {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.fas {
+    font-weight: 900;
+}
+
+#motto_trigger,
+.motto_btn {
+    display: none;
+}
+
+input[type=checkbox]:read-only {
+    color: ccc!important;
+    border-color: #ccc!important;
+}
+
+[type=checkbox] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.motto {
+    display: block;
+}
+
+.inner {
+    .tagbox {
+        padding: 0;
+        width: 100%;
+    }
+}
+
+.flex {
+    display: flex;
+}
+
+.inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.right {
+    text-align: right;
+}
+
+.form-group {
+    display: flex;
+}
+
+select {
+    padding-right: 2rem;
+    padding: 0.5rem 0.75rem;
+    outline: none;
+    appearance: auto!important;
+    text-indent: 0.01px;
+    background: none;
+    vertical-align: middle;
+    -webkit-appearance: none;
+    height: 40px;
+    border: 1px solid #ddd;
+    width: 200px!important;
+    border-radius: 3px;
+    position: relative;
+    display: inline-block;
+}
+
+select {
+    option {
+        background: #fff;
+        color: #333;
+    }
+}
+
+h3 {
+    font-size: 16px;
+}
+
+.back_white {
+    background: #f4f8fa;
+}
+
+.price-custom {
+    padding-top: 10px;
+    padding-bottom: 1px;
+}
+
+@media (max-width: 699px) {
+    .mantaListBox {
+        .searchBox {
+            width: 100%;
+            margin-right: 0;
+        }
+    }
+}
+
+@media (max-width: 699px) {
+    .mottoBox {
+        display: block;
+        margin-top: 5px;
+    }
+}
+
+@media (max-width: 699px) {
+    .mottoBox {
+        .motto_btn {
+            color: #ff6e00;
+            display: block!important;
+        }
+    }
+}
+
+@media (max-width: 699px) {
+    #motto_trigger:checked~,{
+        display: none;
+    }
+    .motto_btn {
+        display: none;
+    }
+}
+
+
+
+@media (max-width: 699px) {
+    .back_white {
+        .inner {
+            .right {
+                text-align: left;
+            }
+        }
+    }
+}
+
+.cp_box {
+    label {
+        display: none;
+    }
+}
+
+@media(max-width:699px) {
+
+.cp_box *, .cp_box *:before, .cp_box *:after {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.cp_box {
+	width: auto;
+	margin: 2em auto;
+}
+.cp_box label {
+	font-weight: bold;
+	position: relative;
+	display: block;
+	width: 80%;
+	margin: auto;
+	padding: 0.3em 1em;
+	cursor: pointer;
+	transition: all 0.3s;
+	text-align: center;
+    color: #ff6e00;
+	border-radius: 3px;
+}
+.cp_box label:hover {
+	transition: all 0.1s;
+	color: #ffffff;
+    color:#ff6e00;
+}
+.cp_box label::after {
+	font-family: 'FontAwesome';
+}
+.cp_box label:hover::after {
+	color: #ffffff;
+}
+.cp_box input:checked ~ label::after {
+	font-family: 'FontAwesome';
+}
+.cp_box input:checked ~ label:hover::after {
+	color: #ffffff;
+}
+.cp_box input {
+	display: none;
+}
+.cp_box .cp_container {
+	position: relative;
+	z-index: 10;
+	overflow: hidden;
+	height: 0;
+	margin-top: -1px;
+	transition: height 0.3s ease-in-out,box-shadow 0.6s linear;
+	background: rgba(255, 255, 255, 0.5);
+}
+.cp_box input:checked ~ div {
+	transition: height 0.5s ease-in-out,box-shadow 0.1s linear;
+}
+/* 続きを読むを押すと表示されるテキストの高さ */
+.cp_box input:checked ~ div.cp_container {
+	height: 500px;
+}
+}
+
+/*ここからプラン*/
+
+.mentaListBox {
+
+    .listBox_text {
+        color: #666;
+        text-align: left;
+    }
+
+    .listBox_result {
+        text-align: left;
+        margin-bottom: 4px;
+        font-weight: 600;
+
+        span {
+            font-size: 1.4rem;
+            font-weight: 700;
+            display: inline;
+            margin-right: 4px;
+            color: #ff6e00;
+        }
+    }
+
+    .listBox_info {
+        margin-bottom: 16px;
+    }
+
+    .listBox_inner {
+        position: relative;
+    }
+
+    .listBox {
+        box-sizing: border-box;
+        flex: 1;
+        min-width: 0;
+    }
+}
+
+.mentorSearch {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto 24px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    h1 {
+        flex: 1;
+        font-size: 26px;
+        font-weight: 700;
+    }
+}
+
+.backwhite {
+    .inner {
+        h1 {
+            color: #333;
+            font-size: 28px;
+            text-align: left;
+            margin: 0;
+            width: 100%;
+        }
+    }
+}
+
+h1 {
+    line-height: 150%;
+}
+
+.navbox_nav {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1;
+    position: relative;
+    margin-bottom: 24px;
+
+    a {
+        padding: 16px;
+        color: #999;
+    }
+
+    .active {
+        a {
+            color: #ff6e00;
+            font-weight: 700;
+            position: relative;
+        }
+    }
+}
+
+.flexbox {
+    display: flex!important;
+    flex-wrap: wrap;
+}
+
+ul {
+    list-style: none;
+}
+
+p {
+    font-size: 15px;
+    margin: 0;
+}
+
+.mentorList {
+    overflow-x: auto;
+    display: flex!important;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    .plan-card {
+        margin-right: 17px;
+    }
+}
+
+.plan-card {
+    position: relative;
+    width: 270px;
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #999;
+    overflow: hidden;
+
+    .slick-slide {
+        position: relative!important;
+    }
+
+    .slick-slider {
+        position: absolute!important;
+        margin-bottom: 0!important;
+        box-sizing: border-box;
+        user-select: none;
+        touch-action: pan-y;
+    }
+}
+
+.plan-card_wrapper {
+    position: absolute;
+    z-index :1;
+    top: 0;
+    left :0;
+    width: 100%;
+    height: 100%;
+}
+
+.plan-card_eyecatch {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    padding-top: 56%;
+    background: #999;
+    margin-bottom: 0!important;
+    height: 0;
+    line-height: 0;
+    z-index: 2;
+}
+
+.plan-card_image {
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: auto;
+}
+
+.slick-list {
+    transform: translateZ(0);
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.slick-track {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.slick-slide {
+    float: left;
+    height: 100%;
+    min-height: 1px;
+}
+
+.plan-card_iconButton {
+    position: absolute;
+    top: 90px;
+    right: 16px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,.2);
+    z-index: 1;
+
+    .like .off {
+        color: #fff;
+    }
+}
+
+.like {
+    align-items: center;
+}
+
+.plan-card-text {
+    padding: 16px;
+    box-sizing: border-box;
+}
+.plan-card_top {
+    padding-bottom: 72px;
+}
+
+.plan-card_subject {
+    font-size: 14px;
+    text-align: left;
+    font-weight: 600;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    display: -webkit-box;
+    line-height: 1.6;
+}
+
+.plan-card_user {
+    z-index: 1;
+    margin-top: 10px;
+
+    .name {
+        position: relative;
+        font-size: 12px;
+        margin-left: 8px;
+        color: #999;
+    }
+
+    .avatar-image {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            max-width: 100%;
+        }
+    }
+}
+
+.plan-card_user>a {
+    align-items: center;
+}
+
+.name {
+    -webkit-box-orient: vertical;
+    -webkit-line-camp: 1;
+    overflow: hidden;
+    display: -webkit-box!important;
+    max-width: calc(100% - 40px);
+}
+
+.plan-card_bottom {
+    position: absolute;
+    width: 100%;
+    padding: 0 16px;
+    box-sizing: border-box;
+    left: 0;
+    bottom: 16px;
+}
+
+.plan-card_info {
+    align-items: center;
+}
+
+.plan-card_review {
+    margin-top: 10px;
+    justify-content: flex-end;
+    font-size: 14px;
+    align-items: center;
+}
+
+.plan-card_review-icon {
+    margin-right: 2px;
+    color: #f698a1;
+}
+
+.plan-card_review-count {
+    margin-right: 6px;
+    font-weight: 500;
+}
+
+.plan-card_review-link {
+    font-size: 12px;
+    z-index: 1;
+}
+
+.plan-card_price {
+    font-size: 14px;
+    font-weight: 700;
+    text-align: right;
+    color: #ff6e00;
+    margin-top: 8px;
+    margin-left: auto;
+}
+
+.m-b1 {
+    margin-bottom: 10px;
+}
+
+.top_mentor_title {
+    text-align: left;
+}
+
+.m-t2 {
+    margin-top: 20px;
+}
+
+h3 {
+    font-weight: 700;
+}
+
+.top_mentor_compornent {
+    text-align: left;
+}
+
+.m-t1 {
+    margin-top: 10px;
+}
+
+.top_mentor_card {
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: flex-start;
+    margin-top: 8px;
+}
+
+.top_mentor_card_card {
+    width: calc(33% - 17px);
+    margin-right: 28px;
+    box-sizing: border-box;
+    background: #fff;
+    border: 1px solid #f6f6f6;
+    padding: 16px;
+    border-radius: 8px;
+    overflow: hidden;
+
+    .comment {
+        font-size: .8rem;
+        margin: 8px 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .facebox {
+        display: flex;
+        align-items: center;
+
+        .name--small {
+            font-size: .7rem;
+            font-weight: 600;
+            line-height: 1.4;
+            text-align: left;
+            color: #666;
+        }
+
+        .name {
+            flex: 1;
+            font-size: .8rem;
+            font-weight: 700;
+            line-height: 1.4;
+            text-align: left;
+        }
+
+        .face {
+            margin-right: 8px;
+        }
+    }
+
+    .title {
+        font-size: .8rem;
+        margin-top: 8px;
+        font-weight: 400;
+    }
+
+    .thumbnail {
+        width: 100%;
+        line-height: 1;
+
+        img {
+            width: 100%;
+            object-fit: contain;
+            width: 100%;
+            height: 100px;
+        }
+
+        a {
+            line-height: 0;
+        }
+    }
+}
+
+.top_mentor_card {
+    .avatar_icon {
+        border-top: 1px solid #e5e5e5;
+        margin: 8px 0 0;
+        padding: 8px 0 0;
+    }
+}
+
+.size {
+    width: 30px;
+    height: 30px;
+    max-width: 30px!important;
+}
+
+.icon {
+    margin: 0 auto;
+    border-radius: 50%;
+    background-position: top;
+    background-size: cover;
+    background: #f4f8fa!important;
+}
+
+.text-ellipsis-line3 {
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.mt-2 {
+    margin-top: 0.5rem;
+}
+
+.size20 {
+    width: 20px;
+    height: 20px;
+    max-width: 20px!important;
+}
+
+.icon {
+    margin: 0 auto;
+    border-radius: 50%;
+    background-position: top;
+    background-size: cover;
+    background: #f4f8fa;
+}
+
+.consultant-plan {
+    display: flex!important;
+    .mentorList {
+        width: 1000px;
+        display: flex!important;
+        .plan-card_wrapper {
+            display: flex!important;
+        }
+    }
+}
+
+.right {
+    border: 1px solid #999;
+}
+

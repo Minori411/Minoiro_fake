@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'plan', :to => "plans#index", as: 'plans'
+  get 'plan/:id', :to => "plans#show", as:'plan'
+
   get 'inquiries/index'
   get 'inquiries/confirm'
   post 'inquiries/confirm'
@@ -34,11 +37,13 @@ Rails.application.routes.draw do
   get "sample", to: "sample#index"
   resource :profile, only: [:show, :edit, :update]
 
-  resources :users, only: [:show, :edit, :update] do
+  resources :users,:plans, only: [:show, :edit, :update, :index] do
     collection do
       get 'search'
     end
   end
+
+  
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
