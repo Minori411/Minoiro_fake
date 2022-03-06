@@ -1,4 +1,5 @@
 <div class="back_white">
+<%= form_with model: @plan, url: plans_path, local: true do |f| %>
     <div class="mentaListBox">
     <div class="searchBox">
     <form method="GET" action="search" class="js-auto-submit">
@@ -103,8 +104,11 @@
             <div class="consultant-plan">
             <div id="vapp">
                 <div class="mentorList">
+                <% @plans.each do |plan| %>
+                <%= link_to plan_path(plan.id) do %>
+
                     <div class="plan-card">
-                        <a href="#" class="plan-card_wrapper"></a>
+                        <div class="plan-card_wrapper"></div>
                         <div class="p-content-card_inner">
                             <div class="plan_card_eyecatch">
                                 <div class="plan-card_image slickSlide slick-initialized slick-slider">
@@ -131,14 +135,14 @@
                                         カップルコンサルできます!あなたが知りたい過去のトラウマや未来の不安などを解消します!
                                     </div>
                                     <div class="plan-card_user flexbox">
-                                        <a href="#" class="flexbox">
+                                        <div class="flexbox">
                                             <span class="avatar-image">
                                                 <img src="/img/flower.jpeg">
                                             </span>
                                             <span class="name">
                                                 林みのり
                                             </span>
-                                        </a>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="plan-card_bottom">
@@ -157,13 +161,536 @@
                             </div>
                         </div>
                     </div>
+                <% end %>
+                <%= link_to plan_path(plan.id) do %>
+
+                    <div class="plan-card">
+                        <div class="plan-card_wrapper"></div>
+                        <div class="p-content-card_inner">
+                            <div class="plan_card_eyecatch">
+                                <div class="plan-card_image slickSlide slick-initialized slick-slider">
+                                    <div class="slick-list draggable">
+                                        <div class="slick-track" style="opacity: 1; width: 268px; tranform: translated3d(0px, 0px, 0px);">
+                                            <div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width:268px">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <label>
+                                    <div class="plan-card_iconButton flexbox">
+                                        <div>
+                                            <span class="like off">
+                                                <i class="far fa-heart"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="plan-card-text">
+                                <div class="plan-card_top">
+                                    <div class="plan-card_subject">
+                                        カップルコンサルできます!あなたが知りたい過去のトラウマや未来の不安などを解消します!
+                                    </div>
+                                    <div class="plan-card_user flexbox">
+                                        <div class="flexbox">
+                                            <span class="avatar-image">
+                                                <img src="/img/flower.jpeg">
+                                            </span>
+                                            <span class="name">
+                                                林みのり
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="plan-card_bottom">
+                                    <div class="plan-card_info flexbox">
+                                        <div class="plan-card_review flexbox">
+                                            <span class="plan-card_review-icon">
+                                                <i class="fas fa-star"></i>
+                                            </span>
+                                            <span class="plan-card_review-count">4.7</span>
+                                        </div>
+                                        <div class="plan-card_price">
+                                            1000円〜
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
+                <%= link_to plan_path(plan.id) do %>
+
+                    <div class="plan-card">
+                        <div class="plan-card_wrapper"></div>
+                        <div class="p-content-card_inner">
+                            <div class="plan_card_eyecatch">
+                                <div class="plan-card_image slickSlide slick-initialized slick-slider">
+                                    <div class="slick-list draggable">
+                                        <div class="slick-track" style="opacity: 1; width: 268px; tranform: translated3d(0px, 0px, 0px);">
+                                            <div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width:268px">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <label>
+                                    <div class="plan-card_iconButton flexbox">
+                                        <div>
+                                            <span class="like off">
+                                                <i class="far fa-heart"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="plan-card-text">
+                                <div class="plan-card_top">
+                                    <div class="plan-card_subject">
+                                        カップルコンサルできます!あなたが知りたい過去のトラウマや未来の不安などを解消します!
+                                    </div>
+                                    <div class="plan-card_user flexbox">
+                                        <div class="flexbox">
+                                            <span class="avatar-image">
+                                                <img src="/img/flower.jpeg">
+                                            </span>
+                                            <span class="name">
+                                                林みのり
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="plan-card_bottom">
+                                    <div class="plan-card_info flexbox">
+                                        <div class="plan-card_review flexbox">
+                                            <span class="plan-card_review-icon">
+                                                <i class="fas fa-star"></i>
+                                            </span>
+                                            <span class="plan-card_review-count">4.7</span>
+                                        </div>
+                                        <div class="plan-card_price">
+                                            1000円〜
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
+                <%= link_to plan_path(plan.id) do %>
+
+                    <div class="plan-card">
+                        <div class="plan-card_wrapper"></div>
+                        <div class="p-content-card_inner">
+                            <div class="plan_card_eyecatch">
+                                <div class="plan-card_image slickSlide slick-initialized slick-slider">
+                                    <div class="slick-list draggable">
+                                        <div class="slick-track" style="opacity: 1; width: 268px; tranform: translated3d(0px, 0px, 0px);">
+                                            <div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width:268px">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <label>
+                                    <div class="plan-card_iconButton flexbox">
+                                        <div>
+                                            <span class="like off">
+                                                <i class="far fa-heart"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="plan-card-text">
+                                <div class="plan-card_top">
+                                    <div class="plan-card_subject">
+                                        カップルコンサルできます!あなたが知りたい過去のトラウマや未来の不安などを解消します!
+                                    </div>
+                                    <div class="plan-card_user flexbox">
+                                        <div class="flexbox">
+                                            <span class="avatar-image">
+                                                <img src="/img/flower.jpeg">
+                                            </span>
+                                            <span class="name">
+                                                林みのり
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="plan-card_bottom">
+                                    <div class="plan-card_info flexbox">
+                                        <div class="plan-card_review flexbox">
+                                            <span class="plan-card_review-icon">
+                                                <i class="fas fa-star"></i>
+                                            </span>
+                                            <span class="plan-card_review-count">4.7</span>
+                                        </div>
+                                        <div class="plan-card_price">
+                                            1000円〜
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
+                <%= link_to plan_path(plan.id) do %>
+
+                    <div class="plan-card">
+                        <div class="plan-card_wrapper"></div>
+                        <div class="p-content-card_inner">
+                            <div class="plan_card_eyecatch">
+                                <div class="plan-card_image slickSlide slick-initialized slick-slider">
+                                    <div class="slick-list draggable">
+                                        <div class="slick-track" style="opacity: 1; width: 268px; tranform: translated3d(0px, 0px, 0px);">
+                                            <div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width:268px">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <label>
+                                    <div class="plan-card_iconButton flexbox">
+                                        <div>
+                                            <span class="like off">
+                                                <i class="far fa-heart"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="plan-card-text">
+                                <div class="plan-card_top">
+                                    <div class="plan-card_subject">
+                                        カップルコンサルできます!あなたが知りたい過去のトラウマや未来の不安などを解消します!
+                                    </div>
+                                    <div class="plan-card_user flexbox">
+                                        <div class="flexbox">
+                                            <span class="avatar-image">
+                                                <img src="/img/flower.jpeg">
+                                            </span>
+                                            <span class="name">
+                                                林みのり
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="plan-card_bottom">
+                                    <div class="plan-card_info flexbox">
+                                        <div class="plan-card_review flexbox">
+                                            <span class="plan-card_review-icon">
+                                                <i class="fas fa-star"></i>
+                                            </span>
+                                            <span class="plan-card_review-count">4.7</span>
+                                        </div>
+                                        <div class="plan-card_price">
+                                            1000円〜
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
+                <%= link_to plan_path(plan.id) do %>
+
+                    <div class="plan-card">
+                        <div class="plan-card_wrapper"></div>
+                        <div class="p-content-card_inner">
+                            <div class="plan_card_eyecatch">
+                                <div class="plan-card_image slickSlide slick-initialized slick-slider">
+                                    <div class="slick-list draggable">
+                                        <div class="slick-track" style="opacity: 1; width: 268px; tranform: translated3d(0px, 0px, 0px);">
+                                            <div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width:268px">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <label>
+                                    <div class="plan-card_iconButton flexbox">
+                                        <div>
+                                            <span class="like off">
+                                                <i class="far fa-heart"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="plan-card-text">
+                                <div class="plan-card_top">
+                                    <div class="plan-card_subject">
+                                        カップルコンサルできます!あなたが知りたい過去のトラウマや未来の不安などを解消します!
+                                    </div>
+                                    <div class="plan-card_user flexbox">
+                                        <div class="flexbox">
+                                            <span class="avatar-image">
+                                                <img src="/img/flower.jpeg">
+                                            </span>
+                                            <span class="name">
+                                                林みのり
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="plan-card_bottom">
+                                    <div class="plan-card_info flexbox">
+                                        <div class="plan-card_review flexbox">
+                                            <span class="plan-card_review-icon">
+                                                <i class="fas fa-star"></i>
+                                            </span>
+                                            <span class="plan-card_review-count">4.7</span>
+                                        </div>
+                                        <div class="plan-card_price">
+                                            1000円〜
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
+                <%= link_to plan_path(plan.id) do %>
+
+                    <div class="plan-card">
+                        <div class="plan-card_wrapper"></div>
+                        <div class="p-content-card_inner">
+                            <div class="plan_card_eyecatch">
+                                <div class="plan-card_image slickSlide slick-initialized slick-slider">
+                                    <div class="slick-list draggable">
+                                        <div class="slick-track" style="opacity: 1; width: 268px; tranform: translated3d(0px, 0px, 0px);">
+                                            <div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width:268px">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <label>
+                                    <div class="plan-card_iconButton flexbox">
+                                        <div>
+                                            <span class="like off">
+                                                <i class="far fa-heart"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="plan-card-text">
+                                <div class="plan-card_top">
+                                    <div class="plan-card_subject">
+                                        カップルコンサルできます!あなたが知りたい過去のトラウマや未来の不安などを解消します!
+                                    </div>
+                                    <div class="plan-card_user flexbox">
+                                        <div class="flexbox">
+                                            <span class="avatar-image">
+                                                <img src="/img/flower.jpeg">
+                                            </span>
+                                            <span class="name">
+                                                林みのり
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="plan-card_bottom">
+                                    <div class="plan-card_info flexbox">
+                                        <div class="plan-card_review flexbox">
+                                            <span class="plan-card_review-icon">
+                                                <i class="fas fa-star"></i>
+                                            </span>
+                                            <span class="plan-card_review-count">4.7</span>
+                                        </div>
+                                        <div class="plan-card_price">
+                                            1000円〜
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
+
+                <%= link_to plan_path(plan.id) do %>
+
+                    <div class="plan-card">
+                        <div class="plan-card_wrapper"></div>
+                        <div class="p-content-card_inner">
+                            <div class="plan_card_eyecatch">
+                                <div class="plan-card_image slickSlide slick-initialized slick-slider">
+                                    <div class="slick-list draggable">
+                                        <div class="slick-track" style="opacity: 1; width: 268px; tranform: translated3d(0px, 0px, 0px);">
+                                            <div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width:268px">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <label>
+                                    <div class="plan-card_iconButton flexbox">
+                                        <div>
+                                            <span class="like off">
+                                                <i class="far fa-heart"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="plan-card-text">
+                                <div class="plan-card_top">
+                                    <div class="plan-card_subject">
+                                        カップルコンサルできます!あなたが知りたい過去のトラウマや未来の不安などを解消します!
+                                    </div>
+                                    <div class="plan-card_user flexbox">
+                                        <div class="flexbox">
+                                            <span class="avatar-image">
+                                                <img src="/img/flower.jpeg">
+                                            </span>
+                                            <span class="name">
+                                                林みのり
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="plan-card_bottom">
+                                    <div class="plan-card_info flexbox">
+                                        <div class="plan-card_review flexbox">
+                                            <span class="plan-card_review-icon">
+                                                <i class="fas fa-star"></i>
+                                            </span>
+                                            <span class="plan-card_review-count">4.7</span>
+                                        </div>
+                                        <div class="plan-card_price">
+                                            1000円〜
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
+
+                <%= link_to plan_path(plan.id) do %>
+
+                    <div class="plan-card">
+                        <div class="plan-card_wrapper"></div>
+                        <div class="p-content-card_inner">
+                            <div class="plan_card_eyecatch">
+                                <div class="plan-card_image slickSlide slick-initialized slick-slider">
+                                    <div class="slick-list draggable">
+                                        <div class="slick-track" style="opacity: 1; width: 268px; tranform: translated3d(0px, 0px, 0px);">
+                                            <div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width:268px">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <label>
+                                    <div class="plan-card_iconButton flexbox">
+                                        <div>
+                                            <span class="like off">
+                                                <i class="far fa-heart"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="plan-card-text">
+                                <div class="plan-card_top">
+                                    <div class="plan-card_subject">
+                                        カップルコンサルできます!あなたが知りたい過去のトラウマや未来の不安などを解消します!
+                                    </div>
+                                    <div class="plan-card_user flexbox">
+                                        <div class="flexbox">
+                                            <span class="avatar-image">
+                                                <img src="/img/flower.jpeg">
+                                            </span>
+                                            <span class="name">
+                                                林みのり
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="plan-card_bottom">
+                                    <div class="plan-card_info flexbox">
+                                        <div class="plan-card_review flexbox">
+                                            <span class="plan-card_review-icon">
+                                                <i class="fas fa-star"></i>
+                                            </span>
+                                            <span class="plan-card_review-count">4.7</span>
+                                        </div>
+                                        <div class="plan-card_price">
+                                            1000円〜
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
+
+                <%= link_to plan_path(plan.id) do %>
+
+                    <div class="plan-card">
+                        <div class="plan-card_wrapper"></div>
+                        <div class="p-content-card_inner">
+                            <div class="plan_card_eyecatch">
+                                <div class="plan-card_image slickSlide slick-initialized slick-slider">
+                                    <div class="slick-list draggable">
+                                        <div class="slick-track" style="opacity: 1; width: 268px; tranform: translated3d(0px, 0px, 0px);">
+                                            <div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width:268px">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <label>
+                                    <div class="plan-card_iconButton flexbox">
+                                        <div>
+                                            <span class="like off">
+                                                <i class="far fa-heart"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="plan-card-text">
+                                <div class="plan-card_top">
+                                    <div class="plan-card_subject">
+                                        カップルコンサルできます!あなたが知りたい過去のトラウマや未来の不安などを解消します!
+                                    </div>
+                                    <div class="plan-card_user flexbox">
+                                        <div class="flexbox">
+                                            <span class="avatar-image">
+                                                <img src="/img/flower.jpeg">
+                                            </span>
+                                            <span class="name">
+                                                林みのり
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="plan-card_bottom">
+                                    <div class="plan-card_info flexbox">
+                                        <div class="plan-card_review flexbox">
+                                            <span class="plan-card_review-icon">
+                                                <i class="fas fa-star"></i>
+                                            </span>
+                                            <span class="plan-card_review-count">4.7</span>
+                                        </div>
+                                        <div class="plan-card_price">
+                                            1000円〜
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
+                <% end %>
+                
+                
+                    
+
+<%#おわり%>
                 </div>
             </div>
         </div>
         </div>
         <div class="m-t2"></div>
         <h3 class="top_mentor_title m-t2 m-b1">高い評価がつけられたコンサルタント</h3>
-        <div class="top_mentor_compornent m-t1">
+        <div class="top_mentor_compornent">
             <section class="regular top_mentor_card">
                 <div class="top_mentor_card_card">
                     <div class="thumbnail"></div>
@@ -199,8 +726,6 @@
 </form>
 </div>
 </div>
+<% end %>
 </div>
 
-<% @plans.each do |plan| %>
-    <%= plan.name %><br>
-<% end %>

@@ -1,7 +1,11 @@
 require 'faker'
 
-10.times do |n|
-    name = Faker::Name.name
-    Plan.create!(name: name
-                )
-end
+
+Plan.create!(title: "aaa", 
+            tag: "aaa",
+            can_do: "aaa",
+            youtube: "aaa",
+            body: "aaa",
+            status: "aaa",
+            consent: "aaa",
+            )

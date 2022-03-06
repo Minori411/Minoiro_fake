@@ -5,5 +5,6 @@ class PlansController < ApplicationController
 
     def show
         @plan = Plan.find(params[:id])
+        @user = User.find(@plan.user_id)
     end
 end

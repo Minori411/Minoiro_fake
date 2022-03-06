@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_02_110957) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_04_233501) do
   create_table "inquiries", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -23,7 +23,37 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_02_110957) do
 
   create_table "plans", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "title"
-    t.string "name"
+    t.string "tag"
+    t.text "can_do"
+    t.string "youtube"
+    t.text "body"
+    t.string "status"
+    t.string "consent"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_plans_on_user_id"
+  end
+
+  create_table "planstags", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "plan_id", null: false
+    t.bigint "tag_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["plan_id"], name: "index_planstags_on_plan_id"
+    t.index ["tag_id"], name: "index_planstags_on_tag_id"
+  end
+
+  create_table "relationships", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.integer "follower_id"
+    t.integer "followed_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tags", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "type", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -75,4 +105,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_02_110957) do
     t.index ["soft_destroyed_at"], name: "index_users_on_soft_destroyed_at"
   end
 
+  add_foreign_key "plans", "users"
+  add_foreign_key "planstags", "plans"
+  add_foreign_key "planstags", "tags"
 end
