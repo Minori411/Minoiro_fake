@@ -1006,11 +1006,12 @@ p {
 
     .right {
         margin-left: auto;
-        width: 60%;
+        width: 80%;
         font-weight: 700;
         font-size: 16px;
         height: 34px;
         line-height: 34px;
+        margin-top: -33px;
     }
 
     .icon_money {
@@ -1026,6 +1027,7 @@ p {
         height: 34px;
         font-size: 14px;
         text-align: left;
+        margin-left: -20px;
     }
 
     .icon_heart {
@@ -1041,6 +1043,7 @@ p {
         text-align: left;
         box-sizing: border-box;
         width: 40%;
+        margin-left: -20px;
     }
 }
 
