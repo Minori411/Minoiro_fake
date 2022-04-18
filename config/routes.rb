@@ -35,13 +35,17 @@ Rails.application.routes.draw do
   resource :profile, only: [:show, :edit, :update]
 
   resources :users do
-    resource :relationships, only: [:create, :destroy]
-    get 'followings' => 'relationships#followings', as: 'followings'
-    get 'followers' => 'relationships#followers', as: 'followers'
     collection do
       get 'search'
     end
   end
+
+  resources :users do
+    member do
+        get :following, :followers
+    end
+  end
+  resources :relationships, only: [:create, :destroy]
 
   
   
