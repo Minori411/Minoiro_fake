@@ -21,17 +21,17 @@
                             <div class="w50p">
                                 <div class="title">フォロー</div>
                                 <div class="member">
-                                    <a href="#">
-                                        <span class="bold">1人</span>
-                                    </a>
+                                <%= link_to following_user_path(@user.id) do %>
+                                    <span class="bold"><%= @user.following.count %>人</span>
+                                <% end %>
                                 </div>
                             </div>
                             <div class="w50p">
                                 <div class="title">フォロワー</div>
                                 <div class="member">
-                                    <a href="#">
-                                        <span class="bold">666人</span>
-                                    </a>
+                                <%= link_to followers_user_path(@user.id) do %>
+                                    <span class="bold"><%= @user.followers.count %>人</span>
+                                <% end %>
                                 </div>
                             </div>
                             <div class="w50p">
@@ -55,7 +55,7 @@
                         秘密保持契約(NDA)
                     </div>
                     <div class="m-b2 FollowArea">
-                    <a class="waves-effect waves-light btn-large follow-btn">フォロー</a>
+                    <%= render "follow_form" %>
                         <div class="FollowArea_sub m-b1">フォローして後でチェック</div>
                         
                     </div>
