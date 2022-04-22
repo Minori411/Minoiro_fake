@@ -22,7 +22,7 @@
                                 <div class="title">フォロー</div>
                                 <div class="member">
                                 <%= link_to following_user_path(@user.id) do %>
-                                    <span class="bold"><%= @user.following.count %>人</span>
+                                    <span class="bold following_count"><%= @user.following.count %>人</span>
                                 <% end %>
                                 </div>
                             </div>
@@ -30,7 +30,7 @@
                                 <div class="title">フォロワー</div>
                                 <div class="member">
                                 <%= link_to followers_user_path(@user.id) do %>
-                                    <span class="bold"><%= @user.followers.count %>人</span>
+                                    <span class="bold followers_count"><%= @user.followers.count %>人</span>
                                 <% end %>
                                 </div>
                             </div>
