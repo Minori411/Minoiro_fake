@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'reviews/index'
+  get 'reviews/show'
 
   devise_for :users, :controllers => {
     :registrations => 'users/registrations',

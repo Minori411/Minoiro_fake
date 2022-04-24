@@ -1,0 +1,20 @@
+<% @reviews.each do |review| %>
+    ~略~
+    <div class="relative-post-evaluation">
+      <span>評価：</span>
+      <span id="star-rate-<%= review.id %>"></span>
+      <script>
+        $('#star-rate-<%= review.id %>').raty({
+          size: 36,
+          starOff: "<%= asset_path('star-off.png') %>",
+          starOn: "<%= asset_path('star-on.png') %>",
+          starHalf: "<%= asset_path('star-half.png') %>",
+          half: true,   # 星半分表示
+          readOnly: true,   # 読み取り専用
+          score: <%= review.evaluation %>,   # 星評価の表示
+        });
+      </script>
+      <%= review.evaluation %>
+    </div>
+    ~略~
+    <% end %>
