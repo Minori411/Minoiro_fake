@@ -73,3 +73,160 @@ h3 {
         background: darken(#ff6e00,20%);
     }
 }
+
+.p-profile_content_inner {
+    padding: 0 2%;
+}
+
+.p-profile_conetnt_items {
+    .is-show {
+        display: block;
+    }
+}
+
+.p-profile-content_items {
+    width: 1040px;
+    margin: 24px auto 0;
+}
+
+.m-b1 {
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-weight: 700;
+}
+
+.review_link {
+    font-weight: 400;
+    font-size: 13px;
+    color: #ddd;
+}
+
+.rating-summary {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    color: #676767;
+    margin-top: -2em;
+}
+
+.rating-summary_avg {
+    margin: 16px;
+}
+
+.rating-summary_avg_num {
+    font-size: 64px;
+    font-weight: 700;
+}
+
+.rating-summary_graph {
+    display: flex;
+    align-items: center;
+}
+
+.rating-summary_graph_labels {
+    .rating-start_label_count {
+        text-align: left;
+        width: 5em;
+    }
+
+    .rating-start_label_start {
+        color: #f7b715;
+        margin-right: 0.5em;
+        width: 5.5em;
+    }
+
+    .rating-start>* {
+        font-size: 80%;
+        font-weight: 700;
+    }
+
+    .rating-start_label {
+        display: flex;
+        justify-content: end;
+    }
+
+    .rating-start {
+        text-align: right;
+        line-height: 1.3;
+        padding: 1.7em 0;
+    }
+}
+
+.p-profile_content_item {
+    margin-top: 8pc;
+    color:#114248;
+}
+
+.c-card-m {
+    padding: 24px;
+    box-sizing: border-box;
+    background: #fff;
+}
+
+.p-profile_content {
+    .review_list_comment {
+        font-size: 16px;
+        margin-top: 8px;
+    }
+
+    .review_list_option {
+        align-items: center;
+        color: #63797b;
+        font-size: 14px;
+        
+    }
+
+    .review_list_name {
+        width: calc(100% - 80px);
+    }
+
+    .review_list_user {
+        font-size: 14px;
+        padding-left: 48px;
+        color: #114248;
+
+        .name {
+            max-width: 100%;
+            font-weight: 600;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+            overflow: hiden;
+            display: -webkit-box!important;
+        }
+    }
+
+    .review_list_avatar {
+        position: absolute;
+
+        .avatar-image {
+            display: block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.flex {
+    display: flex;
+}
+
+.time_created {
+    font-size: 12px;
+    color: #555;
+}
+

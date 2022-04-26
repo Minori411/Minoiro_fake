@@ -54,6 +54,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_24_060842) do
 
   create_table "reviews", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.float "evaluation", null: false
+    t.integer "reviewer_id"
+    t.integer "reviewee_id"
+    t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
