@@ -1435,3 +1435,46 @@ h4 {
     text-align: center;
     margin-top: 10px;
 }
+
+h3 {
+    font-size: 20px;
+    margin: 32px 0 16px;
+}
+
+.rating-summary {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    color: #676767;
+    margin-top: -2em;
+}
+
+.rating-summary_avg {
+    margin: 16px;
+}
+
+.rating-summary_avg_num {
+    font-size: 64px;
+    font-weight: 700;
+}
+
+.rating-summary_graph {
+    display: flex;
+    align-items: center;
+}
+
+.rating-summary_graph_labels {
+    .rating-stat>* {
+        font-size: 80%;
+        font-weight: 700;
+    }
+    .rating-start_label {
+        display: flex;
+        justify-content: end;
+    }
+    .rating-start {
+        text-align: right;
+        line-height: 1.3;
+        padding: 1.7em 0;
+    }
+}

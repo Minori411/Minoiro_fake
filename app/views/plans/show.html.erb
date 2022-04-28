@@ -189,5 +189,82 @@
                 
             </div>
         </div>
+        <h3 id="reviews" class="m-b1 anchor-point">
+        レビュー
+        <pan class="review_link"></span>
+        </h3>
+        <div>
+        <div class="rating-summary">
+        <div class="rating-summary_avg">
+        <span class="rating-summary_avg_num">4.9</span>
+        </div>
+        <div class="rating-summary_graph">
+          <div class="rating-summary_graph_labels">
+            <div class="rating-start">
+              <div class="rating-start_label">
+                <div class="rating-start_label_start">★★★★★</div>
+                <div class="rating-start_label_num">5</div>
+                <div class="rating-start_label_count">(162件)</div>
+              </div>
+              <div class="rating-start_label">
+                <div class="rating-start_label_start">★★★★</div>
+                <div class="rating-start_label_num">4</div>
+                <div class="rating-start_label_count">(162件)</div>
+              </div>
+              <div class="rating-start_label">
+                <div class="rating-start_label_start">★★★</div>
+                <div class="rating-start_label_num">3</div>
+                <div class="rating-start_label_count">(162件)</div>
+              </div>
+              <div class="rating-start_label">
+                <div class="rating-start_label_start">★★</div>
+                <div class="rating-start_label_num">2</div>
+                <div class="rating-start_label_count">(162件)</div>
+              </div>
+              <div class="rating-start_label">
+                <div class="rating-start_label_start">★</div>
+                <div class="rating-start_label_num">1</div>
+                <div class="rating-start_label_count">(162件)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        </div>
+        <div class="p-profile" style="background-color: transparent">
+        <div class="p-profile_content">
+    
+    <div class="p-profile_content_item c-card-m">
+      <div class="review_list_user">
+        <div class="review_list_avatar">
+          <span class="avatar-image">
+            <imag src="">
+          </span>
+        </div>
+        <div class="review_list_user">
+          <div class="flex justify-between">
+            <div class="review_list_name">
+              <span class="name">
+                <%= @user.name %>
+              </span>
+              <div class="review_list_option">
+                <div class="time_area">
+                  <time datetime="22/4/20 22:15" itemprop="datepublished" class="time_created">
+                  </time>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="review_list_comment">
+          <% @reviews.each do |r| %>
+            <%= r.body %>
+          <% end %>
+          </p>
+        </div>
+      </div>
     </div>
-    </div>
+
+  </div>
+</div>
+</div>
+</div>

@@ -1,3 +1,5 @@
+<%= form_with model: @review, url: reviews_show_path, local: true do |f| %>
+
 <div class="back_white inner p-t3 dashContent">
 <div class="dashContent_right">
     <h1>レビュー</h1>
@@ -15,14 +17,15 @@
                 <span class="help-block"></span>
             </div>
             <div class="m-t2">
-                <textarea class placeholder="ありがとうございました。" name="comment" cols="50" rows="10"></textarea>
+                <%= f.text_area :content, placeholder: "ありがとうございました。",  name: "comment",  cols: "50",  rows: "10" %>
                 <span class="help-block"></span>
                 <p class="small">レビューコメントの入力は任意です。</p>
             </div>
             <div class="imasugu alignCenter">
-                <a class="waves-effect waves-light btn-large post_review">レビューを投稿する</a>
+                <%= f.submit "レビューを投稿する", class: "waves-effect waves-light btn-large post_review" %>
             </div>
             </div>
         </div>
     </div>
 </div>
+<% end %>

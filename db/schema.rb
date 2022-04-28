@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_24_060842) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_27_051059) do
   create_table "inquiries", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -53,12 +53,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_24_060842) do
   end
 
   create_table "reviews", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.float "evaluation", null: false
+    t.bigint "user_id", null: false
+    t.text "body"
+    t.string "name"
     t.integer "reviewer_id"
     t.integer "reviewee_id"
-    t.text "body"
+    t.float "evaluation", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "tags", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -118,4 +121,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_24_060842) do
   add_foreign_key "plans", "users"
   add_foreign_key "planstags", "plans"
   add_foreign_key "planstags", "tags"
+  add_foreign_key "reviews", "users"
 end

@@ -1,18 +1,6 @@
-<%= form_with model: @user, local: true do |f| %>
-    ~略~
-    <div class="field" id="star">
-      <%= f.label :evaluation, "星評価：" %>
-      <%= f.hidden_field :evaluation, id: :review_star %>
-      <script>
-        $('#star').raty({
-          size     : 36,
-          starOff:  '<%= asset_path('star-off.png') %>',
-          starOn : '<%= asset_path('star-on.png') %>',
-          starHalf: '<%= asset_path('star-half.png') %>',
-          scoreName: 'review[evaluation]',   # evaluationカラムへの保存
-          half: true,   # 星半分の入力
-        });
-      </script>
-    </div>
-    ~略~
-    <% end %>
+<%= form_with model: @review,url: reviews_show_path, local: true do |f| %>
+
+    <%= f.hidden_field :user_id, @user.id value: @user.id %>
+    <%= f.text_field :body, class: "text-field" %>
+    <%= f.submit '投稿', class: "submit-btn" %>
+<% end %>

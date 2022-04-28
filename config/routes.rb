@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get 'reviews/index'
+  post 'reviews/index', :to => "reviews#index"
   get 'reviews/show'
+  post "reviews/show", :to => "reviews#show"
   get 'reviews/new'
 
   devise_for :users, :controllers => {
