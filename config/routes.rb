@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   post 'reviews/index', :to => "reviews#index"
   get 'reviews/show'
   post "reviews/show", :to => "reviews#show"
-  get 'reviews/new'
+  resources :plans do
+    resources :reviews 
+  end
 
   devise_for :users, :controllers => {
     :registrations => 'users/registrations',
@@ -20,8 +22,6 @@ Rails.application.routes.draw do
     delete "logout", :to => "users/sessions#destroy"
   end
   
-  get 'plan', :to => 'plans#index', as: 'plans'
-  get 'plan/:id', :to => 'plans#show', as: 'plan'
 
   get 'inquiries/index'
   get 'inquiries/confirm'

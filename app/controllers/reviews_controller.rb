@@ -3,6 +3,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.save
     redirect_to plan_path(@review.user)
+    binding.pry
   end
 
   def new

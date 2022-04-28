@@ -1,4 +1,5 @@
 <%= form_with model: @review, url: reviews_show_path, local: true do |f| %>
+    <input type="hidden" value=<%= @plan.id %> name="plan_id">
 
 <div class="back_white inner p-t3 dashContent">
 <div class="dashContent_right">

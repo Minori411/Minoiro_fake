@@ -48,6 +48,7 @@ group :development, :test do
   gem 'database_cleaner-active_record'
   gem 'database_cleaner-sequel'
   gem 'ransack'
+  gem 'pry-rails'
 end
 
 group :development do
