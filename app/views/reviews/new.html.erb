@@ -1,6 +1,6 @@
-<%= form_with model: @review, url: reviews_show_path, local: true do |f| %>
+<%= form_with model: @review, url: plan_reviews_url, local: true do |f| %>
     <input type="hidden" value=<%= @plan.id %> name="plan_id">
-
+    <%= f.hidden_field :user_id, :value => @plan.user_id %>
 <div class="back_white inner p-t3 dashContent">
 <div class="dashContent_right">
     <h1>レビュー</h1>
@@ -8,17 +8,11 @@
         <div class="in action_content">
             <h3>レビュー</h3>
             <div class="m-t2">
-                <select class="browser-default rating">
-                  <option value="5" disabled selected>★★★★★</option>
-                  <option value="4">★★★★</option>
-                  <option value="3">★★★</option>
-                  <option value="2">★★</option>
-                  <option value="1">★</option>
-                </select>
+                <%= f.select :evaluation, {'★★★★★': 5, '★★★★': 4, '★★★': 3, '★★': 2, '★': 1}, { include_blank: '選択してください'}, { class: 'browser-default rating' , required: true } %>
                 <span class="help-block"></span>
             </div>
             <div class="m-t2">
-                <%= f.text_area :content, placeholder: "ありがとうございました。",  name: "comment",  cols: "50",  rows: "10" %>
+                <%= f.text_area :body, placeholder: "ありがとうございました。",  cols: "50",  rows: "10" %>
                 <span class="help-block"></span>
                 <p class="small">レビューコメントの入力は任意です。</p>
             </div>

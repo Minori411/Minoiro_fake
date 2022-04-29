@@ -1,6 +1,14 @@
 <div class="back_white plan_detail">
         <div id="vapp" class="inner">
             <div id="side" class="smt pc">
+                <h1 style="color:red;">このプランのユーザーのレビュー一覧</h1>
+                <% @reviews.each do |review| %>
+                    <div>
+                        星数：<%= review.evaluation %>
+                        内容：<%= review.body %>
+                    </div>
+                <% end %>
+                
                 <div class="gray">
                     <a href="#">
                         <div class="icon size125 wborder" style="background-image:"></div>
