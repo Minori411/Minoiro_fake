@@ -1,11 +1,12 @@
 require 'faker'
 
-User.create!(name:"林みのり",
+user = User.new(name:"林みのり",
             email:"aaa@example.com",
             password:"password1234",
             id:1
             )
-
+user.skip_confirmation!
+user.save!
 
 Plan.create!(title: "aaa", 
             tag: "aaa",
