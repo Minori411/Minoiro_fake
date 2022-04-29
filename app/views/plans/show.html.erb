@@ -1,13 +1,7 @@
 <div class="back_white plan_detail">
         <div id="vapp" class="inner">
             <div id="side" class="smt pc">
-            <h1 style="color:red;">このプランのユーザーのレビュー一覧</h1>
-            <% @reviews.each do |review| %>
-                <div>
-                    星数：<%= review.evaluation %>
-                    内容：<%= review.body %>
-                </div>
-            <% end %>
+
                 <div class="gray">
                     <a href="#">
                         <div class="icon size125 wborder" style="background-image:"></div>
@@ -241,6 +235,7 @@
         <div class="p-profile_content">
     
     <div class="p-profile_content_item c-card-m">
+    <h1 style="color:red;">このプランのユーザーのレビュー一覧</h1>
       <div class="review_list_user">
         <div class="review_list_avatar">
           <span class="avatar-image">
@@ -262,8 +257,22 @@
             </div>
           </div>
           <p class="review_list_comment">
-          <% @reviews.each do |r| %>
-            <%= r.body %>
+          <% @reviews.each do |review| %>
+              <div>
+              <div id="star-rate-<%= review.id %>"></div>
+                <script>
+                $('#star-rate-<%= review.id %>').raty({
+                    size: 36,
+                    starOff:  '<%= asset_path('star-off.png') %>',
+                    starOn : '<%= asset_path('star-on.png') %>',
+                    starHalf: '<%= asset_path('star-half.png') %>',
+                    half: true,
+                    readOnly: true,
+                    score: <%= review.evaluation %>,
+                });
+                </script>  
+                    内容：<%= review.body %>
+              </div>
           <% end %>
           </p>
         </div>

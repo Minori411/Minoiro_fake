@@ -9,7 +9,25 @@
         <div class="in action_content">
             <h3>レビュー</h3>
             <div class="m-t2">
-            <%= f.select :evaluation, {'★★★★★': 5, '★★★★': 4, '★★★': 3, '★★': 2, '★': 1}, { include_blank: '選択してください'}, { class: 'browser-default rating' , required: true } %>
+            <div class="field" id="star">
+            <!-- 評価 -->
+            <div class="form-group row" id="star">
+              <%= f.label :evaluation,'評価 ', class:'col-md-3 col-form-label' %>
+              <%= f.hidden_field :evaluation, id: :review_star %>
+            </div>
+          
+            <!-- 評価javascript -->
+            <script>
+            $('#star').raty({
+              size     : 36,
+              starOff:  '<%= asset_path('star-off.png') %>',
+              starOn : '<%= asset_path('star-on.png') %>',
+              starHalf: '<%= asset_path('star-half.png') %>',
+              scoreName: 'review[evaluation]',
+              half: true,
+            });
+            </script> 
+            </div>
                 <span class="help-block"></span>
             </div>
             <div class="m-t2">
