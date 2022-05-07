@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'bottles/new'
   resources :plans do
     resources :reviews 
   end
