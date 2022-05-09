@@ -1464,6 +1464,13 @@ var $zoomElements = [ 'B000', 'B000','B001', 'B001' ,'B002', 'B002','B003', 'B00
 
 
 
-$(document).ready(function(){
-    $('.modal').modal();
-  });
+
+$(function(){
+    const srcUrl = $('.btl').attr('src');
+    console.log(srcUrl);
+
+    $('.btl').click(function(e) {
+        var src = e.attr('src');
+        $(e).attr('src',srcUrl)
+    });
+});

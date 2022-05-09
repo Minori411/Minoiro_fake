@@ -1,8 +1,8 @@
+<div class="white-back">
 <div id="alternative_url" style="none">
     <a href="∠">スマートフォンページに変更</a>
 </div>
-<div style="text-align:center;margin:0 auto;width:800px;">
-    <h1 id="reading_title">
+    <h1 class="reading_title">
         オーラソーマは４本のボトルを選ぶことで、あなたの魂のメッセージをお伝えします。無料オーラソーマ ミニリーディング。選んだ４本のボトルから、あなたの人生の目的や使命、潜在的な可能性や才能、現在の状況、これからの方向性のヒントが得られます。
     </h1>
     <br>
@@ -32,9 +32,12 @@
                 </li>
             </ul>
         </div>
+        <a class="waves-effect waves-light btn-large submit-bottle">結果を保存する</a>
+
         <div id="buttons_box" class="buttons_box2">
+
   <!-- Modal Trigger -->
-  <a class="waves-effect waves-light modal-trigger" href="#modal1">ボトルの選び方</a>
+  <a class="waves-effect waves-light modal-trigger bottle-selection" href="#modal1">ボトルの選び方</a>
 
   <!-- Modal Structure -->
   <div id="modal1" class="modal">
@@ -47,7 +50,7 @@
     </div>
   </div>
   <!-- Modal Trigger -->
-  <a class="waves-effect waves-light modal-trigger" href="#modal2">ご利用上の注意</a>
+  <a class="waves-effect waves-light modal-trigger bottle-selection" href="#modal2">ご利用上の注意</a>
 
   <!-- Modal Structure -->
   <div id="modal2" class="modal">
@@ -61,6 +64,7 @@
   </div>
         <div class="clear"></div>
     </div>
+
     
     <div id="botttlelist">
         <%= link_to image_tag("B000.jpeg",class:"btl", id: "B000"),'#',{title: "スピリチュアル レスキュー - 直感的な深い洞察や気づきを、日常生活の中に生かすのを助ける"} %>
@@ -187,4 +191,4 @@
         <%= link_to image_tag("B121.jpeg",class:"btl", id: "B121"),'#',{title: "スピリチュアル レスキュー - 直感的な深い洞察や気づきを、日常生活の中に生かすのを助ける"} %>    
     </div>
 </div>
-
+</div>

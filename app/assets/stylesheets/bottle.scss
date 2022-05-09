@@ -16,14 +16,17 @@
 }
 
 
-#reading_title {
+.reading_title {
     margin: 20px auto 10px;
     font-size: 18px;
+    text-align: center;
+    width: 720px;
 }
 
-div#reading {
+#reading {
     margin: 0 auto;
     width: 612px;
+
 }
 
 #box {
@@ -41,6 +44,7 @@ div#reading {
 
 .reading_sub {
     margin-bottom: 60px;
+    text-align: center;
 }
 
 div#reading div#navi {
@@ -50,23 +54,23 @@ div#reading div#navi {
     position: relative;
 }
 
-div#reading div#navi ul li#no1 {
+#reading #navi ul li#no1 {
     left: 15px;
 }
 
-div#reading div#navi ul li#no1, div#reading div#navi ul li#no2, div#reading div#navi ul li#no3, div#reading div#navi ul li#no4, div#reading div#navi ul li#no1-1, div#reading div#navi ul li#no2-1, div#reading div#navi ul li#no3-1, div#reading div#navi ul li#no4-1 {
+#reading div#navi ul li#no1, div#reading div#navi ul li#no2, div#reading div#navi ul li#no3, div#reading div#navi ul li#no4, div#reading div#navi ul li#no1-1, div#reading div#navi ul li#no2-1, div#reading div#navi ul li#no3-1, div#reading div#navi ul li#no4-1 {
     position: absolute;
 }
 
-div#reading div#navi ul li#no2 {
+#reading #navi ul li#no2 {
     left: 166px;
 }
 
-div#reading div#navi ul li#no3 {
+#reading #navi ul li#no3 {
     left: 317px;
 }
 
-div#reading div#navi ul li#no4 {
+#reading #navi ul li#no4 {
     left: 468px;
 }
 
@@ -110,7 +114,30 @@ a.howtoplay, a.usage, a.history_ctrl_open, a.history_ctrl_close {
 }
 
 #bottlelist {
-    position: relative;
     z-index: 1;
     text-align: left;
+    text-align: center;
+}
+
+.submit-bottle {
+    background: #ff6e00;
+    font-weight: 700;
+    margin: 0 auto!important;
+    width: 100%;
+    &:hover {
+        background: darken(#ff6e00,20%);
+    }
+}
+
+.text-lighten-3 {
+    text-align: left!important;
+}
+
+.bottle-selection {
+    text-align: center!important;
+    width: 100%;
+}
+
+.white-back {
+    background:#fff;
 }
