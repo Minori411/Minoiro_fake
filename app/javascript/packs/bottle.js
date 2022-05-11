@@ -1462,15 +1462,30 @@ var $zoomElements = [ 'B000', 'B000','B001', 'B001' ,'B002', 'B002','B003', 'B00
         }
     } );
 
+jQuery( function() {
+    console.log('test');
+        for( var $i = 0; $i < $zoomElements.length; $i++ ){
+            jQuery( '#' + $zoomElements[$i] ).mouseover( function () {
+                jQuery( this ).css( 'height', $zoomSettings[this.id].zoomH + 'px' );
+                jQuery( this ).css( 'width', $zoomSettings[this.id].zoomW + 'px' );
+            } );
+            jQuery( '#' + $zoomElements[$i] ).mouseout( function () {
+                jQuery( this ).css( 'height', $zoomSettings[this.id].zoomOutH + 'px' );
+                jQuery( this ).css( 'width', $zoomSettings[this.id].zoomOutW + 'px' );
+            } );
+        }
 
-
-
+        
+    } );
+  
 $(function(){
-    const srcUrl = $('.btl').attr('src');
-    console.log(srcUrl);
-
-    $('.btl').click(function(e) {
-        var src = e.attr('src');
-        $(e).attr('src',srcUrl)
-    });
+    var image_src ='';
+$(".btl").each(function(index, element) {
+$(element).click(function(e) {
+image_src = $(element).attr("src");
+console.log('.btl');
+console.log(image_src + 'がクリックされました。');
 });
+});
+})
+  
