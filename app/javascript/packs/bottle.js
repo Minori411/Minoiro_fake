@@ -1474,18 +1474,21 @@ jQuery( function() {
                 jQuery( this ).css( 'width', $zoomSettings[this.id].zoomOutW + 'px' );
             } );
         }
-
+        var image_src ='';
+    var count = 1;
+    $(".btl").each(function(index, element) {
+        $(element).click(function(e) {
+        image_src = $(element).attr("src");
+        console.log('.btl');
+        console.log(image_src + 'がクリックされました。');
+        if ( count <= 4) {
+            $(`#bottle${count}`).attr('src', image_src);
+            count++;
+        }
+        });
+    });
         
     } );
   
-$(function(){
-    var image_src ='';
-$(".btl").each(function(index, element) {
-$(element).click(function(e) {
-image_src = $(element).attr("src");
-console.log('.btl');
-console.log(image_src + 'がクリックされました。');
-});
-});
-})
+
   
