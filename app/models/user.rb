@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :articles, dependent: :destroy 
   has_many :reviews
   has_many :following_relationships, foreign_key: "follower_id", class_name: "Relationship",  dependent: :destroy
   has_many :following, through: :following_relationships

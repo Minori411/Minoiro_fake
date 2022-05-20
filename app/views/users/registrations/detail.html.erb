@@ -24,7 +24,7 @@
                         </a>
                     </li>
                     <li class="todoList_item">
-                        <a href="#">
+                    <%= link_to bottles_new_path, data: {"turbolinks" => false} do   %>
                             <span class="check_circle">
                                 <i class="fas fa-check-circle"></i>
                             </span>
@@ -37,7 +37,7 @@
                                 <span class="todoList_item_label_head">ボトルを選ぼう</span>
                                 <span class="todoList_item_label_body">ボトルを4本選んで<br>コンサルティングに備えよう</span>
                             </span>
-                        </a>
+                    <% end %>
                     </li>
                     <li class="todoList_item">
                         <a href="#">

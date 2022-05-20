@@ -26,3 +26,11 @@ Review.create!(body: "メンターの方に親切にしていただき、円滑�
                 evaluation: 5
             )
 
+
+Bottle.create!(bottle_type:"B000",
+bottle_name:"スピリチュアルレスキュー",
+bottle_meaning:"魂のボトル",
+meaning_detail:"直感的な深い洞察や気づきを、日常生活のなかに生かすのを助ける")
+
+
+
