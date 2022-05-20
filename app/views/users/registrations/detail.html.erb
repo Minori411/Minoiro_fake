@@ -8,7 +8,7 @@
             <div class="scroll">
                 <ul class="todoList flexbox">
                     <li class="todoList_item">
-                        <a href="#">
+                    <%= link_to profile_path do  %>
                             <span class="check_circle">
                                 <i class="fas fa-check-circle"></i>
                             </span>
@@ -21,10 +21,10 @@
                                 <span class="todoList_item_label_head">プロフィールの入力</span>
                                 <span class="todoList_item_label_body">できるだけ詳細に入力し<br>マッチングしやすくしましょう</span>
                             </span>
-                        </a>
+                        <% end %>
                     </li>
                     <li class="todoList_item">
-                    <%= link_to bottles_new_path, data: {"turbolinks" => false} do   %>
+                    <%= link_to bottles_new_path do   %>
                             <span class="check_circle">
                                 <i class="fas fa-check-circle"></i>
                             </span>
@@ -40,7 +40,7 @@
                     <% end %>
                     </li>
                     <li class="todoList_item">
-                        <a href="#">
+                    <%= link_to plans_path do  %>
                             <span class="check_circle">
                                 <i class="fas fa-check-circle"></i>
                             </span>
@@ -53,7 +53,7 @@
                                 <span class="todoList_item_label_head">コンサルティングを受けてみよう</span>
                                 <span class="todoList_item_label_body">最短１時間後から可能</span>
                             </span>
-                        </a>
+                    <% end %>
                     </li>
                 </ul>
             </div>

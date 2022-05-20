@@ -1,0 +1,18 @@
+.post-articles {
+    width: 1200px;
+    height: 500px;
+    margin: 0 auto;
+}
+
+.post-article {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-large {
+    background: #ff6e00;
+    width: 200px;
+    &:hover {
+        background: darken(#ff6e00, 20%);
+    }
+}
