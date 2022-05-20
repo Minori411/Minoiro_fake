@@ -1,12 +1,15 @@
 <div class="result-bottle">
     <h1 class="title1">あなたの魂からのメッセージ<br>あなたが選んだ４本のボトル</h1>
-    <a href="#">ボトルをもう一度選ぶ</a>
+    <%= link_to "ボトルをもう一度選ぶ",bottles_new_path %>
 
     <table align="center" width="680">
         <tbody>
             <tr>
                 <td align="center" width="170">
-                    <a id="index1" href=""
+                <%= form_tag('/bottles', method: :post) do %>
+                    <%= image_tag("B000.jpeg") %>
+                <% end %>
+
                 </td>
             </tr>
         </tbody>

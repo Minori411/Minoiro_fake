@@ -1,6 +1,6 @@
-<span>現在ログイン中のユーザー：<%= current_user.name %></span>
 
-<%= form_with model: @article, url: articles_path, local: true do |f| %>
+<%= form_with model: @article, url: "/articles/create", local: true do |f| %>
+    <span>現在ログイン中のユーザー：<%= current_user.name %></span>
 
     <div class="boxbaseP30 post-articles">
         <%= f.label :タイトル %><br>
@@ -8,30 +8,10 @@
         <%= f.label :本文 %><br>
         <%= f.text_area :body %>
         <div class="post-article">
-    <%= f.submit "投稿する", class: "waves-effect waves-light btn-large btn-article" %>
-    </div>
+            <%= f.submit "投稿する", class: "waves-effect waves-light btn-large btn-article" %>
+        </div>
     </div>
     
 <% end %>
 
 
-<table>
-    <thead>
-        <tr>
-            <th>投稿者名</th>
-            <th>タイトル</th>
-            <th>本文</th>
-        </tr>
-    </thead>
-    <tbody>
-        <% @articles.each do |article| %>
-            <tr>
-                <td><%= article.user.name %></td>
-                <td><%= article.subject %></td>
-                <td><%= article.body %></td>
-                <td><%= link_to "編集", edit_article_path %></td>
-                <td><%= link_to "削除", article_path, method: :delete %></td>
-            </tr>
-        <% end %>
-    </tbody>
-</table>

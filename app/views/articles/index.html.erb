@@ -1,0 +1,22 @@
+<%= link_to "ブログを書く",new_article_path %>
+
+<table>
+    <thead>
+        <tr>
+            <th>投稿者名</th>
+            <th>タイトル</th>
+            <th>本文</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @articles.each do |article| %>
+            <tr>
+                <td><%= article.user.name %></td>
+                <td><%= article.subject %></td>
+                <td><%= article.body %></td>
+                <td><%= link_to "編集", edit_article_path %></td>
+                <td><%= link_to "削除", article_path, method: :delete %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>

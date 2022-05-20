@@ -5,19 +5,29 @@ class ArticlesController < ApplicationController
         @articles = Article.all
     end
 
+    def show
+    end
+
     def create
-        @article = Article.new(article_params) # 何を新しく保存するか指定
-        if @article.save # もし保存ができたら
-            redirect_to new_article_path  # 投稿画面に遷移
-        else  # できなければ
-            @articles = Article.all
-            render :new  # newに遷移
+        begin
+            @article = Article.new(article_params) # 何を新しく保存するか指定
+            if @article.save # もし保存ができたら
+                logger.debug("成功")
+                redirect_to articles_path  # 投稿画面に遷移
+            else  # できなければ
+                logger.debug("失敗")
+                logger.debug(@article.errors.full_messages)
+                render :new  # newに遷移
+            end
+        rescue => e
+            logger.debug(e)
+
         end
+
     end
     
     def new
         @article = Article.new
-        @articles = Article.all
     end
 
     def edit
