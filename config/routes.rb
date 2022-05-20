@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   get 'bottles/result'
   get 'bottles/new'
-  get 'bottles/create_select_bottle'
-  post 'bottles/create_select_bottle'
+  post "/bottles/create_select_bottle"
   
   resources :plans do
     resources :reviews 
@@ -53,7 +52,7 @@ Rails.application.routes.draw do
   end
   resources :relationships, only: [:create, :destroy]
 
-  resources :articles, only: [:create, :new, :edit, :update, :destroy]
+  resources :articles
   
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var instances = M.Modal.init(elems);
   });
 
+document.addEventListener("turbolinks:load", function () {
 $(function() {
     $('.dropdown-trigger').dropdown({
         constrainWidth:false,
@@ -48,6 +49,7 @@ $(function() {
             }
         }
     });
+});
 });
 
 document.addEventListener('DOMContentLoaded', function() {

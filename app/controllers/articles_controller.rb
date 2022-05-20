@@ -1,5 +1,10 @@
 class ArticlesController < ApplicationController
     before_action :authenticate_user!
+
+    def index
+        @articles = Article.all
+    end
+
     def create
         @article = Article.new(article_params) # 何を新しく保存するか指定
         if @article.save # もし保存ができたら
