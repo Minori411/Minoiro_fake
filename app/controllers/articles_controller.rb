@@ -6,6 +6,7 @@ class ArticlesController < ApplicationController
     end
 
     def show
+        @article = Article.find(params[:id])
     end
 
     def create
@@ -35,11 +36,19 @@ class ArticlesController < ApplicationController
     end
     
     def update
-        @article = Article.find(params[:id])
-        if @article.update(article_params)
-        redirect_to request.referer
-        else
-        render :new
+        begin
+            #logger.debug("article_id:" + params[:article_id])
+            @article = Article.find(params[:id])
+            if @article.update(article_params)
+                logger.debug("成功")
+                redirect_to article_path(@article.id)
+            else
+                logger.debug("失敗")
+                logger.debug(@article.errors.full_messages)
+                render :new
+            end
+        rescue => e
+            logger.debug(e)
         end
     end
     
@@ -51,8 +60,6 @@ class ArticlesController < ApplicationController
     
     private  # ストロングパラメーター（予期しない値を変更されてしまう脆弱性を防ぐ機能）
     def article_params
-        params.require(:article).permit(:subject, :body) 
+        params.require(:article).permit(:subject, :body).merge(user_id: current_user.id)
     end
-
-
 end

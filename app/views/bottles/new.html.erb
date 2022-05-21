@@ -1,4 +1,4 @@
-<%= form_with model: @user_select_bottle, url: "/bottles/create_select_bottle", local: true do |f| %>
+<%= form_tag({ :controller => 'bottles', :action => 'create_select_bottle' },{ :method => :post}) do %>
 <div class="white-back">
     <h1 class="reading_title">
         オーラソーマは４本のボトルを選ぶことで、あなたの魂のメッセージをお伝えします。無料オーラソーマ ミニリーディング。選んだ４本のボトルから、あなたの人生の目的や使命、潜在的な可能性や才能、現在の状況、これからの方向性のヒントが得られます。
@@ -10,7 +10,6 @@
     <div id="reading">
         <div id="box">
             <%= link_to image_tag("bottle1.jpg",class:".btl",id:"bottle1"),"#" %>
-            <%= hidden_field_tag:bottle_id %>
             <%= link_to image_tag("bottle2.jpg",class:".btl",id:"bottle2"),"#" %>
             <%= link_to image_tag("bottle3.jpg",class:".btl",id:"bottle3"),"#" %>
             <%= link_to image_tag("bottle4.jpg",class:".btl",id:"bottle4"),"#" %>

@@ -1,1 +1,9 @@
-あ
+<div class="boxbaseP30 blog-box">
+    <h2><%= @article.subject %></h3>
+    <br>
+    <p><%= @article.body %></p>
+    <% if user_signed_in? && current_user.id == @article.user_id %>
+        <td><%= link_to "編集", edit_article_path(@article.id) %></td>
+        <td><%= link_to "削除", article_path(@article.id), method: :delete %></td>
+    <% end %>
+</div>

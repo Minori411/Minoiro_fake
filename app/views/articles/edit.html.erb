@@ -1,9 +1,9 @@
 <span>現在ログイン中のユーザー：<%= current_user.name %></span>
-<%= form_with model: @article, url: article_path, local: true do |f| %>
-
+<%= form_with model: @article, url: "/articles/update", local: true do |f| %>
     <div>
+        <br>
         <%= f.label :タイトル %><br>
-        <%= f.text_field :subject, autofocus: true, :placeholder =>"#{@article.title}" %>
+        <%= f.text_field :subject, autofocus: true, :placeholder =>"#{@article.subject}" %>
     </div>
     <div>
         <%= f.label :中身 %><br>

@@ -1,22 +1,26 @@
-<%= link_to "ブログを書く",new_article_path %>
-
+<div class="articles">
+<%= link_to "ブログを書く",new_article_path,class:"write-blog waves-effect waves-light btn-large"%>
+</div>
+<div class="boxbaseP30" blog-ichiran">
 <table>
     <thead>
         <tr>
             <th>投稿者名</th>
             <th>タイトル</th>
-            <th>本文</th>
+            <th>タグ</th>
         </tr>
     </thead>
     <tbody>
         <% @articles.each do |article| %>
             <tr>
                 <td><%= article.user.name %></td>
-                <td><%= article.subject %></td>
-                <td><%= article.body %></td>
-                <td><%= link_to "編集", edit_article_path %></td>
-                <td><%= link_to "削除", article_path, method: :delete %></td>
+                <td>
+                <%= link_to article_path(article.id) do %>
+                <%= article.subject %>
+                <% end %>
+                </td>
             </tr>
         <% end %>
     </tbody>
 </table>
+</div>
