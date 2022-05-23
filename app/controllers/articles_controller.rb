@@ -55,7 +55,7 @@ class ArticlesController < ApplicationController
     def destroy
         @article = Article.find(params[:id])
         @article.destroy
-        redirect_to request.referer
+        redirect_to action:'index'
     end
     
     private  # ストロングパラメーター（予期しない値を変更されてしまう脆弱性を防ぐ機能）

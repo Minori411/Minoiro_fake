@@ -13,7 +13,7 @@
                     </li>
                     
                     <li class="menu_item flexbox">
-                        <%= link_to "ブログ",new_article_path %>
+                        <%= link_to "ブログ",articles_path %>
                     </li>
                 </ul>
                 <div class="navi auth_buttons flexbox">
@@ -78,7 +78,7 @@
                         <ul id='dropdown3' class='dropdown-content dropdown3'>
                             <li><a href="#!">プランの作成</a></li>
                             <li class="divider" tabindex="-1"></li>
-                            <li><a href="#!">ブログの作成</a></li>
+                            <li><%= link_to "ブログの作成",new_article_path %></li>
                         </ul>
                     </div>
                 </div>
