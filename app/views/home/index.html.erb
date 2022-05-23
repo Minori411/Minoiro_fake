@@ -1,5 +1,4 @@
-       <body>
-       <section class="top-keyVisual">
+        <section class="top-keyVisual">
             <div class="top-keyVisual_container">
                 <div class="top-keyVisual_heading">
                     <div class="top-keyVisual_inner heading-inner flexbox">
@@ -18,15 +17,15 @@
                 <div class="top-register">
                     <div class="top-register_inner">
                     <div class="smt-hyoji-btn">
-                        <a class="waves-effect waves-light btn-large smt-test-login">テストログイン</a>
+                        <%= link_to "テストログイン", users_guest_sign_in_path, method: :post, class:"waves-effect waves-light btn-large smt-test-login" %>
                         <a class="waves-effect waves-light btn-large smt-start-now">今すぐはじめる</a>
                     </div>
                         <div class="top-register_card flexbox">
                             <div class="row top-cards">
                                 <div class="col s12 m6">
                                   <div class="card blue-grey darken-1 top-card">
-                                    <a class="waves-effect waves-light btn-large test-login">テストログイン</a>
-                                    <a class="waves-effect waves-light btn-large start-now">今すぐはじめる</a>                    
+                                    <%= link_to "テストログイン", users_guest_sign_in_path,method: :post, class:"waves-effect waves-light btn-large test-login" %>
+                                    <%= link_to "今すぐはじめる" ,new_registration_path(resource_name), class:"waves-effect waves-light btn-large start-now" %>                 
                                     <div class="card-action">
                                       <a href="#" class="card-custom">みのいろとは？（お客様向け）</a>
                                       <a href="#" class="card-custom minoiro">みのいろとは？（カラーコンサルタント向け）</a>
@@ -223,5 +222,3 @@
         <h3>おすすめブログ</h3>
     </div>
 
-
-</body>

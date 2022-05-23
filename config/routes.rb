@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => {
     :registrations => 'users/registrations',
-    :sessions => 'users/sessions'   
+    passwords: 'users/passwords'
   } 
 
   devise_scope :user do
@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     get "login", :to => "users/sessions#new"
     post 'login', to: 'users/sessions#create'
     delete "logout", :to => "users/sessions#destroy"
+    post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
   end
   
 

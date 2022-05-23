@@ -12,7 +12,10 @@ class ArticlesController < ApplicationController
     def create
         begin
             @article = Article.new(article_params) # 何を新しく保存するか指定
+            @article.user_id=current_user.id
+            tag_list=params[:article][:name].split(',')
             if @article.save # もし保存ができたら
+                @article.save_tags(tag_list)
                 logger.debug("成功")
                 redirect_to articles_path  # 投稿画面に遷移
             else  # できなければ
@@ -33,19 +36,22 @@ class ArticlesController < ApplicationController
 
     def edit
         @article = Article.find(params[:id])
+        @tag_list = @article.tags.pluck(:name).join(',')
     end
     
     def update
         begin
             #logger.debug("article_id:" + params[:article_id])
             @article = Article.find(params[:id])
+            tag_list = params[:article][:tag].split(',')
             if @article.update(article_params)
+                @article.save_tags(tag_list)
                 logger.debug("成功")
                 redirect_to article_path(@article.id)
             else
                 logger.debug("失敗")
                 logger.debug(@article.errors.full_messages)
-                render :new
+                render :edit
             end
         rescue => e
             logger.debug(e)
@@ -60,6 +66,6 @@ class ArticlesController < ApplicationController
     
     private  # ストロングパラメーター（予期しない値を変更されてしまう脆弱性を防ぐ機能）
     def article_params
-        params.require(:article).permit(:subject, :body).merge(user_id: current_user.id)
+        params.require(:article).permit(:subject, :body, :tag).merge(user_id: current_user.id)
     end
 end

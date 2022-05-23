@@ -36,6 +36,20 @@ $(function() {
         alignment:'left'
     });
 
+    $('.chips-autocomplete').chips({
+      placeholder: 'Enter a tag',
+      secondaryPlaceholder: '+Tag',
+      autocompleteOptions: {
+        data: {
+          'Apple': null,
+          'Microsoft': null,
+          'Google': null
+        },
+        limit: Infinity,
+        minLength: 1
+      }
+    });
+
     $(document).on('click', function(e) {
         // ２．クリックされた場所の判定
         if(!$(e.target).closest('.dropdown-trigger').length && !$(e.target).closest('#button').length){
