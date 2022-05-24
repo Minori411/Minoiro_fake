@@ -18,7 +18,7 @@
                     <div class="top-register_inner">
                     <div class="smt-hyoji-btn">
                         <%= link_to "テストログイン", users_guest_sign_in_path, method: :post, class:"waves-effect waves-light btn-large smt-test-login" %>
-                        <a class="waves-effect waves-light btn-large smt-start-now">今すぐはじめる</a>
+                        <%= link_to "今すぐはじめる", new_registration_path(resource_name),class:"waves-effect waves-light btn-large smt-start-now" %>
                     </div>
                         <div class="top-register_card flexbox">
                             <div class="row top-cards">
@@ -201,7 +201,7 @@
             障害者手帳をお持ちの方は半額キャンペーン実施中!
         </p>
         <div class="top-conversion_buttons">
-            <a class="waves-effect waves-light btn-large free-btn">無料ではじめる</a>
+            <%= link_to "無料ではじめる", new_registration_path(resource_name), class:"waves-effect waves-light btn-large free-btn" %>
             <a href="#" class="card-custom minoiro2">みのいろとは？（お客様向け）</a>
             <a href="#" class="card-custom minoiro">みのいろとは？（カラーコンサルタント向け）</a>
         </div>

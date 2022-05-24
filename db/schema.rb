@@ -136,6 +136,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_23_064757) do
     t.string "prefecture"
     t.string "user_image"
     t.integer "userstyle", default: 0
+    t.integer "is_kiyaku"
     t.text "introduction"
     t.integer "total_users"
     t.datetime "deleted_at"
