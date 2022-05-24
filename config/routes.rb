@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'explanations/customer'
+  get 'explanations/consultant'
   get 'bottles/result'
   get 'bottles/new'
   post "/bottles/create_select_bottle"

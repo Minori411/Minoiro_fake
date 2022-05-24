@@ -27,8 +27,8 @@
                                     <%= link_to "テストログイン", users_guest_sign_in_path,method: :post, class:"waves-effect waves-light btn-large test-login" %>
                                     <%= link_to "今すぐはじめる" ,new_registration_path(resource_name), class:"waves-effect waves-light btn-large start-now" %>                 
                                     <div class="card-action">
-                                      <a href="#" class="card-custom">みのいろとは？（お客様向け）</a>
-                                      <a href="#" class="card-custom minoiro">みのいろとは？（カラーコンサルタント向け）</a>
+                                      <%= link_to "みのいろとは？（お客様向け)",explanations_customer_path, class:"card-custom" %>
+                                      <%= link_to "みのいろとは？（カラーコンサルタント向け)",explanations_consultant_path, class:"card-custom minoiro" %>
                                     </div>
                                   </div>
                                 </div>
@@ -202,8 +202,8 @@
         </p>
         <div class="top-conversion_buttons">
             <%= link_to "無料ではじめる", new_registration_path(resource_name), class:"waves-effect waves-light btn-large free-btn" %>
-            <a href="#" class="card-custom minoiro2">みのいろとは？（お客様向け）</a>
-            <a href="#" class="card-custom minoiro">みのいろとは？（カラーコンサルタント向け）</a>
+            <%= link_to "みのいろとは？（お客様向け)",explanations_customer_path,class:"card-custom minoiro2" %>
+            <%= link_to "みのいろとは？（カラーコンサルタント向け)",explanations_consultant_path, class:"card-custom minoiro" %>
         </div>
     </div>
 </section>
