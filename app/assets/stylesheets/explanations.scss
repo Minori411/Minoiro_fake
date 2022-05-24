@@ -201,7 +201,6 @@ a {
 }
 
 .about_andmore {
-    padding: 140px 0 160px;
 
     .userType_button {
         position:relative;
@@ -470,4 +469,27 @@ p {
 .add,
 .attach_money{
     margin-bottom: 20px;
+}
+
+.search-btn {
+    background: #ff6e00;
+    font-weight: 700;
+    border-radius: 8px;
+}
+
+.kochira-consultant {
+    background: #fff;
+    border: 2px solid #ff6e00;
+    color: #ff6e00;
+    font-weight: 700;
+    border-radius: 8px;
+}
+
+.consultants-kochira {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.about_andmore {
+    margin-top: 20px;
 }
