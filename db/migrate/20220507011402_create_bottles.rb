@@ -4,7 +4,6 @@ class CreateBottles < ActiveRecord::Migration[7.0]
 
       t.string :bottle_type
       t.string :bottle_name
-      t.string :bottle_meaning
       t.text :meaning_detail
 
       t.timestamps

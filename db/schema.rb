@@ -34,7 +34,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_23_064757) do
   create_table "bottles", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "bottle_type"
     t.string "bottle_name"
-    t.string "bottle_meaning"
     t.text "meaning_detail"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
