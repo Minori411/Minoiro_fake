@@ -34,6 +34,7 @@ main {
         margin-top: 54px;
         font-size: 15px;
         line-height: 2;
+        font-weight: 700;
     }
     h2 {
         font-size: 38px;
@@ -435,6 +436,46 @@ p {
     }
 }
 
+.comment {
+    position: absolute;
+    bottom: 3%;
+    left: 21%;
+    transform: translateX(-50%);
+    margin: 0 auto;
+}
+
+.access_time2 {
+    position: absolute;
+    bottom: 5%;
+    left: 45%;
+    transform: translateX(-50%);
+    margin: 0 auto;
+}
+
+.add2 {
+    position: absolute;
+    bottom: 5%;
+    left: 50.5%;
+    transform: translateX(-50%);
+    margin: 0 auto;
+}
+
+.attach_money2 {
+    position: absolute;
+    bottom: 5%;
+    left: 55%;
+    transform: translateX(-50%);
+    margin: 0 auto;
+}
+
+.mood {
+    position: absolute;
+    bottom: 5%;
+    left: 80%;
+    transform: translateX(-50%);
+    margin: 0 auto;
+}
+
 .access_time {
     position:absolute;
     bottom: 15%;
@@ -492,4 +533,19 @@ p {
 
 .about_andmore {
     margin-top: 20px;
+}
+
+.iroiro {
+    text-align: center;
+}
+
+.regi-c {
+    background: #ff6e00;
+    border-radius: 8px;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+.cus-kochira {
+    border-radius: 8px;
 }

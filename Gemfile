@@ -40,6 +40,7 @@ gem 'dotenv-rails'
 gem 'bootstrap'
 gem 'contentful'
 gem 'libv8-node', '~> 16.10'
+gem 'pry-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -50,7 +51,6 @@ group :development, :test do
   gem 'database_cleaner-active_record'
   gem 'database_cleaner-sequel'
   gem 'ransack'
-  gem 'pry-rails'
 end
 
 group :development do

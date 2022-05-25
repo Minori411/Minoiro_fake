@@ -15,16 +15,22 @@
             <h2>みのいろの特徴</h2>
             <div class="about_service_list flexbox">
                 <div class="about_service_list_item">
+                <i class="large material-icons comment">comment</i>
                     <p class="about_service_list_item_head">内容・料金を自由に設定</p>
                     <p class="about_service_list_item_body">
                         料金は最低1000円(単発)から。内容はカップルコンサルなど自由に設定できます。
                     </p>
                 </div>
                 <div class="about_service_list_item">
+                <i class="large material-icons access_time2">access_time</i>
+                <i class="large material-icons add2">add</i>
+                <i class="large material-icons attach_money2">attach_money</i>
+
                     <p class="about_service_list_item_head">スキマ時間を有効活用</p>
                     <p class="about_service_list_item_body">空いた時間を無駄にすることなく収入アップが見込めます。</p>
                 </div>
                 <div class="about_service_list_item">
+                <i class="large material-icons mood">mood</i>
                     <p class="about_service_list_item_head">デビュー前に</p>
                     <p class="about_service_list_item_body">
                         新米カラーコンサルタントのデビュー前に練習の場としてお使いいただけます。
@@ -47,7 +53,7 @@
                     </div>
                 </div>
                 <span class="arrow_icon">
-                    <img src="/img/sign.png" loading="lazy">
+                <i class="fa-solid fa-circle-chevron-down fa-xl"></i>
                 </span>
                 <div class="about_step_content_item flexbox">
                     <div class="about_step_content_item_body">
@@ -56,7 +62,7 @@
                     </div>
                 </div>
                 <span class="arrow_icon">
-                    <img src="/img/sign.png" loading="lazy">
+                <i class="fa-solid fa-circle-chevron-down fa-xl"></i>
                 </span>
                 <div class="about_step_content_item flexbox">
                     <div class="about_step_content_item_body">
@@ -65,7 +71,7 @@
                     </div>
                 </div>
                 <span class="arrow_icon">
-                    <img src="/img/sign.png" loading="lazy">
+                <i class="fa-solid fa-circle-chevron-down fa-xl"></i>
                 </span>
                 <div class="about_step_content_item flexbox">
                     <div class="about_step_content_item_body">
@@ -74,7 +80,7 @@
                     </div>
                 </div>
                 <span class="arrow_icon">
-                    <img src="/img/sign.png" loading="lazy">
+                <i class="fa-solid fa-circle-chevron-down fa-xl"></i>
                 </span>
                 <div class="about_step_content_item flexbox">
                     <div class="about_step_content_item_body">
@@ -86,7 +92,7 @@
                     </div>
                 </div>
                 <span class="arrow_icon">
-                    <img src="/img/sign.png" loading="lazy">
+                <i class="fa-solid fa-circle-chevron-down fa-xl"></i>
                 </span>
                 <div class="about_step_content_item flexbox">
                     <div class="about_step_content_item_body">
@@ -95,22 +101,13 @@
                     </div>
                 </div>
             </div>
-            <a href="#" class="button plan_consultant primaryButton">
-                <span class="icon">
-                    <i class="fa fa-id-card-alt"></i>
-                </span>
-                カラーコンサルタントとして登録する
-            </a>
+            <div class="iroiro">
+            <%= link_to "カラーコンサルタントとして登録する",new_registration_path(resource_name), class:"waves-effect waves-light btn-large regi-c" %>
+            <div class="about_andmore">
+            <%= link_to "お客様はこちら",explanations_customer_path,class:"waves-effect waves-light btn cus-kochira" %>
+            </div>
+            </div>
         </div>
     </section>
-    <div class="about_andmore">
-        <div class="inner noflex">
-    <a href="#" class="userType_button customer flexbox">
-        <div class="button_inner flexbox">
-            <span class="text">お客様はこちら</span>
-        </div>
-    </a>
-</div>
-</div>
 </div>
 </div>
