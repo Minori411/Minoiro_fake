@@ -641,7 +641,11 @@ meaning_detail:"未定"
     ]
 )
 
-
-
-
-
+ Plan.create!(title: "メンターの方に親切にしていただき、円滑に進めることができました。ありがとうございました。",
+            tag: "恋愛",
+            can_do: "カップルコンサル",
+            youtube: "https://www.youtube.com/watch?v=KMaTIu7pxVM",
+            body: "こんにちは",
+            status:"相談できます",
+            consent:"承認なし"
+            )

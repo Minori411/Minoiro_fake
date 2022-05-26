@@ -18,15 +18,6 @@ var ReactRailsUJS = require("react_ujs");
 ReactRailsUJS.useContext(componentRequireContext);
 
 //index.html
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.collapsible');
-    var instances = M.Collapsible.init(elems);
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.modal');
-    var instances = M.Modal.init(elems);
-  });
 
 document.addEventListener("turbolinks:load", function () {
 $(function() {
@@ -34,6 +25,19 @@ $(function() {
         constrainWidth:false,
         coverTrigger:false,
         alignment:'left'
+    });
+
+    $(document).ready(function(){
+      $('.collapsible').collapsible();
+    });
+
+
+    $(document).ready(function(){
+      $('.modal').modal();
+    });
+
+    $(document).ready(function(){
+      $('.sidenav').sidenav();
     });
 
     $('.chips-autocomplete').chips({
@@ -66,15 +70,9 @@ $(function() {
 });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.sidenav');
-    var instances = M.Sidenav.init(elems);
-});
 
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.collapsible');
-    var instances = M.Collapsible.init(elems);
-});
+
+
 
 /*!
  * Raty - A Star Rating Plugin

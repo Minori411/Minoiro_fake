@@ -1481,9 +1481,12 @@ jQuery( function() {
     var count = 1;
     $(".btl").each(function(index, element) {
         $(element).click(function(e) {
+            $("#bottle5").val("bottle_id");
+            $("#bottle6").val("bottle_id");
+            $("#bottle7").val("bottle_id");
+            $("#bottle8").val("bottle_id");
         image_src = $(element).attr("src");
         console.log('.btl');
-        $("#bottle1").val("bottle_id");
         console.log(image_src + 'がクリックされました。');
         if ( count <= 4) {
             $(`#bottle${count}`).attr('src', image_src);

@@ -180,14 +180,6 @@ input[type=checkbox]:read-only {
     }
 }
 
-@media screen and (max-width: 767px){
-    body, html {
-        font-size: 3.5vm;
-        min-width: 240px;
-        max-width: 767px;
-    }
-}
-
 @media (max-width: 699px){
     .submit_button {
         font-size: 14px;

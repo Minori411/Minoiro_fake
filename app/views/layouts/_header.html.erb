@@ -1,5 +1,5 @@
 <% if signed_in? %>
-
+<body>
 <%#PC表示%>
     <header class="header pc_hyoji mini">
         <div class="header_inner">
@@ -76,7 +76,7 @@
 
                         <!-- Dropdown Structure -->
                         <ul id='dropdown3' class='dropdown-content dropdown3'>
-                            <li><a href="#!">プランの作成</a></li>
+                            <li><%= link_to "プランの作成",new_plan_path %></li>
                             <li class="divider" tabindex="-1"></li>
                             <li><%= link_to "ブログの作成",new_article_path %></li>
                         </ul>
@@ -360,5 +360,5 @@
         <span>まずは無料登録から!</span>
     </div>
 </a>
-
+</body>
 <% end %>
