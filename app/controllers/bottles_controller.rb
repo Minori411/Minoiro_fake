@@ -5,7 +5,7 @@ class BottlesController < ApplicationController
 
   def create_select_bottle
       @user_select_bottle5 = UserSelectBottle.new
-      @user_select_bottle5.bottle_id = params[:botle_id]
+      @user_select_bottle5.bottle_id = params[:bottle5]
       @user_select_bottle5.user_id = current_user.id
       # 何を新しく保存するか指定
       if @user_select_bottle5.save!
@@ -13,7 +13,7 @@ class BottlesController < ApplicationController
       end
     
       @user_select_bottle6 = UserSelectBottle.new
-      @user_select_bottle6.bottle_id = params[:bottle_id]
+      @user_select_bottle6.bottle_id = params[:bottle6]
       @user_select_bottle6.user_id = current_user.id
       # 何を新しく保存するか指定
       if @user_select_bottle6.save!
@@ -21,7 +21,7 @@ class BottlesController < ApplicationController
       end
     
       @user_select_bottle7 = UserSelectBottle.new
-      @user_select_bottle7.bottle_id = params[:bottle_id]
+      @user_select_bottle7.bottle_id = params[:bottle7]
       @user_select_bottle7.user_id = current_user.id
       # 何を新しく保存するか指定
       if @user_select_bottle7.save!
@@ -29,7 +29,7 @@ class BottlesController < ApplicationController
       end
     
       @user_select_bottle8 = UserSelectBottle.new
-      @user_select_bottle8.bottle_id = params[:bottle_id]
+      @user_select_bottle8.bottle_id = params[:bottle8]
       @user_select_bottle8.user_id = current_user.id
       # 何を新しく保存するか指定
       if @user_select_bottle8.save!
