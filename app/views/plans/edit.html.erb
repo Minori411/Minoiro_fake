@@ -1,0 +1,206 @@
+<%= form_with model: @plan, local: true do |f| %>
+
+    <div class="js-plan-edit back_white inner p-t3 dashContent">
+            <div class="dashContent_right">
+                <h1>コンサルタントプラン編集／追加</h1>
+                <div class="alert alert-success">
+                    <i class="fas fa-check-circle"></i>
+                    下書き保存しました。まだ公開されていません。
+                </div>
+                <div class="alert alert-info">
+                    <p>
+                        <i class="fas fa-info-circle"></i>
+                        プランの公開には運営チームによる確認が必要です。
+                        <a href="#">規約</a>
+                        ・
+                        <a href="#">ガイドライン</a>
+                        に抵触していないか確認後、公開されます。
+                    </p>
+                </div>
+                <div id="vapp"></div>
+                <div class="plan_preview flexbox">
+                    <div class="small alignRight">
+                        <i class="fas fa-info-circle"></i>
+                        プレビューボタンを押してもプランの保存はされません。
+                    </div>
+                    <div>
+                        <button type="button" class="waves-effect waves-light btn custom-btn3" name="btn_plan_preview" onclick="$(window).off('beforeunload');">プレビュー</button>
+                    </div>
+                </div>
+                    <input name="_token" type="hidden">
+                    <div class="boxbaseP30 plan_field plan_module z-depth-1">
+                        <div class="in plan_field_inner">
+                            <span class="plan_module_subject">コンサルティングプラン</span>
+                            <div class="m-b2">
+                                プランを登録すると
+                                <a href="#" class="link" target="_blank">コンサルタントとして掲載</a>
+                                されます。
+                            </div>
+                            <div class="form_item">
+                                <div class="form_item_head flexbox">
+                                <%= f.label :title, "タイトル",class:"font-weight"%>
+                                    <span class="required_label">必須</span>
+                                    <p class="small">提供できる内容をわかりやすく記載しましょう。20文字以上80文字以内。</p>
+                                </div>
+                                <div class="form_item_body">
+                                    <div class="m-t-5">
+                                        <%= f.text_field :title, class:"w100p", :placeholder =>"#{@plan.title}" %>
+                                        <span class="help-block"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form_item">
+                                <div class>
+                                    <div id="vapp2">
+                                        <div>
+                                            <div class="mt-6">
+                                                <%= f.label :tag, "関連するタグ（３つまで選べます)",class:"font-weight" %>
+                                                <div class="mt-3 js-another-category-selector checkbox_list_item">
+                                                    <label class="inline-block">
+                                                        <div class="chip">
+                                                            恋愛
+                                                        </div>                 
+                                                    </label>
+                                                    <label class="inline-block">
+                                                        <div class="chip">
+                                                            就活
+                                                        </div>              
+                                                    </label>
+                                                    <label class="inline-block">
+                                                        <div class="chip">
+                                                            夫婦関係
+                                                        </div>              
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+                            <div class="form_item">
+                                <div class="form_item_head flexbox">
+                                    <%= f.label :can_do ,"できること" ,class:"font-weight"%>
+                                    <span class="required_label">必須</span>
+                                    <p class="small">
+                                        1000文字以上5,000文字以内。
+                                    </p>
+                                </div>
+                                <div class="form_item_body">
+                                    <%= f.text_area :can_do, :placeholder =>"#{@plan.can_do}" %>
+                                    <span classs="help-block"></span>
+                                </div>
+                            </div>
+                            <div class="plan_edit_unit m-t2">
+                                <%= f.label :youtube,"Youtube動画URL",class:"font-weight" %>
+                                <p class="small m-t1">Youtube動画の登録ができます。登録動画はプラン詳細に表示され、お客様への信頼度向上が期待できます。</p>
+                                <div class="plan_edit_items m-t2 flexbox">
+                                    <div class="plan_edit_item">
+                                        <div class="m-t1">
+                                            <%= f.text_field :youtube, class:"w100p" , :placeholder =>"#{@plan.youtube}" %>
+                                            <span class="help-block"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--プラン選択-->
+                    <div class="boxbaseP30 plan_module plan_select z-depth-1">
+                        <div class="in">
+                            <span class="plan_module_subject">プランの選択</span>
+                            <p class="m-t-5">
+                                初めはオンラインでチャットかビデオ通話でコンサルしていただくのがおススメです。
+                                <br>
+                                お互いに信頼関係ができたらぜひオフラインで会ってみましょう。
+                            </p>
+                            <div class="plan_select_buttons flexbox">
+                                <div class="row">
+                                    <div class="col1 s12 m4">
+                                      <div class="card blue-grey darken-1">
+                                        <div class="card-content white-text">
+                                          <span class="card-title">Card Title</span>
+                                          <p>I am a very simple card. I am good at containing small bits of information.
+                                          I am convenient because I require little markup to use effectively.</p>
+                                        </div>
+                                        <div class="card-action">
+                                          <a href="#">This is a link</a>
+                                          <a href="#">This is a link</a>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+    
+                                  <div class="row">
+                                    <div class="col1 s12 m4">
+                                      <div class="card blue-grey darken-1">
+                                        <div class="card-content white-text">
+                                          <span class="card-title">Card Title</span>
+                                          <p>I am a very simple card. I am good at containing small bits of information.
+                                          I am convenient because I require little markup to use effectively.</p>
+                                        </div>
+                                        <div class="card-action">
+                                          <a href="#">This is a link</a>
+                                          <a href="#">This is a link</a>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+    
+    
+                            </div>
+                            <div class="btn-cutom4">
+                            <a class="waves-effect waves-light btn-large"><i class="material-icons middle">create</i>自分でプランを作成する</a>
+                            </div>
+    
+                            <p class="small m-t2">
+                                <i class="fas fa-info-circle"></i>
+                                お客様個別のプランを作ることもできます。お客様のプロフィールページより「このユーザー専用のプランを作る」から作成してください。
+                            </p>
+                        </div>
+                    </div>
+                    <!--プラン入力-->
+                
+                                <a class="waves-effect waves-light btn-large btn-custom5">
+                                    <i class="fas fa-plus"></i>                                
+                                    さらにプランを追加する
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--ステータス-->
+                    <div class="boxbaseP30 plan_module z-depth-1">
+                        <div class="in">
+                            <div class="status_unit">
+                                <div class="status_unit_head flexbox">
+                                    <%= f.label :status,"ステータス", class:"status_unit_head_label" %>
+                                    <%= f.select :status, [['相談できます', 1], ['今、忙しいです', 2],['表示しない', 3]], { include_blank: true, selected: 1 } %>      
+                                </div>
+                                <div class="status_unit_head_body">
+                                    <p class="small">今、忙しいです : コンサルタント一覧には表示されますが契約できなくなります</p>
+                                    <p class="small">表示しない : コンサルタント一覧に表示されなくなります</p>
+                                </div>
+                            </div>
+                            <div class="status_unit">
+                                <div class="status_unit_head flexbox">
+                                    <h3 class="status_unit_head_label">コンセント</h3>
+                                    <%= f.select :consent, [['承認なし', 1], ['承認あり', 2]], { include_blank: true, selected: 1 } %>
+                                </div>
+                                <div class="status_unit_head_body">
+                                    <p class="small">承認あり : コンサルタントが契約を承認後のみ契約可能</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--保存ボタンエリア-->
+                    <div class="boxbaseP30 plan_module plan_module_submit z-depth-1">
+                        <div class="plan_module_submit_buttons alignCenter center">
+                            <div class="main_button flexbox">
+                                <a class="waves-effect waves-light btn-large custom-btn">下書き</a>
+                                <%= f.submit "コンサルティングプランを提出する",type: :submit,class:"waves-effect waves-light btn-large custom-btn2" %>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    <% end %>

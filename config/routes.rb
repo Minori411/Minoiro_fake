@@ -9,23 +9,26 @@ Rails.application.routes.draw do
     resources :reviews 
   end
 
-
+  devise_scope :user do
+    get "user/:id", :to => "users/registrations#detail"
+    get '/users', to: redirect("/users/sign_up")
+    get "signup", :to => "users/registrations#new"
+    post "signup", :to => "users/registrations#create"
+    delete "logout", :to => "users/sessions#destroy"
+    post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
+  end
+  
   devise_for :users, :controllers => {
     :registrations => 'users/registrations',
     :sessions => 'users/sessions',
     passwords: 'users/passwords'
   } 
 
-  devise_scope :user do
-    get "user/:id", :to => "users/registrations#detail"
-    get '/users', to: redirect("/users/sign_up")
-    get "signup", :to => "users/registrations#new"
-    post "signup", :to => "users/registrations#create"
-    get "login", :to => "users/sessions#new"
-    post 'login', to: 'users/sessions#create'
-    delete "logout", :to => "users/sessions#destroy"
-    post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
-  end
+  
+
+  
+
+  
   
 
   get 'inquiries/index'

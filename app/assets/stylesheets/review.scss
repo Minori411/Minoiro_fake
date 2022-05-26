@@ -157,6 +157,7 @@ h3 {
     padding: 24px;
     box-sizing: border-box;
     background: #fff;
+    margin-bottom: 20px;
 }
 
 .p-profile_content {
@@ -173,7 +174,8 @@ h3 {
     }
 
     .review_list_name {
-        width: calc(100% - 80px);
+        width:150px;
+        flex-shrink: 0;
     }
 
     .review_list_user {

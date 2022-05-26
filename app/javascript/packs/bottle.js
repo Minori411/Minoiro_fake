@@ -1464,17 +1464,21 @@ jQuery( function() {
             jQuery( this ).css( 'position', 'unset' );
         } );
     }
-        var image_src ='';
+    var image_src ='';
     var count = 1;
+    var img_index = 5;
+    var choice_img = [];
     $(".btl").each(function(index, element) {
         $(element).click(function(e) {
-            $("#bottle5").val("5");
-            $("#bottle6").val("6");
-            $("#bottle7").val("7");
-            $("#bottle8").val("8");
-            var $this = ['#bottle5','#bottle6','#bottle7','#bottle8'];
-            console.log(this);
+            
         image_src = $(element).attr("src");
+        if (choice_img.length < 4) {
+            choice_img.push($(element).attr("id"));
+            $(`#bottle${img_index}`).val($(element).attr("id"));
+            img_index++;
+        }else {
+            alert('4つ以上選択できません');
+        }
         console.log('.btl');
         console.log(image_src + 'がクリックされました。');
         if ( count <= 4) {
@@ -1487,7 +1491,3 @@ jQuery( function() {
     } );
 });
 
-function getId(ele){
-    var attr = ele.getAttribute("id"); // input要素のid属性の値を取得
-    console.log(attr); //「id01」
-}

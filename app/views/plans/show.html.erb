@@ -96,14 +96,20 @@
                 <div class="side_sns"></div>
             </div>
             <div id="main" class="no_br">
-            <div class="plan_details_margin"></div>
+            <div class="plan_details_margin">
+            <% if user_signed_in? && current_user.id == @plan.user_id %>
+            <td><%= link_to "編集", edit_plan_path(@plan.id) %></td>
+            <% end %>
+            </div>
             <div class="boxbaseP30">
                 <p>
                 タグ
                 </p>
-                <h1 class="plan_show">初めましての方向けプラン多数！</h1>
+                <h1 class="plan_show"><%= @plan.title %></h1>
                 <h3 class="nomargin">できること</h3>
-                <div class="markdown-body plan_detail_markdown_over"></div>
+                <div class="markdown-body plan_detail_markdown_over">
+                    <%= @plan.can_do %>
+                </div>
                 <div class="alignCenter">
                     <a href class="link more-btn">
                         <i class="fa fa-angle-down"></i>
@@ -366,29 +372,30 @@
                     </div>
                 </div>
             </div>
+            <%= link_to "レビューを書く",new_plan_review_path(@plan.id) %>
             <div class="p-profile" style="background-color:transparent;">
                 <div class="p-profile_content">
+                <% @reviews.each do |review| %>
                     <div class="p-profile_content_itemt c-card-m">
                         <div class="review_list_user">
                             <div class="review_list_avatar">
                                 <span class="avatar-image"></span>
                             </div>
                             <div class="review_list_user">
-                                <div class="flex justify-between">
+                                <div class="flex">
                                     <div class="review_list_name">
                                         <span class="name">
                                         <%= current_user.name %>
                                         </span>
                                         <div class="review_list_option">
                                         <div class="time_area">
+                                            <%= @review.created_at.strftime("%Y/%m/%d %H:%M") %>
                                         </div>
                                     </div>
                                 </div>
-                                <p class="review_list_comment">
-                                    <% @reviews.each do |review| %>
-                                        <div>
-                                        <div id="star-rate-<%= review.id %>"></div>
-                                            <script>
+                                <div class="review_list_comment">
+                                        <div id='star-rate-<%= review.id %>'>
+                                        <script>
                                             $('#star-rate-<%= review.id %>').raty({
                                                 size: 36,
                                                 starOff:  '<%= asset_path('star-off.png') %>',
@@ -398,15 +405,17 @@
                                                 readOnly: true,
                                                 score: <%= review.evaluation %>,
                                             });
-                                            </script>  
-                                                内容：<%= review.body %>
-                                        </div>
-                                    <% end %>
-                                </p>
+                                            </script> 
+                                            <div class="naiyou">
+                                                <%= review.body %>
+                                            </div>
+                                        </div>       
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            <% end %>
             </div>
         </div>
     </div>  

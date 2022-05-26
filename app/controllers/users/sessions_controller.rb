@@ -8,14 +8,6 @@ class Users::SessionsController < Devise::SessionsController
     redirect_to root_path, notice: 'ゲストユーザーとしてログインしました。'
   end
   # GET /resource/sign_in
-def new
-  super
-end
-
-  # POST /resource/sign_in
-def create
-  super
-end
 
   # DELETE /resource/sign_out
 def destroy
@@ -25,7 +17,6 @@ def destroy
   redirect_to root_path#renderで遷移先のURLを記述 ← コード記入
 end
 
-  protected
 
 
 

@@ -38,7 +38,7 @@
                         </div>
                         <div class="form_item">
                             <div class="form_item_head flexbox">
-                                <%= f.label :title, "タイトル" %>
+                            <%= f.label :title, "タイトル",class:"font-weight"%>
                                 <span class="required_label">必須</span>
                                 <p class="small">提供できる内容をわかりやすく記載しましょう。20文字以上80文字以内。</p>
                             </div>
@@ -54,7 +54,7 @@
                                 <div id="vapp2">
                                     <div>
                                         <div class="mt-6">
-                                            <%= f.label :tag, "関連するタグ（３つまで選べます" %>
+                                            <%= f.label :tag, "関連するタグ（３つまで選べます)",class:"font-weight" %>
                                             <div class="mt-3 js-another-category-selector checkbox_list_item">
                                                 <label class="inline-block">
                                                     <div class="chip">
@@ -80,7 +80,7 @@
                         </div>
                         <div class="form_item">
                             <div class="form_item_head flexbox">
-                                <%= f.label :can_do ,"できること" %>
+                                <%= f.label :can_do ,"できること" ,class:"font-weight"%>
                                 <span class="required_label">必須</span>
                                 <p class="small">
                                     1000文字以上5,000文字以内。
@@ -92,7 +92,7 @@
                             </div>
                         </div>
                         <div class="plan_edit_unit m-t2">
-                            <h3>Youtube動画URL</h3>
+                            <%= f.label :youtube,"Youtube動画URL",class:"font-weight" %>
                             <p class="small m-t1">Youtube動画の登録ができます。登録動画はプラン詳細に表示され、お客様への信頼度向上が期待できます。</p>
                             <div class="plan_edit_items m-t2 flexbox">
                                 <div class="plan_edit_item">
@@ -173,13 +173,8 @@
                     <div class="in">
                         <div class="status_unit">
                             <div class="status_unit_head flexbox">
-                                <h3 class="status_unit_head_label">ステータス</h3>
-                                    <select class="browser-default">
-                                        <option value="" disabled selected>Choose your option</option>
-                                        <option value="1">相談できます</option>
-                                        <option value="2">今、忙しいです</option>
-                                        <option value="3">表示しない</option>
-                                    </select>
+                                <%= f.label :status,"ステータス", class:"status_unit_head_label" %>
+                                <%= f.select :status, [['相談できます', 1], ['今、忙しいです', 2],['表示しない', 3]], { include_blank: true, selected: 1 } %>      
                             </div>
                             <div class="status_unit_head_body">
                                 <p class="small">今、忙しいです : コンサルタント一覧には表示されますが契約できなくなります</p>
@@ -189,11 +184,7 @@
                         <div class="status_unit">
                             <div class="status_unit_head flexbox">
                                 <h3 class="status_unit_head_label">コンセント</h3>
-                                    <select class="browser-default">
-                                        <option value="" disabled selected>Choose your option</option>
-                                        <option value="1">承認あり</option>
-                                        <option value="2">承認なし</option>
-                                    </select>
+                                <%= f.select :consent, [['承認なし', 1], ['承認あり', 2]], { include_blank: true, selected: 1 } %>
                             </div>
                             <div class="status_unit_head_body">
                                 <p class="small">承認あり : コンサルタントが契約を承認後のみ契約可能</p>
@@ -206,7 +197,7 @@
                     <div class="plan_module_submit_buttons alignCenter center">
                         <div class="main_button flexbox">
                             <a class="waves-effect waves-light btn-large custom-btn">下書き</a>
-                            <%= f.submit "コンサルティングプランを提出する",class:"waves-effect waves-light btn-large custom-btn2" %>
+                            <%= f.submit "コンサルティングプランを提出する",type: :submit,class:"waves-effect waves-light btn-large custom-btn2" %>
                         </div>
                     </div>
                 </div>
