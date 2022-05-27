@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_23_064757) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_27_022943) do
   create_table "article_tags", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "article_id", null: false
     t.bigint "tag_id", null: false
@@ -140,7 +140,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_23_064757) do
     t.integer "total_users"
     t.datetime "deleted_at"
     t.text "blogs"
-    t.string "select_bottles"
     t.text "career"
     t.text "url"
     t.string "twitter"
@@ -151,6 +150,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_23_064757) do
     t.string "disability_certificate"
     t.string "level"
     t.string "experience"
+    t.string "disability_passport"
+    t.datetime "year"
+    t.string "image"
     t.index ["email", "soft_destroyed_at"], name: "index_users_on_email_and_soft_destroyed_at", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["soft_destroyed_at"], name: "index_users_on_soft_destroyed_at"

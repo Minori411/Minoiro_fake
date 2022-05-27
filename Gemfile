@@ -41,6 +41,9 @@ gem 'bootstrap'
 gem 'contentful'
 gem 'libv8-node', '~> 16.10'
 gem 'pry-rails'
+gem 'rmagick'
+gem 'carrierwave'
+gem 'mini_magick'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

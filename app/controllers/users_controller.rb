@@ -38,6 +38,16 @@ class UsersController < ApplicationController
         end
     end
 
+    def update
+        @user = User.find(current_user.id)
+        if @user.update(user_params)
+            redirect_to profile_path, success: t('defaults.message.edited', item: User.model_name.human)
+        else
+            flash.now['danger'] = t('defaults.message.not_edited', item: User.model_name.human)
+            render :edit 
+        end
+    end
+
     def withdrawal
         @user = User.find(params[:id])
         # is_deletedカラムをtrueに変更することにより削除フラグを立てる
@@ -52,7 +62,7 @@ class UsersController < ApplicationController
     private
     
     def user_params
-        params.require(:user).permit(:name, :email, :password, :password_confirmation, :userstyle)
+        params.require(:user).permit(:year,:twitter, :facebook, :instagram,:image,:name, :email, :password, :password_confirmation, :userstyle,:user_image, :prefecture, :introduction, :url, :career, :disability_passport, :certificate)
     end
 
     

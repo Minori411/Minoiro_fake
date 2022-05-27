@@ -13,6 +13,10 @@
 @import 'article';
 @import 'explanations';
 
+.scoreStatus_star {
+    white-space:nowrap;
+}
+
 .login-btn2 {
     background: #ff6e00;
     width: 100%;
@@ -55,4 +59,10 @@
 .naiyou {
     display: block;
 }
+
+.preview {
+    height: 125px;
+    width: 125px;
+    object-fit: contain;
+  }
 

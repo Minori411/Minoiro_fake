@@ -25,6 +25,22 @@ Review.create!(body: "メンターの方に親切にしていただき、円滑�
                 user_id: 1,
                 evaluation: 5
             )
+    
+User.create!(userstyle:1,
+            user_image:"aaa", 
+            prefecture:"神奈川県", 
+            introduction:"こんにちは", 
+            url:"aaa", 
+            career:"大学卒業",
+            name:"みのり",
+            email:"bbb@example.com",
+            password:"minori1234",
+            password_confirmation:"minori1234",
+            disability_passport:"www",
+            certificate:"sss",
+            image:"ccc"
+            year:"20225月"
+)
 
 Bottle.create!(
     [

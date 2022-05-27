@@ -10,8 +10,8 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-
 import "./bottle"
+import "./preview"
 // Support component names relative to this directory:
 var componentRequireContext = require.context("components", true);
 var ReactRailsUJS = require("react_ujs");
@@ -21,6 +21,18 @@ ReactRailsUJS.useContext(componentRequireContext);
 
 document.addEventListener("turbolinks:load", function () {
 $(function() {
+      function readURL(input) {
+        if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+    $('#img_prev').attr('src', e.target.result);
+        }
+        reader.readAsDataURL(input.files[0]);
+        }
+    }
+    $("#user_img").change(function(){
+        readURL(this);
+    });
     $('.dropdown-trigger').dropdown({
         constrainWidth:false,
         coverTrigger:false,

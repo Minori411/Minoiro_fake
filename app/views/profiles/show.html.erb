@@ -2,7 +2,9 @@
 <%= form_with model: @user, url: profile_path, local: true do |f| %>
 <div class="userProfileHeader_inner flexbox">
     <div class="userProfileHeader_icon">
-        <div class="icon size125 wborder style="background-image:"></div>
+        <div class="icon wborder">
+        <img src="<%= @user.image %>",class:size125, width="100">
+        </div>
     </div>
     <div class="userProfileHeader_name">
         <div class="name">
@@ -114,11 +116,11 @@
                             </div>
                         </div>
                         <div class="plan_detail_markdown_over nobefore" style="max-height: none;">
-                            <p></p>
+                            <p><%= @user.introduction %></p>
                         </div>
                         <div class="alignCenter" style="display: none;">
                             <a href="#" class="link more-btn">
-                                <i class="fas fa-angle-down"></i>
+                                <i class="fa fa-angle-down"></i>
                                 もっとみる
                             </a>
                         </div>
