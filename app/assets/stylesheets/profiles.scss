@@ -197,14 +197,13 @@ a,a:hover{
 
         h2{
             color: #333;
-            margin: 20px 0 16px;
             font-size: 18px;
-            width: 50%;  
+            width: 50%;
         }
 
         .scoreBox{
             .scoreStatus_lists{
-                width: calc(23% - 1px);
+                width: calc(22% - 1px);
             }
         }
     }
@@ -266,20 +265,13 @@ a,a:hover{
 
     .scoreStatus_item:last-child{
         width: calc(50% - 8px);
-        border: solid #e5e5e5;
         border-width: 0 0 0 1px;
         padding-left: 16px;
     }
 
-    background: #fff;
-    border: 1px solid #f6f6f6;
-    padding: 16px;
-    border-radius: 8px;
-    overflow: hidden;
-
     .contract_manage{
         border: 1px solid #eee;
-        width: 32%;
+        width: 25%;
     }
 
     .scoreStatus{
@@ -298,7 +290,6 @@ a,a:hover{
 }
 
 .scoreBox_wrap{
-    justify-content: space-between;
     align-items: stretch;
 }
 
@@ -327,7 +318,7 @@ input{
 }
 
 .boxbaseP30{
-    padding: 40px;
+    padding: 0px;
     margin-bottom: 20px;
     box-sizing: border-box;
     background: #fff;
@@ -634,10 +625,11 @@ input {
 }
 
 .boxbaseP30 {
-    padding: 40px;
+    padding: 0px;
     margin-bottom: 20px;
     box-sizing: border-box;
 }
+
 
 .pc_hyoji {
     display: block;
@@ -1081,4 +1073,19 @@ input[type=number] {
 
 .current_signin {
     font-size: 12px;
+}
+
+.m-b2{
+    display: block!important;
+    margin-left: 20px;
+    border-radius: 4px;
+}
+
+.hanten {
+    background: #ff6e00!important;
+    color: #fff!important;
+}
+
+.fa-envelope {
+    color :#fff!important;
 }

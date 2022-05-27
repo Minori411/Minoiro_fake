@@ -9,6 +9,14 @@ Rails.application.routes.draw do
     resources :reviews 
   end
 
+  get 'plans/:id/show_user', :to => 'plans#show_user', as: 'show_user'
+
+  devise_for :users, :controllers => {
+    :registrations => 'users/registrations',
+    :sessions => 'users/sessions',
+    passwords: 'users/passwords'
+  } 
+
   devise_scope :user do
     get "user/:id", :to => "users/registrations#detail"
     get '/users', to: redirect("/users/sign_up")
@@ -17,19 +25,6 @@ Rails.application.routes.draw do
     delete "logout", :to => "users/sessions#destroy"
     post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
   end
-  
-  devise_for :users, :controllers => {
-    :registrations => 'users/registrations',
-    :sessions => 'users/sessions',
-    passwords: 'users/passwords'
-  } 
-
-  
-
-  
-
-  
-  
 
   get 'inquiries/index'
   get 'inquiries/confirm'

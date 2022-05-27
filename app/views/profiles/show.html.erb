@@ -17,6 +17,33 @@
     <div class="userProfile_Main">
         <div class="scoreBox customer_summary m-b2 column_3">
             <div class="flexbox scoreBox_wrap">
+            <div class="scoreStatus contract_manage review">
+                            <span class="scoreStatus_label">評価</span>
+                            <span class="scoreStatus_star">
+                                <span class="yellow">
+                                    <i class="fas fa-star"></i>
+                                </span>
+                                <span class="yellow">
+                                    <i class="fas fa-star"></i>
+                                </span>
+                                <span class="yellow">
+                                    <i class="fas fa-star"></i>
+                                </span>
+                                <span class="yellow">
+                                    <i class="fas fa-star"></i>
+                                </span>
+                                <span class="yellow">
+                                    <i class="fas fa-star"></i>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="scoreStatus contract_manage response">
+                            <span class="scoreStatus_label">返信率</span>
+                            <span class="scoreStatus_score">
+                                100
+                                <small>%</small>
+                            </span>
+                        </div>
                 <div class="scoreStatus contract_manage flexbox">
                     <div class="scoreStatus_item relative">
                         <span class="scoreStatus_label flexbox">累計</span>
@@ -24,6 +51,14 @@
                         <span>人</span>
                     </div>
                 </div>
+                <li class="scoreStatus_list manage flexbox">
+                            <i class="fas fa-check-circle link"></i>
+                            <span class="scoreStatus_list_label">NDA</span>
+                        </li>
+                        <li class="scoreStatus_list manage flexbox">
+                            <i class="fas fa-check-circle link"></i>
+                            <span class="scoreStatus_list_label">本人確認</span>
+                        </li>
             </div>
             <ul class="scoreStatus_listss flexbox">
                 <li class="scoreStatus_lists">
@@ -106,10 +141,17 @@
             </div>
         </div>
     </div>
-    <div class="userProfileSide">
-        <div class="alignCenter"></div>
-        <div class="m-b1"></div>
-    </div>
+<div class="userProfileSide">
+<div class="block-profile">
+<a class="waves-effect waves-light btn m-b2">
+<i class="far fa-user"></i>
+フォローする</a>        
+    </a>
+    <a class="waves-effect waves-light btn m-b2 hanten">
+    <i class="far fa-envelope"></i>
+    メッセージを送る</a>        
+    </a>
+</div>
 </div>
 <% end %>
 </div>

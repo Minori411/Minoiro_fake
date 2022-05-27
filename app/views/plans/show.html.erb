@@ -10,14 +10,14 @@
                         <a href="#" class="link"></a>
                     </p>
                     <a href="#" class="color">
-                        <p>もっと詳しく</p>
+                        <%= link_to "もっと詳しく",profile_path%>
                     </a>
                     <div class="snsicon">
                         <a href="#" target="_blank" class="m-r1">
                             <i class="fab fa-twitter"></i>
                         </a>
                     </div>
-                    <div class="followbox m-t1">
+                    <div class="followbox">
                         <div class="z-depth-1 follow">
                             <div class="w50p">
                                 <div class="title">フォロー</div>
@@ -389,7 +389,7 @@
                                         </span>
                                         <div class="review_list_option">
                                         <div class="time_area">
-                                            <%= @review.created_at.strftime("%Y/%m/%d %H:%M") %>
+                                            <%= @plan.created_at.strftime("%Y/%m/%d %H:%M") %>
                                         </div>
                                     </div>
                                 </div>
@@ -406,9 +406,9 @@
                                                 score: <%= review.evaluation %>,
                                             });
                                             </script> 
-                                            <div class="naiyou">
+                                            <p class="naiyou">
                                                 <%= review.body %>
-                                            </div>
+                                            </pp>
                                         </div>       
                                 </div>
                             </div>

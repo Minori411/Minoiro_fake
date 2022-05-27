@@ -177,7 +177,6 @@ li {
 }
 
 .scoreBox_wrap {
-    justify-content: space-between;
     align-items: stretch;
 }
 
@@ -202,7 +201,6 @@ li {
 
     .scoreStatus_item:last-child {
         width: calc(50%-8px);
-        border: solid #e5e5e5;
         border-width: 0 0 0 1px;
         padding-left: 16px;
     }
