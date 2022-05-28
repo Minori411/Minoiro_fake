@@ -1466,7 +1466,6 @@ jQuery( function() {
     }
     var image_src ='';
     var count = 1;
-    var img_index = 5;
     var choice_img = [];
     $(".btl").each(function(index, element) {
         $(element).click(function(e) {
@@ -1474,8 +1473,8 @@ jQuery( function() {
         image_src = $(element).attr("src");
         if (choice_img.length < 4) {
             choice_img.push($(element).attr("id"));
-            $(`#bottle${img_index}`).val($(element).attr("id"));
-            img_index++;
+            //$('#bottle' + count).val($(element).attr("id"));
+            $('#bottle_hid_' + count).val($(element).attr("id"));
         }else {
             alert('4つ以上選択できません');
         }
