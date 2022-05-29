@@ -4,13 +4,11 @@
     <table align="center">
                 <td align="center">
                     <div class="item">
+                    <% @select_bottles.each do |select_bottle| %>
+                        <% bottle = Bottle.find_by(id: select_bottle.id) %>
                         <!-- hoverする画像 -->
                         <div class="item__img">
-                        <% if @bottle1?%>
-                        <%= image_tag @bottle1,class:"center-b" %>
-                        <% else%>
-                        <div>画像がありません</div>
-                        <%end%>
+                        <%= image_tag(bottle.bottle_type+".jpeg",class:"center-b") %>
                         </div>
                         <!-- 画像をhoverした時に表示させる要素 -->
                         <div class="item__text">
@@ -25,7 +23,7 @@
                     <div class="item">
                         <!-- hoverする画像 -->
                         <div class="item__img">
-                            <%= image_tag "B000",class:"center-b" %>
+                        <%= image_tag(bottle.bottle_type+".jpeg",class:"center-b") %>
                         </div>
                         <!-- 画像をhoverした時に表示させる要素 -->
                         <div class="item__text">
@@ -40,7 +38,7 @@
                     <div class="item">
                         <!-- hoverする画像 -->
                         <div class="item__img">
-                            <%= image_tag "B000",class:"center-b" %>
+                        <%= image_tag(bottle.bottle_type+".jpeg",class:"center-b") %>
                         </div>
                         <!-- 画像をhoverした時に表示させる要素 -->
                         <div class="item__text">
@@ -55,7 +53,7 @@
                     <div class="item">
                         <!-- hoverする画像 -->
                         <div class="item__img">
-                            <%= image_tag "B000",class:"center-b" %>
+                        <%= image_tag(bottle.bottle_type+".jpeg",class:"center-b") %>
                         </div>
                         <!-- 画像をhoverした時に表示させる要素 -->
                         <div class="item__text">
@@ -64,6 +62,7 @@
                             <h5>@bottle.bottle_type</h5><br>
                             <p>@bottle.bottle_name </p>
                         </div>
+                        <% end %>
                     </div>
                 </td>
     </table>

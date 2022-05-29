@@ -1,0 +1,109 @@
+<div class="back_white plan_detail">
+        <div id="vapp" class="inner">
+            <div id="side" class="smt pc">
+
+                <div class="gray">
+                    <a href="#">
+                        <div class="icon size125 wborder" style="background-image:"></div>
+                    </a>
+                    <p class="name">
+                        <a href="#" class="link"></a>
+                    </p>
+                    <a href="#" class="color">
+                        <%= link_to "もっと詳しく",profile_path%>
+                    </a>
+                    <div class="snsicon">
+                        <a href="#" target="_blank" class="m-r1">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                    <div class="followbox">
+                        <div class="z-depth-1 follow">
+                            <div class="w50p">
+                                <div class="title">フォロー</div>
+                                <div class="member">
+                                <%= link_to following_user_path(@user.id) do %>
+                                    <span class="bold following_count"><%= @user.following.count %>人</span>
+                                <% end %>
+                                </div>
+                            </div>
+                            <div class="w50p">
+                                <div class="title">フォロワー</div>
+                                <div class="member">
+                                <%= link_to followers_user_path(@user.id) do %>
+                                    <span class="bold followers_count"><%= @user.followers.count %>人</span>
+                                <% end %>
+                                </div>
+                            </div>
+                            <div class="w50p">
+                                <div class="title">返信率</div>
+                                <div class="reply">
+                                    <span class="bold">99%</span>
+                                </div>
+                            </div>
+                            <div class="w30p"></div>
+                            <div class="w30p"></div>
+
+                        </div>
+                    </div>
+                    <p class="time_stamp">
+                        24時間以内
+                    </p>
+                    <div class="selfcheck">
+                        <i class="fas fa-check-circle link"></i>
+                        本人確認
+                        <i class="fas fa-check-circle link"></i>
+                        秘密保持契約(NDA)
+                    </div>
+                    <div class="m-b2 FollowArea">
+                        <div class="FollowArea_sub m-b1">フォローして後でチェック</div>
+                        <%= render "follow_form" %>
+                    </div>
+                    <div class="hyouka_box">
+                        <div class="icon_heart">
+                            評価
+                        </div>
+                        <div class="right">
+                            <span class="star">
+                                <i class="fas fa-star"></i>
+                            </span>
+                            <span class="star">
+                                <i class="fas fa-star"></i>
+                            </span>
+                            <span class="star">
+                                <i class="fas fa-star"></i>
+                            </span>
+                            <span class="star">
+                                <i class="fas fa-star"></i>
+                            </span>
+                            <span class="star">
+                                <i class="fas fa-star"></i>
+                            </span>
+                            <span class="no-bold">(131)</span>
+                        </div>
+                        <div class="icon_money">料金</div>
+                        <div class="right">1000円</div>
+                    </div>
+                    <div class="m-b2 SideMessageArea">
+                        <label for="modal-trigger_message10335" class="z-depth-2 button primaryButton w100p">メッセージで相談</label>
+                        <div class="sideMessageArea_sub">まずは相談してみよう</div>
+                    </div>
+                </div>
+                <div class="m-b1 ReportArea m-t1">
+                    <label for="modal-trigger_report">通報する</label>
+                </div>
+                <div class="sideMessageArea_sub">このプランをシェアしよう!</div>
+                <div class="side_sns"></div>
+            </div>
+            <div id="main" class="no_br">
+            <div class="boxbaseP30">
+            <div>
+            <h1>相談乗ります</h1>
+            <div class="plan_price">
+            <span style="font-size: 1rem;">5000円/回</span>
+            </div>
+            </div>
+            <div></div>
+            <div id="vapp"></div>
+            </div>
+            <div id="side" class="smt sm"></div>

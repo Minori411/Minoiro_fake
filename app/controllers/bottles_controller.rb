@@ -7,7 +7,7 @@ class BottlesController < ApplicationController
       @user_select_bottle1 = UserSelectBottle.new
       @user_select_bottle1.bottle_id = params[:bottle_hid_1]
       @bottle1 = Bottle.find_by(bottle_type: params[:bottle_hid_1])
-      logger.debug(@bottle1)
+      logger.debug(@bottle1.bottle_type)
       @user_select_bottle1.bottle_id = @bottle1.id
       @user_select_bottle1.user_id = current_user.id
       # 何を新しく保存するか指定
@@ -51,6 +51,7 @@ class BottlesController < ApplicationController
   end
   
   def result 
+    @select_bottles = UserSelectBottle.where(user_id: current_user.id)
   end
   
 end
