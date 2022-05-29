@@ -6,7 +6,11 @@
                     <div class="item">
                         <!-- hoverする画像 -->
                         <div class="item__img">
-                            <%= image_tag "B000",class:"center-b" %>
+                        <% if @bottle1?%>
+                        <%= image_tag @bottle1,class:"center-b" %>
+                        <% else%>
+                        <div>画像がありません</div>
+                        <%end%>
                         </div>
                         <!-- 画像をhoverした時に表示させる要素 -->
                         <div class="item__text">
