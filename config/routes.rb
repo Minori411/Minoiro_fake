@@ -2,9 +2,10 @@ Rails.application.routes.draw do
   get 'explanations/customer'
   get 'explanations/consultant'
   get 'bottles/result'
-  get 'bottles/new'
-  post "/bottles/create_select_bottle"
-  
+  get 'bottles/new', :to => 'bottles#new'
+  get "bottles/create_select_bottle"
+  post "bottles/create_select_bottle"
+
   resources :plans do
     resources :reviews 
   end
@@ -12,6 +13,9 @@ Rails.application.routes.draw do
   get 'plans/:id/show_plan_detail', :to => 'plans#show_plan_detail', as: 'show_plan_detail'
   get 'plans/:id/contract_create', :to => 'plans#contract_create', as: 'contract_create'
   get 'plans/:id/contract_shop', :to => 'plans#contract_shop',as: 'contract_shop'
+
+  resources :messages, only: [:create]
+  resources :rooms, only: [:create, :index, :show]
 
   devise_for :users, :controllers => {
     :registrations => 'users/registrations',
