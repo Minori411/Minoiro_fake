@@ -4,6 +4,7 @@ class BottlesController < ApplicationController
   end
 
   def create_select_bottle
+      current_user.user_select_bottles.destroy_all
       @user_select_bottle1 = UserSelectBottle.new
       @user_select_bottle1.bottle_id = params[:bottle_hid_1]
       @bottle1 = Bottle.find_by(bottle_type: params[:bottle_hid_1])
@@ -55,3 +56,4 @@ class BottlesController < ApplicationController
   end
   
 end
+

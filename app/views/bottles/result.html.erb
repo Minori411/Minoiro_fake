@@ -5,7 +5,7 @@
                 <td align="center">
                     <div class="item">
                     <% @select_bottles.each do |select_bottle| %>
-                        <% bottle = Bottle.find_by(id: select_bottle.id) %>
+                        <% bottle = Bottle.find_by(id: select_bottle.bottle_id) %>
                         <!-- hoverする画像 -->
                         <div class="item__img">
                         <%= image_tag(bottle.bottle_type+".jpeg",class:"center-b",width: '200px', height: '300px') %>

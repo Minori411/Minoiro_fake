@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :followers, through: :follower_relationships
   has_many :entries, dependent: :destroy
   has_many :messages, dependent: :destroy
+  has_many :user_select_bottles, dependent: :destroy
   mount_uploader :image, ImageUploader
   
 
