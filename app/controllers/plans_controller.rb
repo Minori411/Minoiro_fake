@@ -48,6 +48,21 @@ class PlansController < ApplicationController
         end
     end
 
+    def show_plan_detail
+        @plan = Plan.find(params[:id])
+        @user = User.find(@plan.user_id)
+    end
+
+    def contract_create
+        @plan = Plan.find(params[:id])
+        @user = User.find(@plan.user_id)
+    end
+
+    def contract_shop
+        @plan = Plan.find(params[:id])
+        @user = User.find(@plan.user_id)
+    end
+
     private  # ストロングパラメーター（予期しない値を変更されてしまう脆弱性を防ぐ機能）
     def plan_params
         params.require(:plan).permit(:title, :tag, :can_do, :youtube, :body, :status, :consent).merge(user_id: current_user.id)

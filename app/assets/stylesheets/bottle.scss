@@ -156,14 +156,18 @@ a.howtoplay, a.usage, a.history_ctrl_open, a.history_ctrl_close {
 
 
 .item {
-    max-width: 230px;
+    max-width: 200px;
     position: relative;
+    display: flex;
+    margin: 0 auto;
+    right: 340px;
     &:hover .item__text {
         opacity: 1;
     }
     &__img {
         width: 100%;
         height: 100%;
+        margin-right: 40px;
     }
     &__text {
         position: absolute;
@@ -184,5 +188,5 @@ a.howtoplay, a.usage, a.history_ctrl_open, a.history_ctrl_close {
 }
 
 .center-b {
-    margin-right: 10px!important;
+    margin-right: 20px!important;
 }

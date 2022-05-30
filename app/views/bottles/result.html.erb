@@ -8,63 +8,27 @@
                         <% bottle = Bottle.find_by(id: select_bottle.id) %>
                         <!-- hoverする画像 -->
                         <div class="item__img">
-                        <%= image_tag(bottle.bottle_type+".jpeg",class:"center-b") %>
+                        <%= image_tag(bottle.bottle_type+".jpeg",class:"center-b",width: '200px', height: '300px') %>
                         </div>
+
                         <!-- 画像をhoverした時に表示させる要素 -->
                         <div class="item__text">
                             <p>1本目のボトルは魂のボトル</p>
                             <p>あなたの人生の目的と使命、潜在的可能性を示しています。</p>
-                            <h5>@bottle.bottle_type</h5><br>
+                            <h5><@bottle.bottle_type ></h5><br>
                             <p>@bottle.bottle_name </p>
                         </div>
-                    </div>
-                </td>
-                <td align="center">
-                    <div class="item">
-                        <!-- hoverする画像 -->
-                        <div class="item__img">
-                        <%= image_tag(bottle.bottle_type+".jpeg",class:"center-b") %>
-                        </div>
-                        <!-- 画像をhoverした時に表示させる要素 -->
                         <div class="item__text">
-                            <p>２本目のボトルはチャレンジとギフトのボトル</p>
-                            <p>人生にチャレンジすることで開花する才能を示します。</p>
-                            <h5>@bottle.bottle_type</h5><br>
+                            <p>1本目のボトルは魂のボトル</p>
+                            <p>あなたの人生の目的と使命、潜在的可能性を示しています。</p>
+                            <h5><@bottle.bottle_type ></h5><br>
                             <p>@bottle.bottle_name </p>
                         </div>
-                    </div>
+                    <% end %>
+                </div>
                 </td>
-                <td align="center">
-                    <div class="item">
-                        <!-- hoverする画像 -->
-                        <div class="item__img">
-                        <%= image_tag(bottle.bottle_type+".jpeg",class:"center-b") %>
-                        </div>
-                        <!-- 画像をhoverした時に表示させる要素 -->
-                        <div class="item__text">
-                            <p>３本目のボトルは今ここのボトル</p>
-                            <p>あなたの今現在の状態を示します。</p>
-                            <h5>@bottle.bottle_type</h5><br>
-                            <p>@bottle.bottle_name </p>
-                        </div>
-                    </div>
-                </td>
-                <td align="center">
-                    <div class="item">
-                        <!-- hoverする画像 -->
-                        <div class="item__img">
-                        <%= image_tag(bottle.bottle_type+".jpeg",class:"center-b") %>
-                        </div>
-                        <!-- 画像をhoverした時に表示させる要素 -->
-                        <div class="item__text">
-                            <p>４本目のボトルは未来のボトル</p>
-                            <p>あなたのこれからの可能性を示します。</p>
-                            <h5>@bottle.bottle_type</h5><br>
-                            <p>@bottle.bottle_name </p>
-                        </div>
-                        <% end %>
-                    </div>
-                </td>
+               
+               
     </table>
 </div>
 

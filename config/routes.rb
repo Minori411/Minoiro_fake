@@ -9,7 +9,9 @@ Rails.application.routes.draw do
     resources :reviews 
   end
 
-  get 'plans/:id/show_user', :to => 'plans#show_user', as: 'show_user'
+  get 'plans/:id/show_plan_detail', :to => 'plans#show_plan_detail', as: 'show_plan_detail'
+  get 'plans/:id/contract_create', :to => 'plans#contract_create', as: 'contract_create'
+  get 'plans/:id/contract_shop', :to => 'plans#contract_shop',as: 'contract_shop'
 
   devise_for :users, :controllers => {
     :registrations => 'users/registrations',
