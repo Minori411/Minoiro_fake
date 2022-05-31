@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_30_084126) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_31_063426) do
   create_table "article_tags", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "article_id", null: false
     t.bigint "tag_id", null: false
@@ -37,6 +37,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_30_084126) do
     t.text "meaning_detail"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "contracts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "plan_id", null: false
+    t.integer "consultant_id"
+    t.integer "customer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["plan_id"], name: "index_contracts_on_plan_id"
+    t.index ["user_id"], name: "index_contracts_on_user_id"
   end
 
   create_table "entries", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -185,6 +196,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_30_084126) do
   add_foreign_key "article_tags", "articles"
   add_foreign_key "article_tags", "tags"
   add_foreign_key "articles", "users"
+  add_foreign_key "contracts", "plans"
+  add_foreign_key "contracts", "users"
   add_foreign_key "entries", "rooms"
   add_foreign_key "entries", "users"
   add_foreign_key "messages", "rooms"

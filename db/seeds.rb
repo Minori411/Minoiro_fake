@@ -9,15 +9,15 @@ user = User.new(name:"林みのり",
 user.skip_confirmation!
 user.save!
 
-Plan.create!(title: "aaa", 
-            tag: "aaa",
-            can_do: "aaa",
-            youtube: "aaa",
-            body: "aaa",
-            status: "aaa",
-            consent: "aaa",
+Plan.create!(title: "メンターの方に親切にしていただき、円滑に進めることができました。ありがとうございました。",
+            tag: "恋愛",
+            can_do: "カップルコンサル",
+            youtube: "https://www.youtube.com/watch?v=KMaTIu7pxVM",
+            body: "こんにちは",
+            status:"相談できます",
+            consent:"承認なし",
             user_id:1
-            )
+)
 
 Review.create!(body: "メンターの方に親切にしていただき、円滑に進めることができました。ありがとうございました。",
                 reviewer_id: 1,
@@ -27,7 +27,6 @@ Review.create!(body: "メンターの方に親切にしていただき、円滑�
             )
     
 User.create!(userstyle:1,
-            user_image:"aaa", 
             prefecture:"神奈川県", 
             introduction:"こんにちは", 
             url:"aaa", 
@@ -39,15 +38,17 @@ User.create!(userstyle:1,
             disability_passport:"www",
             certificate:"sss",
             image:"ccc",
-            year:"20225月"
+            year:"20225月",
+            id:2
 )
+
 
 Bottle.create!(
     [
         {
 bottle_type:"B000",
 bottle_name:"スピリチュアルレスキュー",
-meaning_detail:"直感的な深い洞察や気づきを、日常生活のなかに生かすのを助ける"
+meaning_detail:"直感的な深い洞察や気づきを、日常生活のなかに生かすのを助ける",
 },
 {
 bottle_type:"B001",
@@ -58,6 +59,7 @@ meaning_detail:"日常生活のすべてがスピリチュアルであるとい�
 bottle_type:"B002",
 bottle_name:"ピースボトル",
 meaning_detail:"内なる真の平和と繋がる"
+
 },
 {
 bottle_type:"B003",
@@ -657,11 +659,3 @@ meaning_detail:"未定"
     ]
 )
 
- Plan.create!(title: "メンターの方に親切にしていただき、円滑に進めることができました。ありがとうございました。",
-            tag: "恋愛",
-            can_do: "カップルコンサル",
-            youtube: "https://www.youtube.com/watch?v=KMaTIu7pxVM",
-            body: "こんにちは",
-            status:"相談できます",
-            consent:"承認なし"
-            )

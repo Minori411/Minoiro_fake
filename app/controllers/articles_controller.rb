@@ -40,7 +40,6 @@ class ArticlesController < ApplicationController
         begin
             #logger.debug("article_id:" + params[:article_id])
             @article = Article.find(params[:id])
-            tag_list = params[:article][:tag].split(',')
             if @article.update(article_params)
                 logger.debug("成功")
                 redirect_to article_path(@article.id)
