@@ -13,7 +13,8 @@ Rails.application.routes.draw do
   get 'plans/:id/show_plan_detail', :to => 'plans#show_plan_detail', as: 'show_plan_detail'
   get 'plans/:id/contract_create', :to => 'plans#contract_create', as: 'contract_create'
   get 'plans/:id/contract_shop', :to => 'plans#contract_shop',as: 'contract_shop'
-
+  post "/plans/create"
+  get "/plans/create"
   resources :messages, only: [:create]
   resources :rooms, only: [:create, :index, :show]
 

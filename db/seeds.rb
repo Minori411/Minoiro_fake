@@ -19,13 +19,16 @@ Plan.create!(title: "メンターの方に親切にしていただき、円滑�
             user_id:1
 )
 
-Review.create!(body: "メンターの方に親切にしていただき、円滑に進めることができました。ありがとうございました。",
+    
+User.all.each do |user|
+user.reviews.create!(body: "メンターの方に親切にしていただき、円滑に進めることができました。ありがとうございました。",
                 reviewer_id: 1,
                 reviewee_id: 2,
                 user_id: 1,
                 evaluation: 5
             )
-    
+end
+
 User.create!(userstyle:1,
             prefecture:"神奈川県", 
             introduction:"こんにちは", 
