@@ -10,7 +10,7 @@
                         <a href="#" class="link"></a>
                     </p>
                     <a href="#" class="color">
-                        <%= link_to "もっと詳しく",user_profile_path(@user.id)%>
+                        <%= link_to "もっと詳しく",profile_path(@plan.user_id)%>
                     </a>
                     <div class="snsicon">
                         <a href="#" target="_blank" class="m-r1">
@@ -93,88 +93,30 @@
                     <label for="modal-trigger_report">通報する</label>
                 </div>
                 <div class="sideMessageArea_sub">このプランをシェアしよう!</div>
-                <div class="side_sns"></div>
-            </div>
-            <div id="main">
-            <div class="boxbaseP30">
-            <div>
-            <h1 class="alignCenter">契約が完了しました!</h1>
-            <p class="m-b3">タイトル</p>
-            <div class="plan_contract_caution">
-            <div class="plan_contract_caution_head"></div>
-            <div class="plan_contract_share">
-            <div class="mb-10">
-            <h4 class="alignCenter mb-2">コンサルタントへメッセージを送信しよう！</h4>
-            <div class="plan_contract_message">
-            <a class="waves-effect waves-light btn contract_shop">メッセージを送信する</a>
-            </div>
-            </div>
-            <h4 class="alignCenter">プランをSNSでシェアしよう!</h4>
-            <div class="side_sns">
-            <div class="m-r1">
-            </div>
-            <div class="fb-share-button"></div>
-            </div>
-            </div>
-            </div>
-            </div>
-            <h3 class="smt_hyoji">プロフィール</h3>
-            <div id="side" class="smt sm">
-                <div class="gray">
-                    <a href="#">
-                        <div class="icon size125 wborder"></div>
-                    </a>
-                    <p class="status m-t05 alignCenter">相談できます</p>
-                    <p class="name">
-                        <a href="#" class="link">
-                            <span class="name_text">林みのり</span>
-                    </p>
-                    <div class="sns-icon">
-                        <a href="#" target="_blank" class="m-r1">
-                        <i class="fa fa-twitter"></i>
-                        </a>
-                    </div>
-                    <p class="time_stamp">24時間以内</p>
-                    <div class="selfcheck">
-                        <i class="fa fa-check-circle link"></i>
-                        本人確認
-                        <i class="fa fa-check-circle link"></i>
-                        秘密保持契約（NDA）
-                    </div>
-                    <div class="m-b2 FollowArea">
-                    フォローボタン
-                    </div>
-                    <div class="hyouka_box">
-                        <div class="icon_heart">評価</div>
-                        <div class="right">
-                            <span class="review-icon">
-                            <i class="fa fa-star"></i>
-                            </span>
-                            <span class="review-icon">
-                            <i class="fa fa-star"></i>
-                            </span>
-                            <span class="review-icon">
-                            <i class="fa fa-star"></i>
-                            </span>
-                            <span class="review-icon">
-                            <i class="fa fa-star"></i>
-                            </span>
-                            <span class="review-icon">
-                            <i class="fa fa-star"></i>
-                            </span>
-                            <span class="no-bold">(203)</span>
-                        </div>
-                        <div class="icon_money">料金</div>
-                        <div class="right">1000円〜</div>
-                    </div>
-                    <div class="SideMessageArea">
-                    <a class="waves-effect waves-light btn">メッセージで相談</a>
-                    <div class="SideMessageArea_sub">まずは相談してみよう</div>
-                    </div>
+                <div class="side_sns">
                 </div>
-                <div class="SideMessageArea_sub">このプランをシェアしよう!</div>
-                <div class="side_sns"></div>
+            </div>
+            <div id="main" class="no_br contract_main">
+            <div class="boxbaseP30">
+            <div class="mentorPlan_area">
+            <h3>コンサルタントプラン</h3>
+            <div class="plan_block">
+            <div class="plan_subject">タイトル</div>
+            <div class="plan_title">プランタイトル</div>
+            <div class="plan_price">
+            <span style="font-size: 1rem;">5000円/回</span>
             </div>
             </div>
-        </div>
-</div>
+            </div>
+            <div class="v-app coupon_area">
+            <h3>お支払い情報</h3>
+            <div class="plan_coupon"></div>
+            </div>
+            <div class="submit_buttons alignCenter">
+            <%= link_to "契約する", contracts_shop_path ,class:"waves-light btn" %>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+

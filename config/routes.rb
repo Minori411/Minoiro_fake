@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'contracts/create'
+  get 'contracts/shop'
   get 'explanations/customer'
   get 'explanations/consultant'
   get 'bottles/result'
