@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
-    @plan = Plan.find params[:plan_id]
+    @plan = Plan.find(params[:plan_id])
   end
 
   def index

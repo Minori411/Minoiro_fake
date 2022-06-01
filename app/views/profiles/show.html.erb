@@ -1,5 +1,5 @@
 <div class="userProfileHeader">
-<%= form_with model: @user, url: profile_path, local: true do |f| %>
+<%= form_with model: @user, url: user_profile_path, local: true do |f| %>
 <div class="userProfileHeader_inner flexbox">
     <div class="userProfileHeader_icon">
         <div class="icon wborder">
@@ -112,7 +112,7 @@
                         <div class="flexbox title_area">
                             <h2 class="mt-0">自己紹介</h2>
                             <div class="editBox">
-                                <%= link_to "編集する",edit_profile_path, class:"button subButton fas fa-edit" %>
+                                <%= link_to "編集する",edit_user_profile_path, class:"button subButton fas fa-edit" %>
                             </div>
                         </div>
                         <div class="plan_detail_markdown_over nobefore" style="max-height: none;">
@@ -153,6 +153,18 @@
     <i class="far fa-envelope"></i>
     メッセージを送る</a>        
     </a>
+    <% unless @user.id == current_user.id %>
+        <% if @isRoom == true %>
+            <p class="user-show-room"><a href="/rooms/<%= @roomId %>" class="btn btn-primary btn-lg">チャットへ</a>
+        <% else %>
+            <%= form_for @room do |f| %>
+            <%= fields_for @entry do |e| %>
+                <%= e.hidden_field :user_id, value: @user.id %>
+            <% end %>
+            <%= f.submit "メッセージを送る", class:"btn btn-primary btn-lg user-show-chat"%>
+            <% end %>
+        <% end %>
+    <% end %>
 </div>
 </div>
 <% end %>

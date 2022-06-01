@@ -47,7 +47,10 @@ Rails.application.routes.draw do
   root :to => "home#index"
   
   get "sample", to: "sample#index"
-  resource :profile, only: [:show, :edit, :update]
+
+  resources :users do
+    resource :profile, only: [:show, :edit, :update]
+  end
 
   resources :users do
     collection do

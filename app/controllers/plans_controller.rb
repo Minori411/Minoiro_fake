@@ -6,7 +6,7 @@ class PlansController < ApplicationController
     def show
         @plan = Plan.find(params[:id])
         @user = User.find(@plan.user_id)
-        @review = Review.find_by(user_id: @plan.user_id)
+        @review = Review.find(@plan.user_id)
         @reviews = @user.reviews
         @current_entry = Entry.where(user_id: current_user.id)
         @another_entry = Entry.where(user_id: @user.id)

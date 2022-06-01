@@ -10,7 +10,7 @@
                         <a href="#" class="link"></a>
                     </p>
                     <a href="#" class="color">
-                        <%= link_to "もっと詳しく",profile_path%>
+                        <%= link_to "もっと詳しく",user_profile_path(@user)%>
                     </a>
                     <div class="snsicon">
                         <a href="#" target="_blank" class="m-r1">
@@ -85,7 +85,18 @@
                         <div class="right">1000円</div>
                     </div>
                     <div class="m-b2 SideMessageArea">
-                        <label for="modal-trigger_message10335" class="z-depth-2 button primaryButton w100p">メッセージで相談</label>
+                        <% unless @user.id == current_user.id %>
+                            <% if @isRoom == true %>
+                                <p class="user-show-room"><a href="/rooms/<%= @roomId %>" class="btn btn-primary btn-lg">チャットへ</a>
+                            <% else %>
+                                <%= form_for @room do |f| %>
+                                <%= fields_for @entry do |e| %>
+                                    <%= e.hidden_field :user_id, value: @user.id %>
+                                <% end %>
+                                <%= f.submit "メッセージで相談する", class:"btn btn-primary btn-lg user-show-chat side-bar-message"%>
+                                <% end %>
+                            <% end %>
+                        <% end %>
                         <div class="sideMessageArea_sub">まずは相談してみよう</div>
                     </div>
                 </div>
@@ -242,11 +253,10 @@
                     <%= fields_for @entry do |e| %>
                         <%= e.hidden_field :user_id, value: @user.id %>
                     <% end %>
-                    <%= f.submit "チャットを始める", class:"btn btn-primary btn-lg user-show-chat"%>
+                    <%= f.submit "メッセージで相談する", class:"btn btn-primary btn-lg user-show-chat"%>
                     <% end %>
                 <% end %>
             <% end %>
-            <a class="waves-effect waves-light btn soudan-plan">メッセージで相談</a>
             </div>
             <div class="boxbaseP30">
                 <h4 id="profile" class="anchor-point">プロフィール</h4>
@@ -400,7 +410,7 @@
                                 <div class="flex">
                                     <div class="review_list_name">
                                         <span class="name">
-                                        <%= current_user.name %>
+                                        <%= review.user.name%>
                                         </span>
                                         <div class="review_list_option">
                                         <div class="time_area">
