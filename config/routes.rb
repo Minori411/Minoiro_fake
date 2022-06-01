@@ -48,9 +48,7 @@ Rails.application.routes.draw do
   
   get "sample", to: "sample#index"
 
-  resources :users do
-    resource :profile, only: [:show, :edit, :update]
-  end
+  resource :profile, only: %i[show edit update]
 
   resources :users do
     collection do

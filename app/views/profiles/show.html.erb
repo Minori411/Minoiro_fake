@@ -1,5 +1,5 @@
 <div class="userProfileHeader">
-<%= form_with model: @user, url: user_profile_path, local: true do |f| %>
+<%= form_with model: @user, url: profile_path, local: true do |f| %>
 <div class="userProfileHeader_inner flexbox">
     <div class="userProfileHeader_icon">
         <div class="icon wborder">
@@ -112,7 +112,7 @@
                         <div class="flexbox title_area">
                             <h2 class="mt-0">自己紹介</h2>
                             <div class="editBox">
-                                <%= link_to "編集する",edit_user_profile_path, class:"button subButton fas fa-edit" %>
+                                <%= link_to "編集する",edit_profile_path, class:"button subButton fas fa-edit" %>
                             </div>
                         </div>
                         <div class="plan_detail_markdown_over nobefore" style="max-height: none;">
@@ -145,27 +145,25 @@
     </div>
 <div class="userProfileSide">
 <div class="block-profile">
-<a class="waves-effect waves-light btn m-b2">
-<i class="far fa-user"></i>
-フォローする</a>        
-    </a>
-    <a class="waves-effect waves-light btn m-b2 hanten">
-    <i class="far fa-envelope"></i>
-    メッセージを送る</a>        
-    </a>
-    <% unless @user.id == current_user.id %>
-        <% if @isRoom == true %>
-            <p class="user-show-room"><a href="/rooms/<%= @roomId %>" class="btn btn-primary btn-lg">チャットへ</a>
-        <% else %>
-            <%= form_for @room do |f| %>
-            <%= fields_for @entry do |e| %>
-                <%= e.hidden_field :user_id, value: @user.id %>
-            <% end %>
-            <%= f.submit "メッセージを送る", class:"btn btn-primary btn-lg user-show-chat"%>
-            <% end %>
+<a class="">
+<% if user_signed_in? && %>
+    <div id="follow_form">
+        <% if current_user.following?(@user) %>
+        <%= form_for(current_user, url: relationship_path(@user), method: :delete, remote: true) do |f| %>
+            <%= f.submit "フォロー解除", class: "waves-effect waves-light btn m-b2 longer" %>
         <% end %>
-    <% end %>
+        <% else %>
+        <%= form_for(current_user, url: relationships_path, method: :post, remote: true) do |f| %>
+            <%= hidden_field_tag :following_id, @user.id %>
+            <%= f.submit "フォローする", class: "waves-effect waves-light btn m-b2 longer" %>
+        <% end %>
+        <% end %>
+    </div>
+<% end %>    
+    <%= f.submit "メッセージを送る", class:"hanten waves-light btn m-b2"%>
+            
 </div>
 </div>
 <% end %>
 </div>
+

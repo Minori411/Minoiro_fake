@@ -40,7 +40,7 @@ User.create!(userstyle:1,
             password_confirmation:"minori1234",
             disability_passport:"www",
             certificate:"sss",
-            image:"ccc",
+            image:"B000.jpeg",
             year:"20225月",
             id:2
 )
