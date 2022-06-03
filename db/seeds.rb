@@ -21,12 +21,12 @@ Plan.create!(title: "メンターの方に親切にしていただき、円滑�
 
     
 User.all.each do |user|
-user.reviews.create!(body: "メンターの方に親切にしていただき、円滑に進めることができました。ありがとうございました。",
-                reviewer_id: 1,
-                reviewee_id: 2,
-                user_id: 1,
-                evaluation: 5
-            )
+    user.reviews.create!(body: "メンターの方に親切にしていただき、円滑に進めることができました。ありがとうございました。",
+                        reviewer_id: 1,
+                        reviewee_id: 2,
+                        user_id: 1,
+                        evaluation: 5
+    )
 end
 
 User.create!(userstyle:1,
@@ -43,6 +43,12 @@ User.create!(userstyle:1,
             image:"B000.jpeg",
             year:"20225月",
             id:2
+)
+
+Contract.create!(user_id:1,
+                plan_id:1,
+                consultant_id:1,
+                customer_id:1
 )
 
 

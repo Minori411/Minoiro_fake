@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'contracts/create'
-  get 'contracts/shop'
   get 'explanations/customer'
   get 'explanations/consultant'
   get 'bottles/result'
@@ -9,12 +7,13 @@ Rails.application.routes.draw do
   post "bottles/create_select_bottle"
 
   resources :plans do
+    resources :contracts
     resources :reviews 
   end
 
+  
+
   get 'plans/:id/show_plan_detail', :to => 'plans#show_plan_detail', as: 'show_plan_detail'
-  get 'plans/:id/contract_create', :to => 'plans#contract_create', as: 'contract_create'
-  get 'plans/:id/contract_shop', :to => 'plans#contract_shop',as: 'contract_shop'
   post "/plans/create"
   get "/plans/create"
   resources :messages, only: [:create]

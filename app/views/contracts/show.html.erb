@@ -57,7 +57,7 @@
                     </div>
                     <div class="m-b2 FollowArea">
                         <div class="FollowArea_sub m-b1">フォローして後でチェック</div>
-                        <%= render "follow_form" %>
+                        <%= render "plans/follow_form" %>
                     </div>
                     <div class="hyouka_box">
                         <div class="icon_heart">
@@ -106,14 +106,25 @@
             <div class="mb-10">
             <h4 class="alignCenter mb-2">コンサルタントへメッセージを送信しよう！</h4>
             <div class="plan_contract_message">
-            <a class="waves-effect waves-light btn contract_shop">メッセージを送信する</a>
+            <% unless @user.id == current_user.id %>
+                <% if @isRoom == true %>
+                    <p class="user-show-room"><a href="/rooms/<%= @roomId %>" class="btn btn-primary btn-lg">チャットへ</a>
+                <% else %>
+                    <%= form_for @room do |f| %>
+                    <%= fields_for @entry do |e| %>
+                        <%= e.hidden_field :user_id, value: @user.id %>
+                    <% end %>
+                    <%= f.submit "メッセージで相談する", class:"btn btn-primary btn-lg user-show-chat side-bar-message"%>
+                    <% end %>
+                <% end %>
+            <% end %>
             </div>
             </div>
             <h4 class="alignCenter">プランをSNSでシェアしよう!</h4>
-            <div class="side_sns">
-            <div class="m-r1">
-            </div>
-            <div class="fb-share-button"></div>
+            <div class="side_sns mannaka">
+            <%= link_to "https://twitter.com/share?url=#{ request.url }&text=【拡散しよう】%0a%0a#{ @user.twitter }/&hashtags=みのいろ", target: '_blank' do %>
+                    <i class="fab fa-twitter" style='color: #3399FF;'></i>シェア
+            <% end %>
             </div>
             </div>
             </div>

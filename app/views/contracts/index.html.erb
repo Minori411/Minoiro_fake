@@ -1,3 +1,8 @@
+<%= form_with model: @contract, url: plan_contracts_path(@plan.id,@contract.id), method: :post do |f| %>
+    <input type="hidden" :customer_id, value="current_user.id" >
+    <input type="hidden" :consultant_id, value="@plan.user_id" >
+    <input type="hidden" :user_id, value="@plan.user_id" >
+
 <div class="back_white plan_detail">
         <div id="vapp" class="inner">
             <div id="side" class="smt pc">
@@ -57,7 +62,7 @@
                     </div>
                     <div class="m-b2 FollowArea">
                         <div class="FollowArea_sub m-b1">フォローして後でチェック</div>
-                        <%= render "follow_form" %>
+                        <%= render "plans/follow_form" %>
                     </div>
                     <div class="hyouka_box">
                         <div class="icon_heart">
@@ -113,10 +118,10 @@
             <div class="plan_coupon"></div>
             </div>
             <div class="submit_buttons alignCenter">
-            <%= link_to "契約する", contracts_shop_path ,class:"waves-light btn" %>
+            <%= f.submit "契約する",class:"waves-light btn" %>
             </div>
             </div>
             </div>
             </div>
             </div>
-
+<% end %>

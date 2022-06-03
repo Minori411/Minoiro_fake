@@ -1,12 +1,12 @@
 class PlansController < ApplicationController
     def index
+        @plan = Plan.new
         @plans = Plan.all
     end
 
     def show
         @plan = Plan.find(params[:id])
         @user = User.find(@plan.user_id)
-        @review = Review.find(@plan.user_id)
         @reviews = @user.reviews
         @current_entry = Entry.where(user_id: current_user.id)
         @another_entry = Entry.where(user_id: @user.id)
@@ -66,16 +66,6 @@ class PlansController < ApplicationController
     end
 
     def show_plan_detail
-        @plan = Plan.find(params[:id])
-        @user = User.find(@plan.user_id)
-    end
-
-    def contract_create
-        @plan = Plan.find(params[:id])
-        @user = User.find(@plan.user_id)
-    end
-
-    def contract_shop
         @plan = Plan.find(params[:id])
         @user = User.find(@plan.user_id)
     end
