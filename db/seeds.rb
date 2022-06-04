@@ -16,7 +16,12 @@ Plan.create!(title: "メンターの方に親切にしていただき、円滑�
             body: "こんにちは",
             status:"相談できます",
             consent:"承認なし",
-            user_id:1
+            user_id:1,
+            plan_name:"aaa",
+            price: 1000,
+            video: false,
+            chat: false,
+            plan_detail: "aaa"
 )
 
     

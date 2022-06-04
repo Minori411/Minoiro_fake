@@ -5,6 +5,7 @@ class PlansController < ApplicationController
     end
 
     def show
+        @plans = Plan.all
         @plan = Plan.find(params[:id])
         @user = User.find(@plan.user_id)
         @reviews = @user.reviews

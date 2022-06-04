@@ -122,9 +122,6 @@
                 <p>プランのユーザーID-<%= @plan.user_id %></p>
             </div>
             <div class="boxbaseP30">
-                <p>
-                タグ
-                </p>
                 <h1 class="plan_show"><%= @plan.title %></h1>
                 <h3 class="nomargin">できること</h3>
                 <div class="markdown-body plan_detail_markdown_over">
@@ -138,6 +135,7 @@
             </div>
             <h3 id="plans" class="anchor-point">プラン（３件）</h3>
             <div class="wrapper flex swiper-container swipe01 swiper-initialized swiper-horizonal swiper-pointer-events swiper-free-mode">
+            <% @plans.each do |plan| %>
             <%= link_to show_plan_detail_path(@plan.id) do %>
             <div class="plan-card mmm">
             <div class="plan-card_wrapper"></div>
@@ -155,19 +153,13 @@
                 <div class="plan-card-text">
                     <div class="plan-card_top">
                         <div class="plan-card_subject">
-                            カップルコンサルできます!あなたが知りたい過去のトラウマや未来の不安などを解消します!
+                            <%= @plan.plan_name %>
                         </div>
                     </div>
                     <div class="plan-card_bottom">
                         <div class="plan-card_info flexbox">
-                            <div class="plan-card_review flexbox">
-                                <span class="plan-card_review-icon">
-                                    <i class="fas fa-star"></i>
-                                </span>
-                                <span class="plan-card_review-count">4.7</span>
-                            </div>
                             <div class="plan-card_price">
-                                1000円〜
+                                <%= @plan.price %>円
                             </div>
                         </div>
                     </div>
@@ -175,78 +167,7 @@
             </div>
         </div>
         <% end %>
-        
-        <div class="plan-card mmm">
-            <div class="plan-card_wrapper"></div>
-            <div class="p-content-card_inner">
-                <div class="plan_card_eyecatch">
-                    <div class="plan-card_image slickSlide slick-initialized slick-slider">
-                        <div class="slick-list draggable">
-                            <div class="slick-track" style="opacity: 1; width: 268px; tranform: translated3d(0px, 0px, 0px);">
-                                <div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width:268px">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="plan-card-text">
-                    <div class="plan-card_top">
-                        <div class="plan-card_subject">
-                            カップルコンサルできます!あなたが知りたい過去のトラウマや未来の不安などを解消します!
-                        </div>
-                    </div>
-                    <div class="plan-card_bottom">
-                        <div class="plan-card_info flexbox">
-                            <div class="plan-card_review flexbox">
-                                <span class="plan-card_review-icon">
-                                    <i class="fas fa-star"></i>
-                                </span>
-                                <span class="plan-card_review-count">4.7</span>
-                            </div>
-                            <div class="plan-card_price">
-                                1000円〜
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="plan-card mmm">
-            <div class="plan-card_wrapper"></div>
-            <div class="p-content-card_inner">
-                <div class="plan_card_eyecatch">
-                    <div class="plan-card_image slickSlide slick-initialized slick-slider">
-                        <div class="slick-list draggable">
-                            <div class="slick-track" style="opacity: 1; width: 268px; tranform: translated3d(0px, 0px, 0px);">
-                                <div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width:268px">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="plan-card-text">
-                    <div class="plan-card_top">
-                        <div class="plan-card_subject">
-                            カップルコンサルできます!あなたが知りたい過去のトラウマや未来の不安などを解消します!
-                        </div>
-                    </div>
-                    <div class="plan-card_bottom">
-                        <div class="plan-card_info flexbox">
-                            <div class="plan-card_review flexbox">
-                                <span class="plan-card_review-icon">
-                                    <i class="fas fa-star"></i>
-                                </span>
-                                <span class="plan-card_review-count">4.7</span>
-                            </div>
-                            <div class="plan-card_price">
-                                1000円〜
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <% end %>
 
 
             </div>

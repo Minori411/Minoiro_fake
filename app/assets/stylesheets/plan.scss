@@ -1951,7 +1951,7 @@ select {
 .pricebox {
     margin-left: 20px;
     display: flex;
-    width: 90px;
+    width: 100px;
 }
 
 
@@ -2020,4 +2020,25 @@ select {
 
 .btn-cutom4 {
     text-align: center;
+}
+
+.plan_module {
+    .planbox {
+        .items {
+            width: 100%;
+        }
+    }
+}
+
+.left {
+    margin-right: 20px;
+}
+
+.yenkai {
+    display: flex;
+}
+
+.yenkais {
+    margin-top: 15px;
+    display: flex;
 }

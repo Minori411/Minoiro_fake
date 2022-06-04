@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_31_063426) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_04_113616) do
   create_table "article_tags", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "article_id", null: false
     t.bigint "tag_id", null: false
@@ -87,9 +87,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_31_063426) do
     t.text "body"
     t.string "status"
     t.string "consent"
+    t.integer "consultant_id"
+    t.integer "customer_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "video", default: false, null: false
+    t.boolean "chat", default: false, null: false
+    t.string "plan_name"
+    t.text "plan_detail"
+    t.integer "price"
     t.index ["user_id"], name: "index_plans_on_user_id"
   end
 

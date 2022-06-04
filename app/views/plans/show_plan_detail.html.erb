@@ -102,15 +102,18 @@
                 </div>
             </div>
             <div id="main" class="no_br">
+            <% if user_signed_in? && current_user.id == @plan.user_id %>
+                <td><%= link_to "編集", edit_plan_path(@plan.id) %></td>
+            <% end %>
             <div class="boxbaseP30">
             <div>
-            <h1>相談乗ります</h1>
+            <h1><%= @plan.plan_name %></h1>
             <div class="plan_price">
-            <span style="font-size: 1rem;">5000円/回</span>
+            <span style="font-size: 1rem;"><%= @plan.price %></span>
             </div>
             </div>
             <div>
-            <div class="markdown-body"></div>
+            <div class="markdown-body"><%= @plan.plan_detail %></div>
             </div>
             <div id="vapp">
             <div class="p-entry flexbox">
