@@ -1,0 +1,165 @@
+<%= form_with model: @user, url: user_profiles_path, local: true do |f| %>
+<div class="userProfileHeader">
+<div class="userProfileHeader_inner flexbox">
+    <div class="userProfileHeader_icon">
+        <div class="icon wborder">
+            <img src="<%= @user.image %>",class:size125, width="100">
+        </div>
+    </div>
+    <div class="userProfileHeader_name">
+        <div class="name">
+            <h1><%= @plan.user.name %></h1>
+            <div class="snsicon"></div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="userProfile">
+<div class="inner">
+    <div class="userProfile_Main">
+        <div class="scoreBox customer_summary m-b2 column_3">
+            <div class="flexbox scoreBox_wrap">
+            <div class="scoreStatus contract_manage review">
+                            <span class="scoreStatus_label">評価</span>
+                            <span class="scoreStatus_star">
+                                <span class="yellow">
+                                    <i class="fas fa-star"></i>
+                                </span>
+                                <span class="yellow">
+                                    <i class="fas fa-star"></i>
+                                </span>
+                                <span class="yellow">
+                                    <i class="fas fa-star"></i>
+                                </span>
+                                <span class="yellow">
+                                    <i class="fas fa-star"></i>
+                                </span>
+                                <span class="yellow">
+                                    <i class="fas fa-star"></i>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="scoreStatus contract_manage response">
+                            <span class="scoreStatus_label">返信率</span>
+                            <span class="scoreStatus_score">
+                                100
+                                <small>%</small>
+                            </span>
+                        </div>
+                <div class="scoreStatus contract_manage flexbox">
+                    <div class="scoreStatus_item relative">
+                        <span class="scoreStatus_label flexbox">累計</span>
+                        <span class="scoreStatus_score">1</span>
+                        <span>人</span>
+                    </div>
+                </div>
+                    <li class="scoreStatus_list manage flexbox">
+                        <i class="fas fa-check-circle link"></i>
+                        <span class="scoreStatus_list_label">NDA</span>
+                    </li>
+                    <li class="scoreStatus_list manage flexbox">
+                        <i class="fas fa-check-circle link"></i>
+                        <span class="scoreStatus_list_label">本人確認</span>
+                    </li>
+                </div>
+            <ul class="scoreStatus_listss flexbox">
+                <li class="scoreStatus_lists">
+                    <span class="scoreStatus_list_score">0</span>
+                    <%= f.label :フォロー, class: "scoreStatus_list_label follows"%>
+                </li>
+                <li class="scoreStatus_lists">
+                    <span class="scoreStatus_list_score">0</span>
+                    <%= f.label :フォロワー, class: "scoreStatus_list_label follows"%>
+                </li>
+                <li class="scoreStatus_lists flexbox">
+                    <span class="scoreStatus_list_label">
+                        最終ログイン
+                        <% if current_user.current_sign_in_at > 1.day.ago %>
+                        <%= content_tag :p, "24時間以内", class: "current_signin"%>
+                        <% elsif current_user.current_sign_in_at > 2.day.ago %>
+                        <%= content_tag :p, "1日前", class: "current_signin"%>
+                        <% elsif current_user.current_sign_in_at > 3.day.ago %>
+                        <%= content_tag :p, "2日前", class: "current_signin"%>
+                        <% elsif current_user.current_sign_in_at > 31.day.ago %>
+                        <%= content_tag :p, "30日以上", class: "current_signin"%>
+                        <% elsif 3.days.ago > current_user.current_sign_in_at > 31.day.ago %>
+                        <%= content_tag :p, "30日以上", class: "current_signin"%>
+                        <% end %>       
+                    </span>
+                <li class="scoreStatus_lists flexbox">
+                    <span class="scoreStatus_list_label registration_date">
+                        登録日
+                    <p class="registration_date"><%= current_user.created_at.strftime('%Y/%m/%d') %><p>
+                    </span>
+                </li>
+            </ul>
+        </div>
+        <div class="tab_wrapper">
+            <input id="introduction" type="radio" name="tab_item" checked>
+            <label class="tab_item font-bold" for="introduction">
+                自己紹介
+            </label>
+            <input id="plan" type="radio" name="tab_item">
+            <label class="tab_item font-bold" for="plan">プラン</label>
+            <input id="post" type="radio" name="tab_item">
+            <label class="tab_item font-bold" for="post">ブログ</label>
+            <input id="review" type="radio" name="tab_item">
+            <label class="tab_item font-bold" for="review">レビュー</label>
+            <!--自己紹介 カテゴリ-->
+            <div class="tab_content" id="introduction_content">
+                <div class="tab_content_description">
+                    <div class="boxbaseP30">
+                        <div class="flexbox title_area">
+                            <h2 class="mt-0">自己紹介</h2>
+                        </div>
+                        <div class="plan_detail_markdown_over nobefore" style="max-height: none;">
+                            <p><%= @user.introduction %></p>
+                        </div>
+                        <div class="alignCenter" style="display: none;">
+                            <a href="#" class="link more-btn">
+                                <i class="fa fa-angle-down"></i>
+                                もっとみる
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--プラン カテゴリ-->
+            <div class="tab_content" id="plan_content">
+                <div class="tab_content_description">
+                    <div class="tab_content_plan"></div>
+                </div>
+            </div>
+            <!--投稿 カテゴリ--> 
+            <div class="tab_content" id="post_content">
+                <div class="tab_content_description"></div>
+            </div>
+            <!--レビュー カテゴリ-->
+            <div class="tab_content" id="review_content">
+                <div class="tab_content_description"></div>
+            </div>
+        </div>
+    </div>
+<div class="userProfileSide">
+<div class="block-profile">
+<% if user_signed_in? && %>
+    <div id="follow_form">
+        <% if current_user.following?(@user) %>
+        <%= form_for(current_user, url: relationship_path(@user), method: :delete, remote: true) do |f| %>
+            <%= f.submit "フォロー解除", class: "waves-effect waves-light btn m-b2 longer" %>
+        <% end %>
+        <% else %>
+        <%= form_for(current_user, url: relationships_path, method: :post, remote: true) do |f| %>
+            <%= hidden_field_tag :following_id, @user.id %>
+            <%= f.submit "フォローする", class: "waves-effect waves-light btn m-b2 longer" %>
+        <% end %>
+        <% end %>
+    </div>
+<% end %>    
+    <%= f.submit "メッセージを送る", class:"hanten waves-light btn m-b2"%>
+            
+</div>
+</div>
+<% end %>
+</div>
+

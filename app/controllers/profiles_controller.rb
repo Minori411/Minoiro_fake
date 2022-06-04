@@ -1,6 +1,11 @@
 class ProfilesController < ApplicationController
     before_action :set_user,only: %i[edit update]
 
+    def index
+        @user = User.find(current_user.id)
+        @plan = Plan.find(params[:user_id])
+    end
+
     def edit
     end
 

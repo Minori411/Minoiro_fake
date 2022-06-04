@@ -169,11 +169,11 @@
                 </div>
     <div class="boxbaseP30 plan_module js-addfield-block flex-wrap planbox m-b-20 z-depth-1" style="padding: 30px">
     <div class="left ">
-        <%= f.text_field :plan_name ,:placeholder=>"チャットでの相談" %>
+        <%= f.text_field :plan_name , :placeholder =>"#{@plan.plan_name}" %>
     </div>
 
     <div class="pricebox ">
-        <%= f.text_field :price,  :placeholder=>"5,000" %>
+        <%= f.text_field :price,   :placeholder =>"#{@plan.price}" %>
         <div class="yenkais">
         <span class="yenkai">円/</span>
         <span class="kai">回</span>
@@ -192,7 +192,7 @@
     </div>
 
     <div class="m-t2 left w100p ">
-        <%= f.text_area :plan_detail, class: "w100p", :placeholder=>"プランの内容を入力してください" %>
+        <%= f.text_area :plan_detail, class: "w100p",  :placeholder =>"#{@plan.plan_detail}" %>
     </div>
             <div class="right m-b-20 smt_right m-t1" style="width: auto; margin-left: auto;">
             <a href="#" class="button is-danger" data-deletefiled="true">

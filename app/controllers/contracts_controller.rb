@@ -10,10 +10,10 @@ class ContractsController < ApplicationController
     @contract = Contract.new# 何を新しく保存するか指定
     @plan = Plan.find(params[:plan_id])
     @user = User.find(@plan.user_id)
-    @contract = Plan.find(params[:plan_id])
+    @contract.plan_id = @plan.id
     @contract.consultant_id = @plan.user_id
     @contract.customer_id = current_user.id
-    @contract.user_id = @contract.id
+    @contract.user_id = current_user.id
             if @contract.save! # もし保存ができたら
                 logger.debug("成功")
                 redirect_to plan_contract_path(@plan.id,@contract.id) # 投稿画面に遷移
