@@ -10,12 +10,10 @@
         <%= m.body %>
       </p>
     </div>
-    <% else  %>
-  <% end %>
+    <% else %>
+    <% end %>
+
   <div class="fukidasi">
-    <div class="faceicon">
-      <%= image_tag "B000.jpeg" %>
-    </div>
     <div class="chatting">
       <div class="says">
         <p>
@@ -25,12 +23,48 @@
     </div>
   </div>
 <% end %>
-<div class="chat-form-box">
-  <%= form_for @message do |f| %>
-    <div class="chat-form-group">
-      <%= f.text_field :body %>
-      <%= f.hidden_field :room_id, :value => @room.id %>
-      <%= f.submit "送信する" %>
+
+<div class="back_white p-t3 dashContent">
+    <div class="dashContent_right">
+        <h1>メッセージ</h1>
+        <div class="v-app memberMainContents m-b3">
+            <div>
+                <a href="#" class="text_link bold">
+                <%= ("#{User.find(@another_entry.user_id ).name}") %>
+                </a>
+                さんに
+                <strong>メッセージを送信する</strong>
+            </div>
+            <div>
+                    
+                    <div class="msg_area mt-3">
+                        <p class="small text_message">
+                            <span>残り5000字以内</span>
+                        </p>
+                        <div class="chat-form-box">
+                          <%= form_for @message do |f| %>
+                            <div class="chat-form-group">
+                              <%= f.text_area :body %>
+                              <%= f.hidden_field :room_id, :value => @room.id %>
+                              <%= f.submit "送信する" %>
+                    <div class="alignCenter imasugu mt-3">
+                        <%= f.submit "送信する", class:"btn nosubmit" %>
+                    </div>
+                    </div>
+                    <% end %>
+                  </div>
+              </div>
+                    <div class="tyui m-t2 small">
+                        <p class="tyui_text">注意事項</p>
+                        <ul class="tyui_text">
+                            <li>みのいろを介さずに行う直接取引、勧誘・宣伝行為を禁止しております。
+                                <br>
+                                これらの行為が確認された場合、アカウント制限等の対応をさせていただきますのでご注意ください。
+                            </li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+        <div id="vapp"></div>
     </div>
-  <% end %>
 </div>
