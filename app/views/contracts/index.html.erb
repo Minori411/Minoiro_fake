@@ -52,7 +52,17 @@
                         </div>
                     </div>
                     <p class="time_stamp">
-                        24時間以内
+                    <% if current_user.current_sign_in_at > 1.day.ago %>
+                    <%= content_tag :p, "24時間以内", class: "current_signin"%>
+                    <% elsif current_user.current_sign_in_at > 2.day.ago %>
+                    <%= content_tag :p, "1日前", class: "current_signin"%>
+                    <% elsif current_user.current_sign_in_at > 3.day.ago %>
+                    <%= content_tag :p, "2日前", class: "current_signin"%>
+                    <% elsif current_user.current_sign_in_at > 31.day.ago %>
+                    <%= content_tag :p, "30日以上", class: "current_signin"%>
+                    <% elsif 3.days.ago > current_user.current_sign_in_at > 31.day.ago %>
+                    <%= content_tag :p, "30日以上", class: "current_signin"%>
+                    <% end %> 
                     </p>
                     <div class="selfcheck">
                         <i class="fas fa-check-circle link"></i>

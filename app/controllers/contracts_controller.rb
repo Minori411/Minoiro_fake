@@ -28,7 +28,7 @@ class ContractsController < ApplicationController
     @plan = Plan.find(params[:plan_id])
     @user = User.find(@plan.user_id)
     @current_entry = Entry.where(user_id: current_user.id)
-      @another_entry = Entry.where(user_id: @user.id)
+    @another_entry = Entry.where(user_id: @user.id)
       @room = Room.new
       unless @user.id == current_user.id
           @current_entry.each do |current|

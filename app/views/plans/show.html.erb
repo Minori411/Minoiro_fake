@@ -1,4 +1,5 @@
 <input type="hidden", :user_id, value="@user.id">
+<input type="hidden", :user_id, value="@entry.id">
 <div class="back_white plan_detail">
         <div id="vapp" class="inner">
             <div id="side" class="smt pc">
@@ -48,7 +49,17 @@
                         </div>
                     </div>
                     <p class="time_stamp">
-                        24時間以内
+                    <% if current_user.current_sign_in_at > 1.day.ago %>
+                    <%= content_tag :p, "24時間以内", class: "current_signin"%>
+                    <% elsif current_user.current_sign_in_at > 2.day.ago %>
+                    <%= content_tag :p, "1日前", class: "current_signin"%>
+                    <% elsif current_user.current_sign_in_at > 3.day.ago %>
+                    <%= content_tag :p, "2日前", class: "current_signin"%>
+                    <% elsif current_user.current_sign_in_at > 31.day.ago %>
+                    <%= content_tag :p, "30日以上", class: "current_signin"%>
+                    <% elsif 3.days.ago > current_user.current_sign_in_at > 31.day.ago %>
+                    <%= content_tag :p, "30日以上", class: "current_signin"%>
+                    <% end %> 
                     </p>
                     <div class="selfcheck">
                         <i class="fas fa-check-circle link"></i>
@@ -101,9 +112,6 @@
                         <div class="sideMessageArea_sub">まずは相談してみよう</div>
                     </div>
                 </div>
-                <div class="m-b1 ReportArea m-t1">
-                    <label for="modal-trigger_report">通報する</label>
-                </div>
                 <div class="sideMessageArea_sub">このプランをシェアしよう!</div>
                 <div class="side_sns">
                 <%= link_to "https://twitter.com/share?url=#{ request.url }&text=【拡散しよう】%0a%0a#{ @user.twitter }/&hashtags=みのいろ", target: '_blank' do %>
@@ -136,7 +144,7 @@
             <h3 id="plans" class="anchor-point">プラン（３件）</h3>
             <div class="wrapper flex swiper-container swipe01 swiper-initialized swiper-horizonal swiper-pointer-events swiper-free-mode">
             <% @plans.each do |plan| %>
-            <%= link_to show_plan_detail_path(@plan.id) do %>
+            <%= link_to show_plan_detail_path(plan.id) do %>
             <div class="plan-card mmm">
             <div class="plan-card_wrapper"></div>
             <div class="p-content-card_inner">
@@ -214,10 +222,10 @@
             <div id="vapp-profile" class="boxbaseP30">
                 <div class="planPostBox">
                     <div class="planPostBox_info flexbox">
-                        <span class="planPostBox_date">4月19日</span>
+                        <span class="planPostBox_date"></span>
                     </div>
                     <p class="bold">
-                        <a href="#" class="link">最近の話</a>
+                        <a href="#" class="link"></a>
                     </p>
                 </div>
                 <div class="alignCenter">
@@ -241,7 +249,19 @@
                         <i class="fa fa-twitter"></i>
                         </a>
                     </div>
-                    <p class="time_stamp">24時間以内</p>
+                    <p class="time_stamp">
+                    <% if current_user.current_sign_in_at > 1.day.ago %>
+                    <%= content_tag :p, "24時間以内", class: "current_signin"%>
+                    <% elsif current_user.current_sign_in_at > 2.day.ago %>
+                    <%= content_tag :p, "1日前", class: "current_signin"%>
+                    <% elsif current_user.current_sign_in_at > 3.day.ago %>
+                    <%= content_tag :p, "2日前", class: "current_signin"%>
+                    <% elsif current_user.current_sign_in_at > 31.day.ago %>
+                    <%= content_tag :p, "30日以上", class: "current_signin"%>
+                    <% elsif 3.days.ago > current_user.current_sign_in_at > 31.day.ago %>
+                    <%= content_tag :p, "30日以上", class: "current_signin"%>
+                    <% end %> 
+                    </p>
                     <div class="selfcheck">
                         <i class="fa fa-check-circle link"></i>
                         本人確認

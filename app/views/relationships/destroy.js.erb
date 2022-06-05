@@ -1,5 +1,5 @@
 $('#follow_form').html('<%= j(render('plans/follow')) %>');
 
-$(".following_count").html('<%= link_to following_user_path(@user) do %><%= @user.following.count %>人<% end %>'); 
+$(".following_count").html('<%= link_to following_user_path(@user),class:"zero longer" do %><%= @user.following.count %><% end %>'); 
 
-$(".followers_count").html('<%= link_to followers_user_path(@user) do %><%= @user.followers.count %>人<% end %>');
+$(".followers_count").html('<%= link_to followers_user_path(@user),class:"zero longer" do %><%= @user.followers.count %><% end %>');

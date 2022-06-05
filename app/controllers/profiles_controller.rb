@@ -2,8 +2,22 @@ class ProfilesController < ApplicationController
     before_action :set_user,only: %i[edit update]
 
     def index
-        @user = User.find(current_user.id)
-        @plan = Plan.find(params[:user_id])
+        @user = User.find(params[:user_id])
+        @room = Room.new
+        unless @user.id == current_user.id
+            @current_entry.each do |current|
+                @another_entry.each do |another|
+                    if current.room_id == another.room_id
+                        @is_room = true
+                        @room_id = current.room_id
+                    end
+                end
+            end
+            unless @is_room
+                @room = Room.new
+                @entry = Entry.new
+            end
+        end
     end
 
     def edit

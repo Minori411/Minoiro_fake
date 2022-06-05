@@ -1,6 +1,6 @@
 <div class="title">
   <h2>
-  <%= ("#{@another_entry.user.name}さんとのメッセージ") %>
+  <%= ("#{User.find(@another_entry.user_id ).name}さんとのメッセージ") %>
   </h2>
 </div>
 <% @messages.each do |m| %>
