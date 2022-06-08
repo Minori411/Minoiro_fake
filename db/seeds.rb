@@ -1,4 +1,3 @@
-require 'faker'
 
 user = User.new(name:"林みのり",
             email:"aaa@example.com",
@@ -9,8 +8,8 @@ user = User.new(name:"林みのり",
 user.skip_confirmation!
 user.save!
 
-Plan.create!(title: "メンターの方に親切にしていただき、円滑に進めることができました。ありがとうございました。",
-            tag: "恋愛",
+10.times do |n|
+Plan.create!(title: "何でも相談乗ります",
             can_do: "カップルコンサル",
             youtube: "https://www.youtube.com/watch?v=KMaTIu7pxVM",
             body: "こんにちは",
@@ -23,16 +22,15 @@ Plan.create!(title: "メンターの方に親切にしていただき、円滑�
             chat: false,
             plan_detail: "aaa"
 )
+end
 
     
-User.all.each do |user|
-    user.reviews.create!(body: "メンターの方に親切にしていただき、円滑に進めることができました。ありがとうございました。",
-                        reviewer_id: 1,
-                        reviewee_id: 2,
-                        user_id: 1,
-                        evaluation: 5
-    )
-end
+Review.create!(body: "メンターの方に親切にしていただき、円滑に進めることができました。ありがとうございました。",
+                reviewer_id: 1,
+                reviewee_id: 2,
+                user_id: 1,
+                evaluation: 5
+)
 
 User.create!(userstyle:1,
             prefecture:"神奈川県", 

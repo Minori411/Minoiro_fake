@@ -24,7 +24,7 @@
                         <% end %>
                     </li>
                     <li class="todoList_item">
-                    <%= link_to bottles_new_path do   %>
+                    <%= link_to bottles_new_path do %>
                             <span class="check_circle">
                                 <i class="fas fa-check-circle"></i>
                             </span>
@@ -40,7 +40,7 @@
                     <% end %>
                     </li>
                     <li class="todoList_item">
-                    <%= link_to plans_path do  %>
+                    <%= link_to plans_path do %>
                             <span class="check_circle">
                                 <i class="fas fa-check-circle"></i>
                             </span>
@@ -65,22 +65,38 @@
                 <div class="scoreStatus contract_manage flexbox">
                     <div class="scoreStatus_item relative">
                             <span class="scoreStatus_label flexbox">契約累計</span>
-                            <span class="scoreStatus_score">1</span>
+                            <span class="scoreStatus_score">
+                            <% if current_user.userstyle == 0 %>
+                            <%= @sum_total_consultants %>
+                            <% elsif current_user.userstyle == 1 %>
+                            <%= @sum_total_customers %>
+                            <% end %>
+                            </span>
                             <span>人</span>
                     </div>
                 </div>
             </div>
                 <ul class="scoreStatus_listsss flexbox border-top">
                     <li class="scoreStatus_list flexbox">
-                        <span class="scoreStatus_list_score">0</span>
+                        <span class="scoreStatus_list_score">
+                        <%= link_to following_user_path(@user.id) do %>
+                            <span class="bold following_count zero"><%= @user.following.count %></span>
+                        <% end %>
+                        </span>
                         <span class="scoreStatus_list_label">フォロー</span>
                     </li>
                     <li class="scoreStatus_list flexbox">
-                        <span class="scoreStatus_list_score">0</span>
+                        <span class="scoreStatus_list_score">
+                        <%= link_to followers_user_path(@user.id) do %>
+                            <span class="bold followers_count zero"><%= @user.followers.count %></span>
+                        <% end %>
+                        </span>
                         <span class="scoreStatus_list_label">フォロワー</span>
                     </li>
                     <li class="scoreStatus_list flexbox">
-                        <span class="scoreStatus_list_score">0</span>
+                        <span class="scoreStatus_list_score">
+                        <%= current_user.articles.count %>
+                        </span>
                         <span class="scoreStatus_list_label">投稿</span>
                     </li>
                 </ul>

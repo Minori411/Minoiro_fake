@@ -1,8 +1,7 @@
-<div class="back_white">
 <%= form_with model: @plan, url: plans_path, local: true do |f| %>
+<div class="back_white">
     <div class="mentaListBox">
     <div class="searchBox">
-    <form method="GET" action="search" class="js-auto-submit">
     <div class="plan_search">
         <input name="search_on" type="hidden" value="on">
         <h3 class="m-b1">条件で絞り込む</h3>
@@ -16,25 +15,23 @@
                 <i class="fas fa-search"></i>
             </div>
         </div>
-        <div class="cp_box">
-            <input id="cp00" type="checkbox">
-            <label for="cp00">
-                <i class="fas fa-chevron-down"></i>
-                もっと詳しく検索
-            </label>
+        <div class="cp_box1">
             <div class="cp_container">
-
+            <div class="items">
+                <div class="item_name flexbox">
+                    <h3>相談方式</h3>
+                </div>
+                <%= f.check_box :chat, id: :minoiro_checkbox, :as =>:boolean %>
+                <%=f.label :チャット %>
+                <%= f.check_box :video, id: :minoiro_video, :as =>:boolean %>
+                <%= f.label :ビデオ通話 %>
+            </div>
             <div class="motto">
                 <div class="price-custom">
                 <div class="searchBox_m">料金</div>
                 <div class="form-group right">
                     <div class="select-wrap">
-                <select class="browser-default">
-                    <option value="" disabled selected>Choose your option</option>
-                    <option value="1">Option 1</option>
-                    <option value="2">Option 2</option>
-                    <option value="3">Option 3</option>
-                </select>
+                    <%= f.select :price, [['選択してください', 1], ['〜2000円', 2],['〜3000円', 3],['〜4000円', 4],['〜4999円', 4]], { include_blank: true, selected: 1 } %>
             </div>
             </div>
             </div>
@@ -42,12 +39,7 @@
                 <div class="searchBox_m">評価</div>
                 <div class="form-group right">
                     <div class="select-wrap">
-                        <select class="browser-default">
-                            <option value="" disabled selected>Choose your option</option>
-                            <option value="1">〜★★★</option>
-                            <option value="2">〜★★★★</option>
-                            <option value="3">★★★★★</option>
-                        </select>
+                    <%= f.select :evaluation, [['選択してください', 1], ['〜★★★', 2],['〜★★★★', 3],['★★★★★', 4]], { include_blank: true, selected: 1 } %>
                     </div>
                 </div>
             </div>
@@ -66,7 +58,9 @@
         <div class="listBox_inner flexbox">
             <div class="listBox_info">
                 <p class="listBox_result">
-                    <span>10</span>
+                    <span>
+                    <%= @sum_plan %>
+                    </span>
                     人のコンサルタントがみつかりました。
                 </p>
             </div>
@@ -119,10 +113,12 @@
                                             <span class="plan-card_review-icon">
                                                 <i class="fas fa-star"></i>
                                             </span>
-                                            <span class="plan-card_review-count">4.7</span>
+                                            <span class="plan-card_review-count">                        
+                                            <%= @avg_review %>
+                                            </span>
                                         </div>
                                         <div class="plan-card_price">
-                                            1000円〜
+                                        <%= @min_price %>円〜
                                         </div>
                                     </div>
                                 </div>
@@ -143,9 +139,9 @@
         </div>
         <div class="m-t2"></div>
     </div>
-</form>
+</div>
 </div>
 </div>
 <% end %>
-</div>
+
 

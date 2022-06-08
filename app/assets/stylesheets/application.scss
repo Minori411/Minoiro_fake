@@ -94,3 +94,36 @@
     font-size: 16px;
 }
 
+.cp_box1 {
+.cp00 {
+    display: none;
+}
+}
+
+.average-score {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .star-rating {
+    position: relative;
+    width: 5em;
+    height: 1em;
+    font-size: 17px;
+  
+  }
+  .star-rating-front {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden; // 指定幅からはみ出した部分を隠す。
+    white-space: nowrap;// widthが足りない時に、折り返さないようにする。
+    height: 25px;
+    color: #fdca00;
+    background: linear-gradient(241.35deg,#ffe895 9.83%,#cc9300 81.66%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .star-rating-back {
+    color: #ccc;
+  }

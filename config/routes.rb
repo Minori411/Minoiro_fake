@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :reviews 
   end
 
-  get 'search' => 'posts#search'
+  get 'search' => 'plans#search'
 
 
   get 'plans/:id/show_plan_detail', :to => 'plans#show_plan_detail', as: 'show_plan_detail'

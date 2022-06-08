@@ -17,6 +17,8 @@ end
   # プロフィール画面用のアクションを追加
 def detail
   @user = User.find_by(id: params[:id])
+  @sum_total_consultants = Contract.count(:consultant_id)
+  @sum_total_customers = Contract.count(:customer_id)
 end
 
 # protected
