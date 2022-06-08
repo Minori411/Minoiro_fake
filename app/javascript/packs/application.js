@@ -52,6 +52,10 @@ $(function() {
       $('.sidenav').sidenav();
     });
 
+    $(document).ready(function(){
+      $('.sidenav-trigger').sidenav();
+    });
+
     $('.chips-autocomplete').chips({
       placeholder: 'Enter a tag',
       secondaryPlaceholder: '+Tag',

@@ -1,7 +1,10 @@
 class PlansController < ApplicationController
+    before_action :set_q
+
     def index
         @plan = Plan.new
         @plans = Plan.all
+        @search = Plan.search(params[:q])
     end
 
     def show
@@ -71,7 +74,18 @@ class PlansController < ApplicationController
         @user = User.find(@plan.user_id)
     end
 
-    private  # ストロングパラメーター（予期しない値を変更されてしまう脆弱性を防ぐ機能）
+    def search
+        @results = @q.result
+    end
+
+    private
+    
+    # ストロングパラメーター（予期しない値を変更されてしまう脆弱性を防ぐ機能）
+
+    def set_q
+        @q = User.ransack(params[:q])
+    end
+
     def plan_params
         params.require(:plan).permit(:title, :tag, :can_do, :youtube, :body, :status, :consent).merge(user_id: current_user.id)
     end

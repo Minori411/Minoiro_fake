@@ -400,3 +400,19 @@ input {
     border: 2px solid #ff6e00!important;
     border-radius: 4px!important;
 }
+
+.chat-box {
+    background: #fff;
+    border: 1px solid #f6f6f6;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.messages-username {
+    font-weight: 600;
+}
+
+.messages-year {
+    font-size: 10px;
+}

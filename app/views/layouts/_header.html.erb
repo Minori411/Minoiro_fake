@@ -29,15 +29,6 @@
                                 </div>
                             </div>
                     </div>
-                    <div class="notification" style="margin-right: 16px;">
-                        <!-- Dropdown Trigger -->
-                        <a class='dropdown-trigger' href='#' data-target='dropdown1'><i class="far fa-bell"></i></a>
-                        <!-- Dropdown Structure -->
-                        <ul id='dropdown1' class='dropdown-content dropdown1'>
-                            <li><a href="#!" class="read">全て既読にする</a></li>
-                            <li class="divider" tabindex="-1"></li>
-                            <li><a href="#!">お知らせ</a></li>
-                        </ul>
                     </div>
                     <div class="iconbtn" style="margin-right: 16px;">
                         <!-- Dropdown Trigger -->
@@ -55,14 +46,6 @@
                             <li class="divider" tabindex="-1"></li>
                             <li>
                             <%= link_to "フォローリスト" %>
-                            </li>
-                            <li class="divider" tabindex="-1"></li>
-                            <li>
-                            <%= link_to "設定" %>
-                            </li>
-                            <li class="divider" tabindex="-1"></li>
-                            <li>
-                            <%= link_to "紹介手数料割引" %>
                             </li>
                             <li class="divider" tabindex="-1"></li>
                             <li>
@@ -95,25 +78,15 @@
                     </a>
                 </div>
                 
-                    <div class="notification">
-                        <a class='dropdown-trigger' href='#' data-target='dropdown4'><i class="far fa-bell awe-resize"></i></a>
-                        <!-- Dropdown Structure -->
-                        <ul id='dropdown4' class='dropdown-content'>
-                            <li><a href="#!" class="read">全て既読にする</a></li>
-                            <li class="divider" tabindex="-1"></li>
-                            <li><a href="#!">two</a></li>
-                        </ul>
-                    </div>
-                
                 <div class="menu_icon_last">
-                    <ul id="slide-out" class="sidenav">
+                    <ul id="slide-out" class="sidenav custom-sidenav">
                         <li><a class="waves-effect" href="#!">
                             <i class="far fa-user fa-resize"></i>
                             プロフィール
                         </a></li>
                         <li><div class="divider"></div></li>
                         <li><a class="waves-effect" href="#!">
-                            <i class="far fa-envelope fa-resize"></i>
+                            <i class="fas fa-envelope fa-resize"></i>
                             メッセージ
                         </a></li>
                         <li><div class="divider message-bottom"></div></li>
@@ -146,64 +119,10 @@
                             <i class="far fa-heart fa-resize"></i>
                             フォローリスト
                         </a></li>
-                        <li><div class="divider followlist-bottom"></div></li>
-                        <li><a class="waves-effect" href="#!">
-                            <i class="fas fa-chalkboard-teacher fa-resize"></i>
-                            プラン管理
-                        </a></li>
-                        <li><div class="divider"></div></li>
-                        <li><a class="waves-effect" href="#!">
-                            <i class="fas fa-handshake fa-resize"></i>
-                            契約管理
-                        </a></li>
-                        <li><div class="divider"></div></li>
-                        <li><a class="waves-effect" href="#!">
-                            <i class="fas fa-piggy-bank fa-resize"></i>
-                            売上管理
-                        </a></li>
-                        <li><div class="divider"></div></li>
-                        <li>
-                            <ul class="collapsible">
-                                <li>
-                                  <a class="waves-effect collapsible-header" href="#">
-                                    <i class="fas fa-coins fa-resize"></i>
-                                      お支払い管理
-                                    </a>
-                                  <div class="collapsible-body">
-                                    <a class="waves-effect collapsible-header" href="#">課金履歴</a>
-                                    <div class="divider"></div>
-                                    <a class="waves-effect collapsible-header" href="#">出金申請</a>
-                                    <div class="divider"></div>
-                                    <a class="waves-effect collapsible-header" href="#">出金履歴</a>
-                                  </div>
-                                </li>
-                              </ul>
-                        </li>
-                        
-                        <li><div class="divider money-bottom"></div></li>
-                        <li><a class="waves-effect" href="#!">
-                            <i class="fas fa-cog fa-resize"></i>
-                            設定
-                        </a></li>
-                        <li><div class="divider"></div></li>
-                        <li><a class="waves-effect" href="#!">
-                            <i class="fas fa-tag fa-resize"></i>
-                            紹介手数料割引
-                        </a></li>
-                        <li><div class="divider"></div></li>
-                        <li><a class="waves-effect" href="#!">
-                            <i class="fas fa-sync-alt fa-resize"></i>
-                            お客様に切り替え
-                        </a></li>
                         <li><div class="divider"></div></li>
                         <li><a class="waves-effect" href="#!">
                             <i class="fas fa-unlock-alt fa-resize"></i>
                             ログアウト
-                        </a></li>
-                        <li><div class="divider"></div></li>
-                        <li><a class="waves-effect" href="#!">
-                            <i class="fas fa-minus-circle fa-resize"></i>
-                            退会
                         </a></li>
                         <li><div class="divider logout-bottom"></div></li>
                         <li><a class="waves-effect" href="#!">ビジョン</a></li>
@@ -216,11 +135,8 @@
                         <li><div class="divider"></div></li>
                         <li><a class="waves-effect" href="#!">お問い合わせ</a></li>
                         <li><div class="divider"></div></li>
-
-
-
-                      </ul>
-                      <a href="#" data-target="slide-out" class="sidenav-trigger"><%= image_tag "flower.jpeg", :height=>"50px" %></a>
+                    </ul>
+                    <a href="#" data-target="slide-out" class="sidenav-trigger"><%= image_tag "flower.jpeg", :height=>"50px" %></a>
                 </div>
             </div>
         </div>
@@ -274,83 +190,19 @@
             <div id="nav-drawer" class="header_inner_head flexbox">
                 <div id="logo">
                     <a href="#" class="flexbox">
-                        <img src="">
+                        みのいろ
                     </a>
                 </div>
                 <div class="navi auth_buttons flexbox">
                 <input id="nav-input" type="checkbox" class="nav-unshown">
                 <div class="login">
-                    <a href="#">ログイン</a>
+                    <%= link_to("ログイン", new_session_path(resource_name), class: "waves-effect waves-light btn pchyoji-login") %>
                 </div>
                 <div class="navi_entry">
-                    <a href="#" tabindex="0" class="button primaryButton">登録</a>
+                    <%= link_to("登録",new_registration_path(resource_name),class: "waves-effect waves-light btn pchyoji-register") %>
                 </div>
-                <div class="menu_icon menu_icon_last">
-                    <label id="nav-open" for="nav-input">
-                        <i class="fas fa-bars"></i>
-                    </label>
+                
                 </div>
-                    <label id="nav-close" for="nav-input" class="nav-unshown"></label>
-                </div>
-                <div id="nav-content">
-                    <ul class="p-b2 bggray">
-                        <a href="#">
-                            <li>
-                                <i class="fas fa-question-circle"></i>
-                            みのいろとは？（コンサルタント向け）
-                            </li>
-                        </a>
-                        <a href="#">
-                            <li>
-                                <i class="fas fa-question-circle"></i>
-                            みのいろとは？（お客様向け）
-                            </li>
-                        </a>
-                        <a href="#">
-                            <li>
-                                <i class="fas fa-question-circle"></i>
-                                HOME
-                            </li>
-                        </a>
-                        <a href="#"></a>
-                        <li class="smt_menu_js">
-                            <a href="#">
-                                <i class="fas fa-chevron-right"></i>
-                                コンサルタントを探す
-                            </a>
-                        <li>
-                        <a href="#">
-                            <li>
-                                <i class="fas fa-chevron-right"></i>
-                                ブログ
-                            </li>
-                        </a>
-                    <ul class="p-b2 bggray">
-                        <a href="#">
-                            <li>ビジョン</li>
-                        </a>
-                        <a href="#">
-                            <li>利用規約</li>
-                        </a>
-                        <a href="#">
-                            <li>個人情報保護法</li>
-                        </a>
-                        <a href="#">
-                            <li>お問い合わせ</li>
-                        </a>
-                    </ul>
-                </div>
-            </div>
-            <div class="menu flexbox">
-                <ul>
-                    <li class="menu_item">
-                        <a href="#">コンサルタントを探す</a>
-                    </li>
-                    <li class="menu_item">
-                        <a href="#">ブログ</a>
-                    </li>
-                </ul>
-            </div>
         </div>
 </header>
 <a href="#">

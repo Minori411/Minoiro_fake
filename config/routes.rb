@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   post "bottles/create_select_bottle"
 
   resources :plans do
+      collection do
+        get 'search'
+      end
     resources :contracts
     resources :reviews 
   end
@@ -37,6 +40,8 @@ Rails.application.routes.draw do
   get 'inquiries/index'
   get 'inquiries/confirm'
   get 'inquiries/thanks'
+  post 'inquiries/confirm'
+  post 'inquiries/thanks'
   
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 

@@ -2,36 +2,6 @@
     <%= form_with model: @user, local: true do |f| %>
             <div class="dashContent_right">
                 <h1>プロフィール</h1>
-                <ul class="sub_menu">
-                    <li class="active">
-                        <a href="#">
-                            プロフィール
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">メール・通知</a>
-                    </li>
-                    <li>
-                        <a href="#">お支払い情報</a>
-                    </li>
-                    <li>
-                        <a href="#">本人確認</a>
-                    </li>
-                    <li>
-                        <a href="#">銀行口座</a>
-                    </li>
-                    <li>
-                        <a href="#">パスワード変更</a>
-                    </li>
-                    <li>
-                        <a href="#">外部サービス連携</a>
-                    </li>
-                    <li>
-                        <a href="#">紹介</a>
-                    </li>
-                </ul>
-                <form method="POST" action="profile/edit"  accept-charset="UTF-8" enctype="">
-                    <input name="_token" type="hidden" value="">
                     <div class="boxbaseP30">
                     <div class="in">
                         <h3 class="pc_hyoji">魅力的なプロフィールを完成させましょう!</h3>
@@ -117,7 +87,7 @@
                                     <th>都道府県</th>
                                     <td>
                                         <div class="form-group">
-                                        <%= f.select :prefecture, ["北海道","青森県","岩手県","宮城県","秋田県","山形県","福島県","群馬県","栃木県","茨城県","埼玉県","千葉県","東京都","神奈川県","新潟県","富山県","石川県","福井県","山梨県","長野県",
+                                        <%= f.select :prefecture, ["選択してください","北海道","青森県","岩手県","宮城県","秋田県","山形県","福島県","群馬県","栃木県","茨城県","埼玉県","千葉県","東京都","神奈川県","新潟県","富山県","石川県","福井県","山梨県","長野県",
                                         "岐阜県","静岡県","愛知県","三重県","滋賀県","京都府","大阪府","兵庫県","奈良県","和歌山県","岡山県","広島県","山口県","徳島県","香川県","愛媛県","高知県","青森県","福岡県","佐賀県","長崎県","熊本県","北海道",
                                         "大分県","宮崎県","鹿児島県","沖縄県","海外"],class:"browser-default" %>
 
@@ -160,11 +130,6 @@
                                                 <div class="alignCenter m-t-20 m-b-20">
                                                 <%= f.file_field :disability_passport %>
                                                 </div>
-                                                <div id="selected-file">
-                                                    <div class="selected-file-thumbnail"></div>
-                                                    <div class="selected-file-result"></div>
-                                                    <input id="disorder" name="disorder" type="hidden">
-                                                </div>
                                             </div>
                                             <span class="help-block m-t-5"></span>
                                         </td>                                  
@@ -202,11 +167,6 @@
                                             <div class="alignCenter m-t-20 m-b-20">
                                             <%= f.file_field :certificate %>
                                             </div>
-                                            <div id="selected-file">
-                                                <div class="selected-file-thumbnail"></div>
-                                                <div class="selected-file-result"></div>
-                                                <input id="certificate" name="certificate" type="hidden">
-                                            </div>
                                         </div>
                                         <span class="help-block m-t-5"></span>
                                     </td>
@@ -218,14 +178,7 @@
                                     <td width="235">
                                         <div class="form-group">
                                             <div class="select-wrap">
-                                                <select name="levels[0]">
-                                                    <option value="0">選択してください</option>
-                                                    <option value="1">★ 初心者</option>
-                                                    <option value="2">★★ 初級</option>
-                                                    <option value="3">★★★ 初中級</option>
-                                                    <option value="4">★★★★ 中級</option>
-                                                    <option value="5">★★★★★ 熟練</option>
-                                                </select>
+                                                <%= f.select :level, ["選択してください","★ 初心者","★★ 初級","★★★ 初中級","★★★★ 中級","★★★★★ 熟練"] %>
                                             </div>
                                         </div>
                                     </td>
@@ -233,14 +186,7 @@
                                     <td width="235">
                                         <div class="form-group">
                                             <div class="select-wrap">
-                                                <select name="exs[0]">
-                                                    <option value="0">選択して下さい</option>
-                                                    <option value="1">半年未満</option>
-                                                    <option value="2">〜1年</option>
-                                                    <option value="3">〜3年</option>
-                                                    <option value="4">〜5年</option>
-                                                    <option value="5">5年〜</option>
-                                                </select>
+                                            <%= f.select :level, ["選択してください","半年未満","〜1年","〜3年","〜5年","5年〜"] %>
                                             </div>
                                         </div>
                                     </td>
@@ -294,47 +240,6 @@
                             <a href="#" class="btn">経歴・実績を追加する</a>
                         
                         </div>
-                        <div class="Midasi">外部サービスアカウント</div>
-                        <table class="editable m-b3">
-                            <tbody>
-                                <tr>
-                                    <th width="150">Twitterアカウント</th>
-                                    <td>
-                                        <div class="flex">
-                                            <div class="profile_sns_link">https://twitter.com/</div>
-                                            <div class>
-                                                <%= f.text_field :twitter,class:"w300", :placeholder=>"accountname" %>
-                                            </div>
-                                        </div>
-                                        <span class="help-block"></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>Facebookアカウント</th>
-                                    <td>
-                                        <div class="flex">
-                                            <div class="profile_sns_link">https://www.facebook.com/</div>
-                                            <div class>
-                                            <%= f.text_field :facebook,class:"w300", :placeholder=>"username" %>
-                                            </div>
-                                        </div>
-                                        <span class="help-block"></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>Instagramアカウント</th>
-                                    <td>
-                                        <div class="flex">
-                                            <div class="profile_sns_link">https://www.instagram.com/</div>
-                                            <div class>
-                                            <%= f.text_field :instagram,class:"w300", :placeholder=>"accountname" %>
-                                            </div>
-                                        </div>
-                                        <span class="help-block"></span>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
                     <% end %>
                     <div class="small m-t2">
                     <%= link_to "退会はこちら", "#modal5", class:"waves-effect waves-light modal-trigger" %>
@@ -342,7 +247,6 @@
                     <div class="imasugu alignCenter">
                         <%= f.submit "保存する",type: :submit ,class:"btn nosubmit" %>
                     </div>
-                </form>
             </div>
             <% end %>
         </div>
