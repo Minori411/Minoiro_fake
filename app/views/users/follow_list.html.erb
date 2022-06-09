@@ -1,0 +1,867 @@
+<div class="back_gray inner p-t3 dashContent">
+
+    <div class="dashboard-wrapper-menu_col dashboard-wrapper-menu__client">
+        <div class="dashboard-menu">
+            <section class="p-summary">
+    <div class="p-summary-item --user">
+
+        <div class="p-summary__avatar">
+            <span class="avatar-image">
+                <img src="https://img.menta.work/200/icon/61d6f249929f7.png" alt="林　みのり" loading="lazy">
+            </span>
+        </div>
+
+        <div class="p-summary__contents mentee alignCenter">
+            <div class="mentee__name">林　みのり</div>
+        </div>
+
+        <status-change-button :can-change="true" value="1" :options="{&quot;1&quot;:&quot;\u63d0\u6848\u53d7\u4ed8\u4e2d&quot;,&quot;2&quot;:&quot;\u63d0\u6848\u505c\u6b62\u4e2d&quot;}" null-label="提案未選択" url="https://menta.work/user/31248/change-status" http-method="patch" param-label="accept_proposal" @succeeded="$toasted.success('ステータスを更新しました')" @failed="$toasted.error('ステータスの更新でエラーが発生しました')"></status-change-button>
+
+        <a href="https://menta.work/user/31248" class="mentee__link alignCenter">プロフィールを確認 <i class="fas fa-chevron-right far-fw"></i></a>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</section>
+<nav class="dashboard-menu__list">
+
+    <ul>
+                <li class="dashboard-menu__list_item --dashboard ">
+            <a href="https://menta.work/member/dashboard" class="dashboard-menu__list_link">
+                <div class="dashboard-menu__list__inner flexbox">
+                    <div class="dashboard-menu__list__icon"><i class="fas fa-home fa-fw"></i></div>
+                    <div class="dashboard-menu__list__text">ホーム</div>
+                </div>
+            </a>
+        </li>
+
+                <li class="dashboard-menu__list_item dropdown-menu --message ">
+            <a href="https://menta.work/member/message" class="dashboard-menu__list_link">
+                <div class="dashboard-menu__list__inner flexbox">
+                        <div class="dashboard-menu__list__icon">
+                            <i class="fas fa-envelope fa-fw"></i>
+                                                    </div>
+                        <div class="dashboard-menu__list__text">メッセージ</div>
+                </div>
+            </a>
+        </li>
+
+                <li class="dashboard-menu__list_item dropdown-menu --contract ">
+            <a href="javascript:void(0)" class="dashboard-menu__list_link">
+                <div class="dashboard-menu__list__inner flexbox">
+                    <div class="dashboard-menu__list__icon"><i class="fas fa-handshake fa-fw"></i></div>
+                    <div class="dashboard-menu__list__text">契約管理<i class="fas fa-chevron-right"></i></div>
+                </div>
+            </a>
+            
+            <div class="c-popup-menu" style="display: none;">
+                <div class="c-popup-menu__head flexbox">
+                    <div class="c-popup-menu__title">契約管理</div>
+                </div>
+                <div class="c-popup-menu__body">
+                                            <a href="https://menta.work/member/mentors?status=contracting" class="c-popup-menu__child">契約したメンター</a>
+                                                            <a href="https://menta.work/member/message?t=3" class="c-popup-menu__child">契約リクエスト一覧</a>
+                    <a href="https://menta.work/bosyu" class="c-popup-menu__child">メンター募集一覧</a>
+                                            <a href="https://menta.work/member/payment/charges" class="c-popup-menu__child">課金履歴</a>
+                                    </div>
+            </div>
+            
+        </li>
+
+                                <li class="dashboard-menu__list_item --sales  is-active">
+                <a href="https://menta.work/user/31248/follows" class="dashboard-menu__list_link">
+                    <div class="dashboard-menu__list__inner flexbox">
+                        <div class="dashboard-menu__list__icon"><i class="fas fa-heart fa-fw"></i></div>
+                        <div class="dashboard-menu__list__text">お気に入りリスト</div>
+                    </div>
+                </a>
+            </li>
+        
+        
+                <li class="dashboard-menu__list_item dropdown-menu --post ">
+            <a href="javascript:void(0)" class="dashboard-menu__list_link">
+                <div class="dashboard-menu__list__inner flexbox">
+                    <div class="dashboard-menu__list__icon"><i class="fas fa-file-alt fa-fw"></i></div>
+                    <div class="dashboard-menu__list__text">投稿管理<i class="fas fa-chevron-right"></i></div>
+                </div>
+            </a>
+
+            
+            <div class="c-popup-menu" style="display: none;">
+                <div class="c-popup-menu__head flexbox">
+                    <div class="c-popup-menu__title">投稿管理</div>
+                </div>
+                <div class="c-popup-menu__body">
+                    <a href="https://menta.work/post?scope=own" class="c-popup-menu__child">作成したナレッジ</a>
+                    <a href="https://menta.work/bosyu?t=me" class="c-popup-menu__child">作成した募集</a>
+                </div>
+            </div>
+            
+        </li>
+
+        
+        
+                <li class="dashboard-menu__list_item dropdown-menu --setting ">
+            <a href="javascript:void(0)" class="dashboard-menu__list_link">
+                <div class="dashboard-menu__list__inner flexbox">
+                    <div class="dashboard-menu__list__icon"><i class="fas fa-cog fa-fw"></i></div>
+                    <div class="dashboard-menu__list__text">設定<i class="fas fa-chevron-right"></i></div>
+                </div>
+            </a>
+
+            
+            <div class="c-popup-menu" style="display: none;">
+                <div class="c-popup-menu__head flexbox">
+                    <div class="c-popup-menu__title">設定</div>
+                </div>
+                <div class="c-popup-menu__body">
+                    <a href="https://menta.work/member/config/profile" class="c-popup-menu__child">プロフィール設定</a>
+                    <a href="https://menta.work/member/config/change_mail" class="c-popup-menu__child">メール・通知</a>
+                    <a href="https://menta.work/member/config/card" class="c-popup-menu__child">お支払い情報</a>
+                    <a href="https://menta.work/member/config/account" class="c-popup-menu__child">本人確認</a>
+                    <a href="https://menta.work/member/config/bank" class="c-popup-menu__child">銀行口座</a>
+                    <a href="https://menta.work/member/config/nda" class="c-popup-menu__child">NDA（秘密保持契約）</a>
+                    <a href="https://menta.work/member/config/change_password" class="c-popup-menu__child">パスワード変更</a>
+                    <a href="https://menta.work/member/config/connect" class="c-popup-menu__child">外部サービス連携</a>
+                    <a href="https://menta.work/member/config/invite" class="c-popup-menu__child">友達紹介</a>
+                    <a href="https://menta.work/member/config/block" class="c-popup-menu__child">ブロックユーザー</a>
+                </div>
+            </div>
+            
+        </li>
+
+        <li class="dashboard-menu__list_item dropdown-menu --post">
+            <a href="" class="dashboard-menu__list_link">
+                <div class="dashboard-menu__list__inner flexbox">
+                    <div class="dashboard-menu__list__icon"><i class="fas fa-book fa-fw"></i></div>
+                    <div class="dashboard-menu__list__text">使い方<i class="fas fa-chevron-right"></i></div>
+                </div>
+            </a>
+
+            
+            <div class="c-popup-menu" style="display: none;">
+                <div class="c-popup-menu__head flexbox">
+                    <div class="c-popup-menu__title">使い方</div>
+                </div>
+                <div class="c-popup-menu__body">
+                    <a href="https://intercom.help/mentajp/ja/" class="c-popup-menu__child">ご利用ガイド</a>
+                    <a href="https://intercom.help/mentajp/ja/articles/4447150-menta%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3" class="c-popup-menu__child">ご契約ガイド</a>
+                </div>
+            </div>
+            
+
+        </li>
+
+    </ul>
+
+    
+</nav>
+                        <a href="https://menta.work/member/dashboard/1" class="dashboard-menu__button">
+    <span class="dashboard-menu__button-iocn"><i class="fas fa-sync-alt"></i></span>
+    <span class="dashboard-menu__button-text">メンターに切り替え</span>
+</a>
+            
+
+        </div>
+    </div>
+
+    <div class="dashContent__right">
+        <div class="flex flexbox-justify-content-space-between flexbox-align-center">
+            <h1>お気に入りリスト</h1>
+            <a href="https://menta.work/plan?order=2" class="multiple_send_button link btn btn_small">お気に入りリストのメンターに一括相談</a>
+        </div>
+
+        <ul class="sub_menu">
+            <li class="active"><a href="https://menta.work/user/31248/follows">フォロー（24）</a></li>
+            <li><a href="https://menta.work/user/31248/followers">フォロワー（2）</a></li>
+        </ul>
+
+        
+
+                    <div class="user_box boxbase m-b1">
+    <a href="https://menta.work/user/21155">
+        <div class="icon size85" style="background-image: url('https://img.menta.work/200/icon/623ff77db439b.png');"></div>
+    </a>
+    <div class="body">
+        <div class="bold">
+            <a href="https://menta.work/user/21155">Masuyama</a>
+        </div>
+        <p>
+            +++++++++++++++
+■😊 自己紹介 
+ご覧いただきありがとうございます。
+自社開発企業で Webアプリケーションエンジニア (主に Ruby on Rails) をやっている Masuyama です 🙇‍♂️
+
+また、プログラミングスクール DMM WEBCAMP のメンターも兼任しており、
+質問対応・メンタリングの実績は 【100 件】を越えています 👏
+※2022年5月時点
+
++++++++++++++++
+■ 🙋‍♂️ 指導できること
+　・技術的な質問への対応
+　・Zoom を用いたペアプログラミング
+　・トラブルシューティング（エラー解決）
+　・ポートフォリオ製作のアドバイス、サポート、コードレビュー
+　・実務レベルの GitHub ベース開発
+　・エンジニア転職のサポート（相談、職務経歴書添削など）
+　・プログラミングスキルを活かした副業のアドバイス
+
++++++++++++++++
+■ 💪 メンターとしての強み
+(1) 🧑‍💻 現役エンジニアとして現場目線のアドバイス
+　・Rails エンジニアとして確かな技術力に基づいた指導をできます！
+　・品質、パフォーマンス、メンテナンス性など、現場で活きるスキルを重視したレビューを行えます。
+　・ポートフォリオ製作も現場レベルを意識したアドバイスが可能です！
+
+(2) 😎 プログラミングスクールのプロメンターだからこその高品質メンタリング
+　・プロメンターとして数十名以上への質問対応やメンタリングを現役で行っています。
+　・初学者から経験者まで、幅広い方への指導経験が豊富です。
+　・SlackやZoomでのアドバイスを得意としており、初めての方でも安心してご利用いただけます 
+
+(3) 💬 テクニカルサポート経験者としてのヒアリング＆アドバイス能力
+　・文字だけのコミュニケーションで数百件のトラブルシューティングをしてきました。
+　・少ない情報から困りごとを読み取り、ヒアリングし、問題解決することが得意です。
+　・「とにかくエラーを解消したい」「○○のようなことをしたい」というざっくりした困りごとも大歓迎です！
+        </p>
+    </div>
+</div><div class="user_box boxbase m-b1">
+    <a href="https://menta.work/user/23514">
+        <div class="icon size85" style="background-image: url('https://img.menta.work/200/icon/6203a192b6d7e.jpg');"></div>
+    </a>
+    <div class="body">
+        <div class="bold">
+            <a href="https://menta.work/user/23514">TAKATA＠フリーランスweb</a>
+        </div>
+        <p>
+            某エンジニアスクールを卒業後、上場を目指すベンチャー企業に入社し、自社製品の開発に上流過程から参加する。現在、前職を退社しフリーランスとしてwebサイトの作成・運用からプログラミング初心者向けに講師をしている。
+        </p>
+    </div>
+</div><div class="user_box boxbase m-b1">
+    <a href="https://menta.work/user/59">
+        <div class="icon size85" style="background-image: url('https://img.menta.work/200/icon/59_5b0e30922548e.jpg');"></div>
+    </a>
+    <div class="body">
+        <div class="bold">
+            <a href="https://menta.work/user/59">前川晃一郎</a>
+        </div>
+        <p>
+            ITコンサルティングファームに2年ほど在籍した後に、フリーランスとして独立しました。
+現在は、教育系ベンチャー企業にてWebアプリ開発を行っています！
+        </p>
+    </div>
+</div><div class="user_box boxbase m-b1">
+    <a href="https://menta.work/user/11249">
+        <div class="icon size85" style="background-image: url('https://img.menta.work/200/icon/11249_5e6743d8f1da6.jpg');"></div>
+    </a>
+    <div class="body">
+        <div class="bold">
+            <a href="https://menta.work/user/11249">きゅん@合同会社取締役(通学型スクール経営)</a>
+        </div>
+        <p>
+            はじめまして！フロントエンドエンジニア9年ほど活動をしています！
+↓簡単な自己紹介↓
+
+【自己紹介】
+▫️1988年生まれ
+▫️学生時代から身近にPCがあり、プログラミングや画像の編集などを身につける
+▫️web制作会社での実務を経験後、倒産で路頭に迷う
+▫️某大手ライフスタイル企業に従事
+▫️web制作とマーケティングなど様々な案件に対応
+▫️フリーランスとして活動
+▫️MENTAにおいて260名以上をサポート。継続は40名程度の継続
+▫️卒業生とお仕事を進行中
+▫️会社を起ち上げ、通学型のスクールを開校
+
+
+【学ぶ上で大切にしていること】
+✅ 基本即レス
+ご連絡いただいて即レスを心がけています。1時間以内にはお返ししていますが、最低でも原則24時間以内にお返しをしています。
+
+✅ まずは自分で調べる癖を！
+今後ひとりで案件をこなしていくうえで、調べながら進めて行くことも大切です。実務レベルで大切な事も教えています。どうしてもわからなければ聞いてくださいね 
+
+✅ あなたに合った学習内容にします。
+課題を行っていく中で、「難しすぎて自分にあわない？」と感じる方もいらっしゃると思いますが、遠慮することなくメンターに相談してくださいね。
+
+
+** 【MENTA以外でも教えています】 **
+通学型のプログラミングスクールを経営しており、少人数制のクラスで実際に対面で師事
+大学生と共同でサークル開始
+
+
+** 【少しでも気になる方へ】 **
+恐らく他の方のプランの方が魅力に感じることもあると思います・・！
+ただ、僕にしかない良さもあると思うので是非そこをアピールさせてください。
+
+🔻実際に生徒さんから頂いた声
+
+- 穏やかな人柄で悩みなど話しやすい
+- 丁寧な受け答えで相手の気持ちをしっかり考えている
+- プログラミング学習以外でも聞きたいことを教えてくれる
+- 卒業してもコミュニティには残っていたいと思える環境
+- 手作り感はあるが、学びやすい環境(インプットとアウトプットがはっきりしている)
+
+カリキュラムの完成度は他の方のほうが上かもしれません、しっかり生徒の目線に立ってサポートしています！ただ、厳しくスパルタに手っ取り早く学びたいという方は正直、僕のプランは向かないと思います・・！ごめんなさい。ただ生徒さん同士は皆さん仲良しな環境です。
+
+少しでも気になる方や興味がある方はDMをください！お話をして僕の人となりを知って、何でも聞いてみてくださいね。
+        </p>
+    </div>
+</div><div class="user_box boxbase m-b1">
+    <a href="https://menta.work/user/43948">
+        <div class="icon size85" style="background-image: url('https://img.menta.work/200/icon/623c5fccc5763.jpg');"></div>
+    </a>
+    <div class="body">
+        <div class="bold">
+            <a href="https://menta.work/user/43948">hata.</a>
+        </div>
+        <p>
+            PdM / Infrastructure Engineer
+        </p>
+    </div>
+</div><div class="user_box boxbase m-b1">
+    <a href="https://menta.work/user/32645">
+        <div class="icon size85" style="background-image: url('https://img.menta.work/200/icon/606be42b4962a.png');"></div>
+    </a>
+    <div class="body">
+        <div class="bold">
+            <a href="https://menta.work/user/32645">ryo</a>
+        </div>
+        <p>
+            コンサルティング5年、WEB設計、開発、コーディング経験10年です。
+自身でのサービス開発経験もあります！AWSの活用に強みがあります！
+転職アドバイス、フリーランスとしての案件相談など大歓迎です！
+
+■経験
+システム要件定義、設計・構築、DB設計、アルゴリズム作成、及び仕様書の作成、コーディング、テスト設計、テスト、運用・保守設計
+・予約システム
+・在庫管理システム
+・販売管理、生産管理システム
+・音声認識、電話転送システム
+・CMS構築（WordPress、MT）
+・webスクレイピング
+・AIアルゴリズムを用いた機械学習
+・法人向け大規模インフラ設計（AWS、azure）
+・プログラム開発（Java、JavaScript、 nodeJs、PHP、python、Go）
+
+■対応時間
+基本は平日9時-18時ですが優先度などを踏まえてこれ以外の時間でも対応はさせていただきます。
+※ただし、他の案件も並行して進めていることと、現在多忙な状況につき必ずしも迅速に回答出来ない場合も御座います。
+その場合でも半日以内を目処に回答させて頂きます
+
+些細なことでもお気軽にご相談下さい。
+        </p>
+    </div>
+</div><div class="user_box boxbase m-b1">
+    <a href="https://menta.work/user/779">
+        <div class="icon size85" style="background-image: url('https://img.menta.work/200/icon/61c1f0176afeb.jpg');"></div>
+    </a>
+    <div class="body">
+        <div class="bold">
+            <a href="https://menta.work/user/779">ryocha@Web・AIエンジニア</a>
+        </div>
+        <p>
+            💻概要
+- プログラミング歴8年
+- PHPとLaravelとjsとPythonをメインに決済システムやオウンド系メディアなど開発実績あり
+- 初心者からもエンジニアの実務を学べるコミュニティ運用中
+
+🔶教育実績
+- MENTAやスクールで、合計200名以上の方を育成しました。
+- エンジニア志望の方を中心に相談に乗っており、未経験者だけではなく、現役フリーランスの方からの相談なども頂いています。
+- 教育した生徒が転職し、半年後にフリーランスになった実例もあります。
+
+👪MENTA内最安価の業務実践型コミュニティ運用中
+未経験からエンジニアの実務が学べるコミュニティプランが大変好評でおすすめです。
+ゼロイチのサービス立ち上げを行っており、要件定義から設計、開発、テストまで一気通関で行う経験ができます。また、開発以外の収益化するまでのフローが学べ、ご自身でポートフォリオとしてもアピールできます！
+プログラミング以外に副業情報も発信しており、即時収入が得られる情報もたくさん発信しております！
+また、副業をさらに自動化するツールを作成しており、単価を上げる事が可能です！
+どの月額プランでもこちらのサポートは行っており、行動次第で即元が取れるようになっています！
+興味のある方は、[こちら](https://menta.work/plan/330/9484)のプラン説明からご覧ください。
+
+✳️スキル・経験
+- WebやAI、IOSエンジニアなどの職種を経験しております。
+- Laravelで実装されたメディアのWeb,iOS開発・運用保守を6つ以上のサービスで行いました。
+- Laravelにて個人のサービス開発およびチーム開発のPM兼リードエンジニアも行なっています。
+- 1ヶ月で独学でアプリを10個リリースした経験もありますので、iOSアプリ開発の相談も受け付けます。
+
+Pythonを用いての、AIエンジニア・副業も経験があります。
+
+
+📔 言語
+- PHP Laravel MySQL Python Go JavaScript jQuery,Vue.js,Objective-C,Swift
+- インフラ AWS
+- バージョン管理 git
+- タスク管理 Backlog
+        </p>
+    </div>
+</div><div class="user_box boxbase m-b1">
+    <a href="https://menta.work/user/18784">
+        <div class="icon size85" style="background-image: url('https://img.menta.work/200/icon/18784_5f055f139c654.jpg');"></div>
+    </a>
+    <div class="body">
+        <div class="bold">
+            <a href="https://menta.work/user/18784">PGみどりくん</a>
+        </div>
+        <p>
+            年齢：20台後半
+経歴：専門学校卒業後、企業にて4年間PGとして働いていました。
+習得言語：C#/Java/JavaScript/HTML/CSS
+(※JavaScript は VanillaJS(純粋JS), jQueryのみ。 Vue.js / React は経験がありません)
+Paiza：ランクA(言語はC#)
+Atoder：茶色(564) ( https://atcoder.jp/users/pgmidori
+
+terateil: [僕の回答一覧]( https://teratail.com/users/PgMidori
+Github: https://github.com/Ryokusitai
+        </p>
+    </div>
+</div><div class="user_box boxbase m-b1">
+    <a href="https://menta.work/user/19120">
+        <div class="icon size85" style="background-image: url('https://img.menta.work/200/icon/618e004e15b35.jpg');"></div>
+    </a>
+    <div class="body">
+        <div class="bold">
+            <a href="https://menta.work/user/19120">𝖫‌𝖨‌𝖫‌𝖨 𝖨‌𝖱‌𝖮‌𝖭𝖥‌𝖨‌𝖲‌𝖳</a>
+        </div>
+        <p>
+            🎮FF14@Yojimbo
+🎥twitch深夜配信中
+🍚得意料理:からあげ/肉じゃが/レモネード(スカッシュ🆕) 
+💻プログラマー
+📔横山光輝全般
+🆖喫煙/飲酒
+
+プログラム経験は20年以上になります。直近はほとんどWebシステム開発が多いですが、
+副業にてメンターとWebサイトや業務システムの開発等を手掛けております。
+
+※皆さんに知ってもらいたいこと
+未経験からの転職、副業までの道のりは決して楽ではありません。
+本サイトでメンターに教わる事以外にご自身でも予習や復習等は必須になります。
+IT業界は常に日進月歩以上のスピードで技術が更新されていきますので
+常に学習する事が好きでなければ、この先どこかで躓くでしょう。
+
+月5万稼げる等の甘い言葉に騙されないでください。
+請負った案件を途中で投げ出さないでください。
+本気でこの道を進む気持ちのある方でなければ、
+他のエンジニアやクライアントに迷惑をかける事になります。
+
+安請け合いをしないでください。
+案件を正しく見積る事ができるエンジニアを目指しませんか？
+        </p>
+    </div>
+</div><div class="user_box boxbase m-b1">
+    <a href="https://menta.work/user/19406">
+        <div class="icon size85" style="background-image: url('https://img.menta.work/200/icon/6047442dac17c.jpg');"></div>
+    </a>
+    <div class="body">
+        <div class="bold">
+            <a href="https://menta.work/user/19406">8anxgood</a>
+        </div>
+        <p>
+            こんにちわ。現役でクラウド・SREのエンジニアをフリーランスで行っているものです。
+
+こちらでは敢えて匿名でやらせてもらっていますが、
+年齢や趣向など踏み込まないことで、メンティーさんが気軽に質問したらシンプルに応答する、対話できる、などを考慮してのこととなります。
+
+よって、主に、駆け出しの方や初学者〜中級者向けにQAしたいとおもいますので、ぜひお気軽にお声かけてください。
+
+また、補足ですが、研修中の方や学習の中のフォローなどでもお手伝いさせていだきます。
+
+※あとインフラ系女子の方、応援と歓迎しています
+※本業に関することはお答えできませんので予めご承知おきください。
+        </p>
+    </div>
+</div><div class="user_box boxbase m-b1">
+    <a href="https://menta.work/user/9765">
+        <div class="icon size85" style="background-image: url('https://img.menta.work/200/icon/9765_5f2a80c5011ff.jpg');"></div>
+    </a>
+    <div class="body">
+        <div class="bold">
+            <a href="https://menta.work/user/9765">Inamuu</a>
+        </div>
+        <p>
+            ▼ご挨拶
+IT業界でエンジニアをしております。
+サーバー構築、運用、保守などインフラを主な業務としております。
+Web、メール、DNSのホスティング事業者に従事しておりましたので、レンタルサーバーサービスは得意です。
+AWSやGCPのセットアップもネットワークからDNS、サーバーセットアップなど1から行えます。
+
+### 可能な業務/スキル
+- レンタルサーバー移行（より良いレンタルサーバーの提案ができます）
+- 複数契約の統合（ドメインやウェブサイト、DNSを一括に出来ます）
+- WordPress,ECCUBEなどのサイト移行が出来ます
+- サイトのSSL化（httpからhttpsへのリダイレクトも設定します）
+- VPS, クラウド等のサーバー環境構築
+- ウェブサーバー、メールサーバー、データベースサーバー、DNSサーバーなどの環境構築
+- インフラのコード化（Ansible,itamae,Puppet,Chef,Serverspec,Terraform）
+- Docker開発環境の構築、およびDockerの本番環境構築
+- ウェブサイトのスクレイピング（Python3.x, GoogleAppsScript）
+
+
+### フォロー方法
+Slackを使った一問一答形式でフォローいたします。
+当初とは異なるご質問をいただいて問題ございません。（ただし回答が出来ない場合もございます）
+
+### 使用ツール
+- Slack
+- GitHub（レビューが必要な場合やソースコードを見たほうが良い場合に私のアカウントを招待いただきます。）
+
+### 対応可能な時間
+平日はフルタイムで働いているため、夜以降に回答いたします。
+
+### ご契約の流れ
+申請→承認→本リクエスト→承認後、Slackの招待URLをメッセージでお送りします。
+        </p>
+    </div>
+</div><div class="user_box boxbase m-b1">
+    <a href="https://menta.work/user/29627">
+        <div class="icon size85" style="background-image: url('https://img.menta.work/200/icon/60db1dc8d00be.png');"></div>
+    </a>
+    <div class="body">
+        <div class="bold">
+            <a href="https://menta.work/user/29627">【未経験から自社開発】hiro</a>
+        </div>
+        <p>
+            【自己紹介】
+未経験からプログラミング学習を行い、都内自社開発企業へ転職、現在はフルリモートでRuby on Railsを用いたサービスの設計や開発、また新卒の後輩へのプログラミング指導などを行なっています。
+
+【強み】
+自分が未経験からプログラミングを学習した経験を生かして『自走力』を身に着けるための相談やアドバイスを行えます！
+また、実際にエンジニアとして働いてみて必要だと思ったスキル等も同じ目線でアドバイスできるかと思います！
+        </p>
+    </div>
+</div><div class="user_box boxbase m-b1">
+    <a href="https://menta.work/user/353">
+        <div class="icon size85" style="background-image: url('https://img.menta.work/200/icon/353_5e849bbf37da0.png');"></div>
+    </a>
+    <div class="body">
+        <div class="bold">
+            <a href="https://menta.work/user/353">伝説</a>
+        </div>
+        <p>
+            数社でCTOを務めておりました。
+主にWeb開発のフロント、バックエンド、インフラ、設計をやっています。
+MENTAさんでは200人以上の型のサポートとそのポートフォリオをサポートさせていただきました💪
+
+独学でプログラミング・設計・Webサービスリリースを行った経験がございますので、コーディングをする時どのように考えたら良いか、そのコツのようなものもお伝えできればいいなと思っております^^
+また、ポートフォリオに特化しておりまして「どんなポートフォリオが良いのか・現在考えているポートフォリオはどう思うか」などもご相談可能です。
+
+是非お気軽にご連絡ください！
+        </p>
+    </div>
+</div><div class="user_box boxbase m-b1">
+    <a href="https://menta.work/user/27761">
+        <div class="icon size85" style="background-image: url('https://img.menta.work/200/icon/27761_6003c98ce9e0a.png');"></div>
+    </a>
+    <div class="body">
+        <div class="bold">
+            <a href="https://menta.work/user/27761">takumi</a>
+        </div>
+        <p>
+            2020年の4月から都内の受託会社で勤務しているtakumiです。
+現在都内の受託会社で勤めている傍らMENTAを利用してrubyの学習の方のサポートをしています。(Vueも)
+僕もまだまだ学習中の身なのでエラーやわからない点を相談しながら一緒に解決して行けたらといいなと思っています。
+        </p>
+    </div>
+</div><div class="user_box boxbase m-b1">
+    <a href="https://menta.work/user/8741">
+        <div class="icon size85" style="background-image: url('https://img.menta.work/200/icon/60a085a25fa92.jpg');"></div>
+    </a>
+    <div class="body">
+        <div class="bold">
+            <a href="https://menta.work/user/8741">ばやっしー@ECサイト運営の開発リーダー</a>
+        </div>
+        <p>
+            12歳からのプログラミンを初め、大学在学中からプログラマとして働き、卒業後は年商数十億円の自社ECサイトを7年以上運用しております。
+開発歴15年以上の経験を活かし、皆様のサイト運営や開発を支援できます。
+開発チームの規模も1人～10人程度まで経験してきました。
+その経験から小人数の際に求められるスキルの幅広さ、大人数の際に求められるスキルの深さの両方の面から支援が可能です。
+
+経歴
+
+大学生の時にプログラミングを仕事をする
+　Web・Windowsでの業務アプリケーションの開発
+大学卒業後、自社サービスの会社に就職する
+　ECサイトおよび、関連する顧客・在庫管理システムの開発
+　　少ない人数での開発を行った時期があり、フルスタックで行う
+　　現在はチームリーダーとして、開発と、プロジェクト・プロダクトのマネジメントを行う
+
+MENTA実績
+MENTAで、下記のような活動をしております。
+・エラー特定と解決
+・システム設計のフォロー・レビュー
+・システム本番運用時のフォロー
+・安定したシステム運用に向けたフォロー
+・開発環境のセットアップで躓いた人のフォロー
+などなど
+
+定期契約・単発契約を繰り返しいただく方を合わせると、常時7名程度のメンティーがおります。
+継続率が大変高く、現在契約中や単発を繰り返し頂いている方の半数以上は1年以上継続利用を頂けてます。
+        </p>
+    </div>
+</div><div class="user_box boxbase m-b1">
+    <a href="https://menta.work/user/10335">
+        <div class="icon size85" style="background-image: url('https://img.menta.work/200/icon/10335_5db66bc7dd2d2.jpg');"></div>
+    </a>
+    <div class="body">
+        <div class="bold">
+            <a href="https://menta.work/user/10335">伊藤 フミヤ@塾講師→フルスタックエンジニア</a>
+        </div>
+        <p>
+            従業員500名規模の教育ITベンチャー企業の取締役をしております。
+⭐MENTAにて30〜40名ほど継続プランにて技術サポートさせていただいております⭐※2020/12/18現在 42名
+ 
+【自己紹介】
+▫️1990年生まれ
+▫️小学5年時に趣味で始めたHP制作&amp;ゲーム制作をきっかけにプログラミングと出会う
+▫️早稲田大学卒業。同院先進理工学研究科応用化学を専攻・中退
+▫️大学在籍中、教育系ベンチャー企業を共同創業
+▫️同企業は現在8期目、現在従業員数500名まで成長中
+▫️創業から現在に至るまで取締役に就任中。主に教育・開発・マーケティング領域に従事
+▫️取締役として働く傍ら、MENTAでは30~40名の継続サポート、累計100人以上の育成を行う
+▫️育成面においては、実務未経験約30名をエンジニア転身させた経験がある
+​+・・・・・・・・・・・・+
+ 
+ 
++・・・・・・・・・・・・+
+【スキル・経験】
+▫️💻アプリ開発：企画要件定義・設計・フロントエンド・バックエンド開発・保守運用など全般
+▫️📊データ分析：ETL、DWHなどデータ基盤構築、データ分析・機械学習
+▫️🖊️HP・LP制作：コーポレート、ブランド、採用サイト、ブログのディレクション開発運用
+▫️🎨デザイン：Webデザイン、PC/スマホ/タブレットアプリのUIUXデザイン
+▫️🏫塾運営：学習塾の立ち上げ、オペレーション仕組み化、複数地域の教室管理
+▫️🧑‍🏫塾講師：全体の指導方針や個別カリキュラム作成、勉強法指南、教科指導、生徒保護者とのコミュニケーション
+▫️📝教材作成：小中高生の教科学習教材の企画・制作
+▫️📈マーケティング：年間億運用・リスティング広告・アクセス解析・SEO・SNS運用
+​+・・・・・・・・・・・・+
+ 
+ 
++・・・・・・・・・・・・+
+ 【指導のポリシー・大切にしていること】
+1️⃣ 即レス・即対応を心がけています。
+👉 原則24時間以内の対応ですが、タイミングが合えばすぐに返信できます！
+2️⃣メンティーさんに寄り添い、関わりやすい関係を構築します。
+👉 高圧的な態度をとったり、質問しづらい雰囲気を出すことはありません。メンティーさん1人1人との関係を大切にします！​
+3️⃣レベルに合った課題を設定します。
+👉 初学者〜スクール卒業生に至るまでどの層でも対応できます。あなたのレベルに合わせて適切な課題を設定します！
+4️⃣効率性を重視します
+👉 爆速であなたの目標を達成する為に、本当にやるべきことのみにフォーカスします！
+5️⃣時流に合ったスキルを選択します。
+👉 エンジニアはスキルの流行り廃りが激しい業界です。過去に流行っていたスキルではなく、これから主流になるスキルを中心にカリキュラムに取り入れています。
+6️⃣ 金銭的負担を減らすことを心がけています。
+👉 カリキュラムはprogateやUdemyなど一部有料なものがございますが、できるだけ金銭的な負担がないように設計しています。高額商材の売り込みなどは一切ございません。
++・・・・・・・・・・・・+
+ 
+ 
++・・・・・・・・・・・・+
+【MENTAでの実績まとめ(2020/11/26 現在)】
+🎉実績1：現在30~40名を継続サポート中！累計100人以上のメンティーを育成中🎉
+未経験やプログラミングスクール卒業生、エンジニア歴1〜2年まで様々なバックグラウンドをもっている方にご利用いただいております
+ 
+例えば、
+👉エンジニアになるべく、一念発起し会社を辞めたものの独学で学習することに限界を感じた方
+👉会社勤務と両立しながら、平日夜遅くや休日の数少ない時間で効率的に学習をしたいと思っている方
+👉プログラミングスクールを卒業したものの、オリジナルアプリが作れず困っていた方
+など多種多様な課題を持ったメンティーさんに対して、それぞれに適した手法で課題解決に導いております！
+
+ 
+🎉実績2：平均レビュー評価4.9獲得🎉
+おかげ様で、多くの方に高評価いただいております！実際にMENTAでいただいたレビューをご紹介させていただきます。
+ 
+🔻コミュニケーション面で実際にいただいた評価​
+💬 状況を把握する力が高いので短いやりとりで、何につまづいているのか理解してアドバイスしていただけます。​
+💬 Slackでのやり取りもスムーズで、無駄の無いシンプルな回答が個人的には非常にやりやすさを感じました。
+💬 全ての返信が24時間以内に返ってきました。1分後に返信が来たこともあり、その時は、あまりにも早すぎて笑ってしまいました。
+💬 基本的には半日~1日以内に返ってきますし、早ければ3時間くらいで返ってきます笑​
+💬 質の高い回答が毎回得られました。また何よりもご自身の「開発が好き」という気持ちが伝わってきて、それに触発され自分もアプリ開発の楽しさを実感することができました。
+💬 エンジニアあるあるなのかもしれませんが、チャットベースのやりとりだと、向こうはそんなつもりはないと思うんですが、トゲを感じてしまうことってあると思います（少なくとも私は何名かで経験があります）。伊藤さんはチャットでもコミュニケーションが柔らかいです。
+ 
+🔻技術面で実際にいただいた評価
+💬 firebaseに関してとても丁寧に教えていただきました。
+💬 知らなかった便利なフレームワークを教えてもらえた。
+💬  実現したいことに対してベストな解決策を頂けます。単純にエラーの解決だけではなく、美しくコードを書くためのアドバイスを...
+💬 伊藤さんの場合、フロントエンド/バックエンド問わず、幅広い言語やフレームワークができるので安心です。
+💬 そもそも知らなかった便利なフレームワークを教えて頂き、それをベースに開発を行って1ヶ月で公開して実働するアプリを使うことができました。
+💬 伊藤さん自身のレベルが高いので、アプリを素早く作りたい、モダンな技術を覚えたいという要求にとても最適なメンターさんです。​
+💬 エンジニアとしてだけではなく、企業内でのシステム導入・マネジメントの経験も積まれているため、運用時の難しいポイントも理解があり...
+ 
+🔻カリキュラム面で実際にいただいた評価
+💬学習管理のスプレッドシートを渡され、学習項目、スケジュール、技術レベル、参考にすべき教材がわかります。自分はプログラミングスクール卒業後に伊藤さんの指導を受け始めたのですが、正直スクールに最初から通わずに伊藤さんの指導を受け始めた方がよかったのではないかと思うほどでした。​
+💬伊藤さんのカリキュラムでは、今やるべきことだけにフォーカスしているので、最低限の学習時間でよく使われる技術を学ことができます。
+💬指導は毎回丁寧でかつ、やることが明確なので１週間の学習計画が立てやすく...​
+💬Udemyやテックピット、おすすめ記事などをまとめてくれています。教材学習にどれだけ時間がかかるのかが明確に書かれています。ポートフォリオに何を実装したら企業様から高い評価を得られるかなども一覧でまとめてくれています。VScodeやChromeのおすすめ拡張機能も一覧になっており、便利な拡張機能をまとめてくれています。上記を踏まえた上で、長期的なプランも一緒に考えてもらえるので、方向性に悩んでいる人にもおすすめです。
+💬個別の学習計画表や、やるべきタスクなど、一覧表にしてわかりやすく作って頂けます。​
+💬プログラミングスクールに通うより安価ですので、既存の教材で勉強ができており、勉強スタイルがある程度固まっている方であれば、道標として有効に活用できるのではないでしょうか。​
+💬 受講生の好奇心を考えて学ぶ順番や学び方を提示してくれるため楽しく学ぶことができると思います。また、手取り足取りではなく一人でできるようにするという流れを作ってくださるのもありがたいと思います。
++・・・・・・・・・・・・+
+ 
+ 
++・・・・・・・・・・・・+
+【MENTA以外でも育成しております！】
+MENTA以外でも社内外で累計30名ほどの実務未経験者のエンジニア育成を行っておりました。
+研修カリキュラムの作成やコーチング、コードレビューなどを行い、実務未経験の職場メンバーの業務スキル習得サポートを行ってきました。
+ 
+例えば、
+👉 未経験から3ヶ月でアプリを1から作れるようになった大学1年生メンバー
+👉 中学生から業務スタートしてプログラミング系コンテスト優勝したメンバー
+👉 SIer企業のバックエンドを経験してからフロントエンドエンジニアに転向したメンバー
+👉 フリーランスを数年続けたが技術を身に着けたくなったメンバー
+​など様々なバックグラウンドを持つ方をエンジニアとして育てられる組織を作っています。
+ 
+現場の人事・経営者視点で面接対策アドバイスします！
+​求人や採用などの人事担当をしていたこともあり、
+​数百の書類選考と100名を超えるエンジニアやマーケターの方と面接などでお話してきました。
+​✅ 採用側の目線から未経験でも選考に通る人の特徴や、採点ポイント
+✅ 面接の心構え、受け答え、伝えたほうが良いこと、
+✅ 履歴書・職務経歴書・ポートフォリオのレビュー添削
+​など指導も行えます。
++・・・・・・・・・・・・+
+ 
+ 
++・・・・・・・・・・・・+
+【少しでも私のプランが気になる方へ】
+​ここまでご覧いただきありがとうございます。
+​MENTAでは私が今まで培ってきたプログラミングを始めとするスキルを社会に還元するべく、活動をスタートしました。今では「累計100人以上」の多くの方にご利用いただき、高評価をいただけていることを大変喜ばしく思っています😭
+​
+私自身ことプログラミングにおいては、お仕事や趣味の中で「独学でスキルを獲得しフルスタックエンジニアになることができました🎉
+​独学で学習する際は、確かに大変なこともたくさんありました。しかしそれ以上に、四苦八苦しながらも工夫してスキルを獲得できたとき、そしてそのスキルを仕事に生かせるようになった時は、何者にも代え難い喜びがありました。
+​
+皆さまにもこの体験が提供できればと思っています。
+​
+独学でスキルを習得し、エンジニアとして独り立ちすることはとても大変です。私をメンターにして学習することで、「無駄を省いて最短でスキルを獲得できるよう導いていきます。」
+​色々書きましたが私が経験したことをできる限りあなたに伝授していきたいと思います。
+​共に「爆速」でスキルを獲得し、目標達成をしましょう🔥
++・・・・・・・・・・・・+
+ 
+少しでも興味のある方、悩んでいるその間に周りのライバルとの差はどんどん広がっています。
+​まずは事前Zoom相談であなたのなりたい姿やお悩みをお聞かせください！お気軽にメッセージお待ちしております！
+        </p>
+    </div>
+</div><div class="user_box boxbase m-b1">
+    <a href="https://menta.work/user/7540">
+        <div class="icon size85" style="background-image: url('https://img.menta.work/200/icon/7540_5d2f29117e8cc.jpg');"></div>
+    </a>
+    <div class="body">
+        <div class="bold">
+            <a href="https://menta.work/user/7540">Mario</a>
+        </div>
+        <p>
+            
+        </p>
+    </div>
+</div><div class="user_box boxbase m-b1">
+    <a href="https://menta.work/user/2282">
+        <div class="icon size85" style="background-image: url('https://img.menta.work/200/icon/2282_5b9613b153abb.jpg');"></div>
+    </a>
+    <div class="body">
+        <div class="bold">
+            <a href="https://menta.work/user/2282">Kary/はぐれデータサイエンティスト</a>
+        </div>
+        <p>
+            ◆ブログ
+http://attracter.tokyo/
+◆Twitter
+https://twitter.com/kariya0714
+◆プロフィール
+◾️やりたいことが多すぎて、とりあえずライザップで13キロ痩せた人 ◾️独立して年収1000万円突破 ◾️一人で生き抜く方法を手に入れたい人のために、役立つ・即実践できる #データサイエンス、#デザイン、#プログラミング、#プロモーション などのスキル、成長に繋がる情報をブログで発信していきます
+        </p>
+    </div>
+</div><div class="user_box boxbase m-b1">
+    <a href="https://menta.work/user/9508">
+        <div class="icon size85" style="background-image: url('https://img.menta.work/200/icon/9508_5d8cb78988f54.jpg');"></div>
+    </a>
+    <div class="body">
+        <div class="bold">
+            <a href="https://menta.work/user/9508">oystaar</a>
+        </div>
+        <p>
+            ●主なスキル●　データ分析/統計/バックエンド開発/python/R/SQL/Tableau/GIS
+●略歴●　国内大学博士課程修了→国内大手企業データサイエンティスト
+
+大学院時代からpythonやR、excelでデータ分析を専業にしていました。博士課程を修了後は国内のデータサイエンティストとして勤務しています。大学院時代の研究も含めると、データ可視化プロジェクト、Webアプリケーション開発（バックエンド、API開発担当）、pythonによる自動化システム開発プロジェクト、最適化エンジン開発プロジェクト、ディープラーニング活用モックアップ開発など幅広く経験してきました。
+
+
+
+趣味は料理で、平日も仕事終わりにいつも料理をしています。クリスマスプレゼントに栗原はるみさんの料理レシピ本を妻に買ってもらってから没頭し始めました。トマトを使った名もなき煮込み料理が（簡単なので）得意です。
+最近旅行に行ったハワイが大好きになりました。ハワイで大きなキッチンのついた家を買って、リモートワークをしながら趣味の料理を極めるような生活を送るのが夢です。
+        </p>
+    </div>
+</div><div class="user_box boxbase m-b1">
+    <a href="https://menta.work/user/9096">
+        <div class="icon size85" style="background-image: url('https://img.menta.work/200/icon/9096_5d77bcd7b95d6.jpg');"></div>
+    </a>
+    <div class="body">
+        <div class="bold">
+            <a href="https://menta.work/user/9096">gomiryo</a>
+        </div>
+        <p>
+            ITエンジニア歴15年ほど
+
+独立して、フリーランス・エンジニアとして働きつつ、自社サービスの開発や運用をしています。
+
+PHPをメインに扱いつつ、様々なプロジェクトに参画して参りました。
+
+教えられることは、以下のとおりです。
+
+・PHPプログラミングの基本
+・JavaScriptプログラミングの基本
+・SQL/データベース操作の基本
+・WordPressのテーマ制作や運用の基本
+・コンピュータサイエンスの基本
+・フリーランスとしてお仕事を得る方法
+・Linuxサーバの基本と運用
+・SES会社で働く心得
+・事業会社で働く心得
+・要件定義書・各種仕様書・ソースコードのレビュー
+・私自身の経験や客観的データをもとにしたキャリア・アドバイス
+・教育・転職・起業・副業・生涯学習などの目的別指導
+・企画やアイディアに対しての技術相談ならびにマーケティング観点からのアドバイス
+・ITサービス開発や運用にあたって必要なノウハウ提供
+・学校の課題解決のアドバイス
+・おすすめ書籍や学習教材のご紹介
+・その他、私にできること。 ※気軽にご相談ください。
+
+【私が指導する中で大切にしていること】
+・メンターは回答をくれる人ではなく、回答の導き方を教える人であるということ。プログラミングは最終的に一人で行うものです。他人の力を借りずに問題解決できるようになければなりません。生徒さんの状態・状況によりますが「自走力」をつけてもらうために遠回しな返答をすることもあります。なぜなら、問題を正しく認識する考え方やエラーを正しく解釈する姿勢は、自分なりに仮説をたてて試行錯誤するプロセスを経なければ学べないからです。ではメンターはなぜ必要かと言うと、メンターをつけることで無用な苦労は減らすためです。間違った方向へ進んでいる時に軌道修正ができることにあります。いっしょに学習できることを楽しみしております^^
+
+指導経験がある言語：PHP, Ruby, Python, JavaScript(生js, jQuery, Vue.js)
+仕事で１年以上の経験がある言語：PHP, SQL, JavaScript, perl, VBA, Bash, COBOL, VB.NET
+仕事でやむを得ず使ったことがある言語：Perl, Java, C++
+好きなOS：Linux ＞ Mac ＞ Windows
+使用しているエディタ：Vim
+        </p>
+    </div>
+</div>        
+                    <a id="next-url-link" href="https://menta.work/user/31248/follows?maxId=65752" data-remote="true" class="loader js-auto-loading"></a>
+        
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<% @user.following.each do |user| %>
+  <div class="boxbaseP30">
+    <table>
+    <tr>
+      <td><%= user.name %> </td>
+      <td><%= link_to '詳細', user_profiles_path(user.id) %></td>
+    </tr>
+    </table>
+    </div>
+    <% end %>
