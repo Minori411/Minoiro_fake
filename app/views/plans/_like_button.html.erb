@@ -1,0 +1,13 @@
+<div>
+<span class="like off">
+<% if @user.following?(current_user) %>
+    <%= link_to user_relationship_path(user_id: @user.id, id: @relationship), method: :delete,remote: true do %>
+        <i class="far fa-heart style='color: gray;'"></i>
+    <% end %>
+    <% else %>
+    <%= link_to user_relationships_path(@user), method: :post,remote: true do %>
+        <i class="far fa-heart style='color: red;'"></i>
+    <% end %>
+    <% end %>
+    </span>
+</div>

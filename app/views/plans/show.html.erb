@@ -1,5 +1,3 @@
-<input type="hidden", :user_id, value="@user.id">
-<input type="hidden", :user_id, value="@entry.id">
 <div class="back_white plan_detail">
         <div id="vapp" class="inner">
             <div id="side" class="smt pc">
@@ -14,11 +12,6 @@
                     <a href="#" class="color">
                         <%= link_to "もっと詳しく",user_profiles_path(@plan.user_id)%>
                     </a>
-                    <div class="snsicon">
-                        <a href="#" target="_blank" class="m-r1">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </div>
                     <div class="followbox">
                         <div class="z-depth-1 follow">
                             <div class="w50p">
@@ -91,8 +84,8 @@
                     </div>
                     <div class="m-b2 SideMessageArea">
                         <% unless @user.id == current_user.id %>
-                            <% if @isRoom == true %>
-                                <p class="user-show-room"><a href="/rooms/<%= @roomId %>" class="btn btn-primary btn-lg">チャットへ</a>
+                            <% if @is_room == true %>
+                                <p class="user-show-room"><a href="/rooms/<%= @room_id %>" class="btn btn-primary btn-lg">チャットへ</a>
                             <% else %>
                                 <%= form_for @room do |f| %>
                                 <%= fields_for @entry do |e| %>
@@ -173,8 +166,8 @@
             <div class="m-b1 alignCenter m-t3 bold">コンサルタントに相談してみましょう！</div>
             <div class="m-b4 alignCenter m-t2">
             <% unless @user.id == current_user.id %>
-                <% if @isRoom == true %>
-                    <p class="user-show-room"><a href="/rooms/<%= @roomId %>" class="btn btn-primary btn-lg">チャットへ</a>
+                <% if @is_room == true %>
+                    <p class="user-show-room"><a href="/rooms/<%= @room_id %>" class="btn btn-primary btn-lg">チャットへ</a>
                 <% else %>
                     <%= form_for @room do |f| %>
                     <%= fields_for @entry do |e| %>
@@ -298,7 +291,6 @@
             </div>
             <h3 id="reviews" class="m-b1 anchor-point">
             レビュー
-            <span class="review_link"></span>
             </h3>
             <div>
                 <div class="rating-summary">

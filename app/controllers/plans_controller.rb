@@ -13,10 +13,12 @@ class PlansController < ApplicationController
         @avg_review = Review.average(:evaluation)
         @sum_plan = Plan.count(:id)
         @min_price = Plan.minimum(:price)
+        @user = User.find_by(params[:user_id])
     end
 
 
     def show
+        @relationship = Relationship.find_by(id: params[:id])
         @min_price = Plan.minimum(:price)
         @avg_score = Review.average(:evaluation).round(1)
         @avg_score_percentage = Review.average(:evaluation).round(1).to_f*100/5

@@ -10,7 +10,9 @@ class User < ApplicationRecord
   has_many :user_select_bottles, dependent: :destroy
   has_many :plan, dependent: :destroy
   has_many :contract
+
   mount_uploader :image, ImageUploader
+  #mount_uploader :disability_passport, DisabilityUploader
   
 
 
@@ -28,6 +30,8 @@ class User < ApplicationRecord
   def unfollow(user)
     following_relationships.find_by(following_id: user.id).destroy
   end
+
+  
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

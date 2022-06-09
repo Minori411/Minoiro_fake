@@ -8,30 +8,30 @@ user = User.new(name:"林みのり",
 user.skip_confirmation!
 user.save!
 
+10.times do |n|
+
 User.create!(userstyle:1,
-            prefecture:"神奈川県", 
-            introduction:"こんにちは", 
-            url:"aaa", 
-            career:"大学卒業",
-            name:"みのり",
-            email:"bbb@example.com",
-            password:"minori1234",
-            password_confirmation:"minori1234",
-            disability_passport:"www",
-            certificate:"sss",
-            image:"B000.jpeg",
-            year:"20225月",
-            id:2
+prefecture:"神奈川県", 
+introduction:"こんにちは", 
+url:"aaa", 
+career:"大学卒業",
+name:"みのり",
+email:"bbb#{n+1}@example.com",
+password:"minori1234#{n+1}",
+password_confirmation:"minori1234#{n+1}",
+disability_passport:"www",
+certificate:"sss",
+image:"B000.jpeg",
+year:"20225月",
 )
 
-10.times do |n|
 Plan.create(title: "何でも相談乗ります",
             can_do: "カップルコンサル",
             youtube: "https://www.youtube.com/watch?v=KMaTIu7pxVM",
             body: "こんにちは",
             status:"相談できます",
             consent:"承認なし",
-            user_id:2,
+            user_id:1,
             plan_name:"aaa",
             price: 1000,
             video: false,
@@ -56,7 +56,10 @@ Article.create!(subject:"今日の出来事",
 
     
 
-
+Relationship.create!(
+    following_id: 1,
+    follower_id: 2
+)
 
 
 

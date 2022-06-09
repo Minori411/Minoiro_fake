@@ -1,16 +1,13 @@
-<%= form_with model: @plan, url: plans_path, local: true do |f| %>
 <div class="back_white">
     <div class="mentaListBox">
     <div class="searchBox">
     <div class="plan_search">
-        <input name="search_on" type="hidden" value="on">
         <h3 class="m-b1">条件で絞り込む</h3>
         <div class="relative">
         <%= form_with url: search_path, method: :get, local: true do |f| %>
             <%= f.text_field :keyword, value: @keyword, :placeholder => "検索" %>
             <br>
             <% f.submit '検索' %>
-        <% end %> 
             <div class="absolute center-v right-1 gray2 header-search">
                 <i class="fas fa-search"></i>
             </div>
@@ -46,7 +43,8 @@
             </div>
             </div>
         </div>
-        </div>          
+        </div>
+        <% end %>           
         </div>
     
     <div class="listBox">
@@ -84,9 +82,10 @@
                                 </div>
                                 <label>
                                     <div class="plan-card_iconButton flexbox">
-                                        <div>
-                                            <span class="like off">
-                                                <i class="far fa-heart"></i>
+                                    <div>
+                                        <span class="like off">
+                                        <id='like_button_#{ @user.id }'>
+                                        <%= render partial:'like_button', user: @user %>
                                             </span>
                                         </div>
                                     </div>
@@ -97,13 +96,18 @@
                                     <div class="plan-card_subject">
                                         <%= plan.title %>
                                     </div>
+                                    <div class="prefecture">
+                                    <%= plan.user.prefecture %>
+                                    </div>
                                     <div class="plan-card_user flexbox">
                                         <div class="flexbox">
                                             <span class="avatar-image">
                                             </span>
+                                            
                                             <span class="name">
                                             <%= plan.user.name %>
                                             </span>
+                                           
                                         </div>
                                     </div>
                                 </div>
@@ -142,6 +146,5 @@
 </div>
 </div>
 </div>
-<% end %>
 
 

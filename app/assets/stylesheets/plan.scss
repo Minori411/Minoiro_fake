@@ -297,7 +297,6 @@ p {
     .plan-card {
         margin-right: 17px;
         margin-bottom: 17px;
-        flex-grow: 1;
     }
 }
 
@@ -2041,4 +2040,18 @@ select {
 .yenkais {
     margin-top: 15px;
     display: flex;
+}
+
+@media(max-width: 699px) {
+    .plan-card {
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+}
+
+.prefecture {
+    color: green;
+    position:absolute; 
+    top:5%; 
+    right:5%;
 }
