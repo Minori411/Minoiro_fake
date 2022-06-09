@@ -8,30 +8,6 @@ user = User.new(name:"林みのり",
 user.skip_confirmation!
 user.save!
 
-10.times do |n|
-Plan.create!(title: "何でも相談乗ります",
-            can_do: "カップルコンサル",
-            youtube: "https://www.youtube.com/watch?v=KMaTIu7pxVM",
-            body: "こんにちは",
-            status:"相談できます",
-            consent:"承認なし",
-            user_id:1,
-            plan_name:"aaa",
-            price: 1000,
-            video: false,
-            chat: false,
-            plan_detail: "aaa"
-)
-end
-
-    
-Review.create!(body: "メンターの方に親切にしていただき、円滑に進めることができました。ありがとうございました。",
-                reviewer_id: 1,
-                reviewee_id: 2,
-                user_id: 1,
-                evaluation: 5
-)
-
 User.create!(userstyle:1,
             prefecture:"神奈川県", 
             introduction:"こんにちは", 
@@ -48,11 +24,40 @@ User.create!(userstyle:1,
             id:2
 )
 
-Contract.create!(user_id:1,
-                plan_id:1,
-                consultant_id:1,
-                customer_id:1
+10.times do |n|
+Plan.create(title: "何でも相談乗ります",
+            can_do: "カップルコンサル",
+            youtube: "https://www.youtube.com/watch?v=KMaTIu7pxVM",
+            body: "こんにちは",
+            status:"相談できます",
+            consent:"承認なし",
+            user_id:2,
+            plan_name:"aaa",
+            price: 1000,
+            video: false,
+            chat: false,
+            plan_detail: "aaa",
+            
 )
+
+
+Review.create(body: "メンターの方に親切にしていただき、円滑に進めることができました。ありがとうございました。",
+                name: "林みのり",
+                reviewer_id: 1,
+                reviewee_id: 2,
+                user_id: 2,
+                evaluation: 5,
+)
+end
+
+Article.create!(subject:"今日の出来事",
+                body:"今日の出来事",
+                user_id:2)
+
+    
+
+
+
 
 
 Bottle.create!(

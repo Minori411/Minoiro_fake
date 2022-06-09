@@ -22,6 +22,7 @@ class PlansController < ApplicationController
         @avg_score_percentage = Review.average(:evaluation).round(1).to_f*100/5
         @plan = Plan.find(params[:id])
         @user = User.find(@plan.user_id)
+        @article = Article.all.order(created_at: :desc)
         @reviews = @user.reviews
         @avg_review = Review.average(:evaluation)
         @current_entry = Entry.where(user_id: current_user.id)

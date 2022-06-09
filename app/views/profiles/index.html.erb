@@ -23,21 +23,12 @@
             <div class="scoreStatus contract_manage review">
                             <span class="scoreStatus_label">評価</span>
                             <span class="scoreStatus_star">
-                                <span class="yellow">
-                                    <i class="fas fa-star"></i>
-                                </span>
-                                <span class="yellow">
-                                    <i class="fas fa-star"></i>
-                                </span>
-                                <span class="yellow">
-                                    <i class="fas fa-star"></i>
-                                </span>
-                                <span class="yellow">
-                                    <i class="fas fa-star"></i>
-                                </span>
-                                <span class="yellow">
-                                    <i class="fas fa-star"></i>
-                                </span>
+                            <div class="average-score mb-3">
+                            <div class="star-rating ml-2">
+                            <div class="star-rating-front" style="width: <%= @avg_score_percentage %>%">★★★★★</div>
+                            <div class="star-rating-back">★★★★</div>
+                            </div>
+                            </div>
                             </span>
                         </div>
                         <div class="scoreStatus contract_manage response">
@@ -50,7 +41,13 @@
                 <div class="scoreStatus contract_manage flexbox">
                     <div class="scoreStatus_item relative">
                         <span class="scoreStatus_label flexbox">累計</span>
-                        <span class="scoreStatus_score">1</span>
+                        <span class="scoreStatus_score">
+                            <% if current_user.userstyle == 0 %>
+                            <%= @sum_total_consultants %>
+                            <% elsif current_user.userstyle == 1 %>
+                            <%= @sum_total_customers %>
+                            <% end %>
+                        </span>
                         <span>人</span>
                     </div>
                 </div>
@@ -118,7 +115,7 @@
                             <h2 class="mt-0">自己紹介</h2>
                         </div>
                         <div class="plan_detail_markdown_over nobefore" style="max-height: none;">
-                            <p><%= @user.introduction %></p>
+                            <p><%= @user.introduction%></p>
                         </div>
                         <div class="alignCenter" style="display: none;">
                             <a href="#" class="link more-btn">

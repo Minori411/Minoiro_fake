@@ -1,9 +1,9 @@
-<div class="userProfileHeader">
 <%= form_with model: @user, url: profile_path, local: true do |f| %>
+<div class="userProfileHeader">
 <div class="userProfileHeader_inner flexbox">
     <div class="userProfileHeader_icon">
-        <div class="icon wborder">
-        <img src="<%= @user.image %>",class:size125, width="100">
+        <div class="icon size125 wborder">
+        <img src="<%= @user.image %>" width="100">
         </div>
     </div>
     <div class="userProfileHeader_name">
@@ -22,21 +22,12 @@
             <div class="scoreStatus contract_manage review">
                             <span class="scoreStatus_label">評価</span>
                             <span class="scoreStatus_star">
-                                <span class="yellow">
-                                    <i class="fas fa-star"></i>
-                                </span>
-                                <span class="yellow">
-                                    <i class="fas fa-star"></i>
-                                </span>
-                                <span class="yellow">
-                                    <i class="fas fa-star"></i>
-                                </span>
-                                <span class="yellow">
-                                    <i class="fas fa-star"></i>
-                                </span>
-                                <span class="yellow">
-                                    <i class="fas fa-star"></i>
-                                </span>
+                            <div class="average-score mb-3">
+                            <div class="star-rating ml-2">
+                            <div class="star-rating-front" style="width: <%= @avg_score_percentage %>%">★★★★★</div>
+                            <div class="star-rating-back">★★★★</div>
+                            </div>
+                            </div>
                             </span>
                         </div>
                         <div class="scoreStatus contract_manage response">
@@ -49,7 +40,13 @@
                 <div class="scoreStatus contract_manage flexbox">
                     <div class="scoreStatus_item relative">
                         <span class="scoreStatus_label flexbox">累計</span>
-                        <span class="scoreStatus_score">1</span>
+                        <span class="scoreStatus_score">
+                            <% if current_user.userstyle == 0 %>
+                            <%= @sum_total_consultants %>
+                            <% elsif current_user.userstyle == 1 %>
+                            <%= @sum_total_customers %>
+                            <% end %>
+                        </span>
                         <span>人</span>
                     </div>
                 </div>
@@ -64,11 +61,19 @@
             </div>
             <ul class="scoreStatus_listss flexbox">
                 <li class="scoreStatus_lists">
-                    <span class="scoreStatus_list_score">0</span>
+                    <span class="scoreStatus_list_score">
+                    <%= link_to following_user_path(@user.id) do %>
+                        <span class="bold following_count zero"><%= @user.following.count %></span>
+                    <% end %>
+                    </span>
                     <%= f.label :フォロー, class: "scoreStatus_list_label follows"%>
                 </li>
                 <li class="scoreStatus_lists">
-                    <span class="scoreStatus_list_score">0</span>
+                    <span class="scoreStatus_list_score">
+                    <%= link_to followers_user_path(@user.id) do %>
+                        <span class="bold followers_count zero"><%= @user.followers.count %></span>
+                    <% end %>
+                    </span>
                     <%= f.label :フォロワー, class: "scoreStatus_list_label follows"%>
                 </li>
                 <li class="scoreStatus_lists flexbox">
@@ -143,36 +148,5 @@
             </div>
         </div>
     </div>
-<div class="userProfileSide">
-<div class="block-profile">
-<% if user_signed_in? && %>
-    <div id="follow_form">
-        <% if current_user.following?(@user) %>
-        <%= form_for(current_user, url: relationship_path(@user), method: :delete, remote: true) do |f| %>
-            <%= f.submit "フォロー解除", class: "waves-effect waves-light btn m-b2 longer" %>
-        <% end %>
-        <% else %>
-        <%= form_for(current_user, url: relationships_path, method: :post, remote: true) do |f| %>
-            <%= hidden_field_tag :following_id, @user.id %>
-            <%= f.submit "フォローする", class: "waves-effect waves-light btn m-b2 longer" %>
-        <% end %>
-        <% end %>
-    </div>
-<% end %>    
-<% unless @user.id == current_user.id %>
-<% if @isRoom == true %>
-    <p class="user-show-room"><a href="/rooms/<%= @roomId %>" class="btn btn-primary btn-lg">チャットへ</a>
-<% else %>
-    <%= form_for @room do |f| %>
-    <%= fields_for @entry do |e| %>
-        <%= e.hidden_field :user_id, value: @user.id %>
-    <% end %>
-    <%= f.submit "メッセージを送る", class:"btn btn-primary btn-lg user-show-chat side-bar-message"%>
-    <% end %>
-<% end %>
-<% end %>            
-</div>
 </div>
 <% end %>
-</div>
-

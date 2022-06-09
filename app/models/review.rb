@@ -1,6 +1,6 @@
 class Review < ApplicationRecord
   belongs_to :user
-  has_many :plans, dependent: :destroy
+  # has_many :plans, dependent: :destroy
 
   def avg_score
     unless self.reviews.empty?

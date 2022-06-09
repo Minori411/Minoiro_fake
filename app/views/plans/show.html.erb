@@ -98,7 +98,7 @@
                                 <%= fields_for @entry do |e| %>
                                     <%= e.hidden_field :user_id, value: @user.id %>
                                 <% end %>
-                                <%= f.submit "メッセージで相談する", class:"btn btn-primary btn-lg user-show-chat side-bar-message"%>
+                                <%= f.submit "メッセージで相談する", class:"btn btn-primary btn-lg side-bar-message"%>
                                 <% end %>
                             <% end %>
                         <% end %>
@@ -180,7 +180,7 @@
                     <%= fields_for @entry do |e| %>
                         <%= e.hidden_field :user_id, value: @user.id %>
                     <% end %>
-                    <%= f.submit "メッセージで相談する", class:"btn btn-primary btn-lg user-show-chat"%>
+                    <%= f.submit "メッセージで相談する", class:"btn btn-primary btn-lg margin-bottom"%>
                     <% end %>
                 <% end %>
             <% end %>
@@ -212,12 +212,16 @@
             <h3 id="posts" class="anchor-point">投稿</h3>
             <div id="vapp-profile" class="boxbaseP30">
                 <div class="planPostBox">
+                <% @article.each do |article| %>
                     <div class="planPostBox_info flexbox">
-                        <span class="planPostBox_date"></span>
+                        <span class="planPostBox_date"><%= article.user.created_at.strftime("%m月%d日") %></span>
                     </div>
                     <p class="bold">
-                        <a href="#" class="link"></a>
+                        <%= link_to article_path(article.id) do %>
+                            <%= article.subject %>
+                        <% end %>
                     </p>
+                <% end %>
                 </div>
                 <div class="alignCenter">
                 <a href class="link more-btn">
