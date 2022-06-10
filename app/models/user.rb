@@ -12,7 +12,6 @@ class User < ApplicationRecord
   has_many :contract
 
   mount_uploader :image, ImageUploader
-  #mount_uploader :disability_passport, DisabilityUploader
   
 
 
@@ -31,7 +30,10 @@ class User < ApplicationRecord
     following_relationships.find_by(following_id: user.id).destroy
   end
 
-  
+  def followed_by?(user_id)
+    return false
+    following_relationships.where(following_id: user_id).exists?
+  end  
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

@@ -49,6 +49,10 @@
                             </li>
                             <li class="divider" tabindex="-1"></li>
                             <li>
+                            <%= link_to "メッセージ",rooms_path %>
+                            </li>
+                            <li class="divider" tabindex="-1"></li>
+                            <li>
                             <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
                             </li>
                             </ul>
@@ -73,57 +77,67 @@
         <div class="header_inner flexbox">
             <div id="nav-drawer" class="header_inner_head flexbox">
                 <div class="menu_icon envelope">
-                    <a href="#">
+                    <%= link_to rooms_path do %>
                         <i class="far fa-envelope awe-resize"></i>
-                    </a>
+                    <% end %>
                 </div>
                 
                 <div class="menu_icon_last">
                     <ul id="slide-out" class="sidenav custom-sidenav">
-                        <li><a class="waves-effect" href="#!">
-                            <i class="far fa-user fa-resize"></i>
-                            プロフィール
-                        </a></li>
-                        <li><div class="divider"></div></li>
-                        <li><a class="waves-effect" href="#!">
-                            <i class="fas fa-envelope fa-resize"></i>
-                            メッセージ
-                        </a></li>
+                        <li>
+                            <%= link_to profile_path, class:"waves-effect" do %>
+                                <i class="far fa-user fa-resize"></i>
+                                プロフィール
+                            <% end %>
+                        </li>
                         <li><div class="divider message-bottom"></div></li>
-                        <li><a class="waves-effect" href="#">
+                        <li>
+                        <%= link_to explanations_customer_path, class:"waves-effect" do %>
                             <i class="fas fa-question-circle fa-resize"></i>
                             みのいろとは？（お客様）
-                        </a></li>
+                        <% end %>
+                        </li>
                         <li><div class="divider"></div></li>
-                        <li><a class="waves-effect" href="#!">
+                        <li>
+                        <%= link_to explanations_consultant_path, class:"waves-effect" do %>
                             <i class="fas fa-question-circle fa-resize"></i>
                             みのいろとは？（コンサルタント）
-                        </a></li>
+                        <% end %>
+                        </li>
                         <li><div class="divider"></div></li>
-                        <li><a class="waves-effect" href="#!">
+                        <li>
+                        <%= link_to users_path, class:"waves-effect" do %>
                             <i class="fas fa-home fa-resize"></i>
                             HOME
-                        </a></li>
+                        <% end %>
+                        </li>
                         <li><div class="divider"></div></li>
-                        <li><a class="waves-effect" href="#!">
+                        <li>
+                        <%= link_to plans_path, class:"waves-effect" do %>
                             <i class="fas fa-search fa-resize"></i>
                             コンサルタントを探す
-                        </a></li>
+                        <% end %>
+                        </li>
                         <li><div class="divider"></div></li>
-                        <li><a class="waves-effect" href="#!">
+                        <li>
+                        <%= link_to articles_path, class:"waves-effect" do %>
                             <i class="fas fa-search fa-resize"></i>
                             ブログを探す
-                        </a></li>
+                        <% end %>
+                        </li>
                         <li><div class="divider"></div></li>
-                        <li><a class="waves-effect" href="#!">
+                        <li>
+                        <%= link_to "フォローリスト", class:"waves-effect" do %>
                             <i class="far fa-heart fa-resize"></i>
-                            フォローリスト
-                        </a></li>
+                        <% end %>
+                        </li>
                         <li><div class="divider"></div></li>
-                        <li><a class="waves-effect" href="#!">
+                        <li>
+                        <%= link_to destroy_user_session_path, method: :delete, class:"waves-effect" do %>
                             <i class="fas fa-unlock-alt fa-resize"></i>
                             ログアウト
-                        </a></li>
+                        <% end %>
+                        </li>
                         <li><div class="divider logout-bottom"></div></li>
                         <li><a class="waves-effect" href="#!">ビジョン</a></li>
                         <li><div class="divider"></div></li>
@@ -133,7 +147,11 @@
                         <li><div class="divider"></div></li>
                         <li><a class="waves-effect" href="#!">個人情報保護法</a></li>
                         <li><div class="divider"></div></li>
-                        <li><a class="waves-effect" href="#!">お問い合わせ</a></li>
+                        <li>
+                        <%= link_to inquiries_index_path, class:"waves-effect" do %>
+                        お問い合わせ
+                        <% end %>
+                        </li>
                         <li><div class="divider"></div></li>
                     </ul>
                     <a href="#" data-target="slide-out" class="sidenav-trigger"><%= image_tag "flower.jpeg", :height=>"50px" %></a>
@@ -158,21 +176,13 @@
             </div>
             <ul class="menu gnav flexbox">
                 <li class="menu_item flexbox">
-                    <a href="#">コンサルタントを探す</a>
+                    <%= link_to "コンサルタントを探す", plans_path %>
                 </li>
                 <li class="menu_item flexbox">
-                    <a href="#">ブログ</a>
+                <%= link_to "ブログ", articles_path %>
                 </li>
             </ul>
             <div class="navi auth_buttons flexbox">
-                <div class="search">
-                    <div class="relative">
-                        <input id="q" placeholder="カテゴリ検索" name="q" type="text">
-                            <div class="absolute center-v right-1 gray2 header_search">
-                                <i class="fas fa-search"> </i>
-                            </div>
-                    </div>
-                </div>
                 <div class="navi_login">
                     <%= link_to("ログイン", new_session_path(resource_name), class: "waves-effect waves-light btn pchyoji-login") %>
                 </div>

@@ -144,3 +144,23 @@
 .list_follow {
     margin-bottom: 10px;
 }
+
+.like-btn {
+    font-size: 1em;
+    color: #808080;
+  }
+  
+  .unlike-btn {
+    font-size: 1em;
+    color: #e54747;
+  }
+
+@media (max-width: 699px) {
+    .scoreStatus_star {
+        height: 20px!important;
+    }
+}
+
+.fa-bigger {
+    font-size: 30px;
+}

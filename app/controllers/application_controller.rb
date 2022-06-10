@@ -25,7 +25,9 @@ class ApplicationController < ActionController::Base
     @search = User.ransack(params[:q]) #ransackメソッド推奨
     @search_users = @search.result.page(params[:page])
   end
-  
+
+
+
   protected
 
   # 入力フォームからアカウント名情報をDBに保存するために追加

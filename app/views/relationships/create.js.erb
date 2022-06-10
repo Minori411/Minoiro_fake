@@ -7,7 +7,7 @@ $(".following_count").html('<%= link_to following_user_path(@user),class:"zero" 
 
 $(".followers_count").html('<%= link_to followers_user_path(@user),class:"zero" do %><%= @user.followers.count %><% end %>');
 
-$("#like-button_<%= @user.id %>").html("<%= j(render 'plans/like_button', user: @user) %>");
+$("#like_button_<%= @user.id %>").html('<%= j(render 'plans/like_button', locals: { user: @user}) %>');
 
 
 

@@ -163,7 +163,6 @@ h1,h2,h3,h4,h5,h6{
 .top-container_body {
     margin: 64px 0;
     display: flex!important;
-    justify-content:space-between!important;
     width: 100%;
     margin: 0 auto;
 }
@@ -174,6 +173,7 @@ h1,h2,h3,h4,h5,h6{
     margin-bottom: 20px;
     padding-bottom: 40px;
     margin-top: 20px;
+    margin: 0 auto;
 }
 
 @media( max-width:699px) {
@@ -182,6 +182,11 @@ h1,h2,h3,h4,h5,h6{
         margin-bottom: 40px!important;
         margin-left: 15px;
         margin: 0 auto;
+    }
+
+    .top-container_item {
+        
+        margin-bottom: 40px;
     }
 
 }
@@ -275,9 +280,6 @@ ul{
 .triple-cards {
 height: 500px;
 width: 320px;
-
-    
-
 
 }
 
@@ -424,7 +426,6 @@ h2 {
 
 .top-case_body {
     display: flex;
-    margin-left: 125px;
 }
 
 .top-container_under_wrapper {
