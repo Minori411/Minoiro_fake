@@ -1,7 +1,7 @@
 <div>
 <span class="like off">
 <% if @user.followed_by?(current_user) %>
-    <%= link_to user_relationship_path(user_id: @user.id, id: @relationship), method: :delete,remote: true do %>
+    <%= link_to user_relationship_path(user_id: @user.id, id: @relationship.id), method: :delete,remote: true do %>
         <i class="far fa-heart unlike-btn'"></i>
     <% end %>
     <% else %>

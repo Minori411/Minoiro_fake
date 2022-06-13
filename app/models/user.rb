@@ -31,8 +31,8 @@ class User < ApplicationRecord
   end
 
   def followed_by?(user_id)
-    return false
-    following_relationships.where(following_id: user_id).exists?
+    return true
+    # following_relationships.where(following_id: user_id).exists?
   end  
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
