@@ -84,8 +84,8 @@
                                     <div class="plan-card_iconButton flexbox">
                                     <div>
                                         <span class="like off">
-                                        <div id = "like_button_<%= @user.id %>">
-                                        <%= render partial:'like_button', user: @user %>
+                                        <div id = "like_button_<%= plan.user.id %>">
+                                        <%= render partial:'like_button', locals: { user: plan.user } %>
                                         </div>
                                             </span>
                                         </div>
