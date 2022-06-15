@@ -2,16 +2,15 @@
   <%= render "users/shared/error_messages", resource: resource %>
 <div class="back_gray p-t6 p-b6">
   <div class="loginpanel">
-    <form method="POST" action="">
       <h5>再設定メール送信</h5>
         <p class="guide">入力していただいたメールアドレス宛に再設定のご案内メールが届きます。
       <div class="box has-error">
         <%= f.email_field :email, :placeholder => "メールアドレス", autofocus: true, autocomplete: "email" %>
       </div>
       <div class="submit_buttons">
-        <%= f.submit "送信する",class:"waves-effect waves-light btn-large password_reset"%>
+        <%= f.submit "送信する",class:"waves-effect waves-light btn-large login-btn2"%>
       </div>
-    </form>
+      <%= render "users/shared/links" %>
   </div>
 </div>
 <% end %>
