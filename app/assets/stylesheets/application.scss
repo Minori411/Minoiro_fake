@@ -145,14 +145,14 @@
     margin-bottom: 10px;
 }
 
-.like-btn {
+.like-btn-like {
     font-size: 1em;
-    color: #808080;
+    color: #ff6e00!important;
   }
   
-  .unlike-btn {
+  .like-btn-unlike {
     font-size: 1em;
-    color: #e54747;
+    color: #ff6e00!important;
   }
 
 @media (max-width: 699px) {
@@ -163,4 +163,9 @@
 
 .fa-bigger {
     font-size: 30px;
+}
+
+
+.btn-remove {
+    display: none;
 }
