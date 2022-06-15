@@ -1,5 +1,6 @@
 class PlansController < ApplicationController
     before_action :set_q, only: [:index, :search]
+    before_action :move_to_signed_in
 
     def search
         @results = @q.result
@@ -89,6 +90,14 @@ class PlansController < ApplicationController
     
 
     private
+
+
+    def move_to_signed_in
+        unless user_signed_in?
+        #サインインしていないユーザーはログインページが表示される
+        redirect_to  '/users/sign_in'
+        end
+    end
 
     def set_q
         @q = Plan.ransack(params[:q])

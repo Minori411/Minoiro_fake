@@ -27,7 +27,6 @@ class ApplicationController < ActionController::Base
   end
 
 
-
   protected
 
   # 入力フォームからアカウント名情報をDBに保存するために追加
