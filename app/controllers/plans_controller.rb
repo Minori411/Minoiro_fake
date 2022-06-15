@@ -13,7 +13,6 @@ class PlansController < ApplicationController
         @avg_review = Review.average(:evaluation)
         @sum_plan = Plan.count(:id)
         @min_price = Plan.minimum(:price)
-        @user = User.find_by(params[:user_id])
     end
 
 
