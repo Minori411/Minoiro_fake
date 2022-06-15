@@ -1,8 +1,8 @@
 $(function(){
     function buildField(index) {
-      const html = ` <div class="boxbaseP30 plan_module js-addfield-block{ data: {index: "#{plan.index}"}  flex-wrap planbox m-b-20 z-depth-1" style="padding: 30px">
+      const html = ` <div class="boxbaseP30 plan_module flex-wrap planbox m-b-20 z-depth-1 js-addfield-block" data-index="${index}", style="padding: 30px">
       <div class="left ">
-          <%= f.plan.text_field :plan_name ,:placeholder=>"チャットでの相談" %>
+          <input type="text" .plan.text_field :plan_name ,:placeholder=>"チャットでの相談" %>
       </div>
   
       <div class="pricebox ">
@@ -18,14 +18,14 @@ $(function(){
           <div class="item_name flexbox">
               <h3>相談方式</h3><span class="optional_label">任意</span>
           </div>
-              <%= f.plan.check_box :chat, id: :minoiro_checkbox, :as =>:boolean %>
+              <%= plan.check_box :chat, id: :minoiro_checkbox, :as =>:boolean %>
               <%=f.label :チャット %>
               <%= f.plan.check_box :video, id: :minoiro_video, :as =>:boolean %>
               <%= f.label :ビデオ通話 %>
       </div>
   
       <div class="m-t2 left w100p ">
-          <%= f.plan.text_area :plan_detail, class: "w100p", :placeholder=>"プランの内容を入力してください" %>
+          <%= plan.text_area :plan_detail, class: "w100p", :placeholder=>"プランの内容を入力してください" %>
       </div>
               <div class="right m-b-20 smt_right m-t1" style="width: auto; margin-left: auto;">
               <a href="#" class="button is-danger" data-deletefiled="true">
@@ -42,7 +42,8 @@ $(function(){
     $(".hidden-destroy").hide();
     if (fileIndex.length == 0) $(".add-form-btn").css("display","none");
   
-    $(".add-form-btn").on("click", function() {
+    $(".add-form-btn").on("click", 'button[type="button"]', function(event) {
+        event.stopImmediatePropagation();
       $(".plan_area").append(buildField(fileIndex[0]));
       fileIndex.shift();
       if (fileIndex.length == 0) $(".add-form-btn").css("display","none");

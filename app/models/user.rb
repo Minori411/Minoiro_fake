@@ -13,7 +13,9 @@ class User < ApplicationRecord
 
   mount_uploader :image, ImageUploader
   
-
+  def self.search(keyword)
+    where(["name like?","%#{keyword}%"])
+  end
 
   #フォローしているかを確認するメソッド
   def following?(user)

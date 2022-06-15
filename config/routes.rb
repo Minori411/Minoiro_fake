@@ -7,11 +7,13 @@ Rails.application.routes.draw do
   post "bottles/create_select_bottle"
 
   resources :plans do
+    collection do
+      get 'search'
+    end
     resources :contracts
     resources :reviews 
   end
 
-  get 'search' => 'plans#search'
 
 
   get 'plans/:id/show_plan_detail', :to => 'plans#show_plan_detail', as: 'show_plan_detail'

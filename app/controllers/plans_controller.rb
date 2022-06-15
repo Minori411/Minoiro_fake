@@ -1,10 +1,8 @@
 class PlansController < ApplicationController
+    before_action :set_q, only: [:index, :search]
 
     def search
-        @plan = Plan.new
-        @plans = Plan.search(params[:keyword])
-        @keyword = params[:keyword]
-        render "index"
+        @results = @q.result
     end
 
     def index
@@ -91,6 +89,10 @@ class PlansController < ApplicationController
     
 
     private
+
+    def set_q
+        @q = Plan.ransack(params[:q])
+    end
 
     def plan_params
         params.require(:plan).permit(:title, :can_do, :youtube, :body, :status, :consent, :plan_name, :price, :plan_detail, :video, :chat).merge(user_id: current_user.id)
