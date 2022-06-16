@@ -4,15 +4,16 @@ class PlansController < ApplicationController
 
     def search
         @results = @q.result
+        @plans = Plan.all
+        render "index"
     end
 
     def index
         @plan = Plan.new
         @plans = Plan.all
-        logger.debug(params[:user_id] + "中身")
-        @avg_review = Review.find_by(user_id: params[:user_id]).average(:evaluation)
+        @avg_review = Review.where(user_id: @plan).average(:evaluation)
         @sum_plan = Plan.count(:id)
-        @min_price = Plan.minimum(:price)
+        @min_price = Plan.where(user_id: @plan).minimum(:price)
     end
 
 

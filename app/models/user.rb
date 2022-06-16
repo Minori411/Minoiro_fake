@@ -13,6 +13,10 @@ class User < ApplicationRecord
   has_many :contract
 
   mount_uploader :image, ImageUploader
+  mount_uploader :disability_passport, DisabilityUploader
+  mount_uploader :certificate, CertificateUploader
+
+
   
   def self.search(keyword)
     where(["name like?","%#{keyword}%"])

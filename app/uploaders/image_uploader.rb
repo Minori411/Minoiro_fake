@@ -13,6 +13,10 @@ class ImageUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
+  def default_url(*args)
+    "/assets/rainbow-flower.jpg"
+  end
+
   #リサイズ、画像形式を変更に必要
   include CarrierWave::RMagick
 
@@ -52,7 +56,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   #
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   # end
-
+  
   # Process files as they are uploaded:
   # process scale: [200, 300]
   #
