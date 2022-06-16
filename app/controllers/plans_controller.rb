@@ -9,7 +9,8 @@ class PlansController < ApplicationController
     def index
         @plan = Plan.new
         @plans = Plan.all
-        @avg_review = Review.average(:evaluation)
+        logger.debug(params[:user_id] + "中身")
+        @avg_review = Review.find_by(user_id: params[:user_id]).average(:evaluation)
         @sum_plan = Plan.count(:id)
         @min_price = Plan.minimum(:price)
     end

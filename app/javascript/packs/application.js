@@ -51,11 +51,11 @@ $(function() {
 
     <div class="m-t2 left w100p ">
     <textarea class="w100p" placeholder="プランの内容を入力してください" name="plan[plans][plan_detail]" id="plan_plans_plan_detail"></textarea>
-    </div>
-            <div class="right m-b-20 smt_right m-t1" style="width: auto; margin-left: auto;">
-            <a href="#" class="button is-danger" data-deletefiled="true">
-                <i class="fas fa-times-circle"></i> 削除
-            </a>`;
+  </div>
+      <div class="right m-b-20 smt_right m-t1" style="width: auto; margin-left: auto;">
+      <a href="#" class="button hidden-destroy" data-deletefiled="true">
+          <i class="fas fa-times-circle"></i> 削除
+      </a>`;
     return html;
   }
 
