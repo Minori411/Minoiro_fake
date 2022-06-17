@@ -6,7 +6,9 @@
 
                 <div class="gray">
                     <a href="#">
-                        <div class="icon size125 wborder" style="background-image:"></div>
+                    <div class="wborder">
+                    <img src="<%= @user.image %>",class= "resize125",width="125px" height= "125px", style= "border-radius: 50%;">
+                    </div>
                     </a>
                     <p class="name">
                         <a href="#" class="link"></a>
@@ -14,11 +16,6 @@
                     <a href="#" class="color">
                         <%= link_to "もっと詳しく",user_profiles_path(@plan.user_id)%>
                     </a>
-                    <div class="snsicon">
-                        <a href="#" target="_blank" class="m-r1">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </div>
                     <div class="followbox">
                         <div class="z-depth-1 follow">
                             <div class="w50p">
@@ -49,7 +46,17 @@
                         </div>
                     </div>
                     <p class="time_stamp">
-                        24時間以内
+                    <% if current_user.current_sign_in_at > 1.day.ago %>
+                    <%= content_tag :p, "24時間以内", class: "current_signin"%>
+                    <% elsif current_user.current_sign_in_at > 2.day.ago %>
+                    <%= content_tag :p, "1日前", class: "current_signin"%>
+                    <% elsif current_user.current_sign_in_at > 3.day.ago %>
+                    <%= content_tag :p, "2日前", class: "current_signin"%>
+                    <% elsif current_user.current_sign_in_at > 31.day.ago %>
+                    <%= content_tag :p, "30日以上", class: "current_signin"%>
+                    <% elsif 3.days.ago > current_user.current_sign_in_at > 31.day.ago %>
+                    <%= content_tag :p, "30日以上", class: "current_signin"%>
+                    <% end %> 
                     </p>
                     <div class="selfcheck">
                         <i class="fas fa-check-circle link"></i>
@@ -66,29 +73,32 @@
                             評価
                         </div>
                         <div class="right">
-                            <span class="star">
-                                <i class="fas fa-star"></i>
-                            </span>
-                            <span class="star">
-                                <i class="fas fa-star"></i>
-                            </span>
-                            <span class="star">
-                                <i class="fas fa-star"></i>
-                            </span>
-                            <span class="star">
-                                <i class="fas fa-star"></i>
-                            </span>
-                            <span class="star">
-                                <i class="fas fa-star"></i>
-                            </span>
-                            <span class="no-bold">(131)</span>
+                        <div class="average-score mb-3">
+                        <div class="star-rating ml-2">
+                        <div class="star-rating-front" style="width: <%= @avg_score_percentage %>%">★★★★★</div>
+                        <div class="star-rating-back">★★★★</div>
+                        </div>
+                        <div class="average-score-display">
+                        （<%= @avg_score %>点）
+                        </div>
+                        </div>
                         </div>
                         <div class="icon_money">料金</div>
-                        <div class="right">1000円</div>
+                        <div class="right"><%= @min_price %>円〜</div>
                     </div>
                     <div class="m-b2 SideMessageArea">
-                        <label for="modal-trigger_message10335" class="z-depth-2 button primaryButton w100p">メッセージで相談</label>
-                        <div class="sideMessageArea_sub">まずは相談してみよう</div>
+                    <% unless @user.id == current_user.id %>
+                    <% if @is_room == true %>
+                        <p class="user-show-room"><a href="/rooms/<%= @room_id %>" class="btn btn-primary btn-lg">チャットへ</a>
+                    <% else %>
+                        <%= form_for @room do |f| %>
+                        <%= fields_for @entry do |e| %>
+                            <%= e.hidden_field :user_id, value: @user.id %>
+                        <% end %>
+                        <%= f.submit "メッセージで相談する", class:"btn btn-primary btn-lg side-bar-message"%>
+                        <% end %>
+                    <% end %>
+                <% end %>
                     </div>
                 </div>
                 <div class="m-b1 ReportArea m-t1">
@@ -110,7 +120,7 @@
             <div>
             <h1><%= @plan.plan_name %></h1>
             <div class="plan_price">
-            <span style="font-size: 1rem;"><%= @plan.price %></span>
+            <span style="font-size: 1rem;"><%= @plan.price %>円/回</span>
             </div>
             </div>
             <div>
@@ -137,7 +147,19 @@
                     <i class="fa fa-twitter"></i>
                     </a>
                 </div>
-                <p class="time_stamp">24時間以内</p>
+                <p class="time_stamp">
+                <% if current_user.current_sign_in_at > 1.day.ago %>
+                    <%= content_tag :p, "24時間以内", class: "current_signin"%>
+                    <% elsif current_user.current_sign_in_at > 2.day.ago %>
+                    <%= content_tag :p, "1日前", class: "current_signin"%>
+                    <% elsif current_user.current_sign_in_at > 3.day.ago %>
+                    <%= content_tag :p, "2日前", class: "current_signin"%>
+                    <% elsif current_user.current_sign_in_at > 31.day.ago %>
+                    <%= content_tag :p, "30日以上", class: "current_signin"%>
+                    <% elsif 3.days.ago > current_user.current_sign_in_at > 31.day.ago %>
+                    <%= content_tag :p, "30日以上", class: "current_signin"%>
+                    <% end %> 
+                </p>
                 <div class="selfcheck">
                     <i class="fa fa-check-circle link"></i>
                     本人確認

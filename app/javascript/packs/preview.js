@@ -1,3 +1,4 @@
+document.addEventListener("turbolinks:load", function () {
 $(function() {
     function readURL(input) {
         if (input.files && input.files[0]) {
@@ -45,4 +46,4 @@ $('#user_certificate').change(function(){
     readURL(this);
 });
 });
-
+});

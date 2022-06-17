@@ -4,7 +4,9 @@
 
                 <div class="gray">
                     <a href="#">
-                        <div class="icon size125 wborder" style="background-image:"></div>
+                    <div class="wborder">
+                    <img src="<%= @user.image %>",class= "resize125",width="125px" height= "125px", style= "border-radius: 50%;">
+                    </div>
                     </a>
                     <p class="name">
                         <a href="#" class="link"></a>
@@ -72,7 +74,7 @@
                             <div class="average-score mb-3">
                             <div class="star-rating ml-2">
                             <div class="star-rating-front" style="width: <%= @avg_score_percentage %>%">★★★★★</div>
-                            <div class="star-rating-back">★★★★</div>
+                            <div class="star-rating-back">★★★★★</div>
                             </div>
                             <div class="average-score-display">
                             （<%= @avg_score %>点）
@@ -181,7 +183,9 @@
             </div>
             <div class="boxbaseP30">
                 <h4 id="profile" class="anchor-point">プロフィール</h4>
-                <div class="planProfile plan_detail_markdown_over"></div>
+                <div class="planProfile plan_detail_markdown_over">
+                <%= @user.introduction %>
+                </div>
                 <div class="alignCenter">
                     <a href class="link more-btn">
                     <i class="fa fa-angle-town"></i>
@@ -195,7 +199,9 @@
                 <div class="plan_detail_title flexbox">
                     <h4>経歴・実績</h4>
                 </div>
-                <div class="planResults plan_detail_markdown_over"></div>
+                <div class="planResults plan_detail_markdown_over">
+                <%= @user.career %>
+                </div>
                 <div class="alignCenter">
                     <a href class="link more-btn">
                     <i class="fa fa-angle-town"></i>
@@ -208,7 +214,7 @@
                 <div class="planPostBox">
                 <% @article.each do |article| %>
                     <div class="planPostBox_info flexbox">
-                        <span class="planPostBox_date"><%= article.user.created_at.strftime("%m月%d日") %></span>
+                        <span class="planPostBox_date"><%= article.created_at.strftime("%m月%d日") %></span>
                     </div>
                     <p class="bold">
                         <%= link_to article_path(article.id) do %>

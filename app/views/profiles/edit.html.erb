@@ -123,7 +123,9 @@
 
                         <div id="appProfile">
                         <div class="Midasi">資格</div>
-                        <div>
+                        <div class="sikaku">
+                        <%= f.fields_for :users do |user| %>
+                            <div class="certificate1{ data: {index: "#{user.index}"} }">
                             <table class="editable">
                                 <tr>
                                     <th width="150">資格名</th>
@@ -157,13 +159,13 @@
                                     </td>
                                 </tr>
                                 </table>
-                                <table class="editable">
+                                <table>
                                 <tr class="consultant-info">
                                     <th width="150">レベル</th>
                                     <td width="235">
                                         <div class="form-group">
                                             <div class="select-wrap">
-                                                <%= f.select :level, ["選択してください","★ 初心者","★★ 初級","★★★ 初中級","★★★★ 中級","★★★★★ 熟練"] %>
+                                                <%= user.select :level, ["選択してください","★ 初心者","★★ 初級","★★★ 初中級","★★★★ 中級","★★★★★ 熟練"] %>
                                             </div>
                                         </div>
                                     </td>
@@ -171,7 +173,7 @@
                                     <td width="235">
                                         <div class="form-group">
                                             <div class="select-wrap">
-                                            <%= f.select :level, ["選択してください","半年未満","〜1年","〜3年","〜5年","5年〜"] %>
+                                            <%= user.select :level, ["選択してください","半年未満","〜1年","〜3年","〜5年","5年〜"] %>
                                             </div>
                                         </div>
                                     </td>
@@ -179,21 +181,24 @@
                                 <tr class="consultant-info">
                                     <td></td>
                                     <td colspan="3">
-                                        <a href="#">
-                                            <i class="fa fa-times red"></i>
-                                            削除する
-                                        </a>
+                                        <% if @user.persisted? %>
+                                            <%= user.check_box :_destroy, data:{ index: user.index }, class: "hidden-destroy" %>
+                                        <% end %>
                                     </td>
                                 </tr>
                             </table>
+                            </div>
+                            <% end %>
                         </div>  
                             <div class="m-b5 alignCenter">
-                                <a href="#" class="btn">資格を追加する</a>
+                                <%= f.button "資格を追加する",type: :button, class: "add-btn btn" %>
                             </div>                                       
                         </div>
                         <div id="career" class="Midasi">経歴・実績</div>
-                        <div class="WorkResultBox">
-                            <table class="editable m-b2">
+                        <div class="keirekizisseki">
+                        <%= f.fields_for :users do |user| %>
+                        <div class="WorkResultBox{ data: {index: "#{user.index}"} }">
+                            <table class="editable">
                                 <tr>
                                     <th width="150">経歴・実績</th>
                                     <td colspan="3">
@@ -210,19 +215,12 @@
                                     <%= f.date_select :year,{:discard_day=>true,include_blank: '選択してください'} %>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td></td>
-                                    <td colspan="3">
-                                        <a href="#">
-                                            <i class="fas fa-times red"></i>
-                                            削除する
-                                        </a>
-                                    </td>
-                                </tr>
                             </table>
                         </div>
+                        <% end %>
+                        </div>
                         <div class="m-b5 alignCenter">
-                            <a href="#" class="btn">経歴・実績を追加する</a>
+                            <%= f.button "経歴・実績を追加する", type: :button, class: "btn add-btn2" %>
                         
                         </div>
                     <% end %>

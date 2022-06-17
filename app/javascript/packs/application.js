@@ -12,6 +12,7 @@ Turbolinks.start()
 ActiveStorage.start()
 import "./bottle"
 import "./preview"
+import "./profile"
 // Support component names relative to this directory:
 var componentRequireContext = require.context("components", true);
 var ReactRailsUJS = require("react_ujs");
@@ -20,9 +21,12 @@ ReactRailsUJS.useContext(componentRequireContext);
 //index.html
 
 
+// コンサルタント
 
 document.addEventListener("turbolinks:load", function () {
 $(function() {
+
+  // お客様
 
   function buildField(index) {
     const html = `<div class="boxbaseP30 plan_module flex-wrap planbox m-b-20 z-depth-1 js-addfield-block" data-index="${index}", style="padding: 30px">
@@ -53,17 +57,18 @@ $(function() {
     <textarea class="w100p" placeholder="プランの内容を入力してください" name="plan[plans][plan_detail]" id="plan_plans_plan_detail"></textarea>
   </div>
       <div class="right m-b-20 smt_right m-t1" style="width: auto; margin-left: auto;">
-      <a href="#" class="button hidden-destroy" data-deletefiled="true">
+      <a class="button hidden-destroy" data-deletefiled="true">
           <i class="fas fa-times-circle"></i> 削除
       </a>`;
     return html;
   }
 
   let fileIndex = [1, 2, 3, 4]
-  var lastIndex = $(".js-addfield-block:last").data("index");
+  var lastIndex = $(".certi-ficate:last").data("index");
   fileIndex.splice(0, lastIndex);
   let fileCount = $(".hidden-destroy").length;
-  let displayCount = $(".js-addfield-block").length
+  let displayCount = $(".certi-ficate").length
+
   $(".hidden-destroy").hide();
   if (fileIndex.length == 0) $(".add-form-btn").css("display","none");
 
@@ -76,29 +81,29 @@ $(function() {
     displayCount += 1;
   })
 
-  $(".plan_area").on("click", "", function() {
-    $(".add-form-btn").css("display",".hidden-destroy","block");
-    const targetIndex = $(this).parent().parent().data("index")
-    const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
-    var lastIndex = $(".js-addfield-block:last").data("index");
-    displayCount -= 1;
-    if (targetIndex < fileCount) {
-      $(this).parent().parent().css("display","none")
-      hiddenCheck.prop("checked", true);
-    } else {
-      $(this).parent().parent().remove();
-    }
-    if (fileIndex.length >= 1) {
-      fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
-    } else {
-      fileIndex.push(lastIndex + 1);
-    }
-    if (displayCount == 0) {
-      $(".plan_area").append(buildField(fileIndex[0] - 1));
-      fileIndex.shift();
-      displayCount += 1;
-    } 
-  })
+  // $(".plan_area").on("click", "", function() {
+  //   $(".add-form-btn").css("display",".hidden-destroy","block");
+  //   const targetIndex = $(this).parent().parent().data("index")
+  //   const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
+  //   var lastIndex = $(".js-addfield-block:last").data("index");
+  //   displayCount -= 1;
+  //   if (targetIndex < fileCount) {
+  //     $(this).parent().parent().css("display","none")
+  //     hiddenCheck.prop("checked", true);
+  //   } else {
+  //     $(this).parent().parent().remove();
+  //   }
+  //   if (fileIndex.length >= 1) {
+  //     fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
+  //   } else {
+  //     fileIndex.push(lastIndex + 1);
+  //   }
+  //   if (displayCount == 0) {
+  //     $(".plan_area").append(buildField(fileIndex[0] - 1));
+  //     fileIndex.shift();
+  //     displayCount += 1;
+  //   } 
+  // })
 
   $("#appendTest").click(function(){
     $('.js-addfield-block').after('<p>要素の追加テストです。</p>')
@@ -133,18 +138,7 @@ $(function() {
         }
 
     });
-      function readURL(input) {
-        if (input.files && input.files[0]) {
-        var reader = new FileReader();
-        reader.onload = function (e) {
-    $('#img_prev').attr('src', e.target.result);
-        }
-        reader.readAsDataURL(input.files[0]);
-        }
-    }
-    $("#user_img").change(function(){
-        readURL(this);
-    });
+    // materialize
     $('.dropdown-trigger').dropdown({
         constrainWidth:false,
         coverTrigger:false,
