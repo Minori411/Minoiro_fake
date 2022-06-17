@@ -47,6 +47,9 @@ class ProfilesController < ApplicationController
         @sum_total_consultants = current_user.contracts.where(consultant_id:  current_user.id).count
         @sum_total_customers = current_user.contracts.where(customer_id:  current_user.id).count    
         @user = User.find(current_user.id)
+        @article = @user.articles.order(created_at: :desc)
+        @review = @user.reviews.order(created_at: :desc)
+        @plan = @user.plans.order(created_at: :desc)
     end
 
     private
