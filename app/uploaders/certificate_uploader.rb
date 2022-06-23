@@ -57,7 +57,9 @@ class CertificateUploader < CarrierWave::Uploader::Base
   # def scale(width, height)
   #   # do something
   # end
-
+  def default_url(*args)
+    "/assets/sikaku.png"
+  end
   # Process files as they are uploaded:
   # process scale: [200, 300]
   #

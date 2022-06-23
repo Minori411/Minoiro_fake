@@ -21,11 +21,7 @@ function buildField(index) {
             <th>資格証明書</th>
             <td>
                 <div class="certificate">
-                <% if @user.certificate?%>
-                    <%= image_tag @user.certificate.url, id: :img_prev_2, class: :certificate_img %>
-                <% else%>
-                    <div>画像がありません</div>
-                <%end%>
+                <img src="<%= @user.certificate %>" id= "img_prev_2", class="certificate_img">
                 </div>
                 <div class="upload m-t1" data-thumbnail-target="#selected-file">
                     画像をアップロードする（縦横200px×200px以上推奨、5MB未満)

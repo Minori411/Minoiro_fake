@@ -55,3 +55,6 @@ document.addEventListener("turbolinks:load", function () {
         if (fileIndex.length == 0) $(".add-form-btn").css("display","none");
         displayCount += 1;
       })
+    });
+
+});

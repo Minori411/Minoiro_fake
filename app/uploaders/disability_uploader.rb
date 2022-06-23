@@ -57,7 +57,9 @@ class DisabilityUploader < CarrierWave::Uploader::Base
   # def scale(width, height)
   #   # do something
   # end
-
+  def default_url(*args)
+    "/assets/shougaishatechou.png"
+  end
   # Create different versions of your uploaded files:
   # version :thumb do
   #   process resize_to_fit: [50, 50]

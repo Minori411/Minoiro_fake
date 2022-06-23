@@ -11,13 +11,7 @@ class PlansController < ApplicationController
     def index
         @plan = Plan.new
         @plans = Plan.all
-        @avg_review = .where(review_id: @reviews)
-        .group(:review_id)
-        .average(:evaluation)
-        .transform_values { |evaluation| evaluation.round(2) }
-        @avg_review = @plan.user.reviews.average(:evaluation).round(2)
         @sum_plan = Plan.count(:id)
-        @min_price = @plan.user.plans.minimum(:price)
     end
 
 
@@ -26,14 +20,15 @@ class PlansController < ApplicationController
         @user = User.find(@plan.user_id)
         @article = @plan.user.articles.order(created_at: :desc)
         @reviews = @user.reviews.order("created_at DESC")
-        @avg_review = @plan.user.reviews.average(:evaluation).round(2)
         @relationship = Relationship.find_by(id: params[:id])
         @min_price = @plan.user.plans.minimum(:price)
             unless @reviews.present?
             @avg_score = 0
             @avg_score_percentage = 0
+            @avg_review = 0
             else
             @avg_score = @reviews.average(:evaluation).present? ? @reviews.average(:evaluation).round(2) : 0
+            @avg_review = @plan.user.reviews.average(:evaluation).round(2) 
             end
         @current_entry = Entry.where(user_id: current_user.id)
         @another_entry = Entry.where(user_id: @user.id)
