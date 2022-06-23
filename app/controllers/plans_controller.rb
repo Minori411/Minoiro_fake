@@ -90,6 +90,16 @@ class PlansController < ApplicationController
     def show_plan_detail
         @plan = Plan.find(params[:id])
         @user = User.find(@plan.user_id)
+        @min_price = @plan.user.plans.minimum(:price)
+        @reviews = @user.reviews.order("created_at DESC")
+        unless @reviews.present?
+        @avg_score = 0
+        @avg_score_percentage = 0
+        @avg_review = 0
+        else
+        @avg_score = @reviews.average(:evaluation).present? ? @reviews.average(:evaluation).round(2) : 0
+        @avg_review = @plan.user.reviews.average(:evaluation).round(2) 
+        end
         @current_entry = Entry.where(user_id: current_user.id)
         @another_entry = Entry.where(user_id: @user.id)
         @room = Room.new

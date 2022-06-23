@@ -49,8 +49,8 @@
       <% @messages.each do |m| %>
         <div class="chat-box">
           <div class="chat-face">
+          <img src="<%= m.user.image %>",class= "message-img", width="25px", style= "border-radius: 50%;">
             <%= m.user.name %>
-            <img src="<%= @user.image %>",class= "resize125", width="100">
             <br>
             <%= m.created_at.strftime("%Y-%m-%d %H:%M")%>
           </div>

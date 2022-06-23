@@ -105,6 +105,7 @@
                                             </span>
                                             
                                             <span class="name">
+                                            <img src="<%= plan.user.image %>",class= "message-img", width="15px", style= "border-radius: 50%;">
                                             <%= plan.user.name %>
                                             </span>
                                         
@@ -124,8 +125,6 @@
                                             <% else %>
                                             <%= @avg_review = @reviews.average(:evaluation).present? ? @reviews.average(:evaluation).round(2) : 0 %>
                                             <% end %>
-
-
                                             </span>
                                         </div>
                                         <div class="plan-card_price">

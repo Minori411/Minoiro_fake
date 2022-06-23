@@ -93,29 +93,12 @@ function buildField(index) {
     displayCount += 1;
   })
 
-//   $(".sikaku").on("click", ".delete-form-btn", function() {
-//     $(".add-btn").css("display","block");
-//     const targetIndex = $(this).parent().parent().data("index")
-//     const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
-//     var lastIndex = $(".certificate1:last").data("index");
-//     displayCount -= 1;
-//     if (targetIndex < fileCount) {
-//       $(this).parent().parent().css("display","none")
-//       hiddenCheck.prop("checked", true);
-//     } else {
-//       $(this).parent().parent().remove();
-//     }
-//     if (fileIndex.length >= 1) {
-//       fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
-//     } else {
-//       fileIndex.push(lastIndex + 1);
-//     }
-//     if (displayCount == 0) {
-//       $(".sikaku").append(buildField(fileIndex[0] - 1));
-//       fileIndex.shift();
-//       displayCount += 1;
-//     } 
-//   })
+  $(".delete-form-btn").on("click", function() {
+    $("certificate1").remove();
+})
+
+
+
 });
 
 $(function() {
@@ -225,30 +208,15 @@ $(function() {
         if (fileIndex.length == 0) $(".add-btn").css("display","none");
         displayCount += 1;
       })
-    
-    //   $(".keirekizisseki").on("click", ".delete-form-btn", function() {
-    //     $(".add-btn2").css("display","block");
-    //     const targetIndex = $(this).parent().parent().data("index")
-    //     const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
-    //     var lastIndex = $(".WorkResultBox:last").data("index");
-    //     displayCount -= 1;
-    //     if (targetIndex < fileCount) {
-    //       $(this).parent().parent().css("display","none")
-    //       hiddenCheck.prop("checked", true);
-    //     } else {
-    //       $(this).parent().parent().remove();
-    //     }
-    //     if (fileIndex.length >= 1) {
-    //       fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
-    //     } else {
-    //       fileIndex.push(lastIndex + 1);
-    //     }
-    //     if (displayCount == 0) {
-    //       $(".keirekizisseki").append(buildField(fileIndex[0] - 1));
-    //       fileIndex.shift();
-    //       displayCount += 1;
-    //     } 
-    //   })
+
+      $(document).on("click", ".delete-form-btn", function (e) {
+        // $(this)でイベントが発生した要素を取得して削除する
+        $("div").remove(".WorkResultBox");
+    });
+    fileIndex.pop()
+
      });
 
 });
+
+
