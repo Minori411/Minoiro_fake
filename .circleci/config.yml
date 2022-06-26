@@ -6,9 +6,13 @@ orbs:
 jobs:
   build:
     docker:
-      - image: circleci/ruby:3.0.2
+      - image: circleci/ruby:3.0.2                                     
     working_directory: ~/minoirofake
     steps:
+      - save_cache:
+          key: circleci-cache
+          paths:
+            - circleci-cache.txt    
       - setup_remote_docker:
           version: 20.10.14
       - checkout:
@@ -54,7 +58,7 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker:
-          version: 20.10.11
+          version: 20.10.14
       - heroku/install
       - run:
           name: heroku login
@@ -83,3 +87,4 @@ workflows:
           filters:
             branches:
               only: main
+

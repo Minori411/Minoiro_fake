@@ -1,0 +1,18 @@
+current directory: /Users/minori/Desktop/minoirofake/vendor/bundle/ruby/3.0.0/gems/mini_racer-0.6.2/ext/mini_racer_extension
+/Users/minori/.rbenv/versions/3.0.2/bin/ruby -I /Users/minori/.rbenv/versions/3.0.2/lib/ruby/site_ruby/3.0.0 -r ./siteconf20220627-83007-j31r6g.rb extconf.rb
+checking for -lpthread... yes
+checking for -lobjc... yes
+creating Makefile
+
+current directory: /Users/minori/Desktop/minoirofake/vendor/bundle/ruby/3.0.0/gems/mini_racer-0.6.2/ext/mini_racer_extension
+make DESTDIR\= clean
+
+current directory: /Users/minori/Desktop/minoirofake/vendor/bundle/ruby/3.0.0/gems/mini_racer-0.6.2/ext/mini_racer_extension
+make DESTDIR\=
+compiling mini_racer_extension.cc
+clang: warning: argument unused during compilation: '-rdynamic' [-Wunused-command-line-argument]
+linking shared-object mini_racer_extension.bundle
+
+current directory: /Users/minori/Desktop/minoirofake/vendor/bundle/ruby/3.0.0/gems/mini_racer-0.6.2/ext/mini_racer_extension
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 mini_racer_extension.bundle ./.gem.20220627-83007-yhjt69
