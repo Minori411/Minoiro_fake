@@ -4,7 +4,7 @@
     <div class="plan_search">
         <h3 class="m-b1">条件で絞り込む</h3>
         <div class="relative">
-        <%= search_form_for @q, url: search_plans_path do |f| %>
+        <%= form_with url: search_path, method: :get, local: true do |f| %>
             <%= f.text_field :name_cont, value: @keyword, :placeholder => "検索" %>
             <br>
             <% f.submit '検索' %>

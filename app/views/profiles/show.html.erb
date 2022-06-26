@@ -168,7 +168,22 @@
                 <% @review.each do |review| %>
                     <div class="boxbaseP30">
                     <%= review.created_at.strftime("%m月%d日") %>
-                    <%= review %>
+                    <div id='star-rate-<%= review.id %>'>
+                    <script>
+                        $('#star-rate-<%= review.id %>').raty({
+                            size: 36,
+                            starOff:  '<%= asset_path('star-off.png') %>',
+                            starOn : '<%= asset_path('star-on.png') %>',
+                            starHalf: '<%= asset_path('star-half.png') %>',
+                            half: true,
+                            readOnly: true,
+                            score: <%= review.evaluation %>,
+                        });
+                        </script> 
+                        <p class="naiyou">
+                            <%= review.body %>
+                        </p>
+                    </div>
                     </div>
                 <% end %>
                 </div>

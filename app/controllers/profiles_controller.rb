@@ -2,6 +2,10 @@ class ProfilesController < ApplicationController
     before_action :set_user,only: %i[edit update]
 
     def index
+        @user = User.find(params[:user_id])
+        @article = @user.articles.order(created_at: :desc)
+        @review = @user.reviews.order(created_at: :desc)
+        @plan = @user.plans.order(created_at: :desc)
         @avg_score = Review.average(:evaluation).round(1)
         @avg_score_percentage = Review.average(:evaluation).round(1).to_f*100/5
         @user = User.find_by(id: params[:user_id])

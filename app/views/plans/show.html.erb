@@ -308,7 +308,9 @@
                     </div>
                 </div>
             </div>
+            <% if current_user.id != @plan.user_id %>
             <%= link_to "レビューを書く",new_plan_review_path(@plan.id) %>
+            <% end %>
             <div class="p-profile" style="background-color:transparent;">
                 <div class="p-profile_content">
                 <% @reviews.each do |review| %>
@@ -345,7 +347,7 @@
                                             </script> 
                                             <p class="naiyou">
                                                 <%= review.body %>
-                                            </pp>
+                                            </p>
                                         </div>       
                                 </div>
                             </div>

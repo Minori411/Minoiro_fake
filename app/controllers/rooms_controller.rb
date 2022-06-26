@@ -19,6 +19,7 @@ class RoomsController < ApplicationController
     end
 
     def show
+        @plan = Plan.find(params[:id])
         @user = User.find(params[:id])
         @room = Room.find(params[:id])
         @messages = @room.messages.all

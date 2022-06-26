@@ -93,9 +93,10 @@ function buildField(index) {
     displayCount += 1;
   })
 
-  $(".delete-form-btn").on("click", function() {
-    $("certificate1").remove();
-})
+  $(document).on("click", ".delete-form-btn", function (e) {
+    // $(this)でイベントが発生した要素を取得して削除する
+    $("div").remove(".certificate1");
+});
 
 
 

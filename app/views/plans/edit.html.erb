@@ -79,7 +79,9 @@
                         プランを作成する
                     </span>   
                 </div>
-    <div class="boxbaseP30 plan_module js-addfield-block flex-wrap planbox m-b-20 z-depth-1" style="padding: 30px">
+                <div class="plan_area">
+    <%= f.fields_for :plans do |plan| %>
+    <div class="boxbaseP30 plan_module js-addfield-block{ data: {index: "#{plan.index}"} flex-wrap planbox m-b-20 z-depth-1" style="padding: 30px">
     <div class="left ">
         <%= f.text_field :plan_name , :placeholder =>"#{@plan.plan_name}" %>
     </div>
@@ -112,11 +114,11 @@
             </a>
         </div>
     </div>
+    <% end %>
+    </div>
                     
-                            <a class="waves-effect waves-light btn-large btn-custom5">
-                                <i class="fas fa-plus"></i>                                
-                                さらにプランを追加する
-                            </a>
+    <%= f.button "さらにプランを追加する",type: :button, class:"waves-light btn-large btn-custom5 add-form-btn"%>
+
                         </div>
                     
                             </div>
