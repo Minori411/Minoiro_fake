@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   post "/plans/create"
   get "/plans/create"
   resources :messages, only: [:create]
-  resources :rooms, only: [:create, :index, :show]
+  resources :rooms
 
   devise_for :users, :controllers => {
     :registrations => 'users/registrations',

@@ -9,6 +9,8 @@ jobs:
       - image: circleci/ruby:3.0.2
     working_directory: ~/minoirofake
     steps:
+      - setup_remote_docker:
+          version: 20.10.14
       - checkout:
           path: ~/minoirofake
       - ruby/install-deps

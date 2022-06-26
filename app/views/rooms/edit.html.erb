@@ -1,0 +1,11 @@
+<%= form_with model: @room, local: true do |f| %>
+    <%= f.hidden_field :id, :value => @room.id %>
+    <div class="boxbaseP30 blog-box">
+        <br>
+        <%= f.text_field :body, autofocus: true, :placeholder =>"#{@message.body}" %>
+        <div class="post-article">
+        <%= f.submit "更新する", class: "waves-effect waves-light btn-large btn-article" %>
+        </div>
+    </div>
+    
+<% end %>

@@ -48,6 +48,7 @@
     <% if @messages.present? %>
       <% @messages.each do |m| %>
         <div class="chat-box">
+        <%= link_to "編集",edit_room_path, class: "room_edit"%>
           <div class="chat-face">
             <%= m.user.name %>
             <br>
