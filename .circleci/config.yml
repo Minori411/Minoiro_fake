@@ -6,7 +6,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: circleci/ruby:3.0.2                                     
+      - image: cimg/ruby:3.1.2                                     
     working_directory: ~/minoirofake
     steps:
       - save_cache:
@@ -21,8 +21,8 @@ jobs:
 
   test:
     docker:
-      - image: circleci/ruby:3.0.2
-      - image: circleci/mysql:8.0
+      - image: cimg/ruby:3.1.2
+      - image: cimg/mysql:8.0
         environment:
           MYSQL_ROOT_PASSWORD: password
           MYSQL_DATABASE: rails-front-demo-db

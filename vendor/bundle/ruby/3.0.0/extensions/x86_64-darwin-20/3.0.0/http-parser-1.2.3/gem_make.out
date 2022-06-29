@@ -1,5 +1,0 @@
-current directory: /Users/minori/Desktop/minoirofake/vendor/bundle/ruby/3.0.0/gems/http-parser-1.2.3/ext
-/Users/minori/.rbenv/versions/3.0.2/bin/ruby -I/Users/minori/.rbenv/versions/3.0.2/lib/ruby/site_ruby/3.0.0 -rrubygems /Users/minori/Desktop/minoirofake/vendor/bundle/ruby/3.0.0/gems/rake-13.0.6/exe/rake RUBYARCHDIR\=/Users/minori/Desktop/minoirofake/vendor/bundle/ruby/3.0.0/extensions/x86_64-darwin-20/3.0.0/http-parser-1.2.3 RUBYLIBDIR\=/Users/minori/Desktop/minoirofake/vendor/bundle/ruby/3.0.0/extensions/x86_64-darwin-20/3.0.0/http-parser-1.2.3
-clang -fdeclspec -fexceptions -O -fno-omit-frame-pointer -fno-strict-aliasing -Wall -Wextra -O3   -o x86_64-darwin/http-parser/http_parser.o -c ./http-parser/http_parser.c
-mkdir -p x86_64-darwin/http-parser
-clang -fdeclspec -bundle -o x86_64-darwin/libhttp-parser-ext.bundle x86_64-darwin/http-parser/http_parser.o -fexceptions 

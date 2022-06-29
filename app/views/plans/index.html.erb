@@ -5,7 +5,7 @@
         <h3 class="m-b1">条件で絞り込む</h3>
         <div class="relative">
         <%= form_with url: search_path, method: :get, local: true do |f| %>
-            <%= f.text_field :name_cont, value: @keyword, :placeholder => "検索" %>
+            <%= f.text_field :keyword, value: @keyword, :placeholder => "検索" %>
             <br>
             <% f.submit '検索' %>
             <div class="absolute center-v right-1 gray2 header-search">
@@ -57,7 +57,7 @@
             <div class="listBox_info">
                 <p class="listBox_result">
                     <span>
-                    <%= @sum_plan %>
+                    <%= @plans.count %>
                     </span>
                     人のコンサルタントがみつかりました。
                 </p>

@@ -29,7 +29,7 @@
                                     <th>アイコン</th>
                                     <td>
                                         <div class="size125">
-                                            <img src="<%= @user.image %>" id= "img_prev_0", class="img_user">
+                                            <img src="<%= @user.image %>" id= "img_prev_2", class="img_user">
                                         </div>
                                         <div class="upload m-t1">
                                             画像をアップロードする（縦横200px×200px以上推奨、5MB未満)
@@ -139,12 +139,12 @@
                                     <th>資格証明書</th>
                                     <td>
                                         <div class="certificate">
-                                            <img src="<%= @user.certificate %>" id= "img_prev_2", class="certificate_img">
+                                            <img src="<%= @user.certificate %>" id= "img_prev_0", class="certificate_img">
                                         </div>
                                         <div class="upload m-t1" data-thumbnail-target="#selected-file">
                                             画像をアップロードする（縦横200px×200px以上推奨、5MB未満)
                                             <div class="alignCenter m-t-20 m-b-20">
-                                            <%= f.file_field :certificate %>
+                                            <%= f.file_field :certificate, class: "user_certificate", id: "user_certificate_0" %>
                                             </div>
                                         </div>
                                         <span class="help-block m-t-5"></span>

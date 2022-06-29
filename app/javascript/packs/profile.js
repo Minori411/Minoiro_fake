@@ -21,12 +21,12 @@ function buildField(index) {
             <th>資格証明書</th>
             <td>
                 <div class="certificate">
-                <img src="<%= @user.certificate %>" id= "img_prev_2", class="certificate_img">
+                <img src="/sikaku.png" id= "img_prev_${index}" class="certificate_img">
                 </div>
                 <div class="upload m-t1" data-thumbnail-target="#selected-file">
                     画像をアップロードする（縦横200px×200px以上推奨、5MB未満)
                     <div class="alignCenter m-t-20 m-b-20">
-                    <input type="file" name="user[certificate]" id="user_certificate">
+                    <input type="file" name="user[certificate]" id= "user_certificate_${index}" class="user_certificate">
                     </div>
                 </div>
                 <span class="help-block m-t-5"></span>
