@@ -6,17 +6,26 @@ orbs:
 jobs:
   build:
     docker:
-      - image: circleci/ruby:3.0.2
+      - image: cimg/ruby:3.1.2                                     
     working_directory: ~/minoirofake
     steps:
+      - save_cache:
+          key: circleci-cache
+          paths:
+            - circleci-cache.txt    
+      - setup_remote_docker:
+          version: 20.10.14
       - checkout:
           path: ~/minoirofake
+      - run: sudo apt-get update && sudo apt-get install python3-pip groff-base
+      - run: sudo apt-get install imagemagick libmagickcore-dev libmagickwand-dev
+      - run: export PATH="$PATH:/usr/lib/x86_64-linux-gnu/ImageMagick-6.8.9/bin-Q16"
       - ruby/install-deps
 
   test:
     docker:
-      - image: circleci/ruby:3.0.2
-      - image: circleci/mysql:8.0
+      - image: cimg/ruby:3.1.2
+      - image: cimg/mysql:8.0
         environment:
           MYSQL_ROOT_PASSWORD: password
           MYSQL_DATABASE: rails-front-demo-db
@@ -52,7 +61,7 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker:
-          version: 20.10.11
+          version: 20.10.14
       - heroku/install
       - run:
           name: heroku login
@@ -81,3 +90,4 @@ workflows:
           filters:
             branches:
               only: main
+

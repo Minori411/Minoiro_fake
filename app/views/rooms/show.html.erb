@@ -48,8 +48,10 @@
     <% if @messages.present? %>
       <% @messages.each do |m| %>
         <div class="chat-box">
+        <%= link_to "編集",edit_room_path, class: "room_edit"%>
           <div class="chat-face">
-            <%= m.user.name %><br>
+            <%= m.user.name %>
+            <br>
             <%= m.created_at.strftime("%Y-%m-%d %H:%M")%>
           </div>
           <div class="chat-hukidashi"> <strong><%= m.body %></strong> <br>

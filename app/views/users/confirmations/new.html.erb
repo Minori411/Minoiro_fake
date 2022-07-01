@@ -1,16 +1,20 @@
-<h2>確認メールの再送信</h2>
 
 <%= form_with model: @user, url: confirmation_path(resource_name), local: true do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
-
+  <div class="back_gray p-t6 p-b6">
+  <div class="loginpanel">
+  <h5>確認メールの再送信</h5>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "再送信" %>
+  <div class="submit_buttons waves-effect waves-light btn-large login-btn2">
+  <%= f.submit "再送信",style: "color: #fff;" "font-weight: 600;" %>
+  </div>
+  <%= render "users/shared/links" %>
+  </div>
   </div>
 <% end %>
 
-<%= render "users/shared/links" %>
+

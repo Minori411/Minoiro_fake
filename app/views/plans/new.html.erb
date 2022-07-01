@@ -3,10 +3,6 @@
 <div class="js-plan-edit back_white inner p-t3 dashContent">
         <div class="dashContent_right">
             <h1>コンサルタントプラン編集／追加</h1>
-            <div class="alert alert-success">
-                <i class="fas fa-check-circle"></i>
-                下書き保存しました。まだ公開されていません。
-            </div>
             <div class="alert alert-info">
                 <p>
                     <i class="fas fa-info-circle"></i>
@@ -84,14 +80,14 @@
                     </span>   
                 </div>
     <div class="plan_area">
-    <%= f.fiels_for @plan.plans do |plan| %>
+    <%= f.fields_for :plans do |plan| %>
     <div class="boxbaseP30 plan_module js-addfield-block{ data: {index: "#{plan.index}"}  flex-wrap planbox m-b-20 z-depth-1" style="padding: 30px">
     <div class="left ">
-        <%= f.plan.text_field :plan_name ,:placeholder=>"チャットでの相談" %>
+        <%= plan.text_field :plan_name ,:placeholder=>"チャットでの相談" %>
     </div>
 
     <div class="pricebox ">
-        <%= f.plan.text_field :price,  :placeholder=>"5,000" %>
+        <%= plan.text_field :price,  :placeholder=>"5,000" %>
         <div class="yenkais">
         <span class="yenkai">円/</span>
         <span class="kai">回</span>
@@ -103,26 +99,25 @@
         <div class="item_name flexbox">
             <h3>相談方式</h3><span class="optional_label">任意</span>
         </div>
-            <%= f.plan.check_box :chat, id: :minoiro_checkbox, :as =>:boolean %>
-            <%=f.label :チャット %>
-            <%= f.plan.check_box :video, id: :minoiro_video, :as =>:boolean %>
+            <%= plan.check_box :chat, id: :minoiro_checkbox, :as =>:boolean %>
+            <%= f.label :チャット %>
+            <%= plan.check_box :video, id: :minoiro_video, :as =>:boolean %>
             <%= f.label :ビデオ通話 %>
     </div>
 
     <div class="m-t2 left w100p ">
-        <%= f.plan.text_area :plan_detail, class: "w100p", :placeholder=>"プランの内容を入力してください" %>
+        <%= plan.text_area :plan_detail, class: "w100p", :placeholder=>"プランの内容を入力してください" %>
     </div>
             <div class="right m-b-20 smt_right m-t1" style="width: auto; margin-left: auto;">
-            <a href="#" class="button is-danger" data-deletefiled="true">
-                <i class="fas fa-times-circle"></i> 削除
-            </a>
             <% if @plan.persisted? %>
             <%= plan.check_box :_destroy, data:{ index: plan.index }, class: "hidden-destroy" %>
+            <% end %>
         </div>
     </div>
     <% end %>
     </div>
-                            <%= f.submit "さらにプランを追加する",class:"waves-light btn-large btn-custom5 add-form-btn"%>
+
+                            <%= f.button "さらにプランを追加する",type: :button, class:"waves-light btn-large btn-custom5 add-form-btn"%>
                         </div>
                     </div>
                 </div>
@@ -162,7 +157,6 @@
         </div>
     </div>
 
-<% end %>
 <% end %>
 
 

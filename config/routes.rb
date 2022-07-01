@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   post "/plans/create"
   get "/plans/create"
   resources :messages, only: [:create]
-  resources :rooms, only: [:create, :index, :show]
+  resources :rooms
 
   devise_for :users, :controllers => {
     :registrations => 'users/registrations',
@@ -55,9 +55,6 @@ Rails.application.routes.draw do
   resource :profile, only: %i[show edit update]
 
   resources :users do
-    collection do
-      get 'search'
-    end
     resources :profiles
   end
 

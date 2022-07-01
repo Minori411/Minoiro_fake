@@ -2,13 +2,15 @@
 <div class="userProfileHeader">
 <div class="userProfileHeader_inner flexbox">
     <div class="userProfileHeader_icon">
-        <div class="icon size125 wborder">
-        <img src="<%= @user.image %>" width="100">
+        <div class="icon wborder">
+        <img src="<%= @user.image %>",width="125px" height= "125px", style= "border-radius: 50%;">
         </div>
     </div>
     <div class="userProfileHeader_name">
         <div class="name">
-            <h1>山田太郎</h1>
+            <h1>
+            <%= current_user.name %>
+            </h1>
             <div class="snsicon"></div>
         </div>
     </div>
@@ -25,7 +27,7 @@
                             <div class="average-score mb-3">
                             <div class="star-rating ml-2">
                             <div class="star-rating-front" style="width: <%= @avg_score_percentage %>%">★★★★★</div>
-                            <div class="star-rating-back">★★★★</div>
+                            <div class="star-rating-back">★★★★★</div>
                             </div>
                             </div>
                             </span>
@@ -135,16 +137,56 @@
             <!--プラン カテゴリ-->
             <div class="tab_content" id="plan_content">
                 <div class="tab_content_description">
-                    <div class="tab_content_plan"></div>
+                    <div class="tab_content_plan">
+                    <% @plan.each do |plan| %>
+                        <%= link_to plan_path(plan.id) do %>
+                        <div class="boxbaseP30">
+                        <%= plan.plan_name %><br>
+                        <%= plan.price %>円/回
+                        </div>
+                        <% end %>
+                    <% end %>
+                    </div>
                 </div>
             </div>
             <!--投稿 カテゴリ--> 
             <div class="tab_content" id="post_content">
-                <div class="tab_content_description"></div>
+                <div class="tab_content_description">
+                <% @article.each do |article| %>
+                <%= link_to article_path(article.id) do %>
+                <div class="boxbaseP30">
+                <%= article.created_at.strftime("%m月%d日") %>
+                <%= article.subject %>
+                </div>
+                <% end %>
+                <% end %>
+                </div>
             </div>
             <!--レビュー カテゴリ-->
             <div class="tab_content" id="review_content">
-                <div class="tab_content_description"></div>
+                <div class="tab_content_description">
+                <% @review.each do |review| %>
+                    <div class="boxbaseP30">
+                    <%= review.created_at.strftime("%m月%d日") %>
+                    <div id='star-rate-<%= review.id %>'>
+                    <script>
+                        $('#star-rate-<%= review.id %>').raty({
+                            size: 36,
+                            starOff:  '<%= asset_path('star-off.png') %>',
+                            starOn : '<%= asset_path('star-on.png') %>',
+                            starHalf: '<%= asset_path('star-half.png') %>',
+                            half: true,
+                            readOnly: true,
+                            score: <%= review.evaluation %>,
+                        });
+                        </script> 
+                        <p class="naiyou">
+                            <%= review.body %>
+                        </p>
+                    </div>
+                    </div>
+                <% end %>
+                </div>
             </div>
         </div>
     </div>

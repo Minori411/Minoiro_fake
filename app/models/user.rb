@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  validates_acceptance_of :is_kiyaku, allow_nil: false, on: :create
   has_many :articles, dependent: :destroy 
   has_many :reviews
   has_many :following_relationships, foreign_key: "follower_id", class_name: "Relationship",  dependent: :destroy
@@ -8,12 +9,18 @@ class User < ApplicationRecord
   has_many :entries, dependent: :destroy
   has_many :messages, dependent: :destroy
   has_many :user_select_bottles, dependent: :destroy
-  has_many :plan, dependent: :destroy
-  has_many :contract
+  has_many :plans, dependent: :destroy
+  has_many :contracts
 
   mount_uploader :image, ImageUploader
-  
+  mount_uploader :disability_passport, DisabilityUploader
+  mount_uploader :certificate, CertificateUploader
 
+
+  
+  def self.search(keyword)
+    where(["name like?","%#{keyword}%"])
+  end
 
   #フォローしているかを確認するメソッド
   def following?(user)

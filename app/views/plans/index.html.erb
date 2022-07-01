@@ -57,7 +57,7 @@
             <div class="listBox_info">
                 <p class="listBox_result">
                     <span>
-                    <%= @sum_plan %>
+                    <%= @plans.count %>
                     </span>
                     人のコンサルタントがみつかりました。
                 </p>
@@ -67,11 +67,10 @@
                 <div class="mentorList">
                 <% @plans.each do |plan| %>
                 <%= link_to plan_path(plan.id) do %>
-
                     <div class="plan-card">
-                        <div class="plan-card_wrapper"></div>
-                        <div class="p-content-card_inner">
-                            <div class="plan_card_eyecatch">
+                    <div class="plan-card_wrapper"></div>
+                    <div class="p-content-card_inner">
+                        <div class="plan_card_eyecatch">
                                 <div class="plan-card_image slickSlide slick-initialized slick-slider">
                                     <div class="slick-list draggable">
                                         <div class="slick-track" style="opacity: 1; width: 268px; tranform: translated3d(0px, 0px, 0px);">
@@ -106,9 +105,10 @@
                                             </span>
                                             
                                             <span class="name">
+                                            <img src="<%= plan.user.image %>",class= "message-img", width="15px", style= "border-radius: 50%;">
                                             <%= plan.user.name %>
                                             </span>
-                                           
+                                        
                                         </div>
                                     </div>
                                 </div>
@@ -118,11 +118,17 @@
                                             <span class="plan-card_review-icon">
                                                 <i class="fas fa-star"></i>
                                             </span>
-                                            <span class="plan-card_review-count">                        
-                                            <%= @avg_review %>
+                                            <span class="plan-card_review-count">
+                                            <% @reviews =  plan.user.reviews.order("created_at DESC") %>
+                                            <% unless plan.present? %>
+                                            <%= @avg_review = 0 %>
+                                            <% else %>
+                                            <%= @avg_review = @reviews.average(:evaluation).present? ? @reviews.average(:evaluation).round(2) : 0 %>
+                                            <% end %>
                                             </span>
                                         </div>
                                         <div class="plan-card_price">
+                                        <% @min_price = plan.user.plans.minimum(:price) %>
                                         <%= @min_price %>円〜
                                         </div>
                                     </div>
@@ -131,7 +137,7 @@
                         </div>
                     </div>
                 <% end %>
-                
+                    
                 <% end %>
                 
                 

@@ -9,7 +9,9 @@
 
                 <div class="gray">
                     <a href="#">
-                        <div class="icon size125 wborder" style="background-image:"></div>
+                        <div class="wborder">
+                        <img src="<%= @user.image %>",class= "resize125",width="125px" height= "125px", style= "border-radius: 50%;">
+                        </div>
                     </a>
                     <p class="name">
                         <a href="#" class="link"></a>
@@ -79,29 +81,32 @@
                             評価
                         </div>
                         <div class="right">
-                            <span class="star">
-                                <i class="fas fa-star"></i>
-                            </span>
-                            <span class="star">
-                                <i class="fas fa-star"></i>
-                            </span>
-                            <span class="star">
-                                <i class="fas fa-star"></i>
-                            </span>
-                            <span class="star">
-                                <i class="fas fa-star"></i>
-                            </span>
-                            <span class="star">
-                                <i class="fas fa-star"></i>
-                            </span>
-                            <span class="no-bold">(131)</span>
+                            <div class="average-score mb-3">
+                            <div class="star-rating ml-2">
+                            <div class="star-rating-front" style="width: <%= @avg_score_percentage %>%">★★★★★</div>
+                            <div class="star-rating-back">★★★★★</div>
+                            </div>
+                            <div class="average-score-display">
+                            （<%= @avg_score %>点）
+                            </div>
+                            </div>
                         </div>
                         <div class="icon_money">料金</div>
-                        <div class="right">1000円</div>
+                        <div class="right"><%= @min_price %>円〜</div>
                     </div>
                     <div class="m-b2 SideMessageArea">
-                        <label for="modal-trigger_message10335" class="z-depth-2 button primaryButton w100p">メッセージで相談</label>
-                        <div class="sideMessageArea_sub">まずは相談してみよう</div>
+                    <% unless @user.id == current_user.id %>
+                    <% if @is_room == true %>
+                        <p class="user-show-room"><a href="/rooms/<%= @room_id %>" class="btn btn-primary btn-lg">チャットへ</a>
+                    <% else %>
+                        <%= form_for @room do |f| %>
+                        <%= fields_for @entry do |e| %>
+                            <%= e.hidden_field :user_id, value: @user.id %>
+                        <% end %>
+                        <%= f.submit "メッセージで相談する", class:"btn btn-primary btn-lg side-bar-message"%>
+                        <% end %>
+                    <% end %>
+                <% end %>
                     </div>
                 </div>
                 <div class="m-b1 ReportArea m-t1">
@@ -109,6 +114,9 @@
                 </div>
                 <div class="sideMessageArea_sub">このプランをシェアしよう!</div>
                 <div class="side_sns">
+                <%= link_to "https://twitter.com/share?url=#{ request.url }&text=【拡散しよう】%0a%0a#{ @user.twitter }/&hashtags=みのいろ", target: '_blank' do %>
+                    <i class="fab fa-twitter" style='color: #3399FF;'></i>シェア
+                <% end %>
                 </div>
             </div>
             <div id="main" class="no_br contract_main">
@@ -117,15 +125,19 @@
             <h3>コンサルタントプラン</h3>
             <div class="plan_block">
             <div class="plan_subject">タイトル</div>
-            <div class="plan_title">プランタイトル</div>
+            <div class="plan_title">
+            <%= @plan.plan_name %>
+            </div>
             <div class="plan_price">
-            <span style="font-size: 1rem;">5000円/回</span>
+            <span style="font-size: 1rem;">
+            <%= @plan.price %>円/回
+            </span>
             </div>
             </div>
             </div>
             <div class="v-app coupon_area">
             <h3>お支払い情報</h3>
-            <div class="plan_coupon"></div>
+            <div class="plan_coupon">カード番号</div>
             </div>
             <div class="submit_buttons alignCenter">
             <%= f.submit "契約する",class:"waves-light btn" %>

@@ -19,11 +19,37 @@ class RoomsController < ApplicationController
     end
 
     def show
+        @plan = Plan.find(params[:id])
         @user = User.find(params[:id])
         @room = Room.find(params[:id])
         @messages = @room.messages.all
         @message = Message.new
         @entries = @room.entries
         @another_entry = @entries.where.not(user_id: current_user.id).first
+    end
+
+    def edit
+        @room = Room.find(params[:id])
+        @message = Message.find(params[:id])
+    end
+    
+    def update
+            @room = Room.find(params[:id])
+            @message = Message.find(params[:id])
+            if @messagge.update(message_params)
+                redirect_to room_path(@room.id)
+            else
+                render :edit
+            end
+    end
+    
+    def destroy
+        @room = Room.find(params[:id])
+        @room.destroy
+        redirect_to action:'show'
+    end
+
+    def message_params
+        params.require(:message).permit(:body).merge(room_id: @room.id)
     end
 end

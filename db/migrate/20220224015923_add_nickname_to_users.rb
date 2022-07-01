@@ -16,7 +16,6 @@ class AddNicknameToUsers < ActiveRecord::Migration[7.0]
     add_column :users, :instagram, :string
     add_column :users, :certificate_name, :string
     add_column :users, :certificate, :string
-    add_column :users, :disability_certificate, :string
     add_column :users, :level, :string
     add_column :users, :experience, :string
     add_column :users, :disability_passport, :string
