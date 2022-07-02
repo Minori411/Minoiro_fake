@@ -3,6 +3,7 @@ class ProfilesController < ApplicationController
 
     def index
         @user = User.find(params[:user_id])
+        @relation = Relationship.find_by(following_id:@user.id,follower_id:current_user.id)
         @article = @user.articles.order(created_at: :desc)
         @review = @user.reviews.order(created_at: :desc)
         @plan = @user.plans.order(created_at: :desc)

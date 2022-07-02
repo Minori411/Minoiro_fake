@@ -187,7 +187,7 @@
 <% if user_signed_in? && %>
     <div id="follow_form">
         <% if current_user.following?(@user) %>
-        <%= form_for(current_user, url: user_relationship_path(@user.id), method: :delete, remote: true) do |f| %>
+        <%= form_for(current_user, url: user_relationship_path(@user.id,@relation.id), method: :delete, remote: true) do |f| %>
             <%= f.submit "フォロー解除", class: "btn longer" %>
         <% end %>
         <% else %>
