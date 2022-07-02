@@ -1,5 +1,4 @@
 class PlansController < ApplicationController
-    before_action :set_q, only: [:index, :search]
     before_action :move_to_signed_in
 
     def search
@@ -10,8 +9,8 @@ class PlansController < ApplicationController
 
     def index
         @plan = Plan.new
-        @plans = Plan.all
-        @sum_plan = Plan.count(:id)
+        @users = User.joins(:plans).distinct
+        @plans = @users.map { |user| user.plans.first }
     end
 
 

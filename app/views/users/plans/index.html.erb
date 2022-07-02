@@ -11,9 +11,7 @@
                     <p class="name">
                         <a href="#" class="link"></a>
                     </p>
-                    <a href="#" class="color">
-                        <%= link_to "もっと詳しく",user_profiles_path(@plan.user_id)%>
-                    </a>
+                            <%= link_to "もっと詳しく",user_profiles_path(@user.id)%>
                     <div class="followbox">
                         <div class="z-depth-1 follow">
                             <div class="w50p">
@@ -64,7 +62,7 @@
                     </div>
                     <div class="m-b2 FollowArea">
                         <div class="FollowArea_sub m-b1">フォローして後でチェック</div>
-                        <%= render "follow_form" %>
+                        <%= render "plans/follow_form" %>
                     </div>
                     <div class="hyouka_box">
                         <div class="icon_heart">
@@ -109,19 +107,23 @@
             </div>
             <div id="main" class="no_br">
             <div class="plan_details_margin">
-                <% if user_signed_in? && current_user.id == @plan.user_id %>
-                <td><%= link_to "編集", edit_plan_path(@plan.id) %></td>
+                <% if user_signed_in? && current_user.id == @user.id %>
+                <td><%= link_to "編集", edit_plan_path(@user.id) %></td>
                 <% end %>
                 <% if current_user %>
                 <p>ユーザーID-<%= current_user.id %></p>
                 <% end %>
-                <p>プランのユーザーID-<%= @plan.user_id %></p>
+                <p>プランのユーザーID-<%= @user.id %></p>
             </div>
             <div class="boxbaseP30">
-                <h1 class="plan_show"><%= @plan.title %></h1>
+            <% @plans.each do |plan| %>
+                <h1 class="plan_show"><%= plan.title %></h1>
+            <% end %>
                 <h3 class="nomargin">できること</h3>
                 <div class="markdown-body plan_detail_markdown_over">
-                    <%= @plan.can_do %>
+                <% @plans.each do |plan| %>
+                    <%= plan.can_do %>
+                <% end %>
                 </div>
                 <div class="alignCenter">
                     <a href class="link more-btn">
@@ -131,8 +133,8 @@
             </div>
             <h3 id="plans" class="anchor-point">プラン（３件）</h3>
             <div class="wrapper flex swiper-container swipe01 swiper-initialized swiper-horizonal swiper-pointer-events swiper-free-mode">
-            
-            <%= link_to show_plan_detail_path(@plan.id) do %> 
+            <% @plans.each do |plan| %>
+            <%= link_to user_plan_path(@user.id,plan.id) do %> 
 
             <div class="plan-card mmm">
             <div class="plan-card_wrapper"></div>
@@ -150,19 +152,20 @@
                 <div class="plan-card-text">
                     <div class="plan-card_top">
                         <div class="plan-card_subject">
-                            <%= @plan.plan_name %>
+                            <%= plan.plan_name %>
                         </div>
                     </div>
                     <div class="plan-card_bottom">
                         <div class="plan-card_info flexbox">
                             <div class="plan-card_price">
-                                <%= @plan.price %>円
+                                <%= plan.price %>円
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <% end %>
         <% end %>
 
 
@@ -237,8 +240,7 @@
                     </a>
                     <p class="status m-t05 alignCenter">相談できます</p>
                     <p class="name">
-                        <a href="#" class="link">
-                            <span class="name_text"><%= @plan.user.name %></span>
+                            <span class="name_text"><%= @user.name %></span>
                     </p>
                     <p class="time_stamp">
                     <% if current_user.current_sign_in_at > 1.day.ago %>
@@ -309,8 +311,10 @@
                     </div>
                 </div>
             </div>
-            <% if current_user.id != @plan.user_id %>
-            <%= link_to "レビューを書く",new_plan_review_path(@plan.id) %>
+            <% if current_user.id != @user.id %>
+            <% @plans.each do |plan| %>
+            <%= link_to "レビューを書く",new_plan_review_path(plan.id) %>
+            <% end %>
             <% end %>
             <div class="p-profile" style="background-color:transparent;">
                 <div class="p-profile_content">

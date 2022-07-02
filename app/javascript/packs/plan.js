@@ -1,7 +1,10 @@
 
 document.addEventListener("turbolinks:load", function () {
     $(function() {
-    
+
+    $('.js-searchable').select2({
+      language: "ja" //日本語化
+    });
     
       function buildField(index) {
         const html = `<div class="boxbaseP30 plan_module flex-wrap planbox m-b-20 z-depth-1 js-addfield-block" data-index="${index}", style="padding: 30px">
@@ -32,7 +35,7 @@ document.addEventListener("turbolinks:load", function () {
         <textarea class="w100p" placeholder="プランの内容を入力してください" name="plan[plans][plan_detail]" id="plan_plans_plan_detail"></textarea>
       </div>
           <div class="right m-b-20 smt_right m-t1" style="width: auto; margin-left: auto;">
-          <a class="button hidden-destroy" data-deletefiled="true">
+          <a class="button delete-form-btn" data-deletefiled="true">
               <i class="fas fa-times-circle"></i> 削除
           </a>`;
         return html;
@@ -56,6 +59,43 @@ document.addEventListener("turbolinks:load", function () {
         displayCount += 1;
         
       })
+
+      $(document).on("click", ".delete-form-btn", function (e) {
+        // $(this)でイベントが発生した要素を取得して削除する
+        $("div").remove(".js-addfield-block");
+    });
+    fileIndex.pop()
     });
 
+});
+
+jQuery(function ($) {
+  // セレクトボックスが変更されたら処理をする
+  $('#pref-select').change(function () {
+  
+      // 選択した値を取得
+      var select_val = $('#pref-select option:selected').val();
+      
+      // tbodyのtr数回 処理をする
+      $.each($("#pref-table tbody tr"), function (index, element) {
+      
+          // 選択した値が空欄だったら、全ての行を表示する為の処理
+          if (select_val == "") {
+              $(element).css("display", "table-row");
+              return true; // 次のtrへ
+          }
+          
+          // 1行をテキストとして取り出し、セレクトボックスで選択した値があるかをチェック
+          var row_text = $(element).text();
+          
+          if (row_text.indexOf(select_val) != -1) {
+              // 見つかった場合は表示する
+              $(element).css("display", "table-row");
+          } else {
+              // 見つからなかった場合は非表示に
+              $(element).css("display", "none");
+          }
+
+      });
+  });
 });

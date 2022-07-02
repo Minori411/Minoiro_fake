@@ -7,12 +7,12 @@
 
         <div class="p-summary__avatar">
             <span class="avatar-image">
-                <img src="https://img.menta.work/200/icon/61d6f249929f7.png" alt="林　みのり" loading="lazy">
+                <img src="https://img.menta.work/200/icon/61d6f249929f7.png" alt="林 みのり" loading="lazy">
             </span>
         </div>
 
         <div class="p-summary__contents mentee alignCenter">
-            <div class="mentee__name">林　みのり</div>
+            <div class="mentee__name">林 みのり</div>
         </div>
 
         <status-change-button :can-change="true" value="1" :options="{&quot;1&quot;:&quot;\u63d0\u6848\u53d7\u4ed8\u4e2d&quot;,&quot;2&quot;:&quot;\u63d0\u6848\u505c\u6b62\u4e2d&quot;}" null-label="提案未選択" url="https://menta.work/user/31248/change-status" http-method="patch" param-label="accept_proposal" @succeeded="$toasted.success('ステータスを更新しました')" @failed="$toasted.error('ステータスの更新でエラーが発生しました')"></status-change-button>

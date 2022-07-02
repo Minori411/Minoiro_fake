@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
     before_action :configure_permitted_parameters, if: :devise_controller?
-    before_action :set_search
-    before_action :set_q
+
 
     protect_from_forgery with: :null_session  # このアクションを追加
   def after_sign_in_path_for(resource)
@@ -13,17 +12,9 @@ class ApplicationController < ActionController::Base
   end
 
   def search
-    @results = @q.result
-  end
-
-  def set_q
-    @q = User.ransack(params[:q])
-  end
-
-  def set_search
-    #@search = Article.search(params[:q])
-    @search = User.ransack(params[:q]) #ransackメソッド推奨
-    @search_users = @search.result.page(params[:page])
+    @users = User.search(params[:keyword])
+    @keyword = params[:keyword]
+    render "index"
   end
 
   private
