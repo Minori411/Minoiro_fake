@@ -11,16 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2022_06_04_113616) do
-  create_table "article_tags", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "article_id", null: false
-    t.bigint "tag_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["article_id", "tag_id"], name: "index_article_tags_on_article_id_and_tag_id", unique: true
-    t.index ["article_id"], name: "index_article_tags_on_article_id"
-    t.index ["tag_id"], name: "index_article_tags_on_tag_id"
-  end
-
   create_table "articles", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "user_id"
     t.string "subject"
@@ -100,15 +90,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_04_113616) do
     t.index ["user_id"], name: "index_plans_on_user_id"
   end
 
-  create_table "planstags", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "plan_id", null: false
-    t.bigint "tag_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["plan_id"], name: "index_planstags_on_plan_id"
-    t.index ["tag_id"], name: "index_planstags_on_tag_id"
-  end
-
   create_table "relationships", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "follower_id"
     t.integer "following_id"
@@ -130,13 +111,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_04_113616) do
   end
 
   create_table "rooms", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "tags", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "name", null: false
-    t.integer "type", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -189,7 +163,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_04_113616) do
     t.string "instagram"
     t.string "certificate_name"
     t.string "certificate"
-    t.string "disability_certificate"
     t.string "level"
     t.string "experience"
     t.string "disability_passport"
@@ -200,8 +173,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_04_113616) do
     t.index ["soft_destroyed_at"], name: "index_users_on_soft_destroyed_at"
   end
 
-  add_foreign_key "article_tags", "articles"
-  add_foreign_key "article_tags", "tags"
   add_foreign_key "articles", "users"
   add_foreign_key "contracts", "plans"
   add_foreign_key "contracts", "users"
@@ -210,8 +181,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_04_113616) do
   add_foreign_key "messages", "rooms"
   add_foreign_key "messages", "users"
   add_foreign_key "plans", "users"
-  add_foreign_key "planstags", "plans"
-  add_foreign_key "planstags", "tags"
   add_foreign_key "reviews", "users"
   add_foreign_key "user_select_bottles", "bottles"
   add_foreign_key "user_select_bottles", "users"

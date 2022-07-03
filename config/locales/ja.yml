@@ -11,7 +11,7 @@ ja:
         updated_at: 更新日時
         is_kiyaku: 利用規約と個人情報保護法
       messages:
-        record_invalid: 'バリデーションに失敗しました: %{errors}'
+        record_invalid: "バリデーションに失敗しました: %{errors}"
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"

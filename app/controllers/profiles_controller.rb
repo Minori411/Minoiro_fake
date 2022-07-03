@@ -10,8 +10,8 @@ class ProfilesController < ApplicationController
         @avg_score = Review.average(:evaluation).round(1)
         @avg_score_percentage = Review.average(:evaluation).round(1).to_f*100/5
         @user = User.find_by(id: params[:user_id])
-        @sum_total_consultants = current_user.contracts.where(consultant_id:  current_user.id).count
-        @sum_total_customers = current_user.contracts.where(customer_id:  current_user.id).count    
+        @sum_total_consultants = @user.contracts.where(consultant_id:  @user.id).count
+        @sum_total_customers = @user.contracts.where(customer_id: @user.id).count    
         @current_entry = Entry.where(user_id: current_user.id)
         @another_entry = Entry.where(user_id: @user.id)
         @room = Room.new

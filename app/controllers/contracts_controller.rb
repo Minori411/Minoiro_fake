@@ -38,7 +38,7 @@ class ContractsController < ApplicationController
     @contract.plan_id = @plan.id
     @contract.consultant_id = @plan.user_id
     @contract.customer_id = current_user.id
-    @contract.user_id = current_user.id
+    @contract.user_id = @plan.user_id
             if @contract.save! # もし保存ができたら
                 logger.debug("成功")
                 redirect_to plan_contract_path(@plan.id,@contract.id) # 投稿画面に遷移

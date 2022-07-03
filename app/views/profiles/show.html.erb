@@ -44,9 +44,9 @@
                         <span class="scoreStatus_label flexbox">累計</span>
                         <span class="scoreStatus_score">
                             <% if current_user.userstyle == 0 %>
-                            <%= @sum_total_consultants %>
-                            <% elsif current_user.userstyle == 1 %>
                             <%= @sum_total_customers %>
+                            <% elsif current_user.userstyle == 1 %>
+                            <%= @sum_total_consultants %>
                             <% end %>
                         </span>
                         <span>人</span>

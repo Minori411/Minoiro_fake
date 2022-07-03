@@ -35,7 +35,7 @@ document.addEventListener("turbolinks:load", function () {
         <textarea class="w100p" placeholder="プランの内容を入力してください" name="plan[plans][plan_detail]" id="plan_plans_plan_detail"></textarea>
       </div>
           <div class="right m-b-20 smt_right m-t1" style="width: auto; margin-left: auto;">
-          <a class="button delete-form-btn" data-deletefiled="true">
+          <a class="button delete-form-btn" data-deletefiled="true" data-index="${index}">
               <i class="fas fa-times-circle"></i> 削除
           </a>`;
         return html;
@@ -62,7 +62,9 @@ document.addEventListener("turbolinks:load", function () {
 
       $(document).on("click", ".delete-form-btn", function (e) {
         // $(this)でイベントが発生した要素を取得して削除する
-        $("div").remove(".js-addfield-block");
+        
+        let index = e.target.getAttribute('data-index')
+        $("div").remove(`.js-addfield-block:nth-child(${index})`);
     });
     fileIndex.pop()
     });

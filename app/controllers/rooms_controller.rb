@@ -36,7 +36,7 @@ class RoomsController < ApplicationController
     def update
             @room = Room.find(params[:id])
             @message = Message.find(params[:id])
-            if @messagge.update(message_params)
+            if @message.update(message_params)
                 redirect_to room_path(@room.id)
             else
                 render :edit
