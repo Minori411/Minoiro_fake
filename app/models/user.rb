@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  validates_acceptance_of :is_kiyaku, allow_nil: false, on: :create
+  # validates_acceptance_of :is_kiyaku, allow_nil: false, on: :create
   has_many :articles, dependent: :destroy 
   has_many :reviews
   has_many :following_relationships, foreign_key: "follower_id", class_name: "Relationship",  dependent: :destroy

@@ -18,8 +18,8 @@ end
 def detail
   if user_signed_in?
     @user = User.find_by(id: params[:id])
-    @sum_total_consultants = current_user.contracts.where(consultant_id:  current_user.id).count
-    @sum_total_customers = current_user.contracts.where(customer_id:  current_user.id).count
+    @sum_total_consultants = current_user.contracts.where(consultant_id:  @user.id).count
+    @sum_total_customers = @user.contracts.where(customer_id:  current_user.id).count
   end
 
 end
