@@ -73,7 +73,7 @@ document.addEventListener("turbolinks:load", function () {
 
 jQuery(function ($) {
   // セレクトボックスが変更されたら処理をする
-  $('#pref-select').change(function () {
+  $('#price-select').change(function () {
   
       // 選択した値を取得
       var select_val = $('#pref-select option:selected').val();
@@ -101,3 +101,21 @@ jQuery(function ($) {
       });
   });
 });
+
+// TODO: 「料金の幅」選択が変更されたら、JS 側の制御で 自動的に submit する
+document.addEventListener("turbolinks:load", function () {
+  const submitTarget = document.getElementById('search_plan')// TODO: ID で <form/> を探す
+  const priceSelect = document.querySelector('#price-select')
+  const submitButton = document.querySelector('#search-submit')
+
+  $(priceSelect).on('change', function() {
+    // submit ボタンを押す
+    // submitButton.click()
+    
+    // document.forms["price-select"].submit()
+    
+    // TODO: <form/> に対して submit を送出する
+    // document.forms["search_plan"].submit()
+    submitTarget.submit()
+  })
+})
