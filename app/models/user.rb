@@ -12,7 +12,7 @@ class User < ApplicationRecord
   has_many :plans, dependent: :destroy
   has_many :contracts
   has_many :customer_contracts, foreign_key: "customer_id", class_name: "Contract"
-  has_many :small_plans, dependent: :destroy
+  # has_many :small_plans, dependent: :destroy
 
   mount_uploader :image, ImageUploader
   mount_uploader :disability_passport, DisabilityUploader
