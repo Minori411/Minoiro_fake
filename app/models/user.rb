@@ -16,8 +16,19 @@ class User < ApplicationRecord
   mount_uploader :disability_passport, DisabilityUploader
   mount_uploader :certificate, CertificateUploader
 
+  CUSTOMER = 0
+  CONSULTANT = 1
+  # NOTE: User.style で判別する場合 (数値で判別する場合)
+  # メソッドを定義して、数値 (マジックナンバー) を秘匿するのが、読みやすくなるコードにつながる
 
-  
+  def consultant?
+    userstyle.eql?(CONSULTANT)
+  end
+
+  def customer?
+    userstyle.eql?(CUSTOMER)
+  end
+
   def self.search(keyword)
     where(["title like? OR name like? OR body like?OR can_do like? OR status like? OR consent like? OR plan_name like? OR plan_detail like?","%#{keyword}%","%#{keyword}%","%#{keyword}%", "%#{keyword}%","%#{keyword}%","%#{keyword}%", "%#{keyword}%", "%#{keyword}%"])
   end

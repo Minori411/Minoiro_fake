@@ -1,3 +1,5 @@
+# TODO: 特別な処理をしていない場合、PlansController にリクエストを飛ばせるよう、route を編集し、コントローラを集約する
+
 class Users::PlansController < ApplicationController
     def index
         @user = User.find(params[:user_id])
@@ -7,6 +9,7 @@ class Users::PlansController < ApplicationController
         @current_entry = Entry.where(user_id: current_user.id)
         @another_entry = Entry.where(user_id: @user.id)
         @room = Room.new
+
         unless @user.id == current_user.id
             @current_entry.each do |current|
                 @another_entry.each do |another|
@@ -55,6 +58,27 @@ class Users::PlansController < ApplicationController
                 @entry = Entry.new
             end
         end
+    end
+
+    def new
+        @plan = Plan.new
+    end
+
+    def create
+        @plan = Plan.new(plan_params)
+        @plan.user_id = current_user.id
+        if @plan.save # もし保存ができたら
+            logger.debug("成功")
+            redirect_to plan_path(@plan.id) # 投稿画面に遷移
+        else  # できなければ
+            logger.debug("失敗")
+            logger.debug(@article.errors.full_messages)
+            render :new 
+        end 
+    end
+    
+    def edit
+        @plan = Plan.find(params[:id])
     end
 
 end

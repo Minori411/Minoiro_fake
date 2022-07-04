@@ -58,10 +58,10 @@ class PlansController < ApplicationController
 
     def create
         @plan = Plan.new(plan_params)
-        @plan.user_id=current_user.id
+        @plan.user_id = current_user.id
         if @plan.save # もし保存ができたら
             logger.debug("成功")
-            redirect_to plan_path(@plan.id)  # 投稿画面に遷移
+            redirect_to plan_path(@plan.id) # 投稿画面に遷移
         else  # できなければ
             logger.debug("失敗")
             logger.debug(@article.errors.full_messages)
@@ -125,12 +125,18 @@ class PlansController < ApplicationController
 
     def move_to_signed_in
         unless user_signed_in?
-        #サインインしていないユーザーはログインページが表示される
-        redirect_to  '/users/sign_in'
+          #サインインしていないユーザーはログインページが表示される
+          redirect_to  '/users/sign_in'
         end
     end
 
     def plan_params
-        params.require(:plan).permit(:title, :can_do, :youtube, :body, :status, :consent, :plan_name, :price, :plan_detail, :video, :chat).merge(user_id: current_user.id)
+        params.require(:plan)
+              .permit(
+                :title, :can_do, :youtube,
+                :body, :status, :consent,
+                :plan_name, :price, :plan_detail,
+                :video, :chat
+              ).merge(user_id: current_user.id)
     end
 end
