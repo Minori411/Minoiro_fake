@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :user_select_bottles, dependent: :destroy
   has_many :plans, dependent: :destroy
   has_many :contracts
+  has_many :customer_contracts, foreign_key: "customer_id", class_name: "Contract"
 
   mount_uploader :image, ImageUploader
   mount_uploader :disability_passport, DisabilityUploader
