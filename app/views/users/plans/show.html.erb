@@ -118,17 +118,17 @@
             <% end %>
             <div class="boxbaseP30">
             <div>
-            <h1><%= @plan.plan_name %></h1>
+            <h1><%= @small_plan.plan_name %></h1>
             <div class="plan_price">
-            <span style="font-size: 1rem;"><%= @plan.price %>円/回</span>
+            <span style="font-size: 1rem;"><%= @small_plan.price %>円/回</span>
             </div>
             </div>
             <div>
-            <div class="markdown-body"><%= @plan.plan_detail %></div>
+            <div class="markdown-body"><%= @small_plan.plan_detail %></div>
             </div>
             <div id="vapp">
             <div class="p-entry flexbox">
-            <%= link_to "次へ進む", plan_contracts_path(@plan.id),class: "waves-light btn" %>
+            <%= link_to "次へ進む", plan_contracts_path(@small_plan.id),class: "waves-light btn" %>
             </div>
             </div>
             </div>

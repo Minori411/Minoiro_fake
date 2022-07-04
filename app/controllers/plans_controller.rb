@@ -8,6 +8,7 @@ class PlansController < ApplicationController
     end
 
     def index
+        # @small_plan = SmallPlan.find(params[:small_plan_id])
         @plan = Plan.new
         @users = User.joins(:plans).distinct
         @plans = @users.map { |user| user.plans.first }
