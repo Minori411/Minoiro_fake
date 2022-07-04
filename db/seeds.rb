@@ -31,14 +31,9 @@ Plan.create(title: "何でも相談乗ります",
             body: "こんにちは",
             status:"相談できます",
             consent:"承認なし",
-            user_id:  "#{n}",
-            plan_name:"aaa",
-            price: 1000,
-            video: false,
-            chat: false,
-            plan_detail: "aaa",
-            
+            user_id: "#{n}"     
 )
+
 
 
 
@@ -50,6 +45,19 @@ Review.create(body: "知りたいことが知れました。とてもいい経�
                 user_id: 2,
                 evaluation: 5,
 )
+end
+
+10.times do |n|
+
+SmallPlan.create!(video: false,
+                chat: false,
+                plan_name: "aaa",
+                plan_detail: "aaa",
+                price:"1000",
+                user_id: "#{n}",
+                plan_id: "#{n}"
+)
+
 end
 
 Article.create!(subject:"最近の相談",

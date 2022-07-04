@@ -3,6 +3,7 @@
 class Users::PlansController < ApplicationController
     def index
         @user = User.find(params[:user_id])
+        @small_plans = @user.small_plans
         @plans = @user.plans
         @article = @user.articles.order(created_at: :desc)
         @reviews = @user.reviews.order("created_at DESC")
@@ -27,12 +28,13 @@ class Users::PlansController < ApplicationController
     end
 
     def show
+        @small_plan = SmallPlan.find(params[:id])
         @plan = Plan.find(params[:id])
         @user = User.find(@plan.user_id)
         @article = @plan.user.articles.order(created_at: :desc)
         @reviews = @user.reviews.order("created_at DESC")
         @relationship = Relationship.find_by(id: params[:id])
-        @min_price = @plan.user.plans.minimum(:price)
+        @min_price = @small_plan.user.small_plans.minimum(:price)
             unless @reviews.present?
             @avg_score = 0
             @avg_score_percentage = 0

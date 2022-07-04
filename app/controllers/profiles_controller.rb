@@ -7,6 +7,7 @@ class ProfilesController < ApplicationController
         @article = @user.articles.order(created_at: :desc)
         @review = @user.reviews.order(created_at: :desc)
         @plan = @user.plans.order(created_at: :desc)
+        @small_plan = @user.small_plans
         @avg_score = Review.average(:evaluation).round(1)
         @avg_score_percentage = Review.average(:evaluation).round(1).to_f*100/5
         @user = User.find_by(id: params[:user_id])
@@ -50,9 +51,9 @@ class ProfilesController < ApplicationController
         else
             @avg_score = @reviews.average(:evaluation).present? ? @reviews.average(:evaluation).round(2) : 0
         end
-        @sum_total_consultants = current_user.contracts.where(consultant_id:  current_user.id).count
-        @sum_total_customers = current_user.contracts.where(customer_id:  current_user.id).count    
         @user = User.find(current_user.id)
+        @sum_total_consultants = current_user.contracts.where(consultant_id:  @user.id).count
+        @sum_total_customers = current_user.contracts.count    
         @article = @user.articles.order(created_at: :desc)
         @review = @user.reviews.order(created_at: :desc)
         @plan = @user.plans.order(created_at: :desc)
