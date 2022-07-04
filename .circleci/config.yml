@@ -45,10 +45,6 @@ jobs:
           name: Database setup
           command: bundle exec rails db:migrate
       - run:
-          name: yarn Install
-          command: yarn install
-      - run: bundle exec bin/webpack
-      - run:
           name: rspec
           command: |
             bundle exec rspec --format RspecJunitFormatter \
