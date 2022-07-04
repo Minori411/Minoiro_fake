@@ -1,209 +1,209 @@
     
     
 <div class="back_white plan_detail">
-<div id="vapp" class="inner">
-    <div id="side" class="smt pc">
+        <div id="vapp" class="inner">
+            <div id="side" class="smt pc">
 
-        <div class="gray">
-            <a href="#">
-            <div class="wborder">
-            <img src="<%= @user.image %>",class= "resize125",width="125px" height= "125px", style= "border-radius: 50%;">
-            </div>
-            </a>
-            <p class="name">
-                <a href="#" class="link"></a>
-            </p>
-            <a href="#" class="color">
-                <%= link_to "もっと詳しく",user_profiles_path(@plan.user_id)%>
-            </a>
-            <div class="followbox">
-                <div class="z-depth-1 follow">
-                    <div class="w50p">
-                        <div class="title">フォロー</div>
-                        <div class="member">
-                        <%= link_to following_user_path(@user.id) do %>
-                            <span class="bold following_count"><%= @user.following.count %>人</span>
-                        <% end %>
-                        </div>
+                <div class="gray">
+                    <a href="#">
+                    <div class="wborder">
+                    <img src="<%= @user.image %>",class= "resize125",width="125px" height= "125px", style= "border-radius: 50%;">
                     </div>
-                    <div class="w50p">
-                        <div class="title">フォロワー</div>
-                        <div class="member">
-                        <%= link_to followers_user_path(@user.id) do %>
-                            <span class="bold followers_count"><%= @user.followers.count %>人</span>
-                        <% end %>
-                        </div>
-                    </div>
-                    <div class="w50p">
-                        <div class="title">返信率</div>
-                        <div class="reply">
-                            <span class="bold">99%</span>
-                        </div>
-                    </div>
-                    <div class="w30p"></div>
-                    <div class="w30p"></div>
+                    </a>
+                    <p class="name">
+                        <a href="#" class="link"></a>
+                    </p>
+                    <a href="#" class="color">
+                        <%= link_to "もっと詳しく",user_profiles_path(@plan.user_id)%>
+                    </a>
+                    <div class="followbox">
+                        <div class="z-depth-1 follow">
+                            <div class="w50p">
+                                <div class="title">フォロー</div>
+                                <div class="member">
+                                <%= link_to following_user_path(@user.id) do %>
+                                    <span class="bold following_count"><%= @user.following.count %>人</span>
+                                <% end %>
+                                </div>
+                            </div>
+                            <div class="w50p">
+                                <div class="title">フォロワー</div>
+                                <div class="member">
+                                <%= link_to followers_user_path(@user.id) do %>
+                                    <span class="bold followers_count"><%= @user.followers.count %>人</span>
+                                <% end %>
+                                </div>
+                            </div>
+                            <div class="w50p">
+                                <div class="title">返信率</div>
+                                <div class="reply">
+                                    <span class="bold">99%</span>
+                                </div>
+                            </div>
+                            <div class="w30p"></div>
+                            <div class="w30p"></div>
 
-                </div>
-            </div>
-            <p class="time_stamp">
-            <% if current_user.current_sign_in_at > 1.day.ago %>
-            <%= content_tag :p, "24時間以内", class: "current_signin"%>
-            <% elsif current_user.current_sign_in_at > 2.day.ago %>
-            <%= content_tag :p, "1日前", class: "current_signin"%>
-            <% elsif current_user.current_sign_in_at > 3.day.ago %>
-            <%= content_tag :p, "2日前", class: "current_signin"%>
-            <% elsif current_user.current_sign_in_at > 31.day.ago %>
-            <%= content_tag :p, "30日以上", class: "current_signin"%>
-            <% elsif 3.days.ago > current_user.current_sign_in_at > 31.day.ago %>
-            <%= content_tag :p, "30日以上", class: "current_signin"%>
-            <% end %> 
-            </p>
-            <div class="selfcheck">
-                <i class="fas fa-check-circle link"></i>
-                本人確認
-                <i class="fas fa-check-circle link"></i>
-                秘密保持契約(NDA)
-            </div>
-            <div class="m-b2 FollowArea">
-                <div class="FollowArea_sub m-b1">フォローして後でチェック</div>
-                <%= render "plans/follow_form" %>
-            </div>
-            <div class="hyouka_box">
-                <div class="icon_heart">
-                    評価
-                </div>
-                <div class="right">
-                <div class="average-score mb-3">
-                <div class="star-rating ml-2">
-                <div class="star-rating-front" style="width: <%= @avg_score_percentage %>%">★★★★★</div>
-                <div class="star-rating-back">★★★★★</div>
-                </div>
-                <div class="average-score-display">
-                （<%= @avg_score %>点）
-                </div>
-                </div>
-                </div>
-                <div class="icon_money">料金</div>
-                <div class="right"><%= @min_price %>円〜</div>
-            </div>
-            <div class="m-b2 SideMessageArea">
-            <% unless @user.id == current_user.id %>
-            <% if @is_room == true %>
-                <p class="user-show-room"><a href="/rooms/<%= @room_id %>" class="btn btn-primary btn-lg">チャットへ</a>
-            <% else %>
-                <%= form_for @room do |f| %>
-                <%= fields_for @entry do |e| %>
-                    <%= e.hidden_field :user_id, value: @user.id %>
+                        </div>
+                    </div>
+                    <p class="time_stamp">
+                    <% if current_user.current_sign_in_at > 1.day.ago %>
+                    <%= content_tag :p, "24時間以内", class: "current_signin"%>
+                    <% elsif current_user.current_sign_in_at > 2.day.ago %>
+                    <%= content_tag :p, "1日前", class: "current_signin"%>
+                    <% elsif current_user.current_sign_in_at > 3.day.ago %>
+                    <%= content_tag :p, "2日前", class: "current_signin"%>
+                    <% elsif current_user.current_sign_in_at > 31.day.ago %>
+                    <%= content_tag :p, "30日以上", class: "current_signin"%>
+                    <% elsif 3.days.ago > current_user.current_sign_in_at > 31.day.ago %>
+                    <%= content_tag :p, "30日以上", class: "current_signin"%>
+                    <% end %> 
+                    </p>
+                    <div class="selfcheck">
+                        <i class="fas fa-check-circle link"></i>
+                        本人確認
+                        <i class="fas fa-check-circle link"></i>
+                        秘密保持契約(NDA)
+                    </div>
+                    <div class="m-b2 FollowArea">
+                        <div class="FollowArea_sub m-b1">フォローして後でチェック</div>
+                        <%= render "plans/follow_form" %>
+                    </div>
+                    <div class="hyouka_box">
+                        <div class="icon_heart">
+                            評価
+                        </div>
+                        <div class="right">
+                        <div class="average-score mb-3">
+                        <div class="star-rating ml-2">
+                        <div class="star-rating-front" style="width: <%= @avg_score_percentage %>%">★★★★★</div>
+                        <div class="star-rating-back">★★★★★</div>
+                        </div>
+                        <div class="average-score-display">
+                        （<%= @avg_score %>点）
+                        </div>
+                        </div>
+                        </div>
+                        <div class="icon_money">料金</div>
+                        <div class="right"><%= @min_price %>円〜</div>
+                    </div>
+                    <div class="m-b2 SideMessageArea">
+                    <% unless @user.id == current_user.id %>
+                    <% if @is_room == true %>
+                        <p class="user-show-room"><a href="/rooms/<%= @room_id %>" class="btn btn-primary btn-lg">チャットへ</a>
+                    <% else %>
+                        <%= form_for @room do |f| %>
+                        <%= fields_for @entry do |e| %>
+                            <%= e.hidden_field :user_id, value: @user.id %>
+                        <% end %>
+                        <%= f.submit "メッセージで相談する", class:"btn btn-primary btn-lg side-bar-message"%>
+                        <% end %>
+                    <% end %>
                 <% end %>
-                <%= f.submit "メッセージで相談する", class:"btn btn-primary btn-lg side-bar-message"%>
+                    </div>
+                </div>
+                <div class="m-b1 ReportArea m-t1">
+                    <label for="modal-trigger_report">通報する</label>
+                </div>
+                <div class="sideMessageArea_sub">このプランをシェアしよう!</div>
+                <div class="side_sns">
+                <%= link_to "https://twitter.com/share?url=#{ request.url }&text=【拡散しよう】%0a%0a#{ @user.twitter }/&hashtags=みのいろ", target: '_blank' do %>
+                    <i class="fab fa-twitter" style='color: #3399FF;'></i>シェア
                 <% end %>
+                </div>
+            </div>
+            <div id="main" class="no_br">
+            <% if user_signed_in? && current_user.id == @plan.user_id %>
+                <td><%= link_to "編集", edit_plan_path(@plan.id,anchor: "js-plan") %></td>
+
             <% end %>
-        <% end %>
+            <div class="boxbaseP30">
+            <div>
+            <h1><%= @plan.plan_name %></h1>
+            <div class="plan_price">
+            <span style="font-size: 1rem;"><%= @plan.price %>円/回</span>
+            </div>
+            </div>
+            <div>
+            <div class="markdown-body"><%= @plan.plan_detail %></div>
+            </div>
+            <div id="vapp">
+            <div class="p-entry flexbox">
+            <%= link_to "次へ進む", plan_contracts_path(@plan.id),class: "waves-light btn" %>
+            </div>
+            </div>
+            </div>
+            <div id="side" class="smt sm">
+            <div class="gray">
+                <a href="#">
+                    <div class="icon size125 wborder"></div>
+                </a>
+                <p class="status m-t05 alignCenter">相談できます</p>
+                <p class="name">
+                    <a href="#" class="link">
+                        <span class="name_text">林みのり</span>
+                </p>
+                <div class="sns-icon">
+                    <a href="#" target="_blank" class="m-r1">
+                    <i class="fa fa-twitter"></i>
+                    </a>
+                </div>
+                <p class="time_stamp">
+                <% if current_user.current_sign_in_at > 1.day.ago %>
+                    <%= content_tag :p, "24時間以内", class: "current_signin"%>
+                    <% elsif current_user.current_sign_in_at > 2.day.ago %>
+                    <%= content_tag :p, "1日前", class: "current_signin"%>
+                    <% elsif current_user.current_sign_in_at > 3.day.ago %>
+                    <%= content_tag :p, "2日前", class: "current_signin"%>
+                    <% elsif current_user.current_sign_in_at > 31.day.ago %>
+                    <%= content_tag :p, "30日以上", class: "current_signin"%>
+                    <% elsif 3.days.ago > current_user.current_sign_in_at > 31.day.ago %>
+                    <%= content_tag :p, "30日以上", class: "current_signin"%>
+                    <% end %> 
+                </p>
+                <div class="selfcheck">
+                    <i class="fa fa-check-circle link"></i>
+                    本人確認
+                    <i class="fa fa-check-circle link"></i>
+                    秘密保持契約（NDA）
+                </div>
+                <div class="m-b2 FollowArea">
+                フォローボタン
+                </div>
+                <div class="hyouka_box">
+                    <div class="icon_heart">評価</div>
+                    <div class="right">
+                        <span class="review-icon">
+                        <i class="fa fa-star"></i>
+                        </span>
+                        <span class="review-icon">
+                        <i class="fa fa-star"></i>
+                        </span>
+                        <span class="review-icon">
+                        <i class="fa fa-star"></i>
+                        </span>
+                        <span class="review-icon">
+                        <i class="fa fa-star"></i>
+                        </span>
+                        <span class="review-icon">
+                        <i class="fa fa-star"></i>
+                        </span>
+                        <span class="no-bold">(203)</span>
+                    </div>
+                    <div class="icon_money">料金</div>
+                    <div class="right">1000円〜</div>
+                </div>
+                <div class="SideMessageArea">
+                <a class="waves-effect waves-light btn">メッセージで相談</a>
+                <div class="SideMessageArea_sub">まずは相談してみよう</div>
+                </div>
+            </div>
+            <div class="SideMessageArea_sub">このプランをシェアしよう!</div>
+            <div class="side_sns">
+            <%= link_to "https://twitter.com/share?url=#{ request.url }&text=【拡散しよう】%0a%0a#{ @user.twitter }/&hashtags=みのいろ", target: '_blank' do %>
+                    <i class="fab fa-twitter" style='color: #3399FF;'></i>シェア
+            <% end %>
+            </div>
+            </div>
             </div>
         </div>
-        <div class="m-b1 ReportArea m-t1">
-            <label for="modal-trigger_report">通報する</label>
-        </div>
-        <div class="sideMessageArea_sub">このプランをシェアしよう!</div>
-        <div class="side_sns">
-        <%= link_to "https://twitter.com/share?url=#{ request.url }&text=【拡散しよう】%0a%0a#{ @user.twitter }/&hashtags=みのいろ", target: '_blank' do %>
-            <i class="fab fa-twitter" style='color: #3399FF;'></i>シェア
-        <% end %>
-        </div>
     </div>
-    <div id="main" class="no_br">
-    <% if user_signed_in? && current_user.id == @plan.user_id %>
-        <td><%= link_to "編集", edit_plan_path(@plan.id,anchor: "js-plan") %></td>
-
-    <% end %>
-    <div class="boxbaseP30">
-    <div>
-    <h1><%= @plan.plan_name %></h1>
-    <div class="plan_price">
-    <span style="font-size: 1rem;"><%= @plan.price %>円/回</span>
-    </div>
-    </div>
-    <div>
-    <div class="markdown-body"><%= @plan.plan_detail %></div>
-    </div>
-    <div id="vapp">
-    <div class="p-entry flexbox">
-    <%= link_to "次へ進む", plan_contracts_path(@plan.id),class: "waves-light btn" %>
-    </div>
-    </div>
-    </div>
-    <div id="side" class="smt sm">
-    <div class="gray">
-        <a href="#">
-            <div class="icon size125 wborder"></div>
-        </a>
-        <p class="status m-t05 alignCenter">相談できます</p>
-        <p class="name">
-            <a href="#" class="link">
-                <span class="name_text">林みのり</span>
-        </p>
-        <div class="sns-icon">
-            <a href="#" target="_blank" class="m-r1">
-            <i class="fa fa-twitter"></i>
-            </a>
-        </div>
-        <p class="time_stamp">
-        <% if current_user.current_sign_in_at > 1.day.ago %>
-            <%= content_tag :p, "24時間以内", class: "current_signin"%>
-            <% elsif current_user.current_sign_in_at > 2.day.ago %>
-            <%= content_tag :p, "1日前", class: "current_signin"%>
-            <% elsif current_user.current_sign_in_at > 3.day.ago %>
-            <%= content_tag :p, "2日前", class: "current_signin"%>
-            <% elsif current_user.current_sign_in_at > 31.day.ago %>
-            <%= content_tag :p, "30日以上", class: "current_signin"%>
-            <% elsif 3.days.ago > current_user.current_sign_in_at > 31.day.ago %>
-            <%= content_tag :p, "30日以上", class: "current_signin"%>
-            <% end %> 
-        </p>
-        <div class="selfcheck">
-            <i class="fa fa-check-circle link"></i>
-            本人確認
-            <i class="fa fa-check-circle link"></i>
-            秘密保持契約（NDA）
-        </div>
-        <div class="m-b2 FollowArea">
-        フォローボタン
-        </div>
-        <div class="hyouka_box">
-            <div class="icon_heart">評価</div>
-            <div class="right">
-                <span class="review-icon">
-                <i class="fa fa-star"></i>
-                </span>
-                <span class="review-icon">
-                <i class="fa fa-star"></i>
-                </span>
-                <span class="review-icon">
-                <i class="fa fa-star"></i>
-                </span>
-                <span class="review-icon">
-                <i class="fa fa-star"></i>
-                </span>
-                <span class="review-icon">
-                <i class="fa fa-star"></i>
-                </span>
-                <span class="no-bold">(203)</span>
-            </div>
-            <div class="icon_money">料金</div>
-            <div class="right">1000円〜</div>
-        </div>
-        <div class="SideMessageArea">
-        <a class="waves-effect waves-light btn">メッセージで相談</a>
-        <div class="SideMessageArea_sub">まずは相談してみよう</div>
-        </div>
-    </div>
-    <div class="SideMessageArea_sub">このプランをシェアしよう!</div>
-    <div class="side_sns">
-    <%= link_to "https://twitter.com/share?url=#{ request.url }&text=【拡散しよう】%0a%0a#{ @user.twitter }/&hashtags=みのいろ", target: '_blank' do %>
-            <i class="fab fa-twitter" style='color: #3399FF;'></i>シェア
-    <% end %>
-    </div>
-    </div>
-    </div>
-</div>
-</div>

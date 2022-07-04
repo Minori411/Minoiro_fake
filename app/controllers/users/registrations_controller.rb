@@ -22,8 +22,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     if user_signed_in?
       # @user は カスタマー, コンサルタント、どちらかを取りうる
       @user = User.find(params[:id])
-      @sum_total_consultants = @user.contracts.where(consultant_id:  @user.id).count
-      @sum_total_customers = @user.contracts.where(customer_id:  @user.id).count
+      @sum_total_consultants = current_user.contracts.where(consultant_id:  @user.id).count
+      @sum_total_customers = current_user.customer_contracts.count
     end
   end
 
