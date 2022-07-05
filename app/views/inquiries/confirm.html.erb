@@ -3,7 +3,7 @@
   <h5>お問い合わせ確認</h5>
 </div>
 
-<%= form_for @inquiry, :url => inquiries_thanks_path do |f| %>
+<%= form_with model: Inquiry.new, url: inquiries_thanks_path do |f| %>
   <table class="table">
     <tr>
       <th>名前</th>
