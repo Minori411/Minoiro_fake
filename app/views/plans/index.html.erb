@@ -128,7 +128,7 @@
                                             </span>
                                         </div>
                                         <div class="plan-card_price">
-                                        <%# @min_price = plan.user.plans.minimum(:price) %>
+                                        <% @min_price = plan.user.plans.minimum(:price) %>
                                         <%= @min_price %>円〜
                                         </div>
                                     </div>
