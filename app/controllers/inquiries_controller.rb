@@ -29,6 +29,6 @@ class InquiriesController < ApplicationController
   private
 
   def inquiry_params
-    params.permit(:name, :email,:phone_number, :title, :body)
+    params.require(:inquiry).permit(:name, :email,:phone_number, :title, :body)
   end
 end
