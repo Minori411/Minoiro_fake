@@ -36,19 +36,10 @@ class ContractsController < ApplicationController
     @plan = Plan.find(params[:plan_id])
     @user = User.find(@plan.user_id)
 
-    # @contract.plan_id = @plan.id
-    # @contract.consultant_id = @plan.user_id
-    # @contract.customer_id = current_user.id
     @contract.assign_attributes(
       plan_id: @plan.id,
       consultant_id: @plan.user_id,
       customer_id: current_user.id,
-      # PROBLEM:
-      # a. @plan.user_idにするとコンサルタントのプロフィールが成功し、自分 (カスタマー) のプロフィールの累計は失敗する
-      # b. current_user.id (カスタマー) にすると、プロフィールの累計が成功し、コンサルタントのプロフィールが失敗する
-      # 有るべき姿: 契約後、累計数をカウントすると、コンサルタント, カスタマー 両方の契約数がわかる
-      # MEMO: @plan.user_id # どのユーザがプランを作ったか 認識する
-      # MEMO: contract (契約) はどのように作成されるか 処理は?
       user_id: @plan.user_id
     )
     
