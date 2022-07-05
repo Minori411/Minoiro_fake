@@ -38,6 +38,7 @@ Plan.create(title: "何でも相談乗ります",
 
 
 
+
 Review.create(body: "知りたいことが知れました。とてもいい経験になりました。",
                 name: "林みのり",
                 reviewer_id: 1,
