@@ -7,7 +7,6 @@ class InquiriesController < ApplicationController
 
   def confirm
     # 入力値のチェック
-    @inquiry = Inquiry.find(params[:id])
     @inquiry = Inquiry.new(inquiry_params)
     if @inquiry.valid?
       # OK。確認画面を表示
@@ -20,7 +19,6 @@ class InquiriesController < ApplicationController
 
   def thanks
     # メール送信
-    @inquiry = Inquiry.find(params[:id])
     @inquiry = Inquiry.new(inquiry_params)
     InquiriesMailer.received_email(@inquiry).deliver
 
