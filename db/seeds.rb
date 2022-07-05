@@ -31,12 +31,7 @@ Plan.create(title: "何でも相談乗ります",
             body: "こんにちは",
             status:"相談できます",
             consent:"承認なし",
-            user_id:  "#{n}",
-            plan_name:"aaa",
-            price: 1000,
-            video: false,
-            chat: false,
-            plan_detail: "aaa",
+            user_id:  "#{n}"
             
 )
 
