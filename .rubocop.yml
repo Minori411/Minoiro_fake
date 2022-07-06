@@ -32,5 +32,4 @@ Metrics/LineLength:
   Max: 200
 
   Metrics/AbcSize:
-  Enabled: false
   Max: 100

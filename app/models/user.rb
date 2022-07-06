@@ -1,19 +1,19 @@
 class User < ApplicationRecord
   # validates_acceptance_of :is_kiyaku, allow_nil: false, on: :create
   has_many :articles, dependent: :destroy
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
   has_many :following_relationships, foreign_key: "follower_id", class_name: "Relationship",
                                      dependent: :destroy
-  has_many :following, through: :following_relationships
+  has_many :following, through: :following_relationships, dependent: :destroy
   has_many :follower_relationships, foreign_key: "following_id", class_name: "Relationship",
                                     dependent: :destroy
-  has_many :followers, through: :follower_relationships
+  has_many :followers, through: :follower_relationships, dependent: :destroy
   has_many :entries, dependent: :destroy
   has_many :messages, dependent: :destroy
   has_many :user_select_bottles, dependent: :destroy
   has_many :plans, dependent: :destroy
-  has_many :contracts
-  has_many :customer_contracts, foreign_key: "customer_id", class_name: "Contract"
+  has_many :contracts, dependent: :destroy
+  has_many :customer_contracts, foreign_key: "customer_id", class_name: "Contract", dependent: :destroy
   has_many :smallplans, dependent: :destroy
 
   mount_uploader :image, ImageUploader
