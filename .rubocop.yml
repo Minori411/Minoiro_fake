@@ -7,3 +7,26 @@ require:
 
 AllCops:
   NewCops: enable
+  TargetRubyVersion: 3.1
+
+Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+  Exclude:
+    - '*'
+  Max: 100
+
+Metrics/MethodLength:
+  Enabled: false
+  CountComments: false  # count full line comments?
+  Max: 200
+
+Metrics/LineLength:
+  Enabled: false
+  CountComments: false  # count full line comments?
+  Max: 200
