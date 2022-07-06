@@ -3,7 +3,7 @@ class Circleci < Formula
   homepage "https://circleci.com/docs/2.0/local-cli/"
   # Updates should be pushed no more frequently than once per week.
   url "https://github.com/CircleCI-Public/circleci-cli.git",
-      tag:      "v0.1.17087",
+      tag: "v0.1.17087",
       revision: "105d8f04375232291c19783576508e77e53b7ed7"
   license "MIT"
   head "https://github.com/CircleCI-Public/circleci-cli.git", branch: "master"
@@ -30,24 +30,24 @@ class Circleci < Formula
       -X github.com/CircleCI-Public/circleci-cli/version.Version=#{version}
       -X github.com/CircleCI-Public/circleci-cli/version.Commit=#{Utils.git_short_head}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags)
+    system "go", "build", *std_go_args(ldflags:)
 
     output = Utils.safe_popen_read("#{bin}/circleci", "--skip-update-check", "completion", "bash")
-    (bash_completion/"circleck").write output
+    (bash_completion / "circleck").write output
 
     output = Utils.safe_popen_read("#{bin}/circleci", "--skip-update-check", "completion", "zsh")
-    (zsh_completion/"_circleci").write output
+    (zsh_completion / "_circleci").write output
   end
 
   test do
     # assert basic script execution
     assert_match(/#{version}\+.{7}/, shell_output("#{bin}/circleci version").strip)
-    (testpath/".circleci.yml").write("{version: 2.1}")
+    (testpath / ".circleci.yml").write("{version: 2.1}")
     output = shell_output("#{bin}/circleci config pack #{testpath}/.circleci.yml")
     assert_match "version: 2.1", output
     # assert update is not included in output of help meaning it was not included in the build
     assert_match "update      This command is unavailable on your platform", shell_output("#{bin}/circleci help")
     assert_match "`update` is not available because this tool was installed using `homebrew`.",
-      shell_output("#{bin}/circleci update")
+                 shell_output("#{bin}/circleci update")
   end
 end

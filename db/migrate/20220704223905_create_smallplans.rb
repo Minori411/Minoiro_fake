@@ -1,7 +1,6 @@
 class CreateSmallplans < ActiveRecord::Migration[7.0]
   def change
     create_table :smallplans do |t|
-
       t.timestamps
       t.integer :price
       t.text :plan_detail

@@ -1,13 +1,12 @@
 class ApplicationController < ActionController::Base
-    before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
-
-    protect_from_forgery with: :null_session  # このアクションを追加
-  def after_sign_in_path_for(resource)
+  protect_from_forgery with: :null_session  # このアクションを追加
+  def after_sign_in_path_for(_resource)
     "/user/#{current_user.id}"
   end
 
-  def after_sign_out_path_for(resource)
+  def after_sign_out_path_for(_resource)
     logout_path
   end
 
@@ -21,8 +20,8 @@ class ApplicationController < ActionController::Base
 
   def move_to_signed_in
     unless user_signed_in?
-      #サインインしていないユーザーはログインページが表示される
-      redirect_to  '/users/sign_in'
+      # サインインしていないユーザーはログインページが表示される
+      redirect_to '/users/sign_in'
     end
   end
 
@@ -30,7 +29,6 @@ class ApplicationController < ActionController::Base
 
   # 入力フォームからアカウント名情報をDBに保存するために追加
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name,:userstyle,:nickname,:user_image,:email])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :userstyle, :nickname, :user_image, :email])
   end
-
 end

@@ -6,7 +6,7 @@ class CreateReviews < ActiveRecord::Migration[7.0]
       t.string :name
       t.integer :reviewer_id
       t.integer :reviewee_id
-      t.float :evaluation, null:false
+      t.float :evaluation, null: false
 
       t.timestamps
     end

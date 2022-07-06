@@ -61,6 +61,5 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
-    # ↑この一文が抜けていた
-  
+  # ↑この一文が抜けていた
 end

@@ -1,7 +1,5 @@
 class ExplanationsController < ApplicationController
-  def customer
-  end
+  def customer; end
 
-  def consultant
-  end
+  def consultant; end
 end

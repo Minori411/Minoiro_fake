@@ -22,42 +22,43 @@ class DisabilityUploader < CarrierWave::Uploader::Base
   # end
   include CarrierWave::RMagick
 
-#上限変更
-  process :resize_to_fit => [125, 125]
+  # 上限変更
+  process resize_to_fit: [125, 125]
 
-#JPGで保存
-  process :convert => 'jpg'
+  # JPGで保存
+  process convert: 'jpg'
 
-#サムネイルを生成
+  # サムネイルを生成
   version :thumb do
-    process :resize_to_limit => [300, 300]
+    process resize_to_limit: [300, 300]
   end
 
-# jpg,jpeg,gif,pngのみ
+  # jpg,jpeg,gif,pngのみ
   def extension_white_list
-    %w(jpg jpeg gif png pdf)
+    %w[jpg jpeg gif png pdf]
   end
 
-#ファイル名を変更し拡張子を同じにする
+  # ファイル名を変更し拡張子を同じにする
   def filename
-    super.chomp(File.extname(super)) + '.jpg' 
+    "#{super.chomp(File.extname(super))}.jpg"
   end
 
-#日付で保存
+  # 日付で保存
   def filename
     if original_filename.present?
-      time = Time.now
-      name = time.strftime('%Y%m%d%H%M%S') + '.jpg'
+      time = Time.zone.now
+      name = "#{time.strftime('%Y%m%d%H%M%S')}.jpg"
       name.downcase
     end
   end
+
   # Process files as they are uploaded:
   # process scale: [200, 300]
   #
   # def scale(width, height)
   #   # do something
   # end
-  def default_url(*args)
+  def default_url(*_args)
     "/assets/shougaishatechou.png"
   end
   # Create different versions of your uploaded files:
