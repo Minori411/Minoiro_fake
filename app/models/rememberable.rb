@@ -153,7 +153,8 @@ module Devise
           end
         end
 
-        Devise::Models.config(self, :remember_for, :extend_remember_period, :rememberable_options, :expire_all_remember_me_on_sign_out)
+        Devise::Models.config(self, :remember_for, :extend_remember_period, :rememberable_options,
+                              :expire_all_remember_me_on_sign_out)
       end
     end
   end

@@ -50,7 +50,8 @@ module Users
     private
 
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation, :userstyle, :is_kiyaku)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :userstyle,
+                                   :is_kiyaku)
     end
 
     # GET /resource/edit

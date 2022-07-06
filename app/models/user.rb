@@ -2,9 +2,11 @@ class User < ApplicationRecord
   # validates_acceptance_of :is_kiyaku, allow_nil: false, on: :create
   has_many :articles, dependent: :destroy
   has_many :reviews
-  has_many :following_relationships, foreign_key: "follower_id", class_name: "Relationship", dependent: :destroy
+  has_many :following_relationships, foreign_key: "follower_id", class_name: "Relationship",
+                                     dependent: :destroy
   has_many :following, through: :following_relationships
-  has_many :follower_relationships, foreign_key: "following_id", class_name: "Relationship", dependent: :destroy
+  has_many :follower_relationships, foreign_key: "following_id", class_name: "Relationship",
+                                    dependent: :destroy
   has_many :followers, through: :follower_relationships
   has_many :entries, dependent: :destroy
   has_many :messages, dependent: :destroy
@@ -66,8 +68,10 @@ class User < ApplicationRecord
   # 論理削除に対応するため、validationをカスタマイズする
   validates :email, presence: true, length: { maximum: 255 }
   validates :email, format: { with: Devise.email_regexp, if: :will_save_change_to_email? }
-  validates :password, presence: true, confirmation: true, length: { in: Devise.password_length }, on: :create
-  validates :password, confirmation: true, length: { in: Devise.password_length }, allow_blank: true, on: :update
+  validates :password, presence: true, confirmation: true, length: { in: Devise.password_length },
+                       on: :create
+  validates :password, confirmation: true, length: { in: Devise.password_length },
+                       allow_blank: true, on: :update
 
   # データベース認証時に使われるメソッドを上書きして、
   # without_soft_destroyedを追加する

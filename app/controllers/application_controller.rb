@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
 
   # 入力フォームからアカウント名情報をDBに保存するために追加
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :userstyle, :nickname, :user_image, :email])
+    devise_parameter_sanitizer.permit(:sign_up,
+                                      keys: [:name, :userstyle, :nickname, :user_image, :email])
   end
 end
-

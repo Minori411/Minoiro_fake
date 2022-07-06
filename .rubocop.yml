@@ -32,6 +32,5 @@ Metrics/LineLength:
   Max: 200
 
   Metrics/AbcSize:
-  # The ABC size is a calculated magnitude, so this number can be a Fixnum or
-  # a Float.
+  Enabled: false
   Max: 100
