@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
   private
 
   def move_to_signed_in
-    return if user_signed_in?
+    unless user_signed_in?
       # サインインしていないユーザーはログインページが表示される
       redirect_to '/users/sign_in'
     end
