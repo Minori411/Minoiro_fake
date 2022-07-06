@@ -25,18 +25,34 @@ image:"B000.jpeg",
 year:"20225月",
 )
 
-Plan.create(title: "何でも相談乗ります",
+end
+
+User.all.each do |user|
+
+user.plans.create!(title: "何でも相談乗ります",
             can_do: "カップルコンサル",
             youtube: "https://www.youtube.com/watch?v=KMaTIu7pxVM",
             body: "こんにちは",
             status:"相談できます",
             consent:"承認なし",
-            user_id:  "#{n}"
+            user_id: user.id
             
 )
 
+end
 
+Plan.all.each do |plan|
 
+plan.smallplans.create!(plan_name: "aaa",
+                plan_detail: "aaa",
+                price: 1000,
+                video: false,
+                chat: false,
+                user_id: plan.user_id,
+                plan_id: plan.id
+)
+
+end
 
 
 Review.create(body: "知りたいことが知れました。とてもいい経験になりました。",
@@ -46,7 +62,8 @@ Review.create(body: "知りたいことが知れました。とてもいい経�
                 user_id: 2,
                 evaluation: 5,
 )
-end
+
+
 
 Article.create!(subject:"最近の相談",
                 body:"最近の相談は夫婦関係が多いです",

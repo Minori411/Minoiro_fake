@@ -134,7 +134,8 @@
             <h3 id="plans" class="anchor-point">プラン（３件）</h3>
             <div class="wrapper flex swiper-container swipe01 swiper-initialized swiper-horizonal swiper-pointer-events swiper-free-mode">
             <% @plans.each do |plan| %>
-            <%= link_to user_plan_path(@user.id, plan.id) do %> 
+                <% plan.smallplans.each do |smallplan| %>
+            <%= link_to user_plan_path(@user.id, smallplan.id) do %> 
 
                 <div class="plan-card mmm">
                 <div class="plan-card_wrapper"></div>
@@ -152,19 +153,20 @@
                     <div class="plan-card-text">
                         <div class="plan-card_top">
                             <div class="plan-card_subject">
-                                <%= plan.plan_name %>
+                                <%= smallplan.plan_name %>
                             </div>
                         </div>
                         <div class="plan-card_bottom">
                             <div class="plan-card_info flexbox">
                                 <div class="plan-card_price">
-                                    <%= plan.price %>円
+                                    <%= smallplan.price %>円
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
         </div>
+        <% end %>
         <% end %>
         <% end %>
 

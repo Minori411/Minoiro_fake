@@ -32,7 +32,7 @@ class Users::PlansController < ApplicationController
         @article = @plan.user.articles.order(created_at: :desc)
         @reviews = @user.reviews.order("created_at DESC")
         @relationship = Relationship.find_by(id: params[:id])
-        @min_price = @plan.user.plans.minimum(:price)
+        @min_price = @plan.smallplans.minimum(:price)
             unless @reviews.present?
             @avg_score = 0
             @avg_score_percentage = 0
