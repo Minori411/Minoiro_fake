@@ -49,10 +49,12 @@ class PlansController < ApplicationController
 
   def edit
     @plan = Plan.find(params[:id])
+    @plan.smallplans.new
   end
 
   def new
     @plan = Plan.new
+    @plan.smallplans.new
   end
 
   def create
@@ -71,7 +73,7 @@ class PlansController < ApplicationController
   def update
     # logger.debug("article_id:" + params[:article_id])
     @plan = Plan.find(params[:id])
-    if @plan.update(plan_params)
+    if @plan.update!(plan_params)
       logger.debug("成功")
       redirect_to user_plans_path(@plan.id)
     else
@@ -97,8 +99,8 @@ class PlansController < ApplicationController
           .permit(
             :title, :can_do, :youtube,
             :body, :status, :consent,
-            :plan_name, :price, :plan_detail,
-            :video, :chat
-          ).merge(user_id: current_user.id)
+            smallplans_attributes: [:id,
+            :plan_name, :price, :plan_detail, 
+            :video, :chat].deep_merge(user_id: current_user.id)).merge(user_id: current_user.id)
   end
 end

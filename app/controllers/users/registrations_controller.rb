@@ -7,7 +7,7 @@ module Users
     before_action :ensure_normal_user, only: [:update, :destroy]
 
     def ensure_normal_user
-      redirect_to root_path, if resource.email == 'guest@example.com'
+      redirect_to root_path if resource.email == 'guest@example.com'
     end
 
     # GET /resource/sign_up
@@ -17,6 +17,8 @@ module Users
 
     # プロフィール画面用のアクションを追加
     def detail
+      puts
+      puts user_signed_in?
       if user_signed_in?
         # @user は カスタマー, コンサルタント、どちらかを取りうる
         @user = User.find(params[:id])
@@ -103,3 +105,4 @@ module Users
     # end
   end
 end
+

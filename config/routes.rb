@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get 'plans/:id/show_plan_detail', to: 'plans#show_plan_detail', as: 'show_plan_detail'
   post "/plans/create"
   get "/plans/create"
-  resources :messages, only: [:create]
+  resources :messages
   resources :rooms
 
   devise_for :users, controllers: {

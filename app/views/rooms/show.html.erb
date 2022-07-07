@@ -49,8 +49,8 @@
       <% @messages.each do |m| %>
         <div class="chat-box">
         <% if user_signed_in? && current_user.id != @message.user_id %>
-        <td><%= link_to "編集", edit_room_path(@room.id) %></td>
-        <td><%= link_to "削除", room_path(@room.id), method: :delete %></td>
+        <td><%= link_to "編集", edit_message_path(m.id) %></td>
+        <td><%= link_to "削除", message_path(m.id), method: :delete %></td>
         <% end %>
           <div class="chat-face">
           <img src="<%= @user.image %>",class= "resize125",width="20px" height= "20px", style= "border-radius: 50%;">
