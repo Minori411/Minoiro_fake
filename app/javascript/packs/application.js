@@ -16,6 +16,7 @@ import "./profile"
 import "./raty"
 import "./materialize"
 import "./plan"
+import "./registration"
 // Support component names relative to this directory:
 var componentRequireContext = require.context("components", true);
 var ReactRailsUJS = require("react_ujs");

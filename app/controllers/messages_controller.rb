@@ -1,19 +1,28 @@
 class MessagesController < ApplicationController
-    before_action :authenticate_user!
+  before_action :authenticate_user!
 
-    def create
-        message = Message.new(message_params)
-        message.user_id = current_user.id
-        if message.save
-        redirect_to room_path(message.room)
-        else
-        redirect_back(fallback_location: root_path)
-        end
+  def create
+    message = Message.new(message_params)
+    message.user_id = current_user.id
+    if message.save
+      redirect_to room_path(message.room)
+    else
+      redirect_back(fallback_location: root_path)
     end
+  end
 
-    private
+  def edit; end
 
-    def message_params
+  def destroy
+    @message = Message.find(params[:id])
+    @room = @message.room
+    @message.destroy
+    redirect_to room_path(@room)
+  end
+
+  private
+
+  def message_params
     params.require(:message).permit(:room_id, :body)
-    end
+  end
 end

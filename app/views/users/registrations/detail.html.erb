@@ -1,6 +1,7 @@
 <div class="back_white p-t3 dashContent">
     <div class="dashContent_right">
         <%# お客様の場合 %>
+        <% if current_user.userstyle == 0 %>
         <div class="todo_area">
             <div class="todo_area_title">
                 <h3>お客様のTodo</h3>
@@ -9,9 +10,6 @@
                 <ul class="todoList flexbox">
                     <li class="todoList_item">
                     <%= link_to profile_path do  %>
-                            <span class="check_circle">
-                                <i class="fas fa-check-circle"></i>
-                            </span>
                             <div class="todoList_item_icon flexbox">
                                 <span class="icon">
                                     <i class="fas fa-user user-icon"></i>
@@ -25,9 +23,6 @@
                     </li>
                     <li class="todoList_item">
                     <%= link_to bottles_new_path do %>
-                            <span class="check_circle">
-                                <i class="fas fa-check-circle"></i>
-                            </span>
                             <div class="todoList_item_icon flexbox">
                                 <span class="icon">
                                     <i class="fas fa-palette user-icon"></i>
@@ -41,10 +36,7 @@
                     </li>
                     <li class="todoList_item">
                     <%= link_to plans_path do %>
-                            <span class="check_circle">
-                                <i class="fas fa-check-circle"></i>
-                            </span>
-                            <div class="todoList_item_icon flexbox">
+                        <div class="todoList_item_icon flexbox">
                                 <span class="icon">
                                     <i class="fas fa-handshake user-icon"></i>
                                 </span>
@@ -58,8 +50,64 @@
                 </ul>
             </div>
         </div>
+        <% end %>
+        <%# コンサルタントの場合 %>
+        <% if current_user.userstyle == 1 %>
+        <div class="todo_area">
+        <div class="todo_area_title">
+            <h3>コンサルタントのTodo</h3>
+        </div>
+        <div class="scroll">
+            <ul class="todoList flexbox">
+                <li class="todoList_item">
+                <%= link_to profile_path do  %>
+                        <div class="todoList_item_icon flexbox">
+                            <span class="icon">
+                                <i class="fas fa-user user-icon"></i>
+                            </span>
+                        </div>
+                        <span class="todoList_item_label">
+                            <span class="todoList_item_label_head">プロフィールの入力</span>
+                            <span class="todoList_item_label_body">できるだけ詳細に入力し<br>マッチングしやすくしましょう</span>
+                        </span>
+                    <% end %>
+                </li>
+                <li class="todoList_item">
+                <%= link_to bottles_new_path do %>
+                        <div class="todoList_item_icon flexbox">
+                            <span class="icon">
+                                <i class="fas fa-list user-icon"></i>
+                            </span>
+                        </div>
+                        <span class="todoList_item_label">
+                            <span class="todoList_item_label_head">プランを作成しよう</span>
+                            <span class="todoList_item_label_body">プランを作成して<br>お客様に公開しよう</span>
+                        </span>
+                <% end %>
+                </li>
+                <li class="todoList_item">
+                <%= link_to plans_path do %>
+                        <div class="todoList_item_icon flexbox">
+                            <span class="icon">
+                                <i class="fas fa-handshake user-icon"></i>
+                            </span>
+                        </div>
+                        <span class="todoList_item_label">
+                            <span class="todoList_item_label_head">コンサルティングをしよう</span>
+                            <span class="todoList_item_label_body">お客様が選んだボトル<br>を元にコンサルしよう</span>
+                        </span>
+                <% end %>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <% end %>
         <div class="m-t2">
+        <% if current_user.userstyle == 0 %>
             <h3>お客様サマリー</h3>
+        <% elsif current_user.userstyle == 1 %>
+            <h3>コンサルタントサマリー</h3>
+        <% end %>
             <div class="scoreBox column_2">
             <div class="flexbox scoreBox_wrap">
                 <div class="scoreStatus contract_manage flexbox">

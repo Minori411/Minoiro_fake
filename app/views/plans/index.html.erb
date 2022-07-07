@@ -8,9 +8,6 @@
             <%= f.text_field :keyword, value: @keyword, :placeholder => "検索" %>
             <br>
             <%= f.submit '検索', id: 'search-submit' %>
-            <div class="absolute center-v right-1 gray2 header-search">
-                <i class="fas fa-search"></i>
-            </div>
         </div>
         <div class="cp_box1">
             <div class="cp_container">
@@ -28,7 +25,7 @@
                 <div class="searchBox_m">料金</div>
                 <div class="form-group right">
                     <div class="select-wrap">
-                    <%= f.select :price, [['', 1], ['〜2000円', 2],['〜3000円', 3],['〜4000円', 4],['〜4999円', 5]], { include_blank: true, selected: 1 }, id: "price-select", class: "price-control" %>
+                    <%= f.select :price, [['選択してください', 1], ['〜2000円', 2],['〜3000円', 3],['〜4000円', 4],['〜4999円', 5]], { include_blank: true, selected: 1 }, id: "price-select", class: "price-control" %>
             </div>
             </div>
             </div>
@@ -128,7 +125,7 @@
                                             </span>
                                         </div>
                                         <div class="plan-card_price">
-                                        <%# @min_price = @small_plan.user.small_plans.minimum(:price) %>
+                                        <% @min_price = plan.smallplans.minimum(:price) %>
                                         <%= @min_price %>円〜
                                         </div>
                                     </div>

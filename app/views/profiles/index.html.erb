@@ -126,13 +126,15 @@
             <div class="tab_content" id="plan_content">
                 <div class="tab_content_description">
                     <div class="tab_content_plan">
-                    <% @small_plan.each do |small_plan| %>
-                        <%= link_to plan_path(small_plan.id) do %>
+                    <% @plan.each do |plan| %>
+                        <% plan.smallplans.each do |smallplan| %>
+                        <%= link_to plan_path(smallplan.id) do %>
                         <div class="boxbaseP30">
-                        <%= small_plan.plan_name %><br>
-                        <%= small_plan.price %>円/回
+                        <%= smallplan.plan_name %><br>
+                        <%= smallplan.price %>円/回
                         </div>
                         <% end %>
+                    <% end %>
                     <% end %>
                     </div>
                 </div>
@@ -196,7 +198,7 @@
 <% end %>    
 <% unless @user.id == current_user.id %>
 <% if @is_room == true %>
-    <p class="user-show-room"><a href="/rooms/<%= @room_id %>" class="btn btn-primary btn-lg">チャットへ</a>
+    <p class="user-show-room"><a href="/rooms/<%= @room_id %>" class="btn btn-primary btn-lg w-100">チャットへ</a>
 <% else %>
     <%= form_for @room do |f| %>
     <%= fields_for @entry do |e| %>

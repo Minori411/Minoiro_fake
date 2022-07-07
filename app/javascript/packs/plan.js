@@ -106,9 +106,13 @@ jQuery(function ($) {
 document.addEventListener("turbolinks:load", function () {
   const submitTarget = document.getElementById('search_plan')
   const priceSelect = document.querySelector('#price-select')
+  const evaluationSelect = document.querySelector('#evaluation')
   const submitButton = document.querySelector('#search-submit')
 
   $(priceSelect).on('change', function() {
+    submitTarget.submit()
+  })
+  $(evaluationSelect).on('change', function() {
     submitTarget.submit()
   })
 })

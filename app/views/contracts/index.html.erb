@@ -123,17 +123,20 @@
             <div class="boxbaseP30">
             <div class="mentorPlan_area">
             <h3>コンサルタントプラン</h3>
+            <% @plan.smallplans.each do |smallplan| %>
             <div class="plan_block">
             <div class="plan_subject">タイトル</div>
             <div class="plan_title">
-            <%= @small_plan.plan_name %>
+            <%= smallplan.plan_name %>
             </div>
             <div class="plan_price">
             <span style="font-size: 1rem;">
-            <%= @small_plan.price %>円/回
+            <%= smallplan.price %>円/回
+>>>>>>> complete
             </span>
             </div>
             </div>
+            <% end %>
             </div>
             <div class="v-app coupon_area">
             <h3>お支払い情報</h3>

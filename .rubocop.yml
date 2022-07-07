@@ -5,5 +5,42 @@ require:
   - rubocop-rails
   - rubocop-rspec
 
+
 AllCops:
+  # Exclude:
+  #   - 'controllers/users/registrations_controller'
   NewCops: enable
+  TargetRubyVersion: 3.1
+  # Exclude:
+  #   - controllers
+  
+
+Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+  Exclude:
+    - '*'
+  Max: 100
+
+Metrics/MethodLength:
+  Enabled: false
+  CountComments: false  # count full line comments?
+  Max: 200
+
+Metrics/LineLength:
+  Enabled: false
+  CountComments: false  # count full line comments?
+  Max: 200
+
+  Metrics/AbcSize:
+  # Exclude:
+  #   - 'controllers/bottles_controller'
+  Max: 200  
+
+  Style/GuardClause:
+    Enabled: false
