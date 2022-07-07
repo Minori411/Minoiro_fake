@@ -1,121 +1,133 @@
 {
-  "application.js": "/packs/application-ae90f07d8f22ce9a78c7.js",
-  "application.js.map": "/packs/application-ae90f07d8f22ce9a78c7.js.map",
-  "bottle.js": "/packs/bottle-ae90f07d8f22ce9a78c7.js",
-  "bottle.js.map": "/packs/bottle-ae90f07d8f22ce9a78c7.js.map",
+  "application.js": "/packs/application-23836ea03531179f464b.js",
+  "application.js.map": "/packs/js/application-319beaaf05070f54ed52.hot-update.js.map",
+  "bottle.js": "/packs/bottle-23836ea03531179f464b.js",
+  "bottle.js.map": "/packs/bottle-23836ea03531179f464b.js.map",
   "entrypoints": {
     "application": {
       "js": [
-        "/packs/application-ae90f07d8f22ce9a78c7.js"
+        "/packs/application-23836ea03531179f464b.js"
       ],
       "js.map": [
-        "/packs/application-ae90f07d8f22ce9a78c7.js.map"
+        "/packs/application-23836ea03531179f464b.js.map",
+        "/packs/js/application-319beaaf05070f54ed52.hot-update.js.map"
       ]
     },
     "bottle": {
       "js": [
-        "/packs/bottle-ae90f07d8f22ce9a78c7.js"
+        "/packs/bottle-23836ea03531179f464b.js"
       ],
       "js.map": [
-        "/packs/bottle-ae90f07d8f22ce9a78c7.js.map"
+        "/packs/bottle-23836ea03531179f464b.js.map"
       ]
     },
     "hello_react": {
       "js": [
-        "/packs/hello_react-ae90f07d8f22ce9a78c7.js"
+        "/packs/hello_react-23836ea03531179f464b.js"
       ],
       "js.map": [
-        "/packs/hello_react-ae90f07d8f22ce9a78c7.js.map"
+        "/packs/hello_react-23836ea03531179f464b.js.map"
       ]
     },
     "hello_typescript": {
       "js": [
-        "/packs/hello_typescript-ae90f07d8f22ce9a78c7.js"
+        "/packs/hello_typescript-23836ea03531179f464b.js"
       ],
       "js.map": [
-        "/packs/hello_typescript-ae90f07d8f22ce9a78c7.js.map"
+        "/packs/hello_typescript-23836ea03531179f464b.js.map"
       ]
     },
     "materialize": {
       "js": [
-        "/packs/materialize-ae90f07d8f22ce9a78c7.js"
+        "/packs/materialize-23836ea03531179f464b.js"
       ],
       "js.map": [
-        "/packs/materialize-ae90f07d8f22ce9a78c7.js.map"
+        "/packs/materialize-23836ea03531179f464b.js.map"
       ]
     },
     "plan": {
       "js": [
-        "/packs/plan-ae90f07d8f22ce9a78c7.js"
+        "/packs/plan-23836ea03531179f464b.js"
       ],
       "js.map": [
-        "/packs/plan-ae90f07d8f22ce9a78c7.js.map"
+        "/packs/plan-23836ea03531179f464b.js.map",
+        "/packs/js/plan-319beaaf05070f54ed52.hot-update.js.map"
       ]
     },
     "preview": {
       "js": [
-        "/packs/preview-ae90f07d8f22ce9a78c7.js"
+        "/packs/preview-23836ea03531179f464b.js"
       ],
       "js.map": [
-        "/packs/preview-ae90f07d8f22ce9a78c7.js.map"
+        "/packs/preview-23836ea03531179f464b.js.map"
       ]
     },
     "profile": {
       "js": [
-        "/packs/profile-ae90f07d8f22ce9a78c7.js"
+        "/packs/profile-23836ea03531179f464b.js"
       ],
       "js.map": [
-        "/packs/profile-ae90f07d8f22ce9a78c7.js.map"
+        "/packs/profile-23836ea03531179f464b.js.map"
       ]
     },
     "rails_admin": {
       "js": [
-        "/packs/rails_admin-ae90f07d8f22ce9a78c7.js"
+        "/packs/rails_admin-23836ea03531179f464b.js"
       ],
       "js.map": [
-        "/packs/rails_admin-ae90f07d8f22ce9a78c7.js.map"
+        "/packs/rails_admin-23836ea03531179f464b.js.map"
       ]
     },
     "raty": {
       "js": [
-        "/packs/raty-ae90f07d8f22ce9a78c7.js"
+        "/packs/raty-23836ea03531179f464b.js"
       ],
       "js.map": [
-        "/packs/raty-ae90f07d8f22ce9a78c7.js.map"
+        "/packs/raty-23836ea03531179f464b.js.map"
+      ]
+    },
+    "registration": {
+      "js": [
+        "/packs/registration-23836ea03531179f464b.js"
+      ],
+      "js.map": [
+        "/packs/registration-23836ea03531179f464b.js.map"
       ]
     },
     "server_rendering": {
       "js": [
-        "/packs/server_rendering-ae90f07d8f22ce9a78c7.js"
+        "/packs/server_rendering-23836ea03531179f464b.js"
       ],
       "js.map": [
-        "/packs/server_rendering-ae90f07d8f22ce9a78c7.js.map"
+        "/packs/server_rendering-23836ea03531179f464b.js.map"
       ]
     }
   },
-  "hello_react.js": "/packs/hello_react-ae90f07d8f22ce9a78c7.js",
-  "hello_react.js.map": "/packs/hello_react-ae90f07d8f22ce9a78c7.js.map",
-  "hello_typescript.js": "/packs/hello_typescript-ae90f07d8f22ce9a78c7.js",
-  "hello_typescript.js.map": "/packs/hello_typescript-ae90f07d8f22ce9a78c7.js.map",
-  "materialize.js": "/packs/materialize-ae90f07d8f22ce9a78c7.js",
-  "materialize.js.map": "/packs/materialize-ae90f07d8f22ce9a78c7.js.map",
+  "hello_react.js": "/packs/hello_react-23836ea03531179f464b.js",
+  "hello_react.js.map": "/packs/hello_react-23836ea03531179f464b.js.map",
+  "hello_typescript.js": "/packs/hello_typescript-23836ea03531179f464b.js",
+  "hello_typescript.js.map": "/packs/hello_typescript-23836ea03531179f464b.js.map",
+  "materialize.js": "/packs/materialize-23836ea03531179f464b.js",
+  "materialize.js.map": "/packs/materialize-23836ea03531179f464b.js.map",
   "media/webfonts/fa-solid-900.eot": "/packs/media/webfonts/fa-solid-900-9bbb245e.eot",
   "media/webfonts/fa-solid-900.svg": "/packs/media/webfonts/fa-solid-900-7a8b4f13.svg",
   "media/webfonts/fa-solid-900.ttf": "/packs/media/webfonts/fa-solid-900-be9ee23c.ttf",
   "media/webfonts/fa-solid-900.woff": "/packs/media/webfonts/fa-solid-900-eeccf4f6.woff",
   "media/webfonts/fa-solid-900.woff2": "/packs/media/webfonts/fa-solid-900-1551f4f6.woff2",
-  "plan.js": "/packs/plan-ae90f07d8f22ce9a78c7.js",
-  "plan.js.map": "/packs/plan-ae90f07d8f22ce9a78c7.js.map",
-  "preview.js": "/packs/preview-ae90f07d8f22ce9a78c7.js",
-  "preview.js.map": "/packs/preview-ae90f07d8f22ce9a78c7.js.map",
-  "profile.js": "/packs/profile-ae90f07d8f22ce9a78c7.js",
-  "profile.js.map": "/packs/profile-ae90f07d8f22ce9a78c7.js.map",
-  "rails_admin.js": "/packs/rails_admin-ae90f07d8f22ce9a78c7.js",
-  "rails_admin.js.map": "/packs/rails_admin-ae90f07d8f22ce9a78c7.js.map",
-  "raty.js": "/packs/raty-ae90f07d8f22ce9a78c7.js",
-  "raty.js.map": "/packs/raty-ae90f07d8f22ce9a78c7.js.map",
-  "server_rendering.js": "/packs/server_rendering-ae90f07d8f22ce9a78c7.js",
-  "server_rendering.js.map": "/packs/server_rendering-ae90f07d8f22ce9a78c7.js.map",
+  "plan.js": "/packs/plan-23836ea03531179f464b.js",
+  "plan.js.map": "/packs/js/plan-319beaaf05070f54ed52.hot-update.js.map",
+  "preview.js": "/packs/preview-23836ea03531179f464b.js",
+  "preview.js.map": "/packs/preview-23836ea03531179f464b.js.map",
+  "profile.js": "/packs/profile-23836ea03531179f464b.js",
+  "profile.js.map": "/packs/profile-23836ea03531179f464b.js.map",
+  "rails_admin.js": "/packs/rails_admin-23836ea03531179f464b.js",
+  "rails_admin.js.map": "/packs/rails_admin-23836ea03531179f464b.js.map",
+  "raty.js": "/packs/raty-23836ea03531179f464b.js",
+  "raty.js.map": "/packs/raty-23836ea03531179f464b.js.map",
+  "registration.js": "/packs/registration-23836ea03531179f464b.js",
+  "registration.js.map": "/packs/registration-23836ea03531179f464b.js.map",
+  "server_rendering.js": "/packs/server_rendering-23836ea03531179f464b.js",
+  "server_rendering.js.map": "/packs/server_rendering-23836ea03531179f464b.js.map",
   "vendors~actioncable.js": "/packs/js/vendors~actioncable-d31df81850bdc4fd9d8b.chunk.js",
   "vendors~actioncable.js.map": "/packs/js/vendors~actioncable-d31df81850bdc4fd9d8b.chunk.js.map"
 }

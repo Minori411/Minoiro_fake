@@ -16,5 +16,4 @@ class Plan < ApplicationRecord
     user_plan_ids = Plan.where(user_id: user_ids).ids
     where(id: (plan_ids | smallplan_plan_ids | user_ids | review_ids))
   end
->>>>>>> complete
 end
