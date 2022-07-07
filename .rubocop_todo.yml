@@ -10,6 +10,7 @@
 # Cop supports --auto-correct.
 # Configuration parameters: TreatCommentsAsGroupSeparators, ConsiderPunctuation, Include.
 # Include: **/*.gemfile, **/Gemfile, **/gems.rb
+
 Bundler/OrderedGems:
   Exclude:
     - 'Gemfile'

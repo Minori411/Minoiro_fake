@@ -100,7 +100,8 @@ class PlansController < ApplicationController
             :title, :can_do, :youtube,
             :body, :status, :consent,
             smallplans_attributes: [:id,
-            :plan_name, :price, :plan_detail, 
-            :video, :chat].deep_merge(user_id: current_user.id)).merge(user_id: current_user.id)
+                                    :plan_name, :price, :plan_detail,
+                                    :video, :chat].deep_merge(user_id: current_user.id)
+          ).merge(user_id: current_user.id)
   end
 end

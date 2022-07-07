@@ -11,8 +11,7 @@ class MessagesController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def destroy
     @message = Message.find(params[:id])
@@ -26,7 +25,4 @@ class MessagesController < ApplicationController
   def message_params
     params.require(:message).permit(:room_id, :body)
   end
-
-  
-
 end
