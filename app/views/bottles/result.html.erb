@@ -4,17 +4,23 @@
     <table align="center">
                 <td align="center">
                     <div class="item">
-                    <% @select_bottles.each.with_index(1) do |selectbottle, i| %>                        
+                    <% @select_bottles.each.with_index(1) do |select_bottle, i| %>                        
                         <% bottle = Bottle.find_by(id: select_bottle.bottle_id) %>
                         <!-- hoverする画像 -->
                         <div class="item__img">
                         <%= image_tag(bottle.bottle_type+".jpeg",class:"center-b",width: '200px', height: '300px') %>
                         <!-- 画像をhoverした時に表示させる要素 -->
                         <div class="item__text">
-                            <p>"#{i}"本目のボトルは魂のボトル</p>
+                        <% if i == 1 %>
+                            <p><%= "#{i}" %>本目のボトルは魂のボトル </p>
                             <p>あなたの人生の目的と使命、潜在的可能性を示しています。</p>
-                            <h5>select_bottle.bottle_type ></h5><br>
-                            <p>select_bottle.bottle_name </p>
+                        <% elsif i == 2 %>
+                            <p><%= "#{i}" %>本目のボトルは魂のボトル </p>
+                            <p>２番目。</p>
+                        <% end %>
+
+                            <h5><%= bottle.bottle_type %></h5><br>
+                            <p><%= bottle.bottle_name %></p>
                         </div>
                         </div>
                     <% end %>

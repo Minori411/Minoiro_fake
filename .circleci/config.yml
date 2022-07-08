@@ -69,6 +69,7 @@ jobs:
       - setup_remote_docker:
           version: 20.10.14
       - heroku/install
+      - run: heroku authorizations:create
       - run:
           name: heroku login
           command: heroku container:login

@@ -1,5 +1,5 @@
 class ContractsController < ApplicationController
-def index
+  def index
     @contract = Contract.new
     @plan = Plan.find(params[:plan_id])
     @user = User.find(@plan.user_id)
