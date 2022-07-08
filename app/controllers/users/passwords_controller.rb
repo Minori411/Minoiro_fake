@@ -5,10 +5,7 @@ module Users
     before_action :ensure_normal_user, only: :create
 
     def ensure_normal_user
-      if params[:user][:email].casecmp('guest@example.com').zero?
-        redirect_to new_user_session_path,
-                
-      end
+      redirect_to new_user_session_path if params[:user][:email].casecmp('guest@example.com').zero?
     end
   end
 end

@@ -1,7 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :set_user, only: [:edit, :update]
 
-
   def index
     @user = User.find(params[:user_id])
     @relation = Relationship.find_by(following_id: @user.id, follower_id: current_user.id)
@@ -36,8 +35,7 @@ class ProfilesController < ApplicationController
     @user = User.find(current_user.id)
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @user.update(user_params)
