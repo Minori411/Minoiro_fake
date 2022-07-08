@@ -11,7 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2022_07_04_223905) do
-  create_table "articles", charset: "utf8", collation: "utf8_0900_ai_ci", force: :cascade do |t|
+  create_table "articles", charset: "utf8mb3", force: :cascade do |t|
     t.bigint "user_id"
     t.string "subject"
     t.text "body"
@@ -21,7 +21,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_04_223905) do
     t.index ["user_id"], name: "index_articles_on_user_id"
   end
 
-  create_table "bottles", charset: "utf8", collation: "utf8_0900_ai_ci", force: :cascade do |t|
+  create_table "bottles", charset: "utf8mb3", force: :cascade do |t|
     t.string "bottle_type"
     t.string "bottle_name"
     t.text "meaning_detail"
@@ -29,7 +29,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_04_223905) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "contracts", charset: "utf8", collation: "utf8_0900_ai_ci", force: :cascade do |t|
+  create_table "contracts", charset: "utf8mb3", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "plan_id", null: false
     t.integer "consultant_id"
@@ -40,7 +40,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_04_223905) do
     t.index ["user_id"], name: "index_contracts_on_user_id"
   end
 
-  create_table "entries", charset: "utf8", collation: "utf8_0900_ai_ci", force: :cascade do |t|
+  create_table "entries", charset: "utf8mb3", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "room_id", null: false
     t.datetime "created_at", null: false
@@ -49,7 +49,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_04_223905) do
     t.index ["user_id"], name: "index_entries_on_user_id"
   end
 
-  create_table "inquiries", charset: "utf8", collation: "utf8_0900_ai_ci", force: :cascade do |t|
+  create_table "inquiries", charset: "utf8mb3", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
@@ -59,7 +59,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_04_223905) do
     t.text "body"
   end
 
-  create_table "messages", charset: "utf8", collation: "utf8_0900_ai_ci", force: :cascade do |t|
+  create_table "messages", charset: "utf8mb3", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "room_id", null: false
     t.text "body"
@@ -69,7 +69,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_04_223905) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
-  create_table "plans", charset: "utf8", collation: "utf8_0900_ai_ci", force: :cascade do |t|
+  create_table "plans", charset: "utf8mb3", force: :cascade do |t|
     t.string "title"
     t.string "tag"
     t.text "can_do"
@@ -85,7 +85,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_04_223905) do
     t.index ["user_id"], name: "index_plans_on_user_id"
   end
 
-  create_table "relationships", charset: "utf8", collation: "utf8_0900_ai_ci", force: :cascade do |t|
+  create_table "relationships", charset: "utf8mb3", force: :cascade do |t|
     t.integer "follower_id"
     t.integer "following_id"
     t.datetime "created_at", null: false
@@ -93,7 +93,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_04_223905) do
     t.index ["follower_id", "following_id"], name: "index_relationships_on_follower_id_and_following_id", unique: true
   end
 
-  create_table "reviews", charset: "utf8", collation: "utf8_0900_ai_ci", force: :cascade do |t|
+  create_table "reviews", charset: "utf8mb3", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.text "body"
     t.string "name"
@@ -105,12 +105,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_04_223905) do
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
-  create_table "rooms", charset: "utf8", collation: "utf8_0900_ai_ci", force: :cascade do |t|
+  create_table "rooms", charset: "utf8mb3", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "small_plans", charset: "utf8", collation: "utf8_0900_ai_ci", force: :cascade do |t|
+  create_table "small_plans", charset: "utf8mb3", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "video", default: false, null: false
@@ -124,7 +124,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_04_223905) do
     t.index ["user_id"], name: "index_small_plans_on_user_id"
   end
 
-  create_table "smallplans", charset: "utf8", collation: "utf8_0900_ai_ci", force: :cascade do |t|
+  create_table "smallplans", charset: "utf8mb3", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "price"
@@ -138,7 +138,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_04_223905) do
     t.index ["user_id"], name: "index_smallplans_on_user_id"
   end
 
-  create_table "user_select_bottles", charset: "utf8", collation: "utf8_0900_ai_ci", force: :cascade do |t|
+  create_table "user_select_bottles", charset: "utf8mb3", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "bottle_id", null: false
     t.datetime "created_at", null: false
@@ -147,7 +147,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_04_223905) do
     t.index ["user_id"], name: "index_user_select_bottles_on_user_id"
   end
 
-  create_table "users", charset: "utf8", collation: "utf8_0900_ai_ci", force: :cascade do |t|
+  create_table "users", charset: "utf8mb3", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
