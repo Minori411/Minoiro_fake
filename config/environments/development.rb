@@ -75,7 +75,7 @@ Rails.application.configure do
     user_name: ENV.fetch('DB_USERNAME', nil),
     password: ENV.fetch('DB_PASSWORD', nil),
     authentication: :plain
-    # enable_starttls_auto: true
+    enable_starttls_auto: true
   }
 
   # Use an evented file watcher to asynchronously detect changes in source code,
