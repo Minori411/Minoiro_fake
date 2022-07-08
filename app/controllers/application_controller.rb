@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  before_action :basic_auth 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   protect_from_forgery with: :null_session  # このアクションを追加
@@ -22,6 +23,12 @@ class ApplicationController < ActionController::Base
     unless user_signed_in?
       # サインインしていないユーザーはログインページが表示される
       redirect_to '/users/sign_in'
+    end
+  end
+
+  def basic_auth
+    authenticate_or_request_with_http_basic do |username, password|
+    username == ENV["BASIC_AUTH_USER"] && password == ENV["BASIC_AUTH_PASSWORD"] 
     end
   end
 
