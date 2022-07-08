@@ -70,6 +70,7 @@ jobs:
           version: 20.10.14
       - heroku/install
       - run: heroku authorizations:create
+      - run: heroku auth:token
       - run:
           name: heroku login
           command: heroku container:login
