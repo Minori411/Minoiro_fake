@@ -61,7 +61,7 @@ jobs:
       - store_test_results:
           path: test_results
 
-  deploy:
+  heroku-deploy:
     docker:
       - image: cimg/ruby:3.1.2
     steps:
@@ -90,7 +90,7 @@ workflows:
       - test:
           requires:
             - build
-      - deploy:
+      - heroku-deploy:
           requires:
             - test
           
