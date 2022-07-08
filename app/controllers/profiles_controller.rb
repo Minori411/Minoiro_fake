@@ -26,20 +26,22 @@ class ProfilesController < ApplicationController
         end
       end
       unless @is_room
->>>>>>> complete
         @room = Room.new
         @entry = Entry.new
       end
     end
   end
 
-  def edit; end
+  def set_user
+    @user = User.find(current_user.id)
+  end
+
+  def edit
+  end
 
   def update
     if @user.update(user_params)
-      redirect_to profile_path, success: "ユーザーを更新しました"
-    else
-      flash.now[:danger] = "ユーザーを更新できませんでした"
+      redirect_to profile_path
       render :edit
     end
   end
@@ -60,10 +62,6 @@ class ProfilesController < ApplicationController
   end
 
   private
-
-  def set_user
-    @user = User.find(current_user.id)
-  end
 
   def user_params
     params.require(:user).permit(:email, :first_name, :last_name, :avater, :avater_cash)

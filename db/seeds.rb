@@ -52,7 +52,6 @@ Review.create(body: "知りたいことが知れました。とてもいい経�
 Article.create!(subject: "最近の相談",
                 body: "最近の相談は夫婦関係が多いです",
                 user_id: 2)
->>>>>>> complete
 
 Room.create!(
   [

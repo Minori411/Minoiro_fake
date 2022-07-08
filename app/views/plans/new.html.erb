@@ -72,7 +72,7 @@
                 </div>
     <div class="plan_area">
     <%= f.fields_for :plans do |plan| %>
-    <div class="boxbaseP30 plan_module js-addfield-block"  data-index: "#{plan.index}" flex-wrap planbox m-b-20 z-depth-1" style="padding: 30px">
+    <div class="boxbaseP30 plan_module js-addfield-block"  data-index: "#{smallplan.index}" flex-wrap planbox m-b-20 z-depth-1" style="padding: 30px">
     <div class="left ">
         <%= plan.text_field :plan_name ,:placeholder=>"チャットでの相談" %>
     </div>
@@ -100,9 +100,6 @@
         <%= plan.text_area :plan_detail, class: "w100p", :placeholder=>"プランの内容を入力してください" %>
     </div>
             <div class="right m-b-20 smt_right m-t1" style="width: auto; margin-left: auto;">
-            <% if @plan.persisted? %>
-            <%= plan.check_box :_destroy, data:{ index: plan.index }, class: "hidden-destroy" %>
-            <% end %>
         </div>
     </div>
     <% end %>

@@ -10,7 +10,7 @@ AllCops:
   # Exclude:
   #   - 'controllers/users/registrations_controller'
   NewCops: enable
-  TargetRubyVersion: 3.1
+  TargetRubyVersion: 3.1.2
   # Exclude:
   #   - controllers
   
@@ -44,3 +44,7 @@ Metrics/LineLength:
 
   Style/GuardClause:
     Enabled: false
+
+# rubocop: disable all
+# Metrics/AbcSize
+# rubocop: enable all
