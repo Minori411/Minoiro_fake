@@ -100,20 +100,34 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  require "uri"
-  require "net/http"
-  require "json"
+  config.action_mailer.default_url_options = { host: 'minoirofake.herokuapp.com'}
 
-  url = URI.parse(ENV['TRUSTIFI_URL'] + "/api/i/v1/email")
-  https = Net::HTTP.new(url.host, url.port)
-  https.use_ssl = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :user_name      => ENV['TRUSTIFI_KEY'],
+    :password       => ENV['TRUSTIFI_SECRET'],
+    :domain => "heroku.com",
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
 
-  request = Net::HTTP::Post.new(url)
-  request["x-trustifi-key"] = ENV['TRUSTIFI_KEY']
-  request["x-trustifi-secret"] = ENV['TRUSTIFI_SECRET']
-  request["content-type"] = "application/json"
-  request.body = "{\"recipients\": [{\"email\": \"test@trustificorp.org\"}],\"title\":\"Title\",\"html\":\"Body\"}"
+#   require "uri"
+#   require "net/http"
+#   require "json"
 
-  response = https.request(request)
-  puts response.read_body
-end
+#   url = URI.parse(ENV['TRUSTIFI_URL'] + "/api/i/v1/email")
+#   https = Net::HTTP.new(url.host, url.port)
+#   https.use_ssl = true
+
+#   request = Net::HTTP::Post.new(url)
+#   request["x-trustifi-key"] = ENV['TRUSTIFI_KEY']
+#   request["x-trustifi-secret"] = ENV['TRUSTIFI_SECRET']
+#   request["content-type"] = "application/json"
+#   request.body = "{\"recipients\": [{\"email\": \"test@trustificorp.org\"}],\"title\":\"Title\",\"html\":\"Body\"}"
+
+#   response = https.request(request)
+#   puts response.read_body
+# end
