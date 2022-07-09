@@ -62,9 +62,8 @@ document.addEventListener("turbolinks:load", function () {
 
       $(document).on("click", ".delete-form-btn", function (e) {
         // $(this)でイベントが発生した要素を取得して削除する
-        
-        let index = e.target.getAttribute('data-index')
-        $("div").remove(`.js-addfield-block:nth-child(${index})`);
+        let index = parseInt(e.target.getAttribute('data-index')) + 1
+        $(`div.js-addfield-block:nth-child(${index})`).remove();
     });
     fileIndex.pop()
     });
