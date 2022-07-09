@@ -71,14 +71,14 @@
                     </span>   
                 </div>
     <div class="plan_area">
-    <%= f.fields_for :plans do |plan| %>
-    <div class="boxbaseP30 plan_module js-addfield-block"  data-index: "#{smallplan.index}" flex-wrap planbox m-b-20 z-depth-1" style="padding: 30px">
+    <%= f.fields_for :smallplans do |smallfields| %>
+    <div class="boxbaseP30 plan_module js-addfield-block"  data-index: "<%= smallfields.index %>" flex-wrap planbox m-b-20 z-depth-1" style="padding: 30px">
     <div class="left ">
-        <%= plan.text_field :plan_name ,:placeholder=>"チャットでの相談" %>
+        <%= smallfields.text_field :plan_name ,:placeholder=>"チャットでの相談" %>
     </div>
 
     <div class="pricebox ">
-        <%= plan.text_field :price,  :placeholder=>"5,000" %>
+        <%= smallfields.text_field :price,  :placeholder=>"5,000" %>
         <div class="yenkais">
         <span class="yenkai">円/</span>
         <span class="kai">回</span>
@@ -90,14 +90,14 @@
         <div class="item_name flexbox">
             <h3>相談方式</h3><span class="optional_label">任意</span>
         </div>
-            <%= plan.check_box :chat, id: :minoiro_checkbox, :as =>:boolean %>
+            <%= smallfields.check_box :chat, id: :minoiro_checkbox, :as =>:boolean %>
             <%= f.label :チャット %>
-            <%= plan.check_box :video, id: :minoiro_video, :as =>:boolean %>
+            <%= smallfields.check_box :video, id: :minoiro_video, :as =>:boolean %>
             <%= f.label :ビデオ通話 %>
     </div>
 
     <div class="m-t2 left w100p ">
-        <%= plan.text_area :plan_detail, class: "w100p", :placeholder=>"プランの内容を入力してください" %>
+        <%= smallfields.text_area :plan_detail, class: "w100p", :placeholder=>"プランの内容を入力してください" %>
     </div>
             <div class="right m-b-20 smt_right m-t1" style="width: auto; margin-left: auto;">
         </div>

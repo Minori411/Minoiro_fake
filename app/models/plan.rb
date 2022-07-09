@@ -5,7 +5,7 @@ class Plan < ApplicationRecord
 
   # belongs_to :review
 
-  def self.search(keyword)
+  def self.search(keyword,price)
     plan_ids = Plan.where([
                             "title like? OR body like?OR can_do like? OR status like? OR consent like?", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%"
                           ]).ids

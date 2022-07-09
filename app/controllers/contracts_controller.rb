@@ -3,7 +3,6 @@ class ContractsController < ApplicationController
     @contract = Contract.new
     @plan = Plan.find(params[:plan_id])
     @user = User.find(@plan.user_id)
-    @small_plan = SmallPlan.find(params[:plan_id])
     @reviews = @user.reviews.order("created_at DESC")
     if @reviews.present?
       @avg_score = @reviews.average(:evaluation).present? ? @reviews.average(:evaluation).round(2) : 0

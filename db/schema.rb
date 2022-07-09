@@ -184,6 +184,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_04_223905) do
     t.string "experience"
     t.string "disability_passport"
     t.datetime "year"
+    t.string "twitter"
     t.string "image"
     t.index ["email", "soft_destroyed_at"], name: "index_users_on_email_and_soft_destroyed_at", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

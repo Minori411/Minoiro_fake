@@ -2,7 +2,7 @@ class PlansController < ApplicationController
   before_action :move_to_signed_in
 
   def search
-    @plans = Plan.search(params[:keyword])
+    @plans = Plan.search(params[:keyword],params[:price])
     @keyword = params[:keyword]
     render "index"
   end
@@ -58,31 +58,33 @@ class PlansController < ApplicationController
   end
 
   def create
+    Rails.logger.debug(plan_params)
     @plan = Plan.new(plan_params)
     @plan.user_id = current_user.id
+    @plan.smallplans.map { |smallplan| smallplan.user_id = current_user.id }
+    Rails.logger.debug(@plan.attributes)
+    Rails.logger.debug(@plan.smallplans[0].attributes)
+    Rails.logger.debug("-----")
     if @plan.save # もし保存ができたら
       logger.debug("成功")
       redirect_to user_plans_path(@plan.id) # 投稿画面に遷移
     else # できなければ
       logger.debug("失敗")
-      logger.debug(@article.errors.full_messages)
       render :new
     end
   end
 
   def update
-    # logger.debug("article_id:" + params[:article_id])
     @plan = Plan.find(params[:id])
+    @plan.user_id = current_user.id
+    @plan.smallplans.map { |smallplan| smallplan.user_id = current_user.id }
     if @plan.update!(plan_params)
       logger.debug("成功")
       redirect_to user_plans_path(@plan.id)
     else
       logger.debug("失敗")
-      logger.debug(@article.errors.full_messages)
       render :edit
     end
-  rescue StandardError => e
-    logger.debug(e)
   end
 
   private
@@ -102,6 +104,6 @@ class PlansController < ApplicationController
             smallplans_attributes: [:id,
                                     :plan_name, :price, :plan_detail,
                                     :video, :chat]
-          ).to_h.deep_merge(user_id: current_user.id, smallplans_attributes: [user_id: current_user.id])
+          )
   end
 end

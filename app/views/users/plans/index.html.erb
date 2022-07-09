@@ -131,7 +131,7 @@
                     </a>
                 </div>
             </div>
-            <h3 id="plans" class="anchor-point">プラン（３件）</h3>
+            <h3 id="plans" class="anchor-point">プラン（<%= @plans.count %>件）</h3>
             <div class="wrapper flex swiper-container swipe01 swiper-initialized swiper-horizonal swiper-pointer-events swiper-free-mode">
             <% @plans.each do |plan| %>
                 <% plan.smallplans.each do |smallplan| %>

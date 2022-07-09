@@ -14,5 +14,6 @@ class AddNicknameToUsers < ActiveRecord::Migration[7.0]
     add_column :users, :experience, :string
     add_column :users, :disability_passport, :string
     add_column :users, :year, :datetime
+    add_column :users, :twitter, :string
   end
 end
