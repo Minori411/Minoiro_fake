@@ -48,6 +48,7 @@ class PlansController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:id])
     @plan = Plan.find(params[:id])
     @plan.smallplans.new
   end
@@ -76,15 +77,22 @@ class PlansController < ApplicationController
 
   def update
     @plan = Plan.find(params[:id])
+    @plan.assign_attributes(plan_params)
     @plan.user_id = current_user.id
     @plan.smallplans.map { |smallplan| smallplan.user_id = current_user.id }
-    if @plan.update!(plan_params)
+    if @plan.save!
       logger.debug("成功")
       redirect_to user_plans_path(@plan.id)
     else
       logger.debug("失敗")
       render :edit
     end
+  end
+
+  def destroy
+    @plan = Plan.find(params[:id])
+    @plan.destroy
+    redirect_to user_plans_path
   end
 
   private

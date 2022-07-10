@@ -29,6 +29,7 @@ module Users
 
     def show
       @plan = Plan.find(params[:id])
+      @smallplam = Smallplan.find(params[:id])
       @user = User.find(@plan.user_id)
       @article = @plan.user.articles.order(created_at: :desc)
       @reviews = @user.reviews.order("created_at DESC")
@@ -81,5 +82,38 @@ module Users
     def edit
       @plan = Plan.find(params[:id])
     end
+
+    def update
+        @plan = Plan.find(params[:id])
+        @plan.assign_attributes(plan_params)
+        @plan.user_id = current_user.id
+        @plan.smallplans.map { |smallplan| smallplan.user_id = current_user.id }
+        if @plan.save!
+          logger.debug("成功")
+          redirect_to user_plans_path(@plan.id)
+        else
+          logger.debug("失敗")
+          render :edit
+        end
+      end
+
+      def destroy
+        @plan = Plan.find(params[:id])
+        @plan.destroy
+        redirect_to user_plans_path
+      end
+
+      private
+
+      def plan_params
+        params.require(:plan)
+              .permit(
+                :title, :can_do, :youtube,
+                :body, :status, :consent,
+                smallplans_attributes: [:id,
+                                        :plan_name, :price, :plan_detail,
+                                        :video, :chat]
+              )
+      end
   end
 end

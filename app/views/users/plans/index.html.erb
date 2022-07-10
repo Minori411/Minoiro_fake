@@ -109,6 +109,7 @@
             <div class="plan_details_margin">
                 <% if user_signed_in? && current_user.id == @user.id %>
                 <td><%= link_to "編集", edit_plan_path(@user.id) %></td>
+                <td><%= link_to "削除", plan_path(@user.id) %></td>
                 <% end %>
                 <% if current_user %>
                 <p>ユーザーID-<%= current_user.id %></p>
@@ -116,26 +117,25 @@
                 <p>プランのユーザーID-<%= @user.id %></p>
             </div>
             <div class="boxbaseP30">
-            <% @plans.each do |plan| %>
-                <h1 class="plan_show"><%= plan.title %></h1>
-            <% end %>
+                <h1 class="plan_show"><%= @plans.first.title %></h1>
                 <h3 class="nomargin">できること</h3>
                 <div class="markdown-body plan_detail_markdown_over">
-                <% @plans.each do |plan| %>
-                    <%= plan.can_do %>
-                <% end %>
-                </div>
+                    <%= @plans.first.can_do %>
+                    </div>
                 <div class="alignCenter">
                     <a href class="link more-btn">
                         <i class="fa fa-angle-down"></i>
                     </a>
                 </div>
             </div>
-            <h3 id="plans" class="anchor-point">プラン（<%= @plans.count %>件）</h3>
+            
+            <% @plans.each do |plan| %>
+            <h3 id="plans" class="anchor-point">プラン（<%= plan.smallplans.count %>件）</h3>
+            <% end %>
             <div class="wrapper flex swiper-container swipe01 swiper-initialized swiper-horizonal swiper-pointer-events swiper-free-mode">
             <% @plans.each do |plan| %>
                 <% plan.smallplans.each do |smallplan| %>
-            <%= link_to user_plan_path(@user.id, smallplan.id) do %> 
+            <%= link_to user_plan_path(@user.id, plan.id) do %> 
                 <div class="plan-card mmm">
                 <div class="plan-card_wrapper"></div>
                 <div class="p-content-card_inner">

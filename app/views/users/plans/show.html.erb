@@ -114,26 +114,25 @@
             <div id="main" class="no_br">
             <% if user_signed_in? && current_user.id == @plan.user_id %>
                 <td><%= link_to "編集", edit_plan_path(@plan.id,anchor: "js-plan") %></td>
+                <td><%= link_to "削除", user_plan_path(@plan.id) %></td>
 
             <% end %>
-            <% @plan.smallplans.each do |smallplan| %>
             <div class="boxbaseP30">
             <div>
-            <h1><%= smallplan.plan_name %></h1>
+            <h1><%= @plan.smallplans.first.plan_name %></h1>
             <div class="plan_price">
-            <span style="font-size: 1rem;"><%= smallplan.price %>円/回</span>
+            <span style="font-size: 1rem;"><%= @plan.smallplans.first.price %>円/回</span>
             </div>
             </div>
             <div>
-            <div class="markdown-body"><%= smallplan.plan_detail %></div>
+            <div class="markdown-body"><%= @plan.smallplans.first.plan_detail %></div>
             </div>
             <div id="vapp">
             <div class="p-entry flexbox">
-            <%= link_to "次へ進む", plan_contracts_path(smallplan.id),class: "waves-light btn" %>
+            <%= link_to "次へ進む", plan_contracts_path(@plan.smallplans.first.id),class: "waves-light btn" %>
             </div>
             </div>
             </div>
-            <% end %>
             <div id="side" class="smt sm">
             <div class="gray">
                 <a href="#">
