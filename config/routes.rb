@@ -14,7 +14,6 @@ Rails.application.routes.draw do
   get 'search' => 'plans#search'
   get 'search' => 'applications#search'
 
-  get 'plans/:id/show_plan_detail', to: 'plans#show_plan_detail', as: 'show_plan_detail'
   post "/plans/create"
   get "/plans/create"
   resources :messages

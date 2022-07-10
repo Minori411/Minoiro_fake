@@ -11,6 +11,25 @@ class Plan < ApplicationRecord
                           ]).ids
     smallplan_plan_ids = Smallplan.where(["plan_name like? OR plan_detail like? OR price like? OR video like? OR chat like?", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%",
                                           "%#{keyword}%"]).pluck(:plan_id)
+    # smallplan_plan_ids = Smallplan.where(id: 1)
+    # if price == 2
+    # smallplan_plan_ids.where("price <= 2000")
+    # end
+
+    # if price == 3
+    #     smallplan_plan_ids.where("price <= 3000")
+    #     end
+    
+    # if price == 4
+    #     smallplan_plan_ids.where("price <= 4000")
+    # end
+
+    # if price == 5
+    #     smallplan_plan_ids.where("price <= 4999")
+    # end
+    smallplan_plan_ids = Smallplan.where("price <= 2000")
+
+
     user_ids = User.where(["name like? OR prefecture like?", "%#{keyword}%", "%#{keyword}%"]).ids
     review_ids = Review.where(["evaluation like?", "%#{keyword}%"]).ids
     user_plan_ids = Plan.where(user_id: user_ids).ids

@@ -66,7 +66,6 @@ document.addEventListener("turbolinks:load", function () {
         let index = e.target.getAttribute('data-index')
         $("div").remove(`.js-addfield-block:nth-child(${index})`);
     });
-    fileIndex.pop()
     });
 
 });

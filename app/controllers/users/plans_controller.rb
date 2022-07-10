@@ -74,7 +74,6 @@ module Users
         redirect_to plan_path(@plan.id) # 投稿画面に遷移
       else  # できなければ
         logger.debug("失敗")
-        logger.debug(@article.errors.full_messages)
         render :new
       end
     end
@@ -100,7 +99,7 @@ module Users
       def destroy
         @plan = Plan.find(params[:id])
         @plan.destroy
-        redirect_to user_plans_path
+        redirect_to plans_path
       end
 
       private

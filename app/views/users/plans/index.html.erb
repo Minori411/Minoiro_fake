@@ -109,7 +109,9 @@
             <div class="plan_details_margin">
                 <% if user_signed_in? && current_user.id == @user.id %>
                 <td><%= link_to "編集", edit_plan_path(@user.id) %></td>
-                <td><%= link_to "削除", plan_path(@user.id) %></td>
+                <% @plans.each do |plan| %>
+                <td><%= link_to "削除", user_plan_path(@user.id, plan.id) %></td>
+                <% end %>
                 <% end %>
                 <% if current_user %>
                 <p>ユーザーID-<%= current_user.id %></p>
@@ -117,10 +119,14 @@
                 <p>プランのユーザーID-<%= @user.id %></p>
             </div>
             <div class="boxbaseP30">
-                <h1 class="plan_show"><%= @plans.first.title %></h1>
+                <% @plans.each do |plan| %>
+                <h1 class="plan_show"><%= plan.title %></h1>
+                <% end %>
                 <h3 class="nomargin">できること</h3>
                 <div class="markdown-body plan_detail_markdown_over">
-                    <%= @plans.first.can_do %>
+                    <% @plans.each do |plan| %>
+                    <%= plan.can_do %>
+                    <% end %>
                     </div>
                 <div class="alignCenter">
                     <a href class="link more-btn">
