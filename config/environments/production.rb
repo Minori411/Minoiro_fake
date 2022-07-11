@@ -98,40 +98,39 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
 
-#   config.action_mailer.raise_delivery_errors = true
-#   config.action_mailer.delivery_method = :smtp
-#   host = 'https://www.minoiro99.com'
-#   config.action_mailer.default_url_options = { host: host }
-#   ActionMailer::Base.smtp_settings = {
-#   :port           => ENV['MAILGUN_SMTP_PORT'],
-#   :address        => ENV['MAILGUN_SMTP_SERVER'],
-#   :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
-#   :password       => ENV['MAILGUN_SMTP_PASSWORD'],
-#   :domain         => 'minoiro99.com',
-#   :authentication => :plain,
-# }
-#   ActionMailer::Base.delivery_method = :smtp
-
-  config.action_mailer.perform_caching = false
-
-  config.action_mailer.default_url_options = { host: 'minoiro99.com'}
-
-  config.action_mailer.perform_deliveries = true
-
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    address:"smtp.gmail.com",
-    domain: 'gmail.com',
-    port:587,
-    user_name: ENV.fetch('DB_USERNAME', nil),
-    password: ENV.fetch('DB_PASSWORD', nil),
-    authentication: :login,
-    openssl_verify_mode: 'none',
-    enable_starttls_auto: true
-  }
-
-  config.action_mailer.perform_caching = false
-
   config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { host: "minoiro99.com" }
+  ActionMailer::Base.smtp_settings = {
+  :port           => ENV['MAILGUN_SMTP_PORT'],
+  :address        => ENV['MAILGUN_SMTP_SERVER'],
+  :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
+  :password       => ENV['MAILGUN_SMTP_PASSWORD'],
+  :domain         => 'minoiro99.com',
+  :authentication => :plain,
+}
+  ActionMailer::Base.delivery_method = :smtp
+
+  # config.action_mailer.perform_caching = false
+
+  # config.action_mailer.default_url_options = { host: 'minoiro99.com'}
+
+  # config.action_mailer.perform_deliveries = true
+
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = {
+  #   address:"smtp.gmail.com",
+  #   domain: 'gmail.com',
+  #   port:587,
+  #   user_name: ENV.fetch('DB_USERNAME', nil),
+  #   password: ENV.fetch('DB_PASSWORD', nil),
+  #   authentication: :login,
+  #   openssl_verify_mode: 'none',
+  #   enable_starttls_auto: true
+  # }
+
+  # config.action_mailer.perform_caching = false
+
+  # config.action_mailer.raise_delivery_errors = true
 
 end
