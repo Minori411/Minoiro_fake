@@ -6,7 +6,7 @@ ruby '3.1.2'
 gem 'rails', '~> 7.0.3'
 # Use mysql as the database for Active Record
 gem 'mysql2', '~> 0.5'
-gem 'react-rails'
+# gem 'react-rails'
 gem 'mini_racer'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
@@ -27,7 +27,6 @@ gem 'jbuilder', '~> 2.7'
 # gem 'image_processing', '~> 1.2'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
-gem 'faker'
 gem 'bcrypt'
 gem 'devise'
 gem 'devise-i18n'
@@ -36,7 +35,6 @@ gem 'kakurenbo-puti'
 gem 'rails_admin'
 gem 'dotenv-rails'
 gem 'bootstrap'
-gem 'contentful'
 gem 'libv8-node', '~> 16.10'
 gem 'pry-rails'
 gem 'rmagick'
@@ -51,10 +49,8 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
   gem 'rails-controller-testing'
-  gem 'gimei'
   gem 'database_cleaner-active_record'
   gem 'database_cleaner-sequel'
-  gem 'ransack'
 end
 
 group :development do
