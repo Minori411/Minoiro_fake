@@ -100,20 +100,32 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.default_url_options = { host: 'minoirofake.herokuapp.com'}
+  # config.action_mailer.default_url_options = { host: 'minoirofake.herokuapp.com'}
+
+  # config.action_mailer.raise_delivery_errors = true
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = {
+  #   :user_name      => ENV['TRUSTIFI_KEY'],
+  #   :password       => ENV['TRUSTIFI_SECRET'],
+  #   :domain => "heroku.com",
+  #   :address => "smtp.gmail.com",
+  #   :port => 587,
+  #   :authentication => :plain,
+  #   :enable_starttls_auto => true
+  # }
 
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    :user_name      => ENV['TRUSTIFI_KEY'],
-    :password       => ENV['TRUSTIFI_SECRET'],
-    :domain => "heroku.com",
-    :address => "smtp.gmail.com",
-    :port => 587,
+  host = 'https://www.minoiro99.com'
+  config.action_mailer.default_url_options = { host: host }
+  ActionMailer::Base.smtp_settings = {
+    :port           => ENV['MAILGUN_SMTP_PORT'],
+    :address        => ENV['MAILGUN_SMTP_SERVER'],
+    :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
+    :password       => ENV['MAILGUN_SMTP_PASSWORD'],
+    :domain         => host,
     :authentication => :plain,
-    :enable_starttls_auto => true
   }
-
 #   require "uri"
 #   require "net/http"
 #   require "json"
