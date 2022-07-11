@@ -87,9 +87,6 @@ Rails.application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-  # Use a different logger for distributed setups.
-  # require "syslog/logger"
-  # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
@@ -100,19 +97,6 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  # config.action_mailer.default_url_options = { host: 'minoirofake.herokuapp.com'}
-
-  # config.action_mailer.raise_delivery_errors = true
-  # config.action_mailer.delivery_method = :smtp
-  # config.action_mailer.smtp_settings = {
-  #   :user_name      => ENV['TRUSTIFI_KEY'],
-  #   :password       => ENV['TRUSTIFI_SECRET'],
-  #   :domain => "heroku.com",
-  #   :address => "smtp.gmail.com",
-  #   :port => 587,
-  #   :authentication => :plain,
-  #   :enable_starttls_auto => true
-  # }
 
 #   config.action_mailer.raise_delivery_errors = true
 #   config.action_mailer.delivery_method = :smtp
@@ -128,7 +112,7 @@ Rails.application.configure do
 # }
 #   ActionMailer::Base.delivery_method = :smtp
 
-config.action_mailer.perform_caching = false
+  config.action_mailer.perform_caching = false
 
   config.action_mailer.default_url_options = { host: 'minoiro99.com'}
 
@@ -150,20 +134,4 @@ config.action_mailer.perform_caching = false
 
   config.action_mailer.raise_delivery_errors = true
 
-  #   require "uri"
-  #   require "net/http"
-  #   require "json"
-
-  #   url = URI.parse(ENV['TRUSTIFI_URL'] + "/api/i/v1/email")
-  #   https = Net::HTTP.new(url.host, url.port)
-  #   https.use_ssl = true
-
-  #   request = Net::HTTP::Post.new(url)
-  #   request["x-trustifi-key"] = ENV['TRUSTIFI_KEY']
-  #   request["x-trustifi-secret"] = ENV['TRUSTIFI_SECRET']
-  #   request["content-type"] = "application/json"
-  #   request.body = "{\"recipients\": [{\"email\": \"test@trustificorp.org\"}],\"title\":\"Title\",\"html\":\"Body\"}"
-
-  #   response = https.request(request)
-  #   puts response.read_body
 end
