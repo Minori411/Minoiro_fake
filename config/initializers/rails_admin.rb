@@ -1,4 +1,6 @@
 RailsAdmin.config do |config|
+  require 'i18n'
+  I18n.default_locale = :ja
   config.asset_source = :webpacker
 
   ### Popular gems integration
@@ -14,7 +16,7 @@ RailsAdmin.config do |config|
 
   ## == Pundit ==
   # config.authorize_with :pundit
-
+  
   ## == PaperTrail ==
   # config.audit_with :paper_trail, 'User', 'PaperTrail::Version' # PaperTrail >= 3.0.0
 
