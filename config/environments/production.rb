@@ -119,13 +119,14 @@ Rails.application.configure do
   host = 'https://www.minoiro99.com'
   config.action_mailer.default_url_options = { host: }
   ActionMailer::Base.smtp_settings = {
-    port: 587,
-    address: "smtp.mailgun.org",
-    user_name: "postmaster@sandboxa07125ef6aee429998d2a139372b6dde.mailgun.org",
-    password: "34a71907fe6b594a79e1347b95e82f65-18e06deb-585f2c6f",
-    domain: "minoiro99.com",
-    authentication: :plain
-  }
+  :port           => ENV['MAILGUN_SMTP_PORT'],
+  :address        => ENV['MAILGUN_SMTP_SERVER'],
+  :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
+  :password       => ENV['MAILGUN_SMTP_PASSWORD'],
+  :domain         => 'minoiro99.com',
+  :authentication => :plain,
+}
+  ActionMailer::Base.delivery_method = :smtp
   #   require "uri"
   #   require "net/http"
   #   require "json"
