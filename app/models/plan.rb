@@ -5,7 +5,7 @@ class Plan < ApplicationRecord
 
   # belongs_to :review
 
-  def self.search(keyword,price)
+  def self.search(keyword, _price)
     plan_ids = Plan.where([
                             "title like? OR body like?OR can_do like? OR status like? OR consent like?", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%"
                           ]).ids
@@ -19,7 +19,7 @@ class Plan < ApplicationRecord
     # if price == 3
     #     smallplan_plan_ids.where("price <= 3000")
     #     end
-    
+
     # if price == 4
     #     smallplan_plan_ids.where("price <= 4000")
     # end
@@ -28,7 +28,6 @@ class Plan < ApplicationRecord
     #     smallplan_plan_ids.where("price <= 4999")
     # end
     smallplan_plan_ids = Smallplan.where("price <= 2000")
-
 
     user_ids = User.where(["name like? OR prefecture like?", "%#{keyword}%", "%#{keyword}%"]).ids
     review_ids = Review.where(["evaluation like?", "%#{keyword}%"]).ids

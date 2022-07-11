@@ -1,11 +1,10 @@
 class ApplicationController < ActionController::Base
-  before_action :basic_auth, if: :production?   #追加部分
+  before_action :basic_auth, if: :production?   # 追加部分
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
-  http_basic_authenticate_with :name => ENV["BASIC_AUTH_USER"], :password => ENV["BASIC_AUTH_PASSWORD"] if Rails.env.production?
+  http_basic_authenticate_with name: ENV.fetch("BASIC_AUTH_USER", nil), password: ENV.fetch("BASIC_AUTH_PASSWORD", nil) if Rails.env.production?
 
-
-  protect_from_forgery with: :null_session  # このアクションを追加
+  protect_from_forgery with: :null_session # このアクションを追加
   def after_sign_in_path_for(_resource)
     "/user/#{current_user.id}"
   end
@@ -28,14 +27,14 @@ class ApplicationController < ActionController::Base
       redirect_to '/users/sign_in'
     end
   end
-  
-  def production?   #追加部分〜
+
+  def production? # 追加部分〜
     Rails.env.production?
-  end 
-  
+  end
+
   def basic_auth
     authenticate_or_request_with_http_basic do |username, password|
-    username == ENV["BASIC_AUTH_USER"] && password == ENV["BASIC_AUTH_PASSWORD"] 
+      username == ENV["BASIC_AUTH_USER"] && password == ENV["BASIC_AUTH_PASSWORD"]
     end
   end
 

@@ -117,29 +117,29 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   host = 'https://www.minoiro99.com'
-  config.action_mailer.default_url_options = { host: host }
+  config.action_mailer.default_url_options = { host: }
   ActionMailer::Base.smtp_settings = {
-    :port           => 587,
-    :address        => "smtp.mailgun.org",
-    :user_name      => "postmaster@sandboxa07125ef6aee429998d2a139372b6dde.mailgun.org",
-    :password       => "34a71907fe6b594a79e1347b95e82f65-18e06deb-585f2c6f",
-    :domain         => "minoirofake.herokuapp.com",
-    :authentication => :plain,
+    port: 587,
+    address: "smtp.mailgun.org",
+    user_name: "postmaster@sandboxa07125ef6aee429998d2a139372b6dde.mailgun.org",
+    password: "34a71907fe6b594a79e1347b95e82f65-18e06deb-585f2c6f",
+    domain: "minoirofake.herokuapp.com",
+    authentication: :plain
   }
-#   require "uri"
-#   require "net/http"
-#   require "json"
+  #   require "uri"
+  #   require "net/http"
+  #   require "json"
 
-#   url = URI.parse(ENV['TRUSTIFI_URL'] + "/api/i/v1/email")
-#   https = Net::HTTP.new(url.host, url.port)
-#   https.use_ssl = true
+  #   url = URI.parse(ENV['TRUSTIFI_URL'] + "/api/i/v1/email")
+  #   https = Net::HTTP.new(url.host, url.port)
+  #   https.use_ssl = true
 
-#   request = Net::HTTP::Post.new(url)
-#   request["x-trustifi-key"] = ENV['TRUSTIFI_KEY']
-#   request["x-trustifi-secret"] = ENV['TRUSTIFI_SECRET']
-#   request["content-type"] = "application/json"
-#   request.body = "{\"recipients\": [{\"email\": \"test@trustificorp.org\"}],\"title\":\"Title\",\"html\":\"Body\"}"
+  #   request = Net::HTTP::Post.new(url)
+  #   request["x-trustifi-key"] = ENV['TRUSTIFI_KEY']
+  #   request["x-trustifi-secret"] = ENV['TRUSTIFI_SECRET']
+  #   request["content-type"] = "application/json"
+  #   request.body = "{\"recipients\": [{\"email\": \"test@trustificorp.org\"}],\"title\":\"Title\",\"html\":\"Body\"}"
 
-#   response = https.request(request)
-#   puts response.read_body
+  #   response = https.request(request)
+  #   puts response.read_body
 end
