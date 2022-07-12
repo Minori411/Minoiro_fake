@@ -139,11 +139,13 @@
                 <div class="tab_content_description">
                     <div class="tab_content_plan">
                     <% @plan.each do |plan| %>
+                        <% plan.smallplans.each do |smallplan| %>
                         <%= link_to plan_path(plan.id) do %>
                         <div class="boxbaseP30">
-                        <%= plan.plan_name %><br>
-                        <%= plan.price %>円/回
+                        <%= smallplan.plan_name %><br>
+                        <%= smallplan.price %>円/回
                         </div>
+                        <% end %>
                         <% end %>
                     <% end %>
                     </div>
