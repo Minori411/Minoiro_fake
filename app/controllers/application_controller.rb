@@ -28,7 +28,8 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def production? # 追加部分〜
+  # 追加部分〜
+  def production?
     Rails.env.production?
   end
 

@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
-    redirect_to plan_path(@review.user) if @review.save!
+    redirect_to user_plans_path(@review.user) if @review.save!
   end
 
   def new

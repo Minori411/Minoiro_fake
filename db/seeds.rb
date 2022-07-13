@@ -33,8 +33,8 @@ User.all.each do |user|
 end
 
 Plan.all.each do |plan|
-  plan.smallplans.create!(plan_name: "aaa",
-                          plan_detail: "aaa",
+  plan.smallplans.create!(plan_name: "夫婦関係について相談できます",
+                          plan_detail: "夫婦のお悩み",
                           price: 1000,
                           video: false,
                           chat: false,
