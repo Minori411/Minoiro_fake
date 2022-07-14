@@ -1,4 +1,6 @@
 FROM ruby:3.1.2
+ENV RAILS_ENV="production"
+ENV NODE_ENV="production"
 RUN apt-get update -qq && apt-get install -y nodejs
 
 # yarnパッケージ管理ツールをインストール
