@@ -5,7 +5,7 @@ class Plan < ApplicationRecord
 
   # belongs_to :review
 
-  def self.search(keyword, price)
+  def self.search(keyword, price, evaluation)
     if keyword
       plan_ids = Plan.where([
                               "title like? OR body like?OR can_do like? OR status like? OR consent like?", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%"
@@ -23,19 +23,30 @@ class Plan < ApplicationRecord
     smallplan = Smallplan.where("price <= 4000") if price == "4"
 
     smallplan = Smallplan.where("price <= 4999") if price == "5"
+
+    reviews = []
+    reviews = Review.where("evaluation <= 3") if evaluation == "2"
+    reviews = Review.where("evaluation <= 4") if evaluation == "3"
+    reviews = Review.where("evaluation = 5") if evaluation == "4"
+    reviewee_id = reviews.pluck(:reviewee_id)
+    user_ids = User.where(id: reviewee_id).ids
+    users= Plan.where(user_id: user_ids).ids
+    
+
+
     # smallplan_plan_ids = Smallplan.where("price <= 2000")
 
     # user_ids = User.where(["name like? OR prefecture like?", "%#{keyword}%", "%#{keyword}%"]).ids
-    review_ids = Review.where(["evaluation like?", "%#{keyword}%"]).ids
+    
     # user_plan_ids = Plan.where(user_id: user_ids).ids
 
     small_plan = smallplan.pluck(:plan_id) if smallplan.present?
     logger.warn("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
-    logger.warn(review_ids)
     logger.warn(smallplan_plan_ids)
     logger.warn(plan_ids)
     logger.warn(small_plan)
+    puts hoge = ( small_plan|| smallplan_plan_ids  || plan_ids)
 
-    where(id: (plan_ids | small_plan | review_ids | smallplan_plan_ids))
+    where(id: ( small_plan || users || smallplan_plan_ids || plan_ids))
   end
 end
