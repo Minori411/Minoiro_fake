@@ -99,7 +99,7 @@ module Users
     def destroy
       @plan = Plan.find(params[:id])
       @plan.destroy
-      redirect_to plans_path
+      redirect_to user_plans_path
     end
 
     private

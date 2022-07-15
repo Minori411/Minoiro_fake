@@ -114,7 +114,7 @@
             <div id="main" class="no_br">
             <% if user_signed_in? && current_user.id == @plan.user_id %>
                 <td><%= link_to "編集", edit_plan_path(@plan.id,anchor: "js-plan") %></td>
-                <td><%= link_to "削除", user_plan_path(@plan.id) %></td>
+                <td><%= link_to "削除", user_plan_path(@plan.id), method: :delete %></td>
 
             <% end %>
             <div class="boxbaseP30">
