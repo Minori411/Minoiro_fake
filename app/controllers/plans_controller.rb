@@ -59,13 +59,13 @@ class PlansController < ApplicationController
   end
 
   def create
-    Rails.logger.debug(plan_params)
+    # Rails.logger.debug(plan_params)
     @plan = Plan.new(plan_params)
     @plan.user_id = current_user.id
     @plan.smallplans.map { |smallplan| smallplan.user_id = current_user.id }
-    Rails.logger.debug(@plan.attributes)
-    Rails.logger.debug(@plan.smallplans[0].attributes)
-    Rails.logger.debug("-----")
+    # Rails.logger.debug(@plan.attributes)
+    # Rails.logger.debug(@plan.smallplans[0].attributes)
+    # Rails.logger.debug("-----")
     if @plan.save # もし保存ができたら
       logger.debug("成功")
       redirect_to user_plans_path(@plan.id) # 投稿画面に遷移

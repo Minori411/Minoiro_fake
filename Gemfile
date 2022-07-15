@@ -45,6 +45,9 @@ gem "puma_worker_killer"
 gem 'derailed'
 gem 'pry-nav'
 gem 'comixins'
+gem 'net-imap'
+gem 'net-pop'
+gem 'net-smtp'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
