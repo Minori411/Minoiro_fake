@@ -13,8 +13,5 @@
 @import 'article';
 @import 'explanations';
 @import 'message';
-@import "compass-mixins/lib/compass";
-// 他にcompassのアニメーションなどを使っている場合は追加
-@import "compass-mixins/lib/animation/core";
 @import 'comixins';
 
