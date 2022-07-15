@@ -63,7 +63,7 @@ jobs:
 
   heroku-deploy:
     docker:
-      - image: cimg/ruby:3.1.2
+      - image: cimg/ruby:3.1.2-node
     steps:
       - checkout
       - setup_remote_docker:
@@ -78,6 +78,9 @@ jobs:
       - run:
           name: release docker image
           command: heroku container:release web -a $HEROKU_APP_NAME
+      - run:
+          name: yarn Install
+          command: yarn install
       - run:
           name: database setup
           command: heroku run bundle exec rake db:migrate RAILS_ENV=production -a $HEROKU_APP_NAME
