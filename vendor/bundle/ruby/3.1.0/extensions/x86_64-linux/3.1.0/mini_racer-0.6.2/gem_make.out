@@ -1,0 +1,16 @@
+current directory: /myapp/vendor/bundle/ruby/3.1.0/gems/mini_racer-0.6.2/ext/mini_racer_extension
+/usr/local/bin/ruby -I /usr/local/lib/ruby/3.1.0 -r ./siteconf20220629-1-z2uaof.rb extconf.rb
+checking for -lpthread... yes
+creating Makefile
+
+current directory: /myapp/vendor/bundle/ruby/3.1.0/gems/mini_racer-0.6.2/ext/mini_racer_extension
+make DESTDIR\= clean
+
+current directory: /myapp/vendor/bundle/ruby/3.1.0/gems/mini_racer-0.6.2/ext/mini_racer_extension
+make DESTDIR\=
+compiling mini_racer_extension.cc
+linking shared-object mini_racer_extension.so
+
+current directory: /myapp/vendor/bundle/ruby/3.1.0/gems/mini_racer-0.6.2/ext/mini_racer_extension
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 mini_racer_extension.so ./.gem.20220629-1-i0q8ad
