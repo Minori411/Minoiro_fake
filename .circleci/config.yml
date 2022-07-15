@@ -79,11 +79,12 @@ jobs:
           name: release docker image
           command: heroku container:release web -a $HEROKU_APP_NAME
       - run:
-          name: yarn Install
-          command: yarn install
-      - run:
           name: database setup
           command: heroku run bundle exec rake db:migrate RAILS_ENV=production -a $HEROKU_APP_NAME
+      - run:
+          name: yarn Install
+          command: yarn install
+      - run: bundle exec bin/webpack
       
 workflows:
   version: 2
