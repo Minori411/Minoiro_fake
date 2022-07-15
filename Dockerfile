@@ -1,5 +1,7 @@
 FROM ruby:3.1.2
 RUN apt-get update -qq && apt-get install -y nodejs
+ARG RAILS_MASTER_KEY
+ENV RAILS_MASTER_KEY ${RAILS_MASTER_KEY}
 
 # yarnパッケージ管理ツールをインストール
 # https://classic.yarnpkg.com/en/docs/install/#debian-stable
