@@ -98,7 +98,7 @@ Rails.application.configure do
 
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host: 'minoiro99.com', port: 80 }
+  config.action_mailer.default_url_options = { host: 'minoiro99.com'}
   ActionMailer::Base.smtp_settings = {
     port: ENV.fetch('MAILGUN_SMTP_PORT', nil),
     address: ENV.fetch('MAILGUN_SMTP_SERVER', nil),

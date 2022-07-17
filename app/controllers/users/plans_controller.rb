@@ -28,8 +28,7 @@ module Users
     end
 
     def show
-      @smallplam = Smallplan.find(params[:id])
-      @user = User.find(@plan.user_id)
+      @user = User.find(params[:user_id])
       @plan = @user.plans.first
       @article = @plan.user.articles.order(created_at: :desc)
       @reviews = @user.reviews.order("created_at DESC")
