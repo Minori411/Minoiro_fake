@@ -16,7 +16,7 @@ COPY Gemfile.lock /myapp/Gemfile.lock
 RUN bundle install
 COPY package.json /myapp/package.json
 COPY package-lock.json /myapp/package-lock.json
-RUN yarn install
+# RUN yarn install
 COPY . /myapp
 # RUN RAILS_ENV=production SECRET_KEY_BASE=1 bundle exec rails assets:precompile
 
@@ -29,3 +29,4 @@ ENV TZ Asia/Tokyo
 
 # Start the main process.
 CMD ["rails", "server", "-b", "0.0.0.0"]
+
