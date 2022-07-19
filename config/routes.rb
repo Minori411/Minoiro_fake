@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions',
+    confirmations: 'users/confirmations',
     passwords: 'users/passwords'
   }
 
@@ -32,6 +33,7 @@ Rails.application.routes.draw do
     post "signup", to: "users/registrations#create"
     delete "logout", to: "users/sessions#destroy"
     post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
+    put 'confirmation', to: 'users/confirmations#show', as: :back_confirmation
   end
 
   get 'inquiries/index'
