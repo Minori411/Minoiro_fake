@@ -46,12 +46,14 @@ Review.create(body: "知りたいことが知れました。とてもいい経�
               name: "林みのり",
               reviewer_id: 1,
               reviewee_id: 2,
-              user_id: 2,
+              user_id: 1,
               evaluation: 5)
 
-Article.create!(subject: "最近の相談",
+User.all.each do |user|
+user.article.create!(subject: "最近の相談",
                 body: "最近の相談は夫婦関係が多いです",
-                user_id: 2)
+                user_id: user.id)
+end
 
 Room.create!(
   [
