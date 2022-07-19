@@ -85,10 +85,10 @@ Room.create!(
 # )
 # end
 
-Relationship.create!(
-  following_id: 1,
-  follower_id: 2
-)
+# Relationship.create!(
+#   following_id: 1,
+#   follower_id: 2
+# )
 
 Bottle.create!(
   [
