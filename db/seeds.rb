@@ -42,15 +42,17 @@ Plan.all.each do |plan|
                           plan_id: plan.id)
 end
 
-Review.create(body: "知りたいことが知れました。とてもいい経験になりました。",
-              name: "林みのり",
-              reviewer_id: 1,
-              reviewee_id: 2,
-              user_id: 1,
-              evaluation: 5)
+# User.all.each do |user|
+# user.reviews.create(body: "知りたいことが知れました。とてもいい経験になりました。",
+#               name: "林みのり",
+#               reviewer_id: ,
+#               reviewee_id: ,
+#               user_id: user.id,
+#               evaluation: )
+# end
 
 User.all.each do |user|
-user.article.create!(subject: "最近の相談",
+user.articles.create!(subject: "最近の相談",
                 body: "最近の相談は夫婦関係が多いです",
                 user_id: user.id)
 end
@@ -66,20 +68,22 @@ Room.create!(
   ]
 )
 
-Message.create!(
-  [
-    {
-      user_id: 1,
-      room_id: 1,
-      body: "初めまして"
-    },
-    {
-      user_id: 2,
-      room_id: 2,
-      body: "相談したいことがあります"
-    }
-  ]
-)
+# User.all.each do |user|
+# user.messages.create!(
+#   [
+#     {
+#       user_id: user.id,
+#       room_id: room.id,
+#       body: "初めまして"
+#     },
+#     {
+#       user_id: user.id,
+#       room_id: room.id,
+#       body: "相談したいことがあります"
+#     }
+#   ]
+# )
+# end
 
 Relationship.create!(
   following_id: 1,
