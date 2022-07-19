@@ -30,5 +30,22 @@
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "build:css": "sass ./app/assets/stylesheets/application.sass.scss ./app/assets/builds/application.css --no-source-map --load-path=node_modules"
-  }
+  },
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "version": "1.0.0",
+  "main": "babel.config.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Minori411/Minoiro2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Minori411/Minoiro2/issues"
+  },
+  "homepage": "https://github.com/Minori411/Minoiro2#readme"
 }
