@@ -7,7 +7,8 @@ user.skip_confirmation!
 user.save!
 
 10.times do |n|
-  User.create!(userstyle: 1,
+  User.create!(id: n,
+               userstyle: 1,
                prefecture: "神奈川県",
                introduction: "こんにちは",
                url: "aaa",
@@ -35,21 +36,21 @@ end
 Plan.all.each do |plan|
   plan.smallplans.create!(plan_name: "夫婦関係について相談できます",
                           plan_detail: "夫婦のお悩み",
-                          price: 1000,
+                          price: rand(1000..5000),
                           video: false,
                           chat: false,
                           user_id: plan.user_id,
                           plan_id: plan.id)
 end
 
-# User.all.each do |user|
-# user.reviews.create(body: "知りたいことが知れました。とてもいい経験になりました。",
-#               name: "林みのり",
-#               reviewer_id: ,
-#               reviewee_id: ,
-#               user_id: user.id,
-#               evaluation: )
-# end
+9.times do |n|
+Reviews.create(body: "知りたいことが知れました。とてもいい経験になりました。",
+              name: "林みのり",
+              reviewer_id: n,
+              reviewee_id: n+1,
+              user_id: n,
+              evaluation: [1,2,3,4,5].sample)
+end
 
 User.all.each do |user|
 user.articles.create!(subject: "最近の相談",
@@ -67,28 +68,6 @@ Room.create!(
     }
   ]
 )
-
-# User.all.each do |user|
-# user.messages.create!(
-#   [
-#     {
-#       user_id: user.id,
-#       room_id: room.id,
-#       body: "初めまして"
-#     },
-#     {
-#       user_id: user.id,
-#       room_id: room.id,
-#       body: "相談したいことがあります"
-#     }
-#   ]
-# )
-# end
-
-# Relationship.create!(
-#   following_id: 1,
-#   follower_id: 2
-# )
 
 Bottle.create!(
   [
