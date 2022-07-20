@@ -7,7 +7,7 @@ user.skip_confirmation!
 user.save!
 
 10.times do |n|
-  User.create!(id: n,
+  User.create!(id: n+2,
                userstyle: 1,
                prefecture: "神奈川県",
                introduction: "こんにちは",
@@ -44,7 +44,7 @@ Plan.all.each do |plan|
 end
 
 9.times do |n|
-Reviews.create(body: "知りたいことが知れました。とてもいい経験になりました。",
+Review.create(body: "知りたいことが知れました。とてもいい経験になりました。",
               name: "林みのり",
               reviewer_id: n,
               reviewee_id: n+1,
