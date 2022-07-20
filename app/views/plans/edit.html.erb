@@ -72,7 +72,7 @@
                 </div>
                 <div class="plan_area">
     <%= f.fields_for :smallplans do |smallfields| %>
-    <div class="boxbaseP30 plan_module js-addfield-block{ data: {index: "<%= smallfields.index %>"} flex-wrap planbox m-b-20 z-depth-1" style="padding: 30px">
+    <div class="boxbaseP30 plan_module smallplan js-addfield-block_<%= smallfields.index %> flex-wrap planbox m-b-20 z-depth-1" data-index="<%= smallfields.index %>" style="padding: 30px">
     <div class="left ">
         <%= smallfields.text_field :plan_name %>
     </div>
@@ -100,7 +100,7 @@
         <%= smallfields.text_area :plan_detail, class: "w100p"%>
     </div>
             <div class="right m-b-20 smt_right m-t1" style="width: auto; margin-left: auto;">
-            <a href="#" class="button delete-form-btn" data-deletefiled="true">
+            <a class="button delete-form-btn" data-deletefiled="true" data-index="<%= smallfields.index %>">
                 <i class="fas fa-times-circle"></i> 削除
             </a>
         </div>

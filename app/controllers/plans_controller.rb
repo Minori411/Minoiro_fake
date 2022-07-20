@@ -48,9 +48,8 @@ class PlansController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
-    @plan = @user.plans.first
-    @plan.smallplans.new
+    @plan = Plan.find(params[:id])
+    @user = @plan.user
   end
 
   def new

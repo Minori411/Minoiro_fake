@@ -1,9 +1,16 @@
 class Plan < ApplicationRecord
   belongs_to :user
   has_many :smallplans, dependent: :destroy
-  accepts_nested_attributes_for :smallplans, allow_destroy: true
+  accepts_nested_attributes_for :smallplans, allow_destroy: true, reject_if: :reject_removed_smallplan
 
   # belongs_to :review
+
+  def reject_removed_smallplan(attributes)
+    exists = attributes[:id].present?
+    empty = attributes[:price].blank? && attributes[:plan_detail].blank?
+    attributes.merge!(_destroy: 1) if exists && empty
+    !exists && empty
+  end
 
   def self.search(keyword, price, evaluation, chat, video)
     if keyword
