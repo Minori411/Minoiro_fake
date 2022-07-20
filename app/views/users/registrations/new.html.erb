@@ -28,7 +28,7 @@
                             <p><%= f.label :パスワード（英数字8文字以上）%></p>
                         </div>
                         <div class="input_body">
-                            <%= f.password_field :password, autocomplete: "new-password" %>                               
+                            <%= f.password_field :password, autocomplete: "new-password",id: "password" %>                               
                             <i class="fa icon_eye fa-eye"></i>
                         </div>
                     </div>
@@ -37,7 +37,7 @@
                             <p><%= f.label :確認用パスワード %></p>
                         </div>
                         <div class="input_body">
-                            <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+                            <%= f.password_field :password_confirmation, autocomplete: "new-password", id: "passwordConfirm"%>
                             <i class="fa icon_eye fa-eye"></i>
                         </div>
                     </div>

@@ -32,9 +32,9 @@ document.addEventListener("turbolinks:load", function () {
       </textarea>
           </div>
                   <div class="right m-b-20 smt_right m-t1" style="width: auto; margin-left: auto;">
-                  <a class="button delete-form-btn" data-deletefiled="true" data-index="${index}">
+                  <button class="button delete-form-btn" data-deletefiled="true" data-index="${index}">
                     <i class="fas fa-times-circle"></i> 削除
-                  </a>
+                  </button>
               </div>
           </div>
           </div>
@@ -65,7 +65,7 @@ document.addEventListener("turbolinks:load", function () {
         // $(this)でイベントが発生した要素を取得して削除する
         
         let index = e.target.getAttribute('data-index')
-        $("div").remove(`.js-addfield-block:nth-child(${index})`);
+        e.target.parentElement.parentElement.remove()
     });
     });
 

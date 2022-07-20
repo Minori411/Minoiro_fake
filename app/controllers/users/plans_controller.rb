@@ -7,9 +7,17 @@ module Users
       @plans = @user.plans
       @article = @user.articles.order(created_at: :desc)
       @reviews = @user.reviews.order("created_at DESC")
+      if @reviews.present?
+        @avg_score = @reviews.average(:evaluation).present? ? @reviews.average(:evaluation).round(2) : 0
+        @avg_score_percentage = Review.average(:evaluation).round(1).to_f * 100 / 5
+      else
+        @avg_score = 0
+        @avg_score_percentage = 0
+      end
       @current_entry = Entry.where(user_id: current_user.id)
       @another_entry = Entry.where(user_id: @user.id)
       @room = Room.new
+
 
       unless @user.id == current_user.id
         @current_entry.each do |current|
@@ -30,6 +38,7 @@ module Users
     def show
       @user = User.find(params[:user_id])
       @plan = @user.plans.first
+      @smallplan = Smallplan.find(params[:id])
       @article = @plan.user.articles.order(created_at: :desc)
       @reviews = @user.reviews.order("created_at DESC")
       @relationship = Relationship.find_by(id: params[:id])
@@ -37,6 +46,7 @@ module Users
       if @reviews.present?
         @avg_score = @reviews.average(:evaluation).present? ? @reviews.average(:evaluation).round(2) : 0
         @avg_review = @plan.user.reviews.average(:evaluation).round(2)
+        @avg_score_percentage = Review.average(:evaluation).round(1).to_f * 100 / 5
       else
         @avg_score = 0
         @avg_score_percentage = 0
@@ -96,9 +106,9 @@ module Users
     end
 
     def destroy
-      @plan = Plan.find(params[:id])
-      @plan.smallplans.destroy
-      redirect_to user_plans_path
+      @smallplan = Smallplan.find(params[:id])
+      @smallplan.destroy
+      redirect_to user_plans_path(params[:user_id])
     end
 
     private

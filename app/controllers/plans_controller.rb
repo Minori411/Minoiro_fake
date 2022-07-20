@@ -23,6 +23,7 @@ class PlansController < ApplicationController
     if @reviews.present?
       @avg_score = @reviews.average(:evaluation).present? ? @reviews.average(:evaluation).round(2) : 0
       @avg_review = @plan.user.reviews.average(:evaluation).round(2)
+      @avg_score_percentage = Review.average(:evaluation).round(1).to_f * 100 / 5
     else
       @avg_score = 0
       @avg_score_percentage = 0
@@ -68,7 +69,7 @@ class PlansController < ApplicationController
     # Rails.logger.debug("-----")
     if @plan.save # もし保存ができたら
       logger.debug("成功")
-      redirect_to user_plans_path(@plan.id) # 投稿画面に遷移
+      redirect_to user_plans_path(current_user.id) # 投稿画面に遷移
     else # できなければ
       logger.debug("失敗")
       render :new
@@ -82,7 +83,7 @@ class PlansController < ApplicationController
     @plan.smallplans.map { |smallplan| smallplan.user_id = current_user.id }
     if @plan.save!
       logger.debug("成功")
-      redirect_to user_plans_path(@plan.id)
+      redirect_to user_plans_path(current_user.id)
     else
       logger.debug("失敗")
       render :edit
@@ -92,7 +93,7 @@ class PlansController < ApplicationController
   def destroy
     @plan = Plan.find(params[:id])
     @plan.destroy
-    redirect_to user_plans_path
+    redirect_to plans_path
   end
 
   private

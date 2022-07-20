@@ -112,7 +112,7 @@
                 <% if user_signed_in? && current_user.id == @user.id %>
                 <td><%= link_to "編集", edit_plan_path(@user.id) %></td>
                 <% @plans.each do |plan| %>
-                <td><%= link_to "削除", user_plan_path(@user.id, plan.id) %></td>
+                <td><%= link_to "削除", plan_path(plan.id), method: :delete %></td>
                 <% end %>
                 <% end %>
                 <% if current_user %>
@@ -143,7 +143,7 @@
             <div class="wrapper flex swiper-container swipe01 swiper-initialized swiper-horizonal swiper-pointer-events swiper-free-mode">
             <% @plans.each do |plan| %>
                 <% plan.smallplans.each do |smallplan| %>
-            <%= link_to user_plan_path(@user.id, plan.id) do %> 
+            <%= link_to user_plan_path(@user.id, smallplan.id) do %> 
                 <div class="plan-card mmm">
                 <div class="plan-card_wrapper"></div>
                 <div class="p-content-card_inner">

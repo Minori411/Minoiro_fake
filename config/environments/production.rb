@@ -86,7 +86,6 @@ Rails.application.configure do
   config.active_support.disallowed_deprecation_warnings = []
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
-  config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
