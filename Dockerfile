@@ -18,7 +18,7 @@ COPY package.json /myapp/package.json
 COPY package-lock.json /myapp/package-lock.json
 RUN yarn install
 COPY . /myapp
-RUN RAILS_ENV=production SECRET_KEY_BASE=1 bundle exec rails assets:precompile
+RUN RAILS_ENV=production SECRET_KEY_BASE=1 bundle exec rails assets:precompile; exit 0
 
 # Add a script to be executed every time the container starts
 COPY entrypoint.sh /usr/bin/
