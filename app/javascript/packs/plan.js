@@ -42,7 +42,7 @@ document.addEventListener("turbolinks:load", function () {
         return html;
       }
     
-      let fileIndex = [1, 2, 3, 4]
+      let fileIndex = [1, 2]
       var lastIndex = $(".certi-ficate:last").data("index");
       fileIndex.splice(0, lastIndex);
       let fileCount = $(".hidden-destroy").length;

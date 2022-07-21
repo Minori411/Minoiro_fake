@@ -18,7 +18,6 @@ module Users
       @another_entry = Entry.where(user_id: @user.id)
       @room = Room.new
 
-
       unless @user.id == current_user.id
         @current_entry.each do |current|
           @another_entry.each do |another|
@@ -92,13 +91,14 @@ module Users
     end
 
     def update
+      @user = User.find(params[:user_id])
       @plan = Plan.find(params[:id])
       @plan.assign_attributes(plan_params)
       @plan.user_id = current_user.id
       @plan.smallplans.map { |smallplan| smallplan.user_id = current_user.id }
       if @plan.save!
         logger.debug("成功")
-        redirect_to user_plans_path(@plan.id)
+        redirect_to user_plans_path(@user.id)
       else
         logger.debug("失敗")
         render :edit

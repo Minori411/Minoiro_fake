@@ -113,19 +113,26 @@
             </div>
             <div id="main" class="no_br">
             <% if user_signed_in? && current_user.id == @plan.user_id %>
-                <td><%= link_to "編集", edit_plan_path(@smallplan.id,anchor: "js-plan") %></td>
+                <td><%= link_to "編集", edit_plan_path(@user.id,anchor: "js-plan") %></td>
                 <td><%= link_to "削除", user_plan_path(@user.id,@smallplan.id), method: :delete %></td>
 
             <% end %>
             <div class="boxbaseP30">
             <div>
-            <h1><%= @plan.smallplans.first.plan_name %></h1>
+            <h1><%= @smallplan.plan_name %></h1>
             <div class="plan_price">
-            <span style="font-size: 1rem;"><%= @plan.smallplans.first.price %>円/回</span>
+            <span style="font-size: 1rem;"><%= @smallplan.price %>円/回</span>
             </div>
             </div>
             <div>
-            <div class="markdown-body"><%= @plan.smallplans.first.plan_detail %></div>
+            <div class="video&chat">
+            <% if @smallplan.video == 1 %>
+                ビデオ
+            <% elsif @smallplan.chat == 1 %>
+                チャット
+            <% end %>
+            </div>
+            <div class="markdown-body"><%= @smallplan.plan_detail %></div>
             </div>
             <div id="vapp">
             <div class="p-entry flexbox">

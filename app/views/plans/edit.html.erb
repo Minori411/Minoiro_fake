@@ -1,18 +1,8 @@
-<%= form_with model: @plan, url: user_plan_path(@user.id), local: true do |f| %>
+<%= form_with model: @plan, url: user_plan_path(@user.id,@plan.id), local: true do |f| %>
 
     <div class="js-plan-edit back_white inner p-t3 dashContent">
             <div class="dashContent_right">
                 <h1>コンサルタントプラン編集／追加</h1>
-                <div class="alert alert-info">
-                    <p>
-                        <i class="fas fa-info-circle"></i>
-                        プランの公開には運営チームによる確認が必要です。
-                        <a href="#">規約</a>
-                        ・
-                        <a href="#">ガイドライン</a>
-                        に抵触していないか確認後、公開されます。
-                    </p>
-                </div>
                 <div id="vapp"></div>
                     <input name="_token" type="hidden">
                     <div class="boxbaseP30 plan_field plan_module z-depth-1">
@@ -74,11 +64,11 @@
     <%= f.fields_for :smallplans do |smallfields| %>
     <div class="boxbaseP30 plan_module js-addfield-block{ data: {index: "<%= smallfields.index %>"} flex-wrap planbox m-b-20 z-depth-1" style="padding: 30px">
     <div class="left ">
-        <%= smallfields.text_field :plan_name %>
+        <%= smallfields.text_field :plan_name, :placeholder =>"#{@plan.smallplans[smallfields.index].plan_name}" %>
     </div>
 
     <div class="pricebox ">
-        <%= smallfields.text_field :price %>
+        <%= smallfields.text_field :price,:placeholder =>"#{@plan.smallplans[smallfields.index].price}"%>
         <div class="yenkais">
         <span class="yenkai">円/</span>
         <span class="kai">回</span>
@@ -97,7 +87,7 @@
     </div>
 
     <div class="m-t2 left w100p ">
-        <%= smallfields.text_area :plan_detail, class: "w100p"%>
+        <%= smallfields.text_area :plan_detail, class: "w100p",:placeholder =>"#{@plan.smallplans[smallfields.index].plan_detail}"%>
     </div>
             <div class="right m-b-20 smt_right m-t1" style="width: auto; margin-left: auto;">
             <button class="button delete-form-btn" data-deletefiled="true">

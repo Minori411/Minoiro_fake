@@ -110,20 +110,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_04_223905) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "small_plans", charset: "utf8mb3", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.boolean "video", default: false, null: false
-    t.boolean "chat", default: false, null: false
-    t.string "plan_name"
-    t.string "plan_detail"
-    t.integer "price"
-    t.bigint "plan_id", null: false
-    t.bigint "user_id", null: false
-    t.index ["plan_id"], name: "index_small_plans_on_plan_id"
-    t.index ["user_id"], name: "index_small_plans_on_user_id"
-  end
-
   create_table "smallplans", charset: "utf8mb3", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -200,8 +186,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_04_223905) do
   add_foreign_key "messages", "users"
   add_foreign_key "plans", "users"
   add_foreign_key "reviews", "users"
-  add_foreign_key "small_plans", "plans"
-  add_foreign_key "small_plans", "users"
   add_foreign_key "smallplans", "plans"
   add_foreign_key "smallplans", "users"
   add_foreign_key "user_select_bottles", "bottles"

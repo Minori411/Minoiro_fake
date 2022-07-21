@@ -7,7 +7,7 @@
         <%= form_with url: search_path, id: :search_plan, method: :get, local: true do |f| %>
             <%= f.text_field :keyword, value: @keyword, :placeholder => "検索" %>
             <br>
-            <%= f.submit '検索', id: 'search-submit' %>
+            <% f.submit '検索', id: 'search-submit' %>
         </div>
         <div class="cp_box1">
             <div class="cp_container">
@@ -147,7 +147,6 @@
         </div>
         <div class="m-t2"></div>
     </div>
-</div>
 </div>
 </div>
 
