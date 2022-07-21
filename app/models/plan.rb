@@ -13,11 +13,11 @@ class Plan < ApplicationRecord
                               "title like? OR body like?OR can_do like? OR status like? OR consent like?", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%"
                             ]).ids
       smallplan_plan_ids = Smallplan.where(["plan_name like? OR plan_detail like? OR price like? OR video like? OR chat like?", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%"]).pluck(:plan_id)
-      user_ids = User.where(["name like? OR prefecture like?", "%#{keyword}%", "%#{keyword}%"]).ids
+      user_user_ids = User.where(["name like? OR prefecture like?", "%#{keyword}%", "%#{keyword}%"]).ids
     else
       plan_ids = []
       smallplan_plan_ids = []
-      user_ids = []
+      user_user_ids = []
     end
     smallplan = []
     smallplan = Smallplan.where("price <= 2000") if price == "2"
@@ -30,8 +30,11 @@ class Plan < ApplicationRecord
 
     reviews = []
     reviews = Review.where("evaluation <= 3") if evaluation == "2"
+
     reviews = Review.where("evaluation <= 4") if evaluation == "3"
+
     reviews = Review.where("evaluation = 5") if evaluation == "4"
+
     reviewee_id = reviews.pluck(:reviewee_id)
     user_ids = User.where(id: reviewee_id).ids
     users = Plan.where(user_id: user_ids).ids
@@ -43,7 +46,7 @@ class Plan < ApplicationRecord
     logger.warn(small_plan)
     Rails.logger.debug hoge = (small_plan || smallplan_plan_ids || plan_ids)
 
-    where(id: (small_plan || users || smallplan_plan_ids || plan_ids || user_ids))
+    where(id: (user_user_ids || small_plan || users || smallplan_plan_ids || plan_ids))
   end
 
   private

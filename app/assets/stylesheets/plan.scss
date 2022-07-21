@@ -2094,3 +2094,9 @@ select {
     white-space: nowrap;
 }
 
+@media (max-width: 699px) {
+    .plan_detail {
+        padding: 0!important;
+        width: 100%;
+    }
+}
