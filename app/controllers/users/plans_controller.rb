@@ -9,7 +9,7 @@ module Users
       @reviews = @user.reviews.order("created_at DESC")
       if @reviews.present?
         @avg_score = @reviews.average(:evaluation).present? ? @reviews.average(:evaluation).round(2) : 0
-        @avg_score_percentage = Review.average(:evaluation).round(2).to_f * 100 / 5
+        @avg_score_percentage = @reviews.average(:evaluation).round(1).to_f * 100 / 5
       else
         @avg_score = 0
         @avg_score_percentage = 0
@@ -46,7 +46,7 @@ module Users
       if @reviews.present?
         @avg_score = @reviews.average(:evaluation).present? ? @reviews.average(:evaluation).round(2) : 0
         @avg_review = @plan.user.reviews.average(:evaluation).round(2)
-        @avg_score_percentage = Review.average(:evaluation).round(1).to_f * 100 / 5
+        @avg_score_percentage = @reviews.average(:evaluation).round(1).to_f * 100 / 5
       else
         @avg_score = 0
         @avg_score_percentage = 0

@@ -36,7 +36,7 @@ end
 Plan.all.each do |plan|
   plan.smallplans.create!(plan_name: "夫婦関係について相談できます",
                           plan_detail: "夫婦のお悩み",
-                          price: (1000,2000,3000,4000,5000).sample,
+                          price: [1000,2000,3000,4000,5000].sample,
                           video: false,
                           chat: false,
                           user_id: plan.user_id,

@@ -7,8 +7,8 @@ class ProfilesController < ApplicationController
     @article = @user.articles.order(created_at: :desc)
     @review = @user.reviews.order(created_at: :desc)
     @plan = @user.plans.order(created_at: :desc)
-    @avg_score = Review.average(:evaluation).round(1)
-    @avg_score_percentage = Review.average(:evaluation).round(1).to_f * 100 / 5
+    @avg_score = @reviews.average(:evaluation).round(1)
+    @avg_score_percentage = @reviews.average(:evaluation).round(1).to_f * 100 / 5
     @user = User.find_by(id: params[:user_id])
     @sum_total_consultants = @user.contracts.where(consultant_id: @user.id).count
     @sum_total_customers = @user.contracts.where(customer_id: @user.id).count
