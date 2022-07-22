@@ -113,9 +113,10 @@
             <div class="boxbaseP30">
             <div>
             <h1 class="alignCenter">契約が完了しました!</h1>
-            <p class="m-b3">タイトル</p>
             <div class="plan_contract_caution">
-            <div class="plan_contract_caution_head"></div>
+            <div class="plan_contract_caution_head">
+                <%= @smallplan.plan_name %>
+            </div>
             <div class="plan_contract_share">
             <div class="mb-10">
             <h4 class="alignCenter mb-2">コンサルタントへメッセージを送信しよう！</h4>
@@ -142,82 +143,6 @@
             </div>
             </div>
             </div>
-            </div>
-            <h3 class="smt_hyoji">プロフィール</h3>
-            <div id="side" class="smt sm">
-                <div class="gray">
-                    <a href="#">
-                        <div class="icon size125 wborder"></div>
-                    </a>
-                    <p class="status m-t05 alignCenter">相談できます</p>
-                    <p class="name">
-                        <a href="#" class="link">
-                            <span class="name_text">林みのり</span>
-                    </p>
-                    <div class="sns-icon">
-                        <a href="#" target="_blank" class="m-r1">
-                        <i class="fa fa-twitter"></i>
-                        </a>
-                    </div>
-                    <p class="time_stamp">
-                    <% if current_user.current_sign_in_at > 1.day.ago %>
-                    <%= content_tag :p, "24時間以内", class: "current_signin"%>
-                    <% elsif current_user.current_sign_in_at > 2.day.ago %>
-                    <%= content_tag :p, "1日前", class: "current_signin"%>
-                    <% elsif current_user.current_sign_in_at > 3.day.ago %>
-                    <%= content_tag :p, "2日前", class: "current_signin"%>
-                    <% elsif current_user.current_sign_in_at > 31.day.ago %>
-                    <%= content_tag :p, "30日以上", class: "current_signin"%>
-                    <% elsif 3.days.ago > current_user.current_sign_in_at > 31.day.ago %>
-                    <%= content_tag :p, "30日以上", class: "current_signin"%>
-                    <% end %> 
-                    </p>
-                    <div class="selfcheck">
-                        <i class="fa fa-check-circle link"></i>
-                        本人確認
-                        <i class="fa fa-check-circle link"></i>
-                        秘密保持契約（NDA）
-                    </div>
-                    <div class="m-b2 FollowArea">
-                    フォローボタン
-                    </div>
-                    <div class="hyouka_box">
-                        <div class="icon_heart">評価</div>
-                        <div class="right">
-                            <div class="average-score mb-3">
-                            <div class="star-rating ml-2">
-                            <div class="star-rating-front" style="width: <%= @avg_score_percentage %>%">★★★★★</div>
-                            <div class="star-rating-back">★★★★</div>
-                            </div>
-                            <div class="average-score-display">
-                            （<%= @avg_score %>点）
-                            </div>
-                            </div>
-                        </div>
-                        <div class="icon_money">料金</div>
-                        <div class="right"><%= @min_price %>円〜</div>
-                    </div>
-                    <div class="SideMessageArea">
-                    <% unless @user.id == current_user.id %>
-                            <% if @is_room == true %>
-                                <p class="user-show-room"><a href="/rooms/<%= @room_id %>" class="btn btn-primary btn-lg">チャットへ</a>
-                            <% else %>
-                                <%= form_for @room do |f| %>
-                                <%= fields_for @entry do |e| %>
-                                    <%= e.hidden_field :user_id, value: @user.id %>
-                                <% end %>
-                                <%= f.submit "メッセージで相談する", class:"btn btn-primary btn-lg side-bar-message"%>
-                                <% end %>
-                            <% end %>
-                        <% end %>
-                    </div>
-                </div>
-                <div class="SideMessageArea_sub">このプランをシェアしよう!</div>
-                <div class="side_sns">
-                <%= link_to "https://twitter.com/share?url=#{ request.url }&text=【拡散しよう】%0a%0a#{ @user.twitter }/&hashtags=みのいろ", target: '_blank' do %>
-                    <i class="fab fa-twitter" style='color: #3399FF;'></i>シェア
-                <% end %>
-                </div>
             </div>
             </div>
         </div>

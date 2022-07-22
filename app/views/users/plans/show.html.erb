@@ -143,7 +143,9 @@
             <div id="side" class="smt sm">
             <div class="gray">
                 <a href="#">
-                    <div class="icon size125 wborder"></div>
+                    <div class="wborder">
+                    <img src="<%= @user.image %>",class= "resize125",width="125px" height= "125px", style= "border-radius: 50%;">
+                    </div>
                 </a>
                 <p class="status m-t05 alignCenter">相談できます</p>
                 <p class="name">
@@ -152,7 +154,6 @@
                 </p>
                 <div class="sns-icon">
                     <a href="#" target="_blank" class="m-r1">
-                    <i class="fa fa-twitter"></i>
                     </a>
                 </div>
                 <p class="time_stamp">
@@ -175,7 +176,7 @@
                     秘密保持契約（NDA）
                 </div>
                 <div class="m-b2 FollowArea">
-                フォローボタン
+                <%= render "plans/follow_form" %>
                 </div>
                 <div class="hyouka_box">
                     <div class="icon_heart">評価</div>

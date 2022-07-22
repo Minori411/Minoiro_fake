@@ -8,7 +8,7 @@ class Plan < ApplicationRecord
   # belongs_to :review
 
   def self.search(keyword, price, evaluation)
-    if keyword
+    if keyword.present?
       plan_ids = Plan.where([
                               "title like? OR body like?OR can_do like? OR status like? OR consent like?", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%"
                             ]).ids
@@ -44,9 +44,8 @@ class Plan < ApplicationRecord
     logger.warn(smallplan_plan_ids)
     logger.warn(plan_ids)
     logger.warn(small_plan)
-    Rails.logger.debug hoge = (small_plan || smallplan_plan_ids || plan_ids)
 
-    where(id: (user_user_ids || small_plan || users || smallplan_plan_ids || plan_ids))
+    where(id: (users || user_user_ids || small_plan || smallplan_plan_ids || plan_ids))
   end
 
   private

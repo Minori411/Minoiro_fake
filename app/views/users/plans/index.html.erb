@@ -130,11 +130,6 @@
                     <%= plan.can_do %>
                     <% end %>
                     </div>
-                <div class="alignCenter">
-                    <a href class="link more-btn">
-                        <i class="fa fa-angle-down"></i>
-                    </a>
-                </div>
             </div>
             
             <% @plans.each do |plan| %>
@@ -245,7 +240,9 @@
             <div id="side" class="smt sm">
                 <div class="gray">
                     <a href="#">
-                        <div class="icon size125 wborder"></div>
+                        <div class="wborder">
+                        <img src="<%= @user.image %>",class= "resize125",width="125px" height= "125px", style= "border-radius: 50%;">
+                        </div>
                     </a>
                     <p class="status m-t05 alignCenter">相談できます</p>
                     <p class="name">
@@ -271,7 +268,7 @@
                         秘密保持契約（NDA）
                     </div>
                     <div class="m-b2 FollowArea">
-                    フォローボタン
+                    <%= render "plans/follow_form" %>
                     </div>
                     <div class="hyouka_box">
                         <div class="icon_heart">評価</div>

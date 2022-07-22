@@ -57,6 +57,7 @@ class ContractsController < ApplicationController
   end
 
   def show
+    @smallplan = Smallplan.find(params[:id])
     @plan = Plan.find(params[:plan_id])
     @user = User.find(@plan.user_id)
     @reviews = @user.reviews.order("created_at DESC")
