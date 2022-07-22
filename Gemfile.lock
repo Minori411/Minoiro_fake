@@ -236,9 +236,6 @@ GEM
     public_suffix (4.0.7)
     puma (5.6.4)
       nio4r (~> 2.0)
-    puma_worker_killer (0.3.1)
-      get_process_mem (~> 0.2)
-      puma (>= 2.7)
     racc (1.6.0)
     rack (2.2.4)
     rack-mini-profiler (2.3.4)
@@ -436,7 +433,6 @@ DEPENDENCIES
   pry-nav
   pry-rails
   puma (~> 5.0)
-  puma_worker_killer
   rack-mini-profiler (~> 2.0)
   rails (~> 7.0.3)
   rails-controller-testing

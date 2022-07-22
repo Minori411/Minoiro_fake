@@ -42,7 +42,6 @@ gem 'rmagick'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'rails-i18n'
-gem "puma_worker_killer"
 gem 'derailed'
 gem 'pry-nav'
 gem 'comixins'
