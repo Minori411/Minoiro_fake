@@ -19,7 +19,7 @@ user.save!
                password_confirmation: "minori1234#{n + 1}",
                disability_passport: "www",
                certificate: "sss",
-               image: "B000.jpeg",
+               image: "B000.png",
                year: "20225月")
 end
 

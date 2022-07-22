@@ -14,7 +14,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   def default_url(*_args)
-    "/assets/rainbow-flower.jpg"
+    "/assets/rainbow-flower.png"
   end
 
   # リサイズ、画像形式を変更に必要

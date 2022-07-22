@@ -8,7 +8,7 @@
                         <% bottle = Bottle.find_by(id: select_bottle.bottle_id) %>
                         <!-- hoverする画像 -->
                         <div class="item__img">
-                        <%= image_tag(bottle.bottle_type+".jpeg",class:"center-b",width: '200px', height: '300px') %>
+                        <%= image_tag(bottle.bottle_type+".png",class:"center-b",width: '200px', height: '300px') %>
                         <!-- 画像をhoverした時に表示させる要素 -->
                         <div class="item__text">
                         <% if i == 1 %>
