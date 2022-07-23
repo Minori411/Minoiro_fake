@@ -1,6 +1,5 @@
 document.addEventListener("turbolinks:load", function () {
-    $(function() {
-    
+    console.log('test')
     $('.dropdown-trigger').dropdown({
         constrainWidth:false,
         coverTrigger:false,
@@ -16,27 +15,11 @@ document.addEventListener("turbolinks:load", function () {
         $('.modal').modal();
     });
 
-    $(document).ready(function(){
-        $('.sidenav').sidenav();
-    });
+   
 
-    $(document).ready(function(){
-        $('.sidenav-trigger').sidenav();
-    });
-
-    $('.chips-autocomplete').chips({
-    placeholder: 'Enter a tag',
-    secondaryPlaceholder: '+Tag',
-    autocompleteOptions: {
-        data: {
-        'Apple': null,
-        'Microsoft': null,
-        'Google': null
-        },
-        limit: Infinity,
-        minLength: 1
-    }
-    });
+    // $(document).ready(function(){
+    //     $('.sidenav-trigger').sidenav();
+    // });
 
     $(document).on('click', function(e) {
         // ２．クリックされた場所の判定
@@ -52,5 +35,8 @@ document.addEventListener("turbolinks:load", function () {
         }
     });
 });
-});
 
+$(document).ready(function(){
+    console.log('test')
+    $('.sidenav').sidenav();
+});

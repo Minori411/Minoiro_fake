@@ -82,7 +82,7 @@
                     <% end %>
                 </div>
                 
-                <div class="menu_icon_last">
+                <div class="menu_icon_last" data-turbolinks="false">
                     <ul id="slide-out" class="sidenav custom-sidenav">
                         <li>
                             <%= link_to profile_path, class:"waves-effect" do %>
@@ -154,7 +154,9 @@
                         </li>
                         <li><div class="divider"></div></li>
                     </ul>
-                    <a href="#" data-target="slide-out" class="sidenav-trigger"><%= image_tag "flower.png", :height=>"50px" %></a>
+                    <div data-no-turbolink>
+                    <a href="#" data-turbolinks="false" data-target="slide-out" class="sidenav-trigger"><%= image_tag "flower.png", :height=>"50px" %></a>
+                    </div>
                 </div>
             </div>
         </div>

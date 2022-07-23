@@ -191,3 +191,17 @@ a.howtoplay, a.usage, a.history_ctrl_open, a.history_ctrl_close {
 .center-b {
     margin-right: 20px!important;
 }
+
+@media(max-width: 699px) {
+    .item {
+        max-width: unset;
+        right: 0;
+        width: 100vw;
+    }
+    .item__img {
+        img {
+            width: 100%;
+            max-width: 200px;
+        }
+    }
+}

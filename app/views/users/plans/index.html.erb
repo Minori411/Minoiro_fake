@@ -267,31 +267,25 @@
                         <i class="fa fa-check-circle link"></i>
                         秘密保持契約（NDA）
                     </div>
-                    <div class="m-b2 FollowArea">
-                    <%= render "plans/follow_form" %>
-                    </div>
                     <div class="hyouka_box">
-                        <div class="icon_heart">評価</div>
+                        <div class="icon_heart">
+                            評価
+                        </div>
                         <div class="right">
-                            <span class="review-icon">
-                            <i class="fa fa-star"></i>
-                            </span>
-                            <span class="review-icon">
-                            <i class="fa fa-star"></i>
-                            </span>
-                            <span class="review-icon">
-                            <i class="fa fa-star"></i>
-                            </span>
-                            <span class="review-icon">
-                            <i class="fa fa-star"></i>
-                            </span>
-                            <span class="review-icon">
-                            <i class="fa fa-star"></i>
-                            </span>
-                            <span class="no-bold">(203)</span>
+                            <div class="average-score mb-3">
+                            <div class="star-rating ml-2">
+                            <div class="star-rating-front" style="width: <%= @avg_score_percentage %>%">★★★★★</div>
+                            <div class="star-rating-back">★★★★★</div>
+                            </div>
+                            <div class="average-score-display">
+                            （<%= @avg_score %>点）
+                            </div>
+                            </div>
                         </div>
                         <div class="icon_money">料金</div>
-                        <div class="right">1000円〜</div>
+                        <% @plans.each do |plan| %>
+                        <div class="right"><%= plan.smallplans.minimum(:price)%>円〜</div>
+                        <% end %>
                     </div>
                     <div class="SideMessageArea">
                     <a class="waves-effect waves-light btn">メッセージで相談</a>
