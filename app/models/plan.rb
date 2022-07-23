@@ -43,7 +43,7 @@ class Plan < ApplicationRecord
     logger.warn(plan_ids)
     logger.warn(small_plan)
 
-    where(id: (users || user_user_ids || small_plan || smallplan_plan_ids || plan_ids))
+    where(id: (users & user_user_ids & small_plan & smallplan_plan_ids & plan_ids))
   end
 
   private
