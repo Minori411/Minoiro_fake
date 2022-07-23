@@ -1,5 +1,4 @@
 document.addEventListener("turbolinks:load", function () {
-    console.log('test')
     $('.dropdown-trigger').dropdown({
         constrainWidth:false,
         coverTrigger:false,
@@ -14,12 +13,6 @@ document.addEventListener("turbolinks:load", function () {
     $(document).ready(function(){
         $('.modal').modal();
     });
-
-   
-
-    // $(document).ready(function(){
-    //     $('.sidenav-trigger').sidenav();
-    // });
 
     $(document).on('click', function(e) {
         // ２．クリックされた場所の判定
@@ -37,6 +30,5 @@ document.addEventListener("turbolinks:load", function () {
 });
 
 $(document).ready(function(){
-    console.log('test')
     $('.sidenav').sidenav();
 });
