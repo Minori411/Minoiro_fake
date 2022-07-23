@@ -2,7 +2,7 @@ class PlansController < ApplicationController
   before_action :move_to_signed_in
 
   def search
-    @plans = Plan.search(params[:keyword], params[:price], params[:evaluation])
+    @plans = Plan.search(params[:keyword], params[:price],params[:evaluation],params[:chat],params[:video])
     @keyword = params[:keyword]
     render "index"
   end
