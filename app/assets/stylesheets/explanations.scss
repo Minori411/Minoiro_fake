@@ -155,7 +155,6 @@ p {
 }
 
 .about_step_content_item_body {
-    width: calc(100% - 124px);
 
     p {
         margin-top: 8px;
@@ -423,7 +422,6 @@ p {
 }
 
 .about_step_content_item_body {
-    width: calc(100% - 124px);
 
     p {
         margin-top: 8px;
@@ -565,6 +563,26 @@ p {
     
     .about_service_list{
         display: block;
+    }
+
+    .noflex {
+        h2 {
+            font-size: 17px;
+        }
+    }
+
+    .about_service_list_item_head {
+        font-size: 14px;
+    }
+
+    .about_service_list_item_body {
+        font-size: 10px;
+    }
+
+    .about_step_content_item_body {
+        h4 {
+            font-size: 14px;
+        }
     }
 }
 

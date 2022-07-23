@@ -205,3 +205,24 @@ a.howtoplay, a.usage, a.history_ctrl_open, a.history_ctrl_close {
         }
     }
 }
+
+@media(max-width: 699px) {
+
+#bottle1,
+#bottle2,
+#bottle3,
+#bottle4 {
+    width: 60px;
+    height: 100px;
+    justify-content: space-between;
+}
+
+.modal {
+    width: 100%;
+}
+
+.reading_title {
+    width: 375px;
+    font-size: 14px;
+}
+}
