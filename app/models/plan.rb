@@ -28,15 +28,12 @@ class Plan < ApplicationRecord
 
     smallplan = Smallplan.where("price <= 4999") if price == "5"
 
-    reviews = []
-    reviews = Review.where("evaluation <= 3") if evaluation == "2"
+    reviews_ids = []
+    reviews_ids = Review.having('AVG(evaluation) <= 3').group(:reviewee_id).average(:evaluation).keys if evaluation == "2"
+    reviews_ids = Review.having('AVG(evaluation) <= 4').group(:reviewee_id).average(:evaluation).keys if evaluation == "3"
+    reviews_ids = Review.having('AVG(evaluation) = 5').group(:reviewee_id).average(:evaluation).keys if evaluation == "4"
 
-    reviews = Review.where("evaluation <= 4") if evaluation == "3"
-
-    reviews = Review.where("evaluation = 5") if evaluation == "4"
-
-    reviewee_id = reviews.pluck(:reviewee_id)
-    user_ids = User.where(id: reviewee_id).ids
+    user_ids = User.where(id: reviews_ids).ids
     users = Plan.where(user_id: user_ids).ids
 
     small_plan = smallplan.pluck(:plan_id) if smallplan.present?
