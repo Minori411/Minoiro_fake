@@ -15,7 +15,7 @@
             </div>
             <span class="help-block"></span>
                 <%= f.password_field :password, autocomplete: "current-password",:placeholder => "Password", id: "passwordForm"%>
-                    <i class="fa fa-eye icon_eye js-toggle-password"></i>
+                    <i class="fa fa-eye icon_eye js-toggle-password" data-target-element="passwordForm"></i>
                 <%= f.submit "ログイン",type: :submit,class:"waves-effect waves-light btn-large login-btn2" %>
                 <% if devise_mapping.rememberable? %>
                 <div class="field">
