@@ -46,8 +46,8 @@ end
 9.times do |n|
 Review.create(body: "知りたいことが知れました。とてもいい経験になりました。",
               name: "林みのり",
-              reviewer_id: n,
-              reviewee_id: n+1,
+              reviewer_id: n+1,
+              reviewee_id: n,
               user_id: n,
               evaluation: [1,2,3,4,5].sample)
 end

@@ -3,6 +3,6 @@ class InquiriesMailer < ApplicationMailer
 
   def received_email(inquiry)
     @inquiry = inquiry
-    mail(to: ENV.fetch('SEND_MAIL', nil), subject: 'お問い合わせを承りました')
+    mail(to: "pch.neurodive.yok005@gmail.com", subject: 'お問い合わせを承りました')
   end
 end

@@ -12,7 +12,7 @@ class Plan < ApplicationRecord
       plan_ids = Plan.where([
                               "title like? OR body like?OR can_do like? OR status like? OR consent like?", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%"
                             ]).ids
-      smallplan_plan_ids = Smallplan.where(["plan_name like? OR plan_detail like? OR price like?", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%"]).pluck(:plan_id)
+      smallplan_plan_ids = Smallplan.where(["plan_name like? OR plan_detail like?", "%#{keyword}%", "%#{keyword}%"]).pluck(:plan_id)
       user_user_ids = User.where(["name like? OR prefecture like?", "%#{keyword}%", "%#{keyword}%"]).ids
     else
       plan_ids = []
@@ -39,11 +39,23 @@ class Plan < ApplicationRecord
 
     small_plan = smallplan.pluck(:plan_id) if smallplan.present?
     logger.warn("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+    logger.warn(users)
+    logger.warn(user_user_ids)
+    logger.warn(small_plan)
     logger.warn(smallplan_plan_ids)
     logger.warn(plan_ids)
-    logger.warn(small_plan)
+    logger.warn(users & user_user_ids & small_plan & smallplan_plan_ids & plan_ids)
 
-    where(id: (users & user_user_ids & small_plan & smallplan_plan_ids & plan_ids))
+    result_ids = Plan.all.pluck[:id]
+    result_ids = result_ids & plan_ids if users.length > 0
+    result_ids = result_ids & smallplan_plan_ids if users.length > 0
+    result_ids = result_ids & user_user_ids  if users.length > 0
+    result_ids = result_ids & small_plan if users.length > 0
+    result_ids = result_ids & users if users.length > 0
+
+
+
+    where(id: (result_ids))
   end
 
   private

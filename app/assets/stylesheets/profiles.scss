@@ -42,7 +42,7 @@ main{
 
 .size125{
     width: 125px;
-    height: 100px;
+    height: 125px;
 }
 
 .icon{
@@ -283,6 +283,7 @@ a,a:hover{
 
 .m-b2{
     margin-bottom: 20px;
+    font-size: 14px;
 }
 
 .m-t1{
@@ -480,7 +481,12 @@ p{
 
 @media (max-width: 699px) {
     .boxbaseP30 {
-        padding: 16px;
+        padding: 0px;
+        text-align: center;
+    }
+
+    .upload {
+        padding: 0;
     }
 }
 
@@ -811,7 +817,7 @@ input {
 
 .size125 {
     width: 125px;
-    height: 100px;
+    height: 125px;
 }
 
 .icon {
@@ -826,10 +832,11 @@ input {
 .upload {
     background: #f4f8fa;
     color: #4f5050;
-    padding: 20px 20px 20px 55px;
+    padding: 20px 20px 20px 0px;
     border-radius: 4px;
     background-repeat: no-repeat;
     background-position: 24px 24px;
+    text-align: center;
 }
 
 .m-t1 {
@@ -1099,4 +1106,8 @@ input[type=number] {
 
 .w-100 {
     width: 100%;
+}
+
+.name-p {
+    margin-left: 5px;
 }

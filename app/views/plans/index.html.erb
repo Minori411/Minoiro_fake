@@ -116,7 +116,7 @@
                                                 <i class="fas fa-star"></i>
                                             </span>
                                             <span class="plan-card_review-count">
-                                            <% @reviews =  plan.user.reviews.order("created_at DESC") %>
+                                            <% @reviews =  plan.user.reviewees %>
                                             <% unless plan.present? %>
                                             <%= @avg_review = 0 %>
                                             <% else %>

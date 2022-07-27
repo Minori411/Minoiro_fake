@@ -24,7 +24,7 @@ function buildField(index) {
                 <img src="/sikaku.png" id= "img_prev_${index}" class="certificate_img">
                 </div>
                 <div class="upload m-t1" data-thumbnail-target="#selected-file">
-                    画像をアップロードする（縦横200px×200px以上推奨、5MB未満)
+                    画像をアップロードする
                     <div class="alignCenter m-t-20 m-b-20">
                     <input type="file" name="user[certificate]" id= "user_certificate_${index}" class="user_certificate">
                     </div>

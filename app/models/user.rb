@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :messages, dependent: :destroy
   has_many :user_select_bottles, dependent: :destroy
   has_many :plans, dependent: :destroy
+  has_many :reviewees, foreign_key: "reviewee_id", class_name: "Review", dependent: :destroy
   # validates :plans, numericality: { in: 1..2}
   has_many :contracts, dependent: :destroy
   has_many :customer_contracts, foreign_key: "customer_id", class_name: "Contract", dependent: :destroy

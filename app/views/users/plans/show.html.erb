@@ -5,13 +5,15 @@
             <div id="side" class="smt pc">
 
                 <div class="gray">
-                    <a href="#">
-                    <div class="wborder">
-                    <img src="<%= @user.image %>",class= "resize125",width="125px" height= "125px", style= "border-radius: 50%;">
-                    </div>
-                    </a>
-                    <p class="name">
-                        <a href="#" class="link"></a>
+                    <%= link_to user_profiles_path(@plan.user_id) do %>
+                        <div class="wborder">
+                        <img src="<%= @user.image %>",class= "resize125",width="125px" height= "125px", style= "border-radius: 50%;">
+                        </div>
+                    <% end %>
+                    <p class="name-p">
+                        <%= link_to user_profiles_path(@plan.user_id) do %>
+                            <%= @user.name %>
+                        <% end %>
                     </p>
                     <a href="#" class="color">
                         <%= link_to "もっと詳しく",user_profiles_path(@plan.user_id)%>
@@ -89,7 +91,7 @@
                     <div class="m-b2 SideMessageArea">
                     <% unless @user.id == current_user.id %>
                     <% if @is_room == true %>
-                        <p class="user-show-room"><a href="/rooms/<%= @room_id %>" class="btn btn-primary btn-lg w-100">チャットへ2</a>
+                        <p class="user-show-room"><a href="/rooms/<%= @room_id %>" class="btn btn-primary btn-lg w-100">チャットへ</a>
                     <% else %>
                         <%= form_for @room do |f| %>
                         <%= fields_for @entry do |e| %>
@@ -100,9 +102,6 @@
                     <% end %>
                 <% end %>
                     </div>
-                </div>
-                <div class="m-b1 ReportArea m-t1">
-                    <label for="modal-trigger_report">通報する</label>
                 </div>
                 <div class="sideMessageArea_sub">このプランをシェアしよう!</div>
                 <div class="side_sns">
@@ -147,7 +146,7 @@
                     <img src="<%= @user.image %>",class= "resize125",width="125px" height= "125px", style= "border-radius: 50%;">
                     </div>
                 </a>
-                <p class="status m-t05 alignCenter">相談できます</p>
+                <p class="status m-t05 alignCenter"><%= @plan.status %></p>
                 <p class="name">
                     <a href="#" class="link">
                         <span class="name_text">林みのり</span>

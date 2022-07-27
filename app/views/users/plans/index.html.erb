@@ -3,13 +3,15 @@
             <div id="side" class="smt pc">
 
                 <div class="gray">
-                    <a href="#">
+                    <%= link_to user_profiles_path(@user.id) do %>
                     <div class="wborder">
                     <img src="<%= @user.image %>",class= "resize125",width="125px" height= "125px", style= "border-radius: 50%;">
                     </div>
-                    </a>
-                    <p class="name">
-                        <a href="#" class="link"></a>
+                    <% end %>
+                    <p class="name-p">
+                    <%= link_to user_profiles_path(@user.id) do %>
+                        <%= @user.name %>
+                    <% end %>
                     </p>
                             <%= link_to "もっと詳しく",user_profiles_path(@user.id)%>
                     <div class="followbox">
@@ -199,23 +201,25 @@
                     <i class="fa fa-angle-town"></i>
                     </a>
                 </div>
-                <div class="alignCenter">
-                    <a href class="link more-btn">
-                    <i class="fa fa-angle-town"></i>
-                    </a>
-                </div>
                 <div class="plan_detail_title flexbox">
                     <h4>経歴・実績</h4>
                 </div>
                 <div class="planResults plan_detail_markdown_over">
+                <%= @user.year %><br>
                 <%= @user.career %>
+                </div> 
+                <div class="plan_detail_title flexbox">
+                    <h4>レベル</h4>
                 </div>
-                <div class="alignCenter">
-                    <a href class="link more-btn">
-                    <i class="fa fa-angle-town"></i>
-                    </a>
+                <div class="planResults plan_detail_markdown_over">
+                <%= @user.level %>
+                </div> 
+                <div class="plan_detail_title flexbox">
+                    <h4>経験年数</h4>
                 </div>
-            
+                <div class="planResults plan_detail_markdown_over">
+                <%= @user.experience %>
+                </div> 
             </div>
             <h3 id="posts" class="anchor-point">投稿</h3>
             <div id="vapp-profile" class="boxbaseP30">
@@ -231,11 +235,6 @@
                     </p>
                 <% end %>
                 </div>
-                <div class="alignCenter">
-                <a href class="link more-btn">
-                <i class="fa fa-angle-town"></i>
-                </a>
-                </div>
             </div>
             <div id="side" class="smt sm">
                 <div class="gray">
@@ -244,7 +243,9 @@
                         <img src="<%= @user.image %>",class= "resize125",width="125px" height= "125px", style= "border-radius: 50%;">
                         </div>
                     </a>
-                    <p class="status m-t05 alignCenter">相談できます</p>
+                    <% @plans.each do |plan|%>
+                    <p class="status m-t05 alignCenter"><%= plan.status %></p>
+                    <% end %>
                     <p class="name">
                             <span class="name_text"><%= @user.name %></span>
                     </p>
