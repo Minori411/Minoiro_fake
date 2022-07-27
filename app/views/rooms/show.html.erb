@@ -4,8 +4,8 @@
         <h1>メッセージ</h1>
         <div class="v-app memberMainContents m-b3">
             <div>
-                <%= link_to user_profiles_path(@user.id), class: "text_link bold" do %>
-                <%= ("#{User.find(@another_entry.user_id ).name}") %>
+                <%= link_to user_profiles_path(@another_entry.user_id), class: "text_link bold" do %>
+                <%= ("#{User.find(@another_entry.user_id).name}") %>
                 <% end %>
                 さんに
                 <strong>メッセージを送信する</strong>
