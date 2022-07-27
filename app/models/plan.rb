@@ -34,6 +34,11 @@ class Plan < ApplicationRecord
     reviews_ids = Review.having('AVG(evaluation) <= 4').group(:reviewee_id).average(:evaluation).keys if evaluation == "3"
     reviews_ids = Review.having('AVG(evaluation) = 5').group(:reviewee_id).average(:evaluation).keys if evaluation == "4"
 
+    # 2と3(★3以下と★4以下)の場合はレビューがないユーザーも対象とする
+    if evaluation == "2" || evaluation == "3"
+      reviews_ids += User.where.missing(:reviewees).pluck(:id)
+    end
+
     user_ids = User.where(id: reviews_ids).ids
     users = Plan.where(user_id: user_ids).ids
 
