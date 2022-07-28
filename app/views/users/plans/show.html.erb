@@ -146,10 +146,9 @@
                     <img src="<%= @user.image %>",class= "resize125",width="125px" height= "125px", style= "border-radius: 50%;">
                     </div>
                 </a>
-                <p class="status m-t05 alignCenter"><%= @plan.status %></p>
                 <p class="name">
                     <a href="#" class="link">
-                        <span class="name_text">林みのり</span>
+                        <span class="name_text"><%= @plan.user.name %></span>
                 </p>
                 <div class="sns-icon">
                     <a href="#" target="_blank" class="m-r1">
@@ -177,25 +176,18 @@
                 <div class="hyouka_box">
                     <div class="icon_heart">評価</div>
                     <div class="right">
-                        <span class="review-icon">
-                        <i class="fa fa-star"></i>
-                        </span>
-                        <span class="review-icon">
-                        <i class="fa fa-star"></i>
-                        </span>
-                        <span class="review-icon">
-                        <i class="fa fa-star"></i>
-                        </span>
-                        <span class="review-icon">
-                        <i class="fa fa-star"></i>
-                        </span>
-                        <span class="review-icon">
-                        <i class="fa fa-star"></i>
-                        </span>
-                        <span class="no-bold">(203)</span>
+                    <div class="average-score mb-3">
+                    <div class="star-rating ml-2">
+                    <div class="star-rating-front" style="width: <%= @avg_score_percentage %>%">★★★★★</div>
+                    <div class="star-rating-back">★★★★★</div>
+                    </div>
+                    <div class="average-score-display">
+                    （<%= @avg_score %>点）
+                    </div>
+                    </div>
                     </div>
                     <div class="icon_money">料金</div>
-                    <div class="right">1000円〜</div>
+                    <div class="right"><%= @min_price %>円〜</div>
                 </div>
                 <div class="SideMessageArea">
                 <a class="waves-effect waves-light btn">メッセージで相談</a>

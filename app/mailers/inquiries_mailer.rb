@@ -3,6 +3,6 @@ class InquiriesMailer < ApplicationMailer
 
   def received_email(inquiry)
     @inquiry = inquiry
-    mail(to: "pch.neurodive.yok005@gmail.com")
+    mail(to: 'pch.neurodive.yok005@gmail.com')
   end
 end

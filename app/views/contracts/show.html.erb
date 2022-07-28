@@ -106,7 +106,9 @@
             <h1 class="alignCenter">契約が完了しました!</h1>
             <div class="plan_contract_caution">
             <div class="plan_contract_caution_head">
-                <%= @smallplan.plan_name %>
+            <% @plan.smallplans.each do |smallplan| %>
+                <%= smallplan.plan_name %>
+            <% end %>
             </div>
             <div class="plan_contract_share">
             <div class="mb-10">

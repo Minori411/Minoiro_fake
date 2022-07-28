@@ -59,7 +59,7 @@ class CertificateUploader < CarrierWave::Uploader::Base
   #   # do something
   # end
   def default_url(*_args)
-    ActionController::Base.helpers.image_path("sikaku.png")
+    ActionController::Base.helpers.image_path('sikaku.png')
   end
   # Process files as they are uploaded:
   # process scale: [200, 300]

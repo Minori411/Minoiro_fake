@@ -54,7 +54,6 @@
 
 input {
     line-height: normal;
-    padding: 0.5rem 0.75rem;
 }
 
 .m-b1 {
@@ -1398,7 +1397,7 @@ h3 {
 
     h1 {
         padding: 0;
-        font-size: 28px!important;
+        font-size: 28px;
         margin-bottom: 10px;
         color: #333;
     }
@@ -1437,9 +1436,7 @@ h1 {
     background: #fff!important;
     color: #ff6e00!important;
     border: 2px solid #ff6e00!important;
-    width: 300px!important;
-    margin-right: 50px;
-    margin-left: 100px;
+    width: 100%!important;
     &:hover {
         background:darken(#ff6d00,20%)!important;
     }
@@ -1447,8 +1444,7 @@ h1 {
 
 .custom-btn2 {
     background: #ff6d00!important;
-    width: 500px!important;
-    margin-right: 100px;
+    width: 100%!important;
     &:hover{
         background: darken(#ff6d00,20%)!important;
     }
@@ -1536,7 +1532,7 @@ p{
 }
 
 .plan_module_subject {
-    font-size: 24px!important;
+    font-size: 24px;
     font-weight: 600;
 }
 
@@ -1966,6 +1962,8 @@ select {
     padding: 0 7px;
     margin: 0 4px;
     height: 20px;
+    margin-left: 10px;
+    margin-top: 28px;
 }
 
 .use_purpose_checkboxes {
@@ -2141,6 +2139,16 @@ select {
 .plan_detail .pc {
     display: none!important;
 }
+
+.pricebox {
+    margin-left: 0px!important;
+    display: flex;
+    width: 100px;
+}
+
+.items {
+    text-align: left!important;
+}
 }
 
 @media(max-width: 699px) {
@@ -2315,11 +2323,25 @@ select {
 .plan_detail .markdown-body h1, .plan_detail .markdown-body h2, .plan_detail .markdown-body h3 {
     font-size: 16px!important;
 }
+
+.plan_module_subject {
+    font-size: 17px!important;
+    font-weight: 600;
+}
 }
 
 @media (max-width: 699px){
 .plan_detail .markdown-body h1, .plan_detail .markdown-body h2, .plan_detail .markdown-body h3 {
     font-size: 16px!important;
+}
+
+.font-weight {
+    font-size: 14px!important;
+}
+
+.custom-btn2 {
+    margin-top: 20px;
+    width: 100%;
 }
 }
 
@@ -2434,6 +2456,10 @@ select {
 @media (max-width: 699px){
 .back_gray p {
     text-align: left;
+}
+
+.kai {
+    width: 50px;
 }
 }
 
@@ -2551,7 +2577,7 @@ select {
 
 @media (max-width: 699px){
     .name_text {
-        margin-left: 30px;
+        margin-left: 40px;
         color: black;
     }
 
@@ -2561,5 +2587,10 @@ select {
             font-size: 17px;
             font-weight: 700;
         }
+    }
+
+    .dashContent_right h1 {
+        padding: 0;
+        font-size: 17px!important;
     }
 }

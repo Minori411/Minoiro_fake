@@ -11,7 +11,6 @@
             <h1>
             <%= current_user.name %>
             </h1>
-            <div class="snsicon"></div>
         </div>
     </div>
 </div>
@@ -19,7 +18,7 @@
 <div class="userProfile">
 <div class="inner">
     <div class="userProfile_Main">
-        <div class="scoreBox customer_summary m-b2 column_3">
+        <div class="scoreBox customer_summary column_3">
             <div class="flexbox scoreBox_wrap">
             <div class="scoreStatus contract_manage review">
                             <span class="scoreStatus_label">評価</span>
@@ -134,7 +133,7 @@
                     <div class="tab_content_plan">
                     <% @plan.each do |plan| %>
                         <% plan.smallplans.each do |smallplan| %>
-                        <%= link_to plan_path(plan.id) do %>
+                        <%= link_to user_plan_path(@user.id,plan.id) do %>
                         <div class="boxbaseP30">
                         <%= smallplan.plan_name %><br>
                         <%= smallplan.price %>円/回

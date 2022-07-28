@@ -2,7 +2,7 @@ class PlansController < ApplicationController
   before_action :move_to_signed_in
 
   def search
-    @plans = Plan.search(params[:keyword], params[:price],params[:evaluation],params[:chat],params[:video])
+    @plans = Plan.search(params[:keyword], params[:price], params[:evaluation], params[:chat], params[:video])
     @keyword = params[:keyword]
     render "index"
   end
@@ -74,7 +74,7 @@ class PlansController < ApplicationController
     params.require(:plan)
           .permit(
             :title, :can_do, :youtube,
-            :body, 
+            :body,
             smallplans_attributes: [:id,
                                     :plan_name, :price, :plan_detail,
                                     :video, :chat]

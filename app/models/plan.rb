@@ -10,7 +10,7 @@ class Plan < ApplicationRecord
   def self.search(keyword, price, evaluation, chat, video)
     if keyword.present?
       plan_ids = Plan.where([
-                              "title like? OR body like?OR can_do like?","%#{keyword}%", "%#{keyword}%", "%#{keyword}%"
+                              "title like? OR body like?OR can_do like?", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%"
                             ]).ids
       smallplan_plan_ids = Smallplan.where(["plan_name like? OR plan_detail like?", "%#{keyword}%", "%#{keyword}%"]).pluck(:plan_id)
       user_user_ids = User.where(["name like? OR prefecture like?", "%#{keyword}%", "%#{keyword}%"]).ids
@@ -35,9 +35,7 @@ class Plan < ApplicationRecord
     reviews_ids = Review.having('AVG(evaluation) = 5').group(:reviewee_id).average(:evaluation).keys if evaluation == "4"
 
     # 2と3(★3以下と★4以下)の場合はレビューがないユーザーも対象とする
-    if evaluation == "2" || evaluation == "3"
-      reviews_ids += User.where.missing(:reviewees).pluck(:id)
-    end
+    reviews_ids += User.where.missing(:reviewees).pluck(:id) if %w[2 3].include?(evaluation)
 
     user_ids = User.where(id: reviews_ids).ids
     users = Plan.where(user_id: user_ids).ids
@@ -53,18 +51,18 @@ class Plan < ApplicationRecord
 
     result_ids = Plan.all.pluck(:id)
     logger.warn(result_ids)
-    result_ids = result_ids & plan_ids if users.length > 0
+    result_ids &= plan_ids if users.length.positive?
     logger.warn(result_ids)
-    result = plan_ids & smallplan_plan_ids if users.length > 0
+    result = plan_ids & smallplan_plan_ids if users.length.positive?
     logger.warn(result)
-    result = smallplan_plan_ids & user_user_ids  if users.length > 0
+    result = smallplan_plan_ids & user_user_ids if users.length.positive?
     logger.warn(result)
-    result = user_user_ids & small_plan if users.length > 0
+    result = user_user_ids & small_plan if users.length.positive?
     logger.warn(result)
-    result = small_plan & users if users.length > 0
+    result = small_plan & users if users.length.positive?
     logger.warn(result)
 
-    where(id: (result))
+    where(id: result)
   end
 
   private

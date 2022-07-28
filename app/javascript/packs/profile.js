@@ -35,11 +35,11 @@ function buildField(index) {
         </table>
         <table>
         <tr class="consultant-info">
-            <th width="150">レベル</th>
-            <td width="235">
+            <th class="bbb">レベル</th>
+            <td class="aaa">
                 <div class="form-group">
                     <div class="select-wrap">
-                        <select name="user[users][level]" id="user_users_level"><option value="選択してください">選択してください</option>
+                        <select name="user[users][level]" id="user_users_level">
                         <option value="★ 初心者">★ 初心者</option>
                         <option value="★★ 初級">★★ 初級</option>
                         <option value="★★★ 初中級">★★★ 初中級</option>
@@ -48,11 +48,11 @@ function buildField(index) {
                     </div>
                 </div>
             </td>
-            <th width="150">経験年数</th>
-            <td width="235">
+            <th class="bbb">経験年数</th>
+            <td class="aaa">
                 <div class="form-group">
                     <div class="select-wrap">
-                        <select name="user[users][level]" id="user_users_level"><option value="選択してください">選択してください</option>
+                        <select name="user[users][experience]" id="user_users_experience">
                         <option value="半年未満">半年未満</option>
                         <option value="〜1年">〜1年</option>
                         <option value="〜3年">〜3年</option>
@@ -105,95 +105,88 @@ function buildField(index) {
 $(function() {
 
     function buildField(index) {
-        const html = `<div class="WorkResultBox" data-index="${index}"> 
-        <table class="editable">
-        <tr>
-            <th width="150">経歴・実績</th>
-            <td colspan="3">
-                <div class="m-t-5">
-                <textarea name="user[career]" id="user_career"></textarea>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <th width="150">期間</th>
-            <td colspan="3">
-            <select id="user_year_1i" name="user[year(1i)]">
-                <option value="" label=" "></option>
-                <option value="2017">2017</option>
-                <option value="2018">2018</option>
-                <option value="2019">2019</option>
-                <option value="2020">2020</option>
-                <option value="2021">2021</option>
-                <option value="2022">2022</option>
-                <option value="2023">2023</option>
-                <option value="2024">2024</option>
-                <option value="2025">2025</option>
-                <option value="2026">2026</option>
-                <option value="2027">2027</option>
+        const html = 
+        `<div class="WorkResultBox" data-index="${index}">
+            <table class="editable">
+                <tr>
+                <th>経歴・実績</th>
+                    <td colspan="3">
+                        <div class="m-t-5">
+                            <textarea name="user[career]" id="user_career">
+                            </textarea>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                <th class="ccc">期間</th>
+                <td class="ddd">
+                <select id="user_year_1i" name="user[year(1i)]">
+                    <option value="" label=" "></option>
+                    <option value="2017">2017</option>
+                    <option value="2018">2018</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    </select>
+                    <select id="user_year_2i" name="user[year(2i)]">
+                    <option value="" label=" "></option>
+                    <option value="1">1月</option>
+                    <option value="2">2月</option>
+                    <option value="3">3月</option>
+                    <option value="4">4月</option>
+                    <option value="5">5月</option>
+                    <option value="6">6月</option>
+                    <option value="7">7月</option>
+                    <option value="8">8月</option>
+                    <option value="9">9月</option>
+                    <option value="10">10月</option>
+                    <option value="11">11月</option>
+                    <option value="12">12月</option>
                 </select>
-                <select id="user_year_2i" name="user[year(2i)]">
-                <option value="" label=" "></option>
-                <option value="1">1月</option>
-                <option value="2">2月</option>
-                <option value="3">3月</option>
-                <option value="4">4月</option>
-                <option value="5">5月</option>
-                <option value="6">6月</option>
-                <option value="7">7月</option>
-                <option value="8">8月</option>
-                <option value="9">9月</option>
-                <option value="10">10月</option>
-                <option value="11">11月</option>
-                <option value="12">12月</option>
+                <input type="hidden" id="user_year_3i" name="user[year(3i)]" value="1" autocomplete="off" />
+                            〜
+                <select id="user_year_1i" name="user[year(1i)]">
+                    <option value="" label=" "></option>
+                    <option value="2017">2017</option>
+                    <option value="2018">2018</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    </select>
+                    <select id="user_year_2i" name="user[year(2i)]">
+                    <option value="" label=" "></option>
+                    <option value="1">1月</option>
+                    <option value="2">2月</option>
+                    <option value="3">3月</option>
+                    <option value="4">4月</option>
+                    <option value="5">5月</option>
+                    <option value="6">6月</option>
+                    <option value="7">7月</option>
+                    <option value="8">8月</option>
+                    <option value="9">9月</option>
+                    <option value="10">10月</option>
+                    <option value="11">11月</option>
+                    <option value="12">12月</option>
                 </select>
-                <input type="hidden" id="user_year_3i" name="user[year(3i)]" value="1" autocomplete="off">
-            〜
-            <select id="user_year_1i" name="user[year(1i)]">
-                <option value="" label=" "></option>
-                <option value="2017">2017</option>
-                <option value="2018">2018</option>
-                <option value="2019">2019</option>
-                <option value="2020">2020</option>
-                <option value="2021">2021</option>
-                <option value="2022">2022</option>
-                <option value="2023">2023</option>
-                <option value="2024">2024</option>
-                <option value="2025">2025</option>
-                <option value="2026">2026</option>
-                <option value="2027">2027</option>
-                </select>
-                <select id="user_year_2i" name="user[year(2i)]">
-                <option value="" label=" "></option>
-                <option value="1">1月</option>
-                <option value="2">2月</option>
-                <option value="3">3月</option>
-                <option value="4">4月</option>
-                <option value="5">5月</option>
-                <option value="6">6月</option>
-                <option value="7">7月</option>
-                <option value="8">8月</option>
-                <option value="9">9月</option>
-                <option value="10">10月</option>
-                <option value="11">11月</option>
-                <option value="12">12月</option>
-                </select>
-                <input type="hidden" id="user_year_3i" name="user[year(3i)]" value="1" autocomplete="off">
-            </td>
-        </tr>
-        <tr>
-            <td></td>
-            <td colspan="3">
-                <span class="delete-form-btn">
-                <i class="fa fa-times red"></i>
-                削除する
-                </span>
-            </td>
-        </tr>
-    </table>
-        </div>`;
-        return html;
-      }
+                <input type="hidden" id="user_year_3i" name="user[year(3i)]" value="1" autocomplete="off" />
+                </td>
+            </tr>
+        </table>
+    </div>`;
+return html;
+}
     
       let fileIndex = [1, 2, 3, 4]
       var lastIndex = $(".WorkResultBox:last").data("index");
