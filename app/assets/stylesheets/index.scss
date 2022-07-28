@@ -960,6 +960,22 @@ h3 {
   
     /* スマホ用の慣性スクロール */
     -webkit-overflow-scrolling: touch;
-  
 }
+
+.follow_list h1 {
+    padding: 0;
+    font-size: 17px!important;
+    color: #333;
+}
+
+}
+
+.follow_list h1 {
+    padding: 0;
+    font-size: 28px;
+    color: #333;
+}
+
+.user-show-room {
+    margin-bottom: 20px!important;
 }
