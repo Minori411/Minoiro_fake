@@ -59,7 +59,7 @@ class DisabilityUploader < CarrierWave::Uploader::Base
   #   # do something
   # end
   def default_url(*_args)
-    "/assets/shougaishatechou.png"
+    ActionController::Base.helpers.image_path("shougaishatechou.png")
   end
   # Create different versions of your uploaded files:
   # version :thumb do
