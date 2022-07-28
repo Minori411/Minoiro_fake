@@ -13,6 +13,7 @@ class ContractsController < ApplicationController
       @avg_score_percentage = 0
       @avg_review = 0
     end
+    @min_price = @plan.smallplans.minimum(:price)
     @current_entry = Entry.where(user_id: current_user.id)
     @another_entry = Entry.where(user_id: @user.id)
     @room = Room.new
@@ -44,8 +45,6 @@ class ContractsController < ApplicationController
       user_id: @plan.user_id
     )
 
-    # @contract.user_id = @plan.user_id
-
     if @contract.save! # もし保存ができたら
       logger.debug("成功")
       redirect_to plan_contract_path(@plan.id, @contract.id) # 投稿画面に遷移
@@ -72,7 +71,7 @@ class ContractsController < ApplicationController
       @avg_score_percentage = 0
       @avg_review = 0
     end
-
+    @min_price = @plan.smallplans.minimum(:price)
     @current_entry = Entry.where(user_id: current_user.id)
     @another_entry = Entry.where(user_id: @user.id)
     @room = Room.new
