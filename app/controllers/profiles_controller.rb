@@ -52,8 +52,8 @@ class ProfilesController < ApplicationController
       @avg_score = 0
       @avg_score_percentage = 0
     end
-    @sum_total_consultants = current_user.contracts.where(consultant_id: current_user.id).count
-    @sum_total_customers = current_user.contracts.where(customer_id: current_user.id).count
+    @sum_total_consultants = current_user.contracts.where(consultant_id: @user.id).count
+    @sum_total_customers = current_user.customer_contracts.count
     @user = User.find(current_user.id)
     @article = @user.articles.order(created_at: :desc)
     @review = @user.reviews.order(created_at: :desc)
