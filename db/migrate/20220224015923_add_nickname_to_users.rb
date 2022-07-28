@@ -2,7 +2,6 @@ class AddNicknameToUsers < ActiveRecord::Migration[7.0]
   def change
     add_column :users, :prefecture, :string
     add_column :users, :userstyle, :integer, default: 0
-    add_column :users, :is_kiyaku, :boolean, default: false, null: false
     add_column :users, :introduction, :text
     add_column :users, :total_users, :integer
     add_column :users, :deleted_at, :datetime
