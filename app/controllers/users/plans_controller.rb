@@ -117,7 +117,7 @@ module Users
       params.require(:plan)
             .permit(
               :title, :can_do, :youtube,
-              :body, :status, :consent,
+              :body,
               smallplans_attributes: [:id,
                                       :plan_name, :price, :plan_detail,
                                       :video, :chat]

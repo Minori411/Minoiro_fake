@@ -318,7 +318,7 @@ input{
     font-weight: 700;
 }
 
-.boxbaseP30{
+.boxbaseP301{
     padding: 0px;
     margin-bottom: 20px;
     box-sizing: border-box;
@@ -411,6 +411,10 @@ p{
         line-height: 1.5;
         margin-left: 16px;
     }
+
+    .length-r {
+        width: 375px;
+    }
 }
 
 @media (max-width: 699px) {
@@ -487,6 +491,21 @@ p{
 
     .upload {
         padding: 0;
+    }
+
+    .consultant-info {
+        display: block;
+        margin: 0 auto;
+        text-align: -webkit-center;
+    }
+
+    .bbb {
+        display: block;
+        text-align: center;
+    }
+
+    .aaa {
+        margin: 0 auto;
     }
 }
 
@@ -632,7 +651,7 @@ input {
 }
 
 .boxbaseP30 {
-    padding: 0px;
+    padding: 30px;
     margin-bottom: 20px;
     box-sizing: border-box;
 }
@@ -1096,8 +1115,8 @@ input[type=number] {
 }
 
 .certificate_img {
-    height: 500px;
-    width: 500px;
+    height: 100%;
+    width: 100%;
 }
 
 .btn-outline-secondary {

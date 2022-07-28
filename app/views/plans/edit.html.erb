@@ -105,30 +105,6 @@
                             </div>
                         </div>
                     </div>
-                    <!--ステータス-->
-                    <div class="boxbaseP30 plan_module z-depth-1">
-                        <div class="in">
-                            <div class="status_unit">
-                                <div class="status_unit_head flexbox">
-                                    <%= f.label :status,"ステータス", class:"status_unit_head_label" %>
-                                    <%= f.select :status, [['相談できます', 1], ['今、忙しいです', 2],['表示しない', 3]], { include_blank: true, selected: 1 } %>      
-                                </div>
-                                <div class="status_unit_head_body">
-                                    <p class="small">今、忙しいです : コンサルタント一覧には表示されますが契約できなくなります</p>
-                                    <p class="small">表示しない : コンサルタント一覧に表示されなくなります</p>
-                                </div>
-                            </div>
-                            <div class="status_unit">
-                                <div class="status_unit_head flexbox">
-                                    <h3 class="status_unit_head_label">コンセント</h3>
-                                    <%= f.select :consent, [['承認なし', 1], ['承認あり', 2]], { include_blank: true, selected: 1 } %>
-                                </div>
-                                <div class="status_unit_head_body">
-                                    <p class="small">承認あり : コンサルタントが契約を承認後のみ契約可能</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <!--保存ボタンエリア-->
                     <div class="boxbaseP30 plan_module plan_module_submit z-depth-1">
                         <div class="plan_module_submit_buttons alignCenter center">

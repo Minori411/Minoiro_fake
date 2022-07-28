@@ -28,8 +28,6 @@ User.all.each do |user|
                      can_do: "カップルコンサル",
                      youtube: "https://www.youtube.com/watch?v=KMaTIu7pxVM",
                      body: "こんにちは",
-                     status: "相談できます",
-                     consent: "承認なし",
                      user_id: user.id)
 end
 

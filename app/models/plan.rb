@@ -10,7 +10,7 @@ class Plan < ApplicationRecord
   def self.search(keyword, price, evaluation, chat, video)
     if keyword.present?
       plan_ids = Plan.where([
-                              "title like? OR body like?OR can_do like? OR status like? OR consent like?", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%"
+                              "title like? OR body like?OR can_do like?","%#{keyword}%", "%#{keyword}%", "%#{keyword}%"
                             ]).ids
       smallplan_plan_ids = Smallplan.where(["plan_name like? OR plan_detail like?", "%#{keyword}%", "%#{keyword}%"]).pluck(:plan_id)
       user_user_ids = User.where(["name like? OR prefecture like?", "%#{keyword}%", "%#{keyword}%"]).ids
@@ -51,16 +51,20 @@ class Plan < ApplicationRecord
     logger.warn(plan_ids)
     logger.warn(users & user_user_ids & small_plan & smallplan_plan_ids & plan_ids)
 
-    result_ids = Plan.all.pluck[:id]
+    result_ids = Plan.all.pluck(:id)
+    logger.warn(result_ids)
     result_ids = result_ids & plan_ids if users.length > 0
-    result_ids = result_ids & smallplan_plan_ids if users.length > 0
-    result_ids = result_ids & user_user_ids  if users.length > 0
-    result_ids = result_ids & small_plan if users.length > 0
-    result_ids = result_ids & users if users.length > 0
+    logger.warn(result_ids)
+    result = plan_ids & smallplan_plan_ids if users.length > 0
+    logger.warn(result)
+    result = smallplan_plan_ids & user_user_ids  if users.length > 0
+    logger.warn(result)
+    result = user_user_ids & small_plan if users.length > 0
+    logger.warn(result)
+    result = small_plan & users if users.length > 0
+    logger.warn(result)
 
-
-
-    where(id: (result_ids))
+    where(id: (result))
   end
 
   private

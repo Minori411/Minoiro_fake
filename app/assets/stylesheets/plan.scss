@@ -152,7 +152,7 @@ select {
     -webkit-appearance: none;
     height: 40px;
     border: 1px solid #ddd;
-    width: 200px!important;
+    width: 100%;
     border-radius: 3px;
     position: relative;
     display: inline-block;
@@ -2553,5 +2553,13 @@ select {
     .name_text {
         margin-left: 30px;
         color: black;
+    }
+
+    .mentorSearch {
+        h1 {
+            flex: 1;
+            font-size: 17px;
+            font-weight: 700;
+        }
     }
 }

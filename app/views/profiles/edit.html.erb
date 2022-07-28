@@ -2,7 +2,7 @@
     <%= form_with model: @user, local: true do |f| %>
             <div class="dashContent_right">
                 <h1>プロフィール</h1>
-                    <div class="boxbaseP30">
+                    <div class="boxbaseP301">
                     <div class="in">
                         <h3 class="pc_hyoji">魅力的なプロフィールを完成させましょう!</h3>
                         <p class="m-b2">詳細に書けば書くほど信頼されるプロフィールに!</p>
@@ -116,21 +116,18 @@
                     </div>
                           <% elsif current_user.userstyle == 1 %>
                             <%#コンサルタントの処理%>
-
-                        <div id="appProfile">
+                        <div class="vapp" class="customer-info">
                         <div class="Midasi">資格</div>
                         <div class="sikaku">
                         <%= f.fields_for :users do |user| %>
                             <div class="certificate1{ data: {index: "#{user.index}"} }">
                             <table class="editable">
                                 <tr>
-                                    <th width="150">資格名</th>
-                                    <td colspan="3">
-                                        <div>
-                                            <div class="certificate-input-root">
-                                                <div class="certificate-input-wrapper-default input">
-                                                    <input class="w300" placeholder="資格名" name="certificate" type="text">
-                                                </div>
+                                    <th class= "length-p">資格名</th>
+                                    <td class="length-r">
+                                        <div class="certificate-input-root">
+                                            <div class="certificate-input-wrapper-default input">
+                                                <input class="w300" placeholder="資格名" name="certificate" type="text">
                                             </div>
                                         </div>
                                     </td>
@@ -153,16 +150,16 @@
                                 </table>
                                 <table>
                                 <tr class="consultant-info">
-                                    <th width="150">レベル</th>
-                                    <td width="235">
+                                    <th  class= "bbb">レベル</th>
+                                    <td class= "aaa">
                                         <div class="form-group">
                                             <div class="select-wrap">
                                                 <%= user.select :level, ["選択してください","★ 初心者","★★ 初級","★★★ 初中級","★★★★ 中級","★★★★★ 熟練"] %>
                                             </div>
                                         </div>
                                     </td>
-                                    <th width="150">経験年数</th>
-                                    <td width="235">
+                                    <th class= "bbb">経験年数</th>
+                                    <td class="aaa">
                                         <div class="form-group">
                                             <div class="select-wrap">
                                             <%= user.select :experience, ["選択してください","半年未満","〜1年","〜3年","〜5年","5年〜"] %>
@@ -184,7 +181,7 @@
                         <div class="WorkResultBox{ data: {index: "#{user.index}"} }">
                             <table class="editable">
                                 <tr>
-                                    <th width="150">経歴・実績</th>
+                                    <th>経歴・実績</th>
                                     <td colspan="3">
                                         <div class="m-t-5">
                                             <%= f.text_area :career %>
@@ -192,8 +189,8 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th width="150">期間</th>
-                                    <td colspan="3">
+                                    <th class="ccc">期間</th>
+                                    <td class="ddd">
                                     <%= f.date_select :year,{:discard_day=>true,include_blank: '選択してください'} %>
                                     〜
                                     <%= f.date_select :year,{:discard_day=>true,include_blank: '選択してください'} %>
