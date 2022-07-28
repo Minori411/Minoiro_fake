@@ -13,7 +13,7 @@
                         <%= @user.name %>
                     <% end %>
                     </p>
-                            <%= link_to "もっと詳しく",user_profiles_path(@user.id)%>
+                        <%= link_to "もっと詳しく",user_profiles_path(@user.id)%>
                     <div class="followbox">
                         <div class="z-depth-1 follow">
                             <div class="w50p">
@@ -118,7 +118,7 @@
                 <% end %>
                 <% end %>
             </div>
-            <div class="boxbaseP30 leftt">
+            <div class="boxbaseP30">
                 <% @plans.each do |plan| %>
                 <h1 class="plan_show"><%= plan.title %></h1>
                 <% end %>
@@ -187,7 +187,7 @@
                 <% end %>
             <% end %>
             </div>
-            <div class="boxbaseP30 leftt">
+            <div class="boxbaseP30">
                 <h4 id="profile" class="anchor-point">プロフィール</h4>
                 <div class="planProfile plan_detail_markdown_over">
                 <%= @user.introduction %>
@@ -321,7 +321,7 @@
                                 <span class="avatar-image"></span>
                             </div>
                             <div class="review_list_user">
-                                <div class="flex">
+                                <div class="flex block-sm">
                                     <div class="review_list_name">
                                         <span class="name">
                                         <% user = User.find_by(id: review.reviewer_id)%>

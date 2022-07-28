@@ -736,7 +736,7 @@ a {
 }
 
 .wborder {
-    border: 3px solid #fff;
+    border-radius: 50%;
 }
 
 .size125 {
@@ -1867,6 +1867,11 @@ select {
     width: 280px;
 }
 
+.name-p a {
+    color: black!important;
+    font-weight: 600!important;
+}
+
 .btn-custom6 {
     font-size: 12px;
     background: #f0f8f9;
@@ -2243,6 +2248,17 @@ select {
 .section-menu__list {
     border-radius: 0;
 }
+
+.mentorList .plan-card {
+    margin-right: 40px;
+    margin-bottom: 17px;
+}
+}
+
+@media (max-width: 399px) {
+    .mentorList .plan-card {
+        margin-right:55px;
+    }
 }
 
 @media (max-width: 699px){
@@ -2619,9 +2635,6 @@ select {
     text-align: left;
 }
 
-.btn-large {
-    padding: 0!important;
-}
 
 .addplan {
     text-align: center!important;

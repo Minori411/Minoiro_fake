@@ -813,9 +813,9 @@ header {
 }
 
 .fas,.far {
-    font-size: 16px;
+    font-size: 18px;
     color: #ff6e00!important;
-    margin-right: 10px!important;
+    margin-bottom: 10px!important;
 }
 
 @media (max-width: 400px) {
@@ -828,6 +828,7 @@ header {
 }
 .awe-resize {
     font-size: 40px;
+    margin-right: 10px;
 }
 
 
@@ -835,6 +836,10 @@ header {
 @media (max-width: 1024px) {
     .pc_hyoji {
         display: none!important;
+    }
+
+    .side_sns {
+        margin-bottom: 15px!important;
     }
 }
 

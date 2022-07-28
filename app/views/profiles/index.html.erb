@@ -3,7 +3,7 @@
 <div class="userProfileHeader">
 <div class="userProfileHeader_inner flexbox">
     <div class="userProfileHeader_icon">
-        <div class="icon wborder">
+        <div class="wborder">
         <img src="<%= @user.image %>",class= "resize125",width="125px" height= "125px", style= "border-radius: 50%;">
         </div>
     </div>
@@ -197,7 +197,7 @@
     <%= fields_for @entry do |e| %>
         <%= e.hidden_field :user_id, value: @user.id %>
     <% end %>
-    <%= f.submit "メッセージを送る", class:"btn btn-primary btn-lg user-show-chat side-bar-message"%>
+    <%= f.submit "メッセージを送る", class:"btn btn-primary btn-lg side-bar-message w-100"%>
     <% end %>
 <% end %>
 <% end %>            
