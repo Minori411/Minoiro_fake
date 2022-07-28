@@ -17,7 +17,7 @@
 <div class="userProfile">
 <div class="inner">
     <div class="userProfile_Main">
-        <div class="scoreBox customer_summary m-b2 column_3">
+        <div class="scoreBox customer_summary column_3">
             <div class="flexbox scoreBox_wrap">
             <div class="scoreStatus contract_manage review">
                             <span class="scoreStatus_label">評価</span>
@@ -176,15 +176,15 @@
 <div class="userProfileSide">
 <div class="block-profile">
 <% if user_signed_in? && @user.id != current_user.id %>
-    <div id="follow_form">
+    <div id="follow_form", class="follow_bottom">
         <% if current_user.following?(@user) %>
         <%= form_for(current_user, url: user_relationship_path(@user.id,@relation.id), method: :delete, remote: true) do |f| %>
-            <%= f.submit "フォロー解除", class: "btn longer" %>
+            <%= f.submit "フォロー解除", class: "btn w-100" %>
         <% end %>
         <% else %>
         <%= form_for(current_user, url: user_relationships_path(@user.id), method: :post, remote: true) do |f| %>
             <%= hidden_field_tag :following_id, @user.id %>
-            <%= f.submit "フォローする", class: "btn longer" %>
+            <%= f.submit "フォローする", class: "btn w-100" %>
         <% end %>
         <% end %>
     </div>

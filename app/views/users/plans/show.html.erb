@@ -15,7 +15,7 @@
                             <%= @user.name %>
                         <% end %>
                     </p>
-                    <a href="#" class="color">
+                    <a class="color">
                         <%= link_to "もっと詳しく",user_profiles_path(@plan.user_id)%>
                     </a>
                     <div class="followbox">
@@ -66,7 +66,7 @@
                         <i class="fas fa-check-circle link"></i>
                         秘密保持契約(NDA)
                     </div>
-                    <div class="m-b2 FollowArea">
+                    <div class="FollowArea">
                         <div class="FollowArea_sub m-b1">フォローして後でチェック</div>
                         <%= render "plans/follow_form" %>
                     </div>
@@ -88,7 +88,7 @@
                         <div class="icon_money">料金</div>
                         <div class="right"><%= @min_price %>円〜</div>
                     </div>
-                    <div class="m-b2 SideMessageArea">
+                    <div class="SideMessageArea">
                     <% unless @user.id == current_user.id %>
                     <% if @is_room == true %>
                         <p class="user-show-room"><a href="/rooms/<%= @room_id %>" class="btn btn-primary btn-lg w-100">チャットへ</a>

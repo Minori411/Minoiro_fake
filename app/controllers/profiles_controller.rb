@@ -9,8 +9,13 @@ class ProfilesController < ApplicationController
     @plan = @user.plans.order(created_at: :desc)
     @user = User.find_by(id: params[:user_id])
     @reviews = @user.reviews.order('created_at DESC')
-    @avg_score = @reviews.average(:evaluation).round(1)
-    @avg_score_percentage = @reviews.average(:evaluation).round(1).to_f * 100 / 5
+    if @reviews.present?
+      @avg_score = @reviews.average(:evaluation).present? ? @reviews.average(:evaluation).round(2) : 0
+      @avg_score_percentage = @reviews.average(:evaluation).round(1).to_f * 100 / 5
+    else
+      @avg_score = 0
+      @avg_score_percentage = 0
+    end
     @sum_total_consultants = @user.contracts.where(consultant_id: @user.id).count
     @sum_total_customers = @user.contracts.where(customer_id: @user.id).count
     @current_entry = Entry.where(user_id: current_user.id)
