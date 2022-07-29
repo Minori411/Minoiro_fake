@@ -11,7 +11,7 @@ document.addEventListener("turbolinks:load", function () {
           <div class="pricebox ">
               <input placeholder="5,000" type="text" name="plan[smallplans_attributes][0][price]" id="plan_smallplans_attributes_0_price" />
               <div class="yenkais">
-              <span class="yenkai">円/</span>
+              <span class="yenkai">円</span>
               <span class="kai">回</span>
               </div>
           </div>
