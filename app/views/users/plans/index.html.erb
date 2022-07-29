@@ -307,7 +307,7 @@
                     </div>
                 </div>
             </div>
-            <% if current_user.id != @user.id %>
+            <% if current_user.id != @user.id && current_user.customer? %>
             <% @plans.each do |plan| %>
             <%= link_to "レビューを書く",new_plan_review_path(plan.id) %>
             <% end %>
