@@ -110,7 +110,7 @@
             </div>
             <% end %>
             </div>
-            <% unless @user.id == current_user.id %>
+            <% if @user.id != current_user.id && current_user.customer? %>
             <div class="submit_buttons alignCenter">
             <%= f.submit "契約する",class:"waves-light btn" %>
             </div>
