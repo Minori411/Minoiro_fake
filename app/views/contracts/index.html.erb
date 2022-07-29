@@ -91,20 +91,6 @@
                         <div class="icon_money">料金</div>
                         <div class="right"><%= @min_price %>円〜</div>
                     </div>
-                    <div class="SideMessageArea">
-                    <% unless @user.id == current_user.id %>
-                    <% if @is_room == true %>
-                        <p class="user-show-room"><a href="/rooms/<%= @room_id %>" class="btn btn-primary btn-lg">チャットへ</a>
-                    <% else %>
-                        <%= form_for @room do |f| %>
-                        <%= fields_for @entry do |e| %>
-                            <%= e.hidden_field :user_id, value: @user.id %>
-                        <% end %>
-                        <%= f.submit "メッセージで相談する", class:"btn btn-primary btn-lg side-bar-message"%>
-                        <% end %>
-                    <% end %>
-                <% end %>
-                    </div>
                 </div>
             </div>
             <div id="main" class="no_br contract_main">
