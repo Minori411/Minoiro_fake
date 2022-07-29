@@ -26,7 +26,7 @@ end
 User.all.each do |user|
   user.plans.create!(title: "何でも相談乗ります",
                      can_do: "カップルコンサル",
-                     youtube: "https://www.youtube.com/watch?v=KMaTIu7pxVM",
+                     youtube: "https://www.youtube.com",
                      body: "こんにちは",
                      user_id: user.id)
 end

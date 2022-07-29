@@ -8,11 +8,6 @@
                 <div class="boxbaseP30 plan_field plan_module z-depth-1">
                     <div class="in plan_field_inner">
                         <span class="plan_module_subject">コンサルティングプラン</span>
-                        <div class="m-b2">
-                            プランを登録すると
-                            <%= link_to "コンサルタントとして掲載", plans_path, class:"link", target: :_blank %>
-                            されます。
-                        </div>
                         <div class="form_item">
                             <div class="form_item_head flexbox">
                             <%= f.label :title, "タイトル",class:"font-weight"%>
@@ -45,7 +40,7 @@
                             <div class="plan_edit_items m-t2 flexbox">
                                 <div class="plan_edit_item">
                                     <div class="m-t1">
-                                        <%= f.text_field :youtube, class:"w100p" ,:placeholder=>"https://www.youtube.com/watch?v=XXXXXXXXXXXX" %>
+                                        <%= f.text_field :youtube, class:"w100p" ,:placeholder=>"https://www.youtube.com" %>
                                         <span class="help-block"></span>
                                     </div>
                                 </div>
