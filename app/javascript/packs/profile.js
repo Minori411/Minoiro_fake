@@ -35,36 +35,8 @@ function buildField(index) {
         </table>
         <table>
         <tr class="consultant-info">
-            <th class="bbb">レベル</th>
-            <td class="aaa">
-                <div class="form-group">
-                    <div class="select-wrap">
-                        <select name="user[users][level]" id="user_users_level">
-                        <option value="★ 初心者">★ 初心者</option>
-                        <option value="★★ 初級">★★ 初級</option>
-                        <option value="★★★ 初中級">★★★ 初中級</option>
-                        <option value="★★★★ 中級">★★★★ 中級</option>
-                        <option value="★★★★★ 熟練">★★★★★ 熟練</option></select>
-                    </div>
-                </div>
-            </td>
-            <th class="bbb">経験年数</th>
-            <td class="aaa">
-                <div class="form-group">
-                    <div class="select-wrap">
-                        <select name="user[users][experience]" id="user_users_experience">
-                        <option value="半年未満">半年未満</option>
-                        <option value="〜1年">〜1年</option>
-                        <option value="〜3年">〜3年</option>
-                        <option value="〜5年">〜5年</option>
-                        <option value="5年〜">5年〜</option></select>
-                    </div>
-                </div>
-            </td>
-        </tr>
-        <tr class="consultant-info">
             <td></td>
-            <td colspan="3">
+            <td class="right" colspan="3">
                 <span class="delete-form-btn">
                     <i class="fa fa-times red"></i>
                     削除する

@@ -9,11 +9,6 @@ document.addEventListener("turbolinks:load", function () {
         $('.collapsible').collapsible();
     });
 
-
-    $(document).ready(function(){
-        $('.modal').modal();
-    });
-
     $(document).on('click', function(e) {
         // ２．クリックされた場所の判定
         if(!$(e.target).closest('.dropdown-trigger').length && !$(e.target).closest('#button').length){
@@ -31,4 +26,8 @@ document.addEventListener("turbolinks:load", function () {
 
 $(document).ready(function(){
     $('.sidenav').sidenav();
+});
+
+$(document).ready(function(){
+    $('.modal').modal();
 });

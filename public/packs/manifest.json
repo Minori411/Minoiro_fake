@@ -1,133 +1,131 @@
 {
-  "application.js": "/packs/application-49218e126c9f7626337a.js",
-  "application.js.map": "/packs/js/application-786a6a3c8872f2ce50ba.hot-update.js.map",
-  "bottle.js": "/packs/bottle-49218e126c9f7626337a.js",
-  "bottle.js.map": "/packs/bottle-49218e126c9f7626337a.js.map",
+  "application.js": "/packs/application-4b8603c3bf8bf23b3567.js",
+  "application.js.map": "/packs/application-4b8603c3bf8bf23b3567.js.map",
+  "bottle.js": "/packs/bottle-4b8603c3bf8bf23b3567.js",
+  "bottle.js.map": "/packs/bottle-4b8603c3bf8bf23b3567.js.map",
   "entrypoints": {
     "application": {
       "js": [
-        "/packs/application-49218e126c9f7626337a.js"
+        "/packs/application-4b8603c3bf8bf23b3567.js"
       ],
       "js.map": [
-        "/packs/application-49218e126c9f7626337a.js.map",
-        "/packs/js/application-786a6a3c8872f2ce50ba.hot-update.js.map"
+        "/packs/application-4b8603c3bf8bf23b3567.js.map"
       ]
     },
     "bottle": {
       "js": [
-        "/packs/bottle-49218e126c9f7626337a.js"
+        "/packs/bottle-4b8603c3bf8bf23b3567.js"
       ],
       "js.map": [
-        "/packs/bottle-49218e126c9f7626337a.js.map"
+        "/packs/bottle-4b8603c3bf8bf23b3567.js.map"
       ]
     },
     "hello_react": {
       "js": [
-        "/packs/hello_react-49218e126c9f7626337a.js"
+        "/packs/hello_react-4b8603c3bf8bf23b3567.js"
       ],
       "js.map": [
-        "/packs/hello_react-49218e126c9f7626337a.js.map"
+        "/packs/hello_react-4b8603c3bf8bf23b3567.js.map"
       ]
     },
     "hello_typescript": {
       "js": [
-        "/packs/hello_typescript-49218e126c9f7626337a.js"
+        "/packs/hello_typescript-4b8603c3bf8bf23b3567.js"
       ],
       "js.map": [
-        "/packs/hello_typescript-49218e126c9f7626337a.js.map"
+        "/packs/hello_typescript-4b8603c3bf8bf23b3567.js.map"
       ]
     },
     "materialize": {
       "js": [
-        "/packs/materialize-49218e126c9f7626337a.js"
+        "/packs/materialize-4b8603c3bf8bf23b3567.js"
       ],
       "js.map": [
-        "/packs/materialize-49218e126c9f7626337a.js.map"
+        "/packs/materialize-4b8603c3bf8bf23b3567.js.map"
       ]
     },
     "plan": {
       "js": [
-        "/packs/plan-49218e126c9f7626337a.js"
+        "/packs/plan-4b8603c3bf8bf23b3567.js"
       ],
       "js.map": [
-        "/packs/plan-49218e126c9f7626337a.js.map",
-        "/packs/js/plan-786a6a3c8872f2ce50ba.hot-update.js.map"
+        "/packs/plan-4b8603c3bf8bf23b3567.js.map"
       ]
     },
     "preview": {
       "js": [
-        "/packs/preview-49218e126c9f7626337a.js"
+        "/packs/preview-4b8603c3bf8bf23b3567.js"
       ],
       "js.map": [
-        "/packs/preview-49218e126c9f7626337a.js.map"
+        "/packs/preview-4b8603c3bf8bf23b3567.js.map"
       ]
     },
     "profile": {
       "js": [
-        "/packs/profile-49218e126c9f7626337a.js"
+        "/packs/profile-4b8603c3bf8bf23b3567.js"
       ],
       "js.map": [
-        "/packs/profile-49218e126c9f7626337a.js.map"
+        "/packs/profile-4b8603c3bf8bf23b3567.js.map"
       ]
     },
     "rails_admin": {
       "js": [
-        "/packs/rails_admin-49218e126c9f7626337a.js"
+        "/packs/rails_admin-4b8603c3bf8bf23b3567.js"
       ],
       "js.map": [
-        "/packs/rails_admin-49218e126c9f7626337a.js.map"
+        "/packs/rails_admin-4b8603c3bf8bf23b3567.js.map"
       ]
     },
     "raty": {
       "js": [
-        "/packs/raty-49218e126c9f7626337a.js"
+        "/packs/raty-4b8603c3bf8bf23b3567.js"
       ],
       "js.map": [
-        "/packs/raty-49218e126c9f7626337a.js.map"
+        "/packs/raty-4b8603c3bf8bf23b3567.js.map"
       ]
     },
     "registration": {
       "js": [
-        "/packs/registration-49218e126c9f7626337a.js"
+        "/packs/registration-4b8603c3bf8bf23b3567.js"
       ],
       "js.map": [
-        "/packs/registration-49218e126c9f7626337a.js.map"
+        "/packs/registration-4b8603c3bf8bf23b3567.js.map"
       ]
     },
     "server_rendering": {
       "js": [
-        "/packs/server_rendering-49218e126c9f7626337a.js"
+        "/packs/server_rendering-4b8603c3bf8bf23b3567.js"
       ],
       "js.map": [
-        "/packs/server_rendering-49218e126c9f7626337a.js.map"
+        "/packs/server_rendering-4b8603c3bf8bf23b3567.js.map"
       ]
     }
   },
-  "hello_react.js": "/packs/hello_react-49218e126c9f7626337a.js",
-  "hello_react.js.map": "/packs/hello_react-49218e126c9f7626337a.js.map",
-  "hello_typescript.js": "/packs/hello_typescript-49218e126c9f7626337a.js",
-  "hello_typescript.js.map": "/packs/hello_typescript-49218e126c9f7626337a.js.map",
-  "materialize.js": "/packs/materialize-49218e126c9f7626337a.js",
-  "materialize.js.map": "/packs/materialize-49218e126c9f7626337a.js.map",
+  "hello_react.js": "/packs/hello_react-4b8603c3bf8bf23b3567.js",
+  "hello_react.js.map": "/packs/hello_react-4b8603c3bf8bf23b3567.js.map",
+  "hello_typescript.js": "/packs/hello_typescript-4b8603c3bf8bf23b3567.js",
+  "hello_typescript.js.map": "/packs/hello_typescript-4b8603c3bf8bf23b3567.js.map",
+  "materialize.js": "/packs/materialize-4b8603c3bf8bf23b3567.js",
+  "materialize.js.map": "/packs/materialize-4b8603c3bf8bf23b3567.js.map",
   "media/webfonts/fa-solid-900.eot": "/packs/media/webfonts/fa-solid-900-9bbb245e.eot",
   "media/webfonts/fa-solid-900.svg": "/packs/media/webfonts/fa-solid-900-7a8b4f13.svg",
   "media/webfonts/fa-solid-900.ttf": "/packs/media/webfonts/fa-solid-900-be9ee23c.ttf",
   "media/webfonts/fa-solid-900.woff": "/packs/media/webfonts/fa-solid-900-eeccf4f6.woff",
   "media/webfonts/fa-solid-900.woff2": "/packs/media/webfonts/fa-solid-900-1551f4f6.woff2",
-  "plan.js": "/packs/plan-49218e126c9f7626337a.js",
-  "plan.js.map": "/packs/js/plan-786a6a3c8872f2ce50ba.hot-update.js.map",
-  "preview.js": "/packs/preview-49218e126c9f7626337a.js",
-  "preview.js.map": "/packs/preview-49218e126c9f7626337a.js.map",
-  "profile.js": "/packs/profile-49218e126c9f7626337a.js",
-  "profile.js.map": "/packs/profile-49218e126c9f7626337a.js.map",
-  "rails_admin.js": "/packs/rails_admin-49218e126c9f7626337a.js",
-  "rails_admin.js.map": "/packs/rails_admin-49218e126c9f7626337a.js.map",
-  "raty.js": "/packs/raty-49218e126c9f7626337a.js",
-  "raty.js.map": "/packs/raty-49218e126c9f7626337a.js.map",
-  "registration.js": "/packs/registration-49218e126c9f7626337a.js",
-  "registration.js.map": "/packs/registration-49218e126c9f7626337a.js.map",
-  "server_rendering.js": "/packs/server_rendering-49218e126c9f7626337a.js",
-  "server_rendering.js.map": "/packs/server_rendering-49218e126c9f7626337a.js.map",
+  "plan.js": "/packs/plan-4b8603c3bf8bf23b3567.js",
+  "plan.js.map": "/packs/plan-4b8603c3bf8bf23b3567.js.map",
+  "preview.js": "/packs/preview-4b8603c3bf8bf23b3567.js",
+  "preview.js.map": "/packs/preview-4b8603c3bf8bf23b3567.js.map",
+  "profile.js": "/packs/profile-4b8603c3bf8bf23b3567.js",
+  "profile.js.map": "/packs/profile-4b8603c3bf8bf23b3567.js.map",
+  "rails_admin.js": "/packs/rails_admin-4b8603c3bf8bf23b3567.js",
+  "rails_admin.js.map": "/packs/rails_admin-4b8603c3bf8bf23b3567.js.map",
+  "raty.js": "/packs/raty-4b8603c3bf8bf23b3567.js",
+  "raty.js.map": "/packs/raty-4b8603c3bf8bf23b3567.js.map",
+  "registration.js": "/packs/registration-4b8603c3bf8bf23b3567.js",
+  "registration.js.map": "/packs/registration-4b8603c3bf8bf23b3567.js.map",
+  "server_rendering.js": "/packs/server_rendering-4b8603c3bf8bf23b3567.js",
+  "server_rendering.js.map": "/packs/server_rendering-4b8603c3bf8bf23b3567.js.map",
   "vendors~actioncable.js": "/packs/js/vendors~actioncable-d31df81850bdc4fd9d8b.chunk.js",
   "vendors~actioncable.js.map": "/packs/js/vendors~actioncable-d31df81850bdc4fd9d8b.chunk.js.map"
 }
