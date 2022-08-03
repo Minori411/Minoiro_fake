@@ -36,8 +36,8 @@ module Users
 
     def show
       @user = User.find(params[:user_id])
-      @plan = Plan.find(params[:id])
       @smallplan = Smallplan.find(params[:id])
+      @plan = @smallplan.plan
       @article = @plan.user.articles.order(created_at: :desc)
       @reviews = @user.reviews.order("created_at DESC")
       @relationship = Relationship.find_by(id: params[:id])

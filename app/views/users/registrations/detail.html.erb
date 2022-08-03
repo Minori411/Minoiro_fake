@@ -60,7 +60,7 @@
         <div class="scroll">
             <ul class="todoList flexbox">
                 <li class="todoList_item">
-                <%= link_to profile_path do  %>
+                <%= link_to profile_path, data: {"turbolinks"=>false} do %>
                         <div class="todoList_item_icon flexbox">
                             <span class="icon">
                                 <i class="fas fa-user user-icon"></i>

@@ -127,9 +127,10 @@
             </div>
             <div>
             <div class="video&chat">
-            <% if @smallplan.video == 1 %>
+            <% if @smallplan.video == true %>
                 ビデオ
-            <% elsif @smallplan.chat == 1 %>
+            <% end %>
+            <% if @smallplan.chat == true %>
                 チャット
             <% end %>
             </div>

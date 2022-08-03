@@ -33,6 +33,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(current_user.id)
+    Rails.logger.debug(user_params)
     if @user.update(user_params)
       redirect_to profile_path, success: t('defaults.message.edited', item: User.model_name.human)
     else
