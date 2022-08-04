@@ -52,7 +52,7 @@
         <td><%= link_to "削除", message_path(m.id), method: :delete %></td>
         <% end %>
           <div class="chat-face">
-          <img src="<%= m.user.image %>",class= "resize125",width="20px" height= "20px", style= "border-radius: 50%;">
+          <img src="<%= m.user.image %>",class= "resize125">
           <%= m.user.name %>
             <br>
             <%= m.created_at.strftime("%Y-%m-%d %H:%M")%>

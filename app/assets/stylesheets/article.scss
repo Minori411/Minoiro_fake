@@ -221,8 +221,18 @@
     height: 200px;
 }
 
-.resize125 {
+.wborder{
+img {
     border-radius: 50%;
     width: 125px;
     height: 125px;
+}
+}
+
+.name {
+    img {
+        border-radius: 50%;
+        width: 15px;
+        height: 15px;
+    }
 }
