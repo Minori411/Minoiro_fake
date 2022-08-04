@@ -1,4 +1,3 @@
-document.addEventListener("turbolinks:load", function () {
     $('.icon_eye').click(function (e) {
 
         let target_id = $(this).data('target-element');
@@ -12,7 +11,6 @@ document.addEventListener("turbolinks:load", function () {
             $(this).removeClass("fa-eye-slash");
         }
     })
-});
 
 
 

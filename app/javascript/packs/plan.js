@@ -1,5 +1,4 @@
 
-document.addEventListener("turbolinks:load", function () {
     $(function() {
     
       function buildField(index) {
@@ -69,10 +68,8 @@ document.addEventListener("turbolinks:load", function () {
     });
     });
 
-});
 
 // TODO: 「料金の幅」選択が変更されたら、JS 側の制御で 自動的に submit する
-document.addEventListener("turbolinks:load", function () {
   const submitTarget = document.getElementById('search_plan')
   const priceSelect = document.querySelector('#price-select')
   const evaluationSelect = document.querySelector('#evaluation')
@@ -84,4 +81,3 @@ document.addEventListener("turbolinks:load", function () {
   $(evaluationSelect).on('change', function() {
     submitTarget.submit()
   })
-})

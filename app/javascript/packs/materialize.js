@@ -1,4 +1,3 @@
-document.addEventListener("turbolinks:load", function () {
     $('.dropdown-trigger').dropdown({
         constrainWidth:false,
         coverTrigger:false,
@@ -22,7 +21,6 @@ document.addEventListener("turbolinks:load", function () {
             }
         }
     });
-});
 
 $(document).ready(function(){
     $('.sidenav').sidenav();

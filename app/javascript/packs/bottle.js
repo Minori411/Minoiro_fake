@@ -1448,7 +1448,6 @@ var $zoomElements = [ 'B000', 'B000','B001', 'B001' ,'B002', 'B002','B003', 'B00
         },
 
     };
-    document.addEventListener("turbolinks:load", function () {
 
 jQuery( function() {
 
@@ -1488,5 +1487,4 @@ jQuery( function() {
     });
         
     } );
-});
 

@@ -1,4 +1,3 @@
-document.addEventListener("turbolinks:load", function () {
 
 $(function() {
 
@@ -182,7 +181,5 @@ return html;
     fileIndex.pop()
 
      });
-
-});
 
 
