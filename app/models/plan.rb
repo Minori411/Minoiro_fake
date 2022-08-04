@@ -21,21 +21,21 @@ class Plan < ApplicationRecord
     end
 
     smallplan = Smallplan.all
-    smallplan = smallplan.where("price <= 2000") if price == "2"
-    smallplan = smallplan.where("price <= 3000") if price == "3"
-    smallplan = smallplan.where("price <= 4000") if price == "4"
-    smallplan = smallplan.where("price <= 4999") if price == "5"
+    smallplan = smallplan.where("price <= 2000") if price == "1"
+    smallplan = smallplan.where("price <= 3000") if price == "2"
+    smallplan = smallplan.where("price <= 4000") if price == "3"
+    smallplan = smallplan.where("price = 5000") if price == "4"
 
     smallplan = smallplan.where(chat: true) if chat == "1"
     smallplan = smallplan.where(video: true) if video == "1"
 
     reviews_ids = []
-    reviews_ids = Review.having('AVG(evaluation) <= 3').group(:reviewee_id).average(:evaluation).keys if evaluation == "2"
-    reviews_ids = Review.having('AVG(evaluation) <= 4').group(:reviewee_id).average(:evaluation).keys if evaluation == "3"
-    reviews_ids = Review.having('AVG(evaluation) = 5').group(:reviewee_id).average(:evaluation).keys if evaluation == "4"
+    reviews_ids = Review.having('AVG(evaluation) <= 3').group(:reviewee_id).average(:evaluation).keys if evaluation == "1"
+    reviews_ids = Review.having('AVG(evaluation) <= 4').group(:reviewee_id).average(:evaluation).keys if evaluation == "2"
+    reviews_ids = Review.having('AVG(evaluation) = 5').group(:reviewee_id).average(:evaluation).keys if evaluation == "3"
 
     # 2と3(★3以下と★4以下)の場合はレビューがないユーザーも対象とする
-    if evaluation == "2" || evaluation == "3"
+    if evaluation == "1" || evaluation == "2"
       reviews_ids += User.where.missing(:reviewees).pluck(:id)
     end
 

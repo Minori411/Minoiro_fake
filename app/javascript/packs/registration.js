@@ -1,3 +1,5 @@
+$(function() {
+
     $('.icon_eye').click(function (e) {
 
         let target_id = $(this).data('target-element');
@@ -11,6 +13,5 @@
             $(this).removeClass("fa-eye-slash");
         }
     })
-
-
+});
 

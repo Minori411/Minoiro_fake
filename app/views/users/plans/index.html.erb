@@ -202,7 +202,7 @@
                     <h4>経歴・実績</h4>
                 </div>
                 <div class="planResults plan_detail_markdown_over">
-                <%= @user.year %><br>
+                <%= @user.year.strftime('%Y/%m') %>〜<%= @user.year.strftime('%Y/%m') %><br>
                 <%= @user.career %>
                 </div> 
                 <div class="plan_detail_title flexbox">

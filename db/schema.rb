@@ -75,8 +75,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_04_223905) do
     t.text "can_do"
     t.string "youtube"
     t.text "body"
-    t.string "status"
-    t.string "consent"
     t.integer "consultant_id"
     t.integer "customer_id"
     t.bigint "user_id"
@@ -158,7 +156,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_04_223905) do
     t.string "remember_digest"
     t.string "prefecture"
     t.integer "userstyle", default: 0
-    t.boolean "is_kiyaku", default: false, null: false
     t.text "introduction"
     t.integer "total_users"
     t.datetime "deleted_at"

@@ -1,5 +1,5 @@
 user = User.new(name: "林みのり",
-                email: "aaa@example.com",
+                email: Faker::Internet.email,
                 password: "password1234",
                 id: 1)
 
@@ -9,18 +9,20 @@ user.save!
 10.times do |n|
   User.create!(id: n+2,
                userstyle: 1,
-               prefecture: "神奈川県",
+               prefecture: Gimei.address.prefecture.kanji,
                introduction: "こんにちは",
                url: "aaa",
-               career: "大学卒業",
-               name: "みのり",
-               email: "bbb#{n + 1}@example.com",
+               career: "〇〇大学卒業",
+               name:Gimei.kanji,
+               email: Faker::Internet.email,
                password: "minori1234#{n + 1}",
                password_confirmation: "minori1234#{n + 1}",
                disability_passport: "www",
                certificate: "sss",
                image: "B000.png",
-               year: "20225月")
+               year: "20225月",
+               level: "★★★ 初中級",
+               experience: "〜3年")
 end
 
 User.all.each do |user|

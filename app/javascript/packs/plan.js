@@ -70,10 +70,15 @@
 
 
 // TODO: 「料金の幅」選択が変更されたら、JS 側の制御で 自動的に submit する
+$(function() {
+
   const submitTarget = document.getElementById('search_plan')
   const priceSelect = document.querySelector('#price-select')
   const evaluationSelect = document.querySelector('#evaluation')
+  const chatSelect = document.querySelector('#minoiro_checkbox')
+  const videoSelect = document.querySelector('#minoiro_video')
   const submitButton = document.querySelector('#search-submit')
+
 
   $(priceSelect).on('change', function() {
     submitTarget.submit()
@@ -81,3 +86,10 @@
   $(evaluationSelect).on('change', function() {
     submitTarget.submit()
   })
+  $(chatSelect).on('change', function() {
+    submitTarget.submit()
+  })
+  $(videoSelect).on('change', function() {
+    submitTarget.submit()
+  })
+});

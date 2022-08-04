@@ -303,7 +303,7 @@ p {
 .plan-card {
     position: relative;
     width: 265px!important;
-    max-height: 165px;
+    height: 180px;
     background: #fff;
     border-radius: 8px;
     border: 1px solid #999;
@@ -2650,8 +2650,11 @@ select {
     text-align: left!important;
 }
 
+
+@media(max-width:699px){
 .swiper-container {
     overflow-x: scroll;
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
+}
 }

@@ -1,12 +1,18 @@
+$(document).ready(function(){
+
     $('.dropdown-trigger').dropdown({
         constrainWidth:false,
         coverTrigger:false,
         alignment:'left'
     });
+});
 
-    $(document).ready(function(){
-        $('.collapsible').collapsible();
-    });
+$(document).ready(function(){
+
+    $('.collapsible').collapsible();
+});
+
+$(document).ready(function(){
 
     $(document).on('click', function(e) {
         // ２．クリックされた場所の判定
@@ -21,8 +27,10 @@
             }
         }
     });
+});
 
 $(document).ready(function(){
+
     $('.sidenav').sidenav();
 });
 
