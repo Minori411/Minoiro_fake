@@ -696,10 +696,28 @@ div {
     }
 
     @media(max-width: 699px) {
-        .searchBox {
-            width: 100%!important;
-            position: absolute;
+        .plan_searchh {
+            display: block!important;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #f6f6f6;
+            border-radius: 8px;
+            overflow:hidden;
         }
+        .searchBoxx{
+            width: 80%!important;
+            display: block!important;
+            margin: 0 auto;
+        }
+        .right {
+            transform: translateX(-20%);
+        }
+
+    }
+
+    .searchboxx,
+    .plan_searchh {
+        display: none;
     }
 
     .searchBox {

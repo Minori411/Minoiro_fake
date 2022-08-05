@@ -136,7 +136,56 @@
                 <% end %>
                     
                 <% end %>
-                
+                <!--スマホ表示-->
+                <div class="searchBoxx">
+                <div class="plan_searchh">
+                    <h3 class="m-b1">条件で絞り込む</h3>
+                    <%= form_with url: search_path, id: :search_plan, method: :get, local: true do |f| %>
+                    <div class="txt-show">
+                    <div class="relative">
+                        <%= f.text_field :keyword, value: @keyword, :placeholder => "検索" %>
+                        <br>
+                        <% f.submit '検索', id: 'search-submit' %>
+                    </div>
+                    </div>
+                    <div class="txt-hide">
+                    <div class="cp_box1">
+                        <div class="cp_container">
+                        <div class="items">
+                            <div class="item_name flexbox">
+                                <h3>相談方式</h3>
+                            </div>
+                            <%= f.check_box :chat, id: :minoiro_checkbox, :as =>:boolean, checked: params[:chat] == "1" %>
+                            <%=f.label :チャット %>
+                            <%= f.check_box :video, id: :minoiro_video, :as =>:boolean, checked: params[:video] == "1" %>
+                            <%= f.label :ビデオ通話 %>
+                        </div>
+                        <div class="motto">
+                            <div class="price-custom">
+                            <div class="searchBox_m">料金</div>
+                            <div class="form-group right">
+                                <div class="select-wrap">
+                                <%= f.select :price, [['〜2000円', 1],['〜3000円', 2],['〜4000円', 3],['5000円', 4]], { include_blank: true, selected: params[:price] }, id: "price-select", class: "price-control" %>
+                        </div>
+                        </div>
+                        </div>
+                        <div class="review-custom">
+                            <div class="searchBox_m">評価</div>
+                            <div class="form-group right">
+                                <div class="select-wrap">
+                                <%= f.select :evaluation, [['〜★★★', 1],['〜★★★★', 2],['★★★★★', 3]], { include_blank: true, selected: params[:evaluation] } %>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                    <a class="more">もっとみる</a>
+                    <i class="fa-solid fa-angle-down"></i>
+                    </div>
+                    <% end %>           
+                    </div>
                 
                     
 
