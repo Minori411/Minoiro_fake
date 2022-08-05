@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'explanations/vision'
   get 'explanations/customer'
   get 'explanations/consultant'
   get 'bottles/result'
