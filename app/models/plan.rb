@@ -49,12 +49,12 @@ class Plan < ApplicationRecord
     end
 
     logger.warn("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
-    logger.warn(users)
-    logger.warn(user_user_ids)
-    logger.warn(small_plan)
-    logger.warn(smallplan_plan_ids)
-    logger.warn(plan_ids)
-    
+    logger.warn(users)#評価
+    logger.warn(user_user_ids)#名前と県名
+    logger.warn(small_plan)#料金
+    logger.warn(smallplan_plan_ids)#smallplan
+    logger.warn(plan_ids)#plan
+
     result_ids = Plan.all.pluck(:id)
     result_ids = result_ids & plan_ids if plan_ids.length > 0
     result_ids = result_ids & smallplan_plan_ids if smallplan_plan_ids.length > 0
