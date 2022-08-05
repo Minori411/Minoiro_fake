@@ -648,8 +648,12 @@ h3 {
     }
 }
 
-
-
+@media (max-width: 699px) {
+    #vapp,
+    .consultant-plan {
+        width: 100%;
+    }
+}
 
 
 
@@ -2602,7 +2606,6 @@ select {
 
 @media (max-width: 699px){
     .name_text {
-        margin-left: 40px;
         color: black;
     }
 

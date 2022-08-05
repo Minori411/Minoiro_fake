@@ -21,30 +21,13 @@ class Plan < ApplicationRecord
     end
 
     smallplan = Smallplan.all
-    logger.warn(smallplan)
     smallplan = smallplan.where("price <= 2000") if price == "1"
-    logger.warn(smallplan)
-
     smallplan = smallplan.where("price <= 3000") if price == "2"
-    logger.warn(smallplan)
-
     smallplan = smallplan.where("price <= 4000") if price == "3"
-    logger.warn(smallplan)
-
     smallplan = smallplan.where("price = 5000") if price == "4"
-    logger.warn(smallplan)
-
-
     smallplan = smallplan.where(chat: true) if chat == "1"
-    logger.warn(smallplan)
-
     smallplan = smallplan.where(video: true) if video == "1"
-    logger.warn(smallplan)
-    logger.warn("---------------")
-    p chat
-    p video
-
-
+    
     reviews_ids = []
     reviews_ids = Review.having('AVG(evaluation) <= 3').group(:reviewee_id).average(:evaluation).keys if evaluation == "1"
     reviews_ids = Review.having('AVG(evaluation) <= 4').group(:reviewee_id).average(:evaluation).keys if evaluation == "2"
@@ -64,15 +47,14 @@ class Plan < ApplicationRecord
     else
       return []
     end
-    
+
     logger.warn("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
     logger.warn(users)
     logger.warn(user_user_ids)
     logger.warn(small_plan)
     logger.warn(smallplan_plan_ids)
     logger.warn(plan_ids)
-p smallplan 
-p small_plan
+    
     result_ids = Plan.all.pluck(:id)
     result_ids = result_ids & plan_ids if plan_ids.length > 0
     result_ids = result_ids & smallplan_plan_ids if smallplan_plan_ids.length > 0
