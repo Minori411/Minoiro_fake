@@ -63,7 +63,9 @@
 
                         <!-- Dropdown Structure -->
                         <ul id='dropdown3' class='dropdown-content dropdown3'>
+                            <% if current_user.userstyle == 1 %>
                             <li><%= link_to "プランの作成",new_plan_path %></li>
+                            <% end %>
                             <li class="divider" tabindex="-1"></li>
                             <li><%= link_to "ブログの作成",new_article_path %></li>
                         </ul>

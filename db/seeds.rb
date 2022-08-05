@@ -1,6 +1,13 @@
 user = User.new(name: "林みのり",
                 email: Faker::Internet.email,
                 password: "password1234",
+                year: "2022-05-01 00:00:00",
+                level: "★★★ 初中級",
+                experience: "〜3年",
+                prefecture: Gimei.address.prefecture.kanji,
+                career: "〇〇大学卒業",
+                introduction: "こんにちは",
+                userstyle: 1,
                 id: 1)
 
 user.skip_confirmation!
@@ -20,13 +27,13 @@ user.save!
                disability_passport: "www",
                certificate: "sss",
                image: "B000.png",
-               year: "20225月",
+               year: "2022-05-01 00:00:00",
                level: "★★★ 初中級",
                experience: "〜3年")
 end
 
 User.all.each do |user|
-  user.plans.create!(title: "何でも相談乗ります",
+  user.plans.create!(title: "悩みを色で解決します",
                      can_do: "カップルコンサル",
                      youtube: "https://www.youtube.com",
                      body: "こんにちは",
@@ -37,7 +44,7 @@ Plan.all.each do |plan|
   plan.smallplans.create!(plan_name: "夫婦関係について相談できます",
                           plan_detail: "夫婦のお悩み",
                           price: [1000,2000,3000,4000,5000].sample,
-                          video: false,
+                          video: true,
                           chat: false,
                           user_id: plan.user_id,
                           plan_id: plan.id)
