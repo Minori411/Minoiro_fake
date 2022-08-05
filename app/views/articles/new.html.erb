@@ -1,7 +1,5 @@
 
 <%= form_with model: @article, url: "/articles/create", local: true do |f| %>
-    <span>現在ログイン中のユーザー：<%= current_user.name %></span>
-
     <div class="boxbaseP30 post-articles">
         <%= f.label :タイトル %><br>
         <%= f.text_field :subject, autofocus: true %>
