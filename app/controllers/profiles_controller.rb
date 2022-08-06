@@ -10,7 +10,7 @@ class ProfilesController < ApplicationController
     @user = User.find_by(id: params[:user_id])
     @reviews = @user.reviews.order('created_at DESC')
     if @reviews.present?
-      @avg_score = @reviews.average(:evaluation).present? ? @reviews.average(:evaluation).round(2) : 0
+      @avg_score = @reviews.average(:evaluation).present? ? @reviews.average(:evaluation).round(1) : 0
       @avg_score_percentage = @reviews.average(:evaluation).round(1).to_f * 100 / 5
     else
       @avg_score = 0
@@ -52,7 +52,7 @@ class ProfilesController < ApplicationController
 
   def show
     if @reviews.present?
-      @avg_score = @reviews.average(:evaluation).present? ? @reviews.average(:evaluation).round(2) : 0
+      @avg_score = @reviews.average(:evaluation).present? ? @reviews.average(:evaluation).round(1) : 0
     else
       @avg_score = 0
       @avg_score_percentage = 0

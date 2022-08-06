@@ -56,7 +56,7 @@ Review.create(body: "知りたいことが知れました。とてもいい経�
               reviewer_id: n+1,
               reviewee_id: n,
               user_id: n,
-              evaluation: [1,2,3,4,5].sample)
+              evaluation: [2,3,4,5].sample)
 end
 
 User.all.each do |user|

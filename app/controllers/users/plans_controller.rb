@@ -8,7 +8,7 @@ module Users
       @article = @user.articles.order(created_at: :desc)
       @reviews = @user.reviews.order("created_at DESC")
       if @reviews.present?
-        @avg_score = @reviews.average(:evaluation).present? ? @reviews.average(:evaluation).round(2) : 0
+        @avg_score = @reviews.average(:evaluation).present? ? @reviews.average(:evaluation).round(1) : 0
         @avg_score_percentage = @reviews.average(:evaluation).round(1).to_f * 100 / 5
       else
         @avg_score = 0
@@ -43,8 +43,8 @@ module Users
       @relationship = Relationship.find_by(id: params[:id])
       @min_price = @plan.smallplans.minimum(:price)
       if @reviews.present?
-        @avg_score = @reviews.average(:evaluation).present? ? @reviews.average(:evaluation).round(2) : 0
-        @avg_review = @plan.user.reviews.average(:evaluation).round(2)
+        @avg_score = @reviews.average(:evaluation).present? ? @reviews.average(:evaluation).round(1) : 0
+        @avg_review = @plan.user.reviews.average(:evaluation).round(1)
         @avg_score_percentage = @reviews.average(:evaluation).round(1).to_f * 100 / 5
       else
         @avg_score = 0

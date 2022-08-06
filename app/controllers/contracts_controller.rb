@@ -5,8 +5,8 @@ class ContractsController < ApplicationController
     @user = User.find(@plan.user_id)
     @reviews = @user.reviews.order("created_at DESC")
     if @reviews.present?
-      @avg_score = @reviews.average(:evaluation).present? ? @reviews.average(:evaluation).round(2) : 0
-      @avg_review = @plan.user.reviews.average(:evaluation).round(2)
+      @avg_score = @reviews.average(:evaluation).present? ? @reviews.average(:evaluation).round(1) : 0
+      @avg_review = @plan.user.reviews.average(:evaluation).round(1)
       @avg_score_percentage = @reviews.average(:evaluation).round(1).to_f * 100 / 5
     else
       @avg_score = 0
@@ -63,8 +63,8 @@ class ContractsController < ApplicationController
 
     # TODO: unless よりは if を使う
     if @reviews.present?
-      @avg_score = @reviews.average(:evaluation).present? ? @reviews.average(:evaluation).round(2) : 0
-      @avg_review = @plan.user.reviews.average(:evaluation).round(2)
+      @avg_score = @reviews.average(:evaluation).present? ? @reviews.average(:evaluation).round(1) : 0
+      @avg_review = @plan.user.reviews.average(:evaluation).round(1)
       @avg_score_percentage = @reviews.average(:evaluation).round(1).to_f * 100 / 5
     else
       @avg_score = 0

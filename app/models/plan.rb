@@ -21,10 +21,11 @@ class Plan < ApplicationRecord
     end
 
     smallplan = Smallplan.all
-    smallplan = smallplan.where("price <= 2000") if price == "1"
-    smallplan = smallplan.where("price <= 3000") if price == "2"
-    smallplan = smallplan.where("price <= 4000") if price == "3"
-    smallplan = smallplan.where("price = 5000") if price == "4"
+    smallplan = smallplan.where('price <= 2000') if price == "1"
+    smallplan = smallplan.where('price <= 3000') if price == "2"
+    smallplan = smallplan.where('price <= 4000') if price == "3"
+    smallplan = smallplan.where('price = 5000') if price == "4"
+    
     smallplan = smallplan.where(chat: true) if chat == "1"
     smallplan = smallplan.where(video: true) if video == "1"
     
