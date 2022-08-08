@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_04_223905) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_08_101532) do
   create_table "articles", charset: "utf8mb3", force: :cascade do |t|
     t.bigint "user_id"
     t.string "subject"
@@ -27,6 +27,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_04_223905) do
     t.text "meaning_detail"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "careers", charset: "utf8mb3", force: :cascade do |t|
+    t.datetime "started_at"
+    t.datetime "end_at"
+    t.string "content"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_careers_on_user_id"
   end
 
   create_table "contracts", charset: "utf8mb3", force: :cascade do |t|
@@ -159,14 +169,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_04_223905) do
     t.text "introduction"
     t.integer "total_users"
     t.datetime "deleted_at"
-    t.text "career"
     t.text "url"
     t.string "certificate_name"
     t.string "certificate"
     t.string "level"
     t.string "experience"
     t.string "disability_passport"
-    t.datetime "year"
     t.string "twitter"
     t.string "image"
     t.index ["email", "soft_destroyed_at"], name: "index_users_on_email_and_soft_destroyed_at", unique: true
@@ -175,6 +183,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_04_223905) do
   end
 
   add_foreign_key "articles", "users"
+  add_foreign_key "careers", "users"
   add_foreign_key "contracts", "plans"
   add_foreign_key "contracts", "users"
   add_foreign_key "entries", "rooms"

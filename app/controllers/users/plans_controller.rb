@@ -5,6 +5,10 @@ module Users
     def index
       @user = User.find(params[:user_id])
       @plans = @user.plans
+      @careers = @user.careers
+      puts '@@@@@@@@@@@@@@@@@'
+      puts @career
+      puts '@@@@@@@@@@@@@@@@@'
       @article = @user.articles.order(created_at: :desc)
       @reviews = @user.reviews.order("created_at DESC")
       if @reviews.present?

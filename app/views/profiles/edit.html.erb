@@ -177,23 +177,23 @@
                         </div>
                         <div id="career" class="Midasi">経歴・実績</div>
                         <div class="keirekizisseki">
-                        <%= f.fields_for :users do |user| %>
+                        <%= f.fields_for :careers do |career| %>
                         <div class="WorkResultBox{ data: {index: "#{user.index}"} }">
                             <table class="editable">
                                 <tr>
                                     <th>経歴・実績</th>
                                     <td colspan="3">
                                         <div class="m-t-5">
-                                            <%= f.text_area :career %>
+                                            <%= career.text_area :content %>
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
                                     <th class="ccc">期間</th>
                                     <td class="ddd">
-                                    <%= f.date_select :year,{:discard_day=>true,include_blank: '選択してください'} %>
+                                    <%= career.date_select :started_at,{:discard_day=>true,include_blank: '選択してください'} %>
                                     〜
-                                    <%= f.date_select :year,{:discard_day=>true,include_blank: '選択してください'} %>
+                                    <%= career.date_select :end_at,{:discard_day=>true,include_blank: '選択してください'} %>
                                     </td>
                                 </tr>
                             </table>

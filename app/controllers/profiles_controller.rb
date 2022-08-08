@@ -41,7 +41,9 @@ class ProfilesController < ApplicationController
     @user = User.find(current_user.id)
   end
 
-  def edit; end
+  def edit
+    @user.careers.build
+  end
 
   def update
     if @user.update(user_params)

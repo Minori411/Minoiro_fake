@@ -1,11 +1,9 @@
 user = User.new(name: "林みのり",
                 email: Faker::Internet.email,
                 password: "password1234",
-                year: "2022-05-01 00:00:00",
                 level: "★★★ 初中級",
                 experience: "〜3年",
                 prefecture: Gimei.address.prefecture.kanji,
-                career: "〇〇大学卒業",
                 introduction: "こんにちは",
                 userstyle: 1,
                 id: 1)
@@ -19,7 +17,6 @@ user.save!
                prefecture: Gimei.address.prefecture.kanji,
                introduction: "こんにちは",
                url: "aaa",
-               career: "〇〇大学卒業",
                name:Gimei.kanji,
                email: Faker::Internet.email,
                password: "minori1234#{n + 1}",
@@ -27,12 +24,15 @@ user.save!
                disability_passport: "www",
                certificate: "sss",
                image: "B000.png",
-               year: "2022-05-01 00:00:00",
                level: "★★★ 初中級",
                experience: "〜3年")
 end
 
 User.all.each do |user|
+  user.careers.create!(started_at: "2022-05-01 00:00:00",
+                      end_at: "2022-08-01 00:00:00",
+                      content: "◯◯大学卒業")
+
   user.plans.create!(title: "悩みを色で解決します",
                      can_do: "カップルコンサル",
                      youtube: "https://www.youtube.com",
