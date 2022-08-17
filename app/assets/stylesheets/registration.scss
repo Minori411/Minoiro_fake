@@ -10,6 +10,12 @@
     }
 }
 
+@media(max-width: 699px) {
+    .registration-btn {
+        font-size: 20px!important;
+    }
+}
+
 .register-select {
     display: flex;
     width: 100%;

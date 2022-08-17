@@ -30,7 +30,7 @@
               <textarea class="w100p" placeholder="プランの内容を入力してください" name="plan[smallplans_attributes][0][plan_detail]" id="plan_smallplans_attributes_0_plan_detail">
       </textarea>
           </div>
-                  <div class="right m-b-20 smt_right m-t1" style="width: auto; margin-left: auto;">
+              <div class="right m-b-20 smt_right m-t1" style="width: auto; margin-left: auto;">
                   <button class="button delete-form-btn" data-deletefiled="true" data-index="${index}">
                     <i class="fas fa-times-circle"></i> 削除
                   </button>

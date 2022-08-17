@@ -127,7 +127,7 @@
                                     <td class="length-r">
                                         <div class="certificate-input-root">
                                             <div class="certificate-input-wrapper-default input">
-                                                <input class="w300" placeholder="資格名" name="certificate" type="text">
+                                                <%= f.text_field :certificate_name, class: "w300", :placeholder => "資格名" %>
                                             </div>
                                         </div>
                                     </td>
@@ -171,14 +171,11 @@
                             </div>
                             <% end %>
                         </div>  
-                            <div class="m-b5 alignCenter">
-                                <%= f.button "資格を追加する",type: :button, class: "add-btn btn" %>
-                            </div>                                       
                         </div>
                         <div id="career" class="Midasi">経歴・実績</div>
                         <div class="keirekizisseki">
                         <%= f.fields_for :careers do |career| %>
-                        <div class="WorkResultBox{ data: {index: "#{user.index}"} }">
+                        <div class="WorkResultBox{ data: {index: "#{career.index}"} }">
                             <table class="editable">
                                 <tr>
                                     <th>経歴・実績</th>
