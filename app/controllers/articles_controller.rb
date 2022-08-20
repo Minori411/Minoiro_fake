@@ -33,7 +33,6 @@ class ArticlesController < ApplicationController
     if @article.update(article_params)
       redirect_to article_path(@article.id)
     else
-      logger.debug(@article.errors.full_messages)
       render :edit
     end
   end
