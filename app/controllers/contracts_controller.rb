@@ -1,5 +1,8 @@
 class ContractsController < ApplicationController
   def index
+    # REVIEW メソッドが長い
+    # 1. インスタンス変数(@がつく変数)が多い。viewで使用しない変数は@をつけない
+    # 2. indexアクションとshowアクションで共通している処理はコントローラ内でprivateメソッド化を検討する
     @contract = Contract.new
     @plan = Plan.find(params[:plan_id])
     @user = User.find(@plan.user_id)
