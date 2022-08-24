@@ -63,6 +63,14 @@ class Plan < ApplicationRecord
     result_ids = result_ids & small_plan if small_plan.length > 0
     result_ids = result_ids & users if users.length > 0
 
+    # REVIEW 私も実装した部分ですが、断片的に対象IDを抽出するより、テーブル結合して検索する方法が使えるとよい。
+    # joinsやeager_loadで複数のテーブルを結合
+    # mergeメソッドで複数のテーブルに条件を指定できる
+    # 参考) https://railsguides.jp/active_record_querying.html
+    #
+    # 例) plan と smallplanをjoinsで結合し、planに対する条件を指定し、そしてsmallplanに対する条件も指定できる
+    # Plan.where(xxx)とSmallPlan.where(xxx)をまとめて記述できるようになる
+    #
     where(id: (result_ids))
   end
 
