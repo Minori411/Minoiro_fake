@@ -74,6 +74,26 @@ class ContractsController < ApplicationController
     @min_price = @plan.smallplans.minimum(:price)
     @current_entry = Entry.where(user_id: current_user.id)
     @another_entry = Entry.where(user_id: @user.id)
+
+    # REVIEW: 全般複雑です。シンプルな構成を目指しましょう。
+    #
+    # 1. @roomはどのプログラムを通ってもRoom.newになる。
+    # 2. 分岐・繰り返し処理が多い。unless x 2, if x 1, each x 2(入れ子)
+    #   @current_entryのroom_id(複数)と@another_entryのroom_id(複数)に同じroom_idが含まれているか比較すれば軽量化できる
+    #   https://qiita.com/takaram/items/fdc2b1897d68b3f2d848
+    # 3. show.htmlの抜粋です。コントローラのみでなくビューでも分岐処理が登場している。
+    #             <% if @user.id != current_user.id && current_user.customer? %>
+    #                 <% if @is_room == true %>
+    #                     <p class="user-show-room"><a href="/rooms/<%= @room_id %>" class="btn btn-primary btn-lg">チャットへ</a>
+    #                 <% else %>
+    #                     <%= form_for @room do |f| %>
+    #                     <%= fields_for @entry do |e| %>
+    #                         <%= e.hidden_field :user_id, value: @user.id %>
+    #                     <% end %>
+    #                     <%= f.submit "メッセージで相談する", class:"btn btn-primary btn-lg side-bar-message"%>
+    #                     <% end %>
+    #                 <% end %>
+    #             <% end %>
     @room = Room.new
     # TODO: unless よりは if を使う
     unless @user.id == current_user.id
