@@ -20,6 +20,9 @@ class ProfilesController < ApplicationController
     @sum_total_customers = @user.contracts.where(customer_id: @user.id).count
     @current_entry = Entry.where(user_id: current_user.id)
     @another_entry = Entry.where(user_id: @user.id)
+
+
+    # REVIEW roomの関する同じ記述がここにもある。(contracts_controllerと同じ)
     @room = Room.new
     unless @user.id == current_user.id
       @current_entry.each do |current|
