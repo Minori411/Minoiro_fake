@@ -56,6 +56,6 @@ class UsersController < ApplicationController
     params.require(:user).permit(:twitter, :image, :name, :email, :password, :password_confirmation, :userstyle, :prefecture, :introduction, :url,
                                  :disability_passport, :certificate, :level, :experience, :icon,
                                  careers_attributes: [:started_at,
-                                 :end_at, :content])
+                                                      :end_at, :content])
   end
 end

@@ -25,45 +25,43 @@ class Plan < ApplicationRecord
     smallplan = smallplan.where('price <= 3000') if price == "2"
     smallplan = smallplan.where('price <= 4000') if price == "3"
     smallplan = smallplan.where('price = 5000') if price == "4"
-    
+
     smallplan = smallplan.where(chat: true) if chat == "1"
     smallplan = smallplan.where(video: true) if video == "1"
-    
+
     reviews_ids = []
     reviews_ids = Review.having('AVG(evaluation) <= 3').group(:reviewee_id).average(:evaluation).keys if evaluation == "1"
     reviews_ids = Review.having('AVG(evaluation) <= 4').group(:reviewee_id).average(:evaluation).keys if evaluation == "2"
     reviews_ids = Review.having('AVG(evaluation) = 5').group(:reviewee_id).average(:evaluation).keys if evaluation == "3"
 
     # 2と3(★3以下と★4以下)の場合はレビューがないユーザーも対象とする
-    if evaluation == "1" || evaluation == "2"
-      reviews_ids += User.where.missing(:reviewees).pluck(:id)
-    end
+    reviews_ids += User.where.missing(:reviewees).pluck(:id) if %w[1 2].include?(evaluation)
 
     user_ids = User.where(id: reviews_ids).ids
     users = Plan.where(user_id: user_ids).ids
-    
+
     # ない場合は返却
     if smallplan.present?
-      small_plan = smallplan.pluck(:plan_id) 
+      small_plan = smallplan.pluck(:plan_id)
     else
       return []
     end
 
     logger.warn("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
-    logger.warn(users)#評価
-    logger.warn(user_user_ids)#名前と県名
-    logger.warn(small_plan)#料金
-    logger.warn(smallplan_plan_ids)#smallplan
-    logger.warn(plan_ids)#plan
+    logger.warn(users) # 評価
+    logger.warn(user_user_ids) # 名前と県名
+    logger.warn(small_plan) # 料金
+    logger.warn(smallplan_plan_ids) # smallplan
+    logger.warn(plan_ids) # plan
 
     result_ids = Plan.all.pluck(:id)
-    result_ids = result_ids & plan_ids if plan_ids.length > 0
-    result_ids = result_ids & smallplan_plan_ids if smallplan_plan_ids.length > 0
-    result_ids = result_ids & user_user_ids  if user_user_ids.length > 0
-    result_ids = result_ids & small_plan if small_plan.length > 0
-    result_ids = result_ids & users if users.length > 0
+    result_ids &= plan_ids if plan_ids.length.positive?
+    result_ids &= smallplan_plan_ids if smallplan_plan_ids.length.positive?
+    result_ids &= user_user_ids  if user_user_ids.length.positive?
+    result_ids &= small_plan if small_plan.length.positive?
+    result_ids &= users if users.length.positive?
 
-    where(id: (result_ids))
+    where(id: result_ids)
   end
 
   private

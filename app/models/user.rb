@@ -20,7 +20,6 @@ class User < ApplicationRecord
   has_many :careers, dependent: :destroy
   accepts_nested_attributes_for :careers, allow_destroy: true
 
-
   mount_uploader :image, ImageUploader
   mount_uploader :disability_passport, DisabilityUploader
   mount_uploader :certificate, CertificateUploader

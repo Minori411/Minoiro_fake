@@ -17,7 +17,7 @@ user.save!
                prefecture: Gimei.address.prefecture.kanji,
                introduction: "こんにちは",
                url: "aaa",
-               name:Gimei.kanji,
+               name: Gimei.kanji,
                email: Faker::Internet.email,
                password: "minori1234#{n + 1}",
                password_confirmation: "minori1234#{n + 1}",
