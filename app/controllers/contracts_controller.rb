@@ -46,11 +46,8 @@ class ContractsController < ApplicationController
     )
 
     if @contract.save! # もし保存ができたら
-      logger.debug("成功")
       redirect_to plan_contract_path(@plan.id, @contract.id) # 投稿画面に遷移
     else # できなければ
-      logger.debug("失敗")
-      logger.debug(@contract.errors.full_messages)
       render :index # newに遷移
     end
   end

@@ -6,9 +6,6 @@ module Users
       @user = User.find(params[:user_id])
       @plans = @user.plans
       @careers = @user.careers
-      Rails.logger.debug '@@@@@@@@@@@@@@@@@'
-      Rails.logger.debug @career
-      Rails.logger.debug '@@@@@@@@@@@@@@@@@'
       @article = @user.articles.order(created_at: :desc)
       @reviews = @user.reviews.order("created_at DESC")
       if @reviews.present?
@@ -82,10 +79,8 @@ module Users
       @plan = Plan.new(plan_params)
       @plan.user_id = current_user.id
       if @plan.save # もし保存ができたら
-        logger.debug("成功")
         redirect_to plan_path(@plan.id) # 投稿画面に遷移
       else  # できなければ
-        logger.debug("失敗")
         render :new
       end
     end
@@ -101,10 +96,8 @@ module Users
       @plan.user_id = current_user.id
       @plan.smallplans.map { |smallplan| smallplan.user_id = current_user.id }
       if @plan.save!
-        logger.debug("成功")
         redirect_to user_plans_path(@user.id)
       else
-        logger.debug("失敗")
         render :edit
       end
     end

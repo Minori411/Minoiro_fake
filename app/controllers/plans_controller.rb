@@ -33,10 +33,8 @@ class PlansController < ApplicationController
     # Rails.logger.debug(@plan.smallplans[0].attributes)
     # Rails.logger.debug("-----")
     if @plan.save # もし保存ができたら
-      logger.debug("成功")
       redirect_to user_plans_path(current_user.id) # 投稿画面に遷移
     else # できなければ
-      logger.debug("失敗")
       render :new
     end
   end
@@ -47,10 +45,8 @@ class PlansController < ApplicationController
     @plan.user_id = current_user.id
     @plan.smallplans.map { |smallplan| smallplan.user_id = current_user.id }
     if @plan.save!
-      logger.debug("成功")
       redirect_to user_plans_path(current_user.id)
     else
-      logger.debug("失敗")
       render :edit
     end
   end
